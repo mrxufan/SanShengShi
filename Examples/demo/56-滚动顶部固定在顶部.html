@@ -28,7 +28,7 @@ body{height: 2000px;}
 <script type="text/javascript">
 var nav=document.querySelector('.nav');
 window.addEventListener('scroll',function(){
-	var sTop=document.documentElement.scrollTop;
+	var sTop=document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
 	if (sTop>=300) {
 		nav.className='nav fixed';
 	} else {

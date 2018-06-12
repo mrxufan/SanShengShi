@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>substring展开收起</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+.txt{margin: 0;padding: 0;width: 500px;background-color: pink;padding: 10px;}
+</style>
+</head>
+<body>
+<p class="txt">
+    <span class="content">在《穿Prada的女魔头中》，安妮·海瑟薇的父亲对女儿的秘书工作顾虑重重：“你拿着最低工资，给人跑腿、打杂、遛狗、看孩子、买咖啡，这是要闹哪样？”而女儿不得不一再给老爸打气：“只要坚持上两年，我就能拿到所有纸媒行业的门票。这事还是有前途的。”
+本届奥斯卡大热影片《伯德小姐》中，思想开明宽容、绝非望子成龙的父母仍然对在超市做收银员的嬉皮儿子极之忧虑，因为：“这不是一项事业（that's not even a career）。”快言快语的妹妹更是直接告知：“如果你不把脸上这些钉钉环环摘下来，活该一辈子找不到。</span><a href="javascript:;" class="btn">展开>></a>
+</p>
+
+<script type="text/javascript">
+var content=document.querySelector('.content');
+var btn=document.querySelector('.btn');
+var str=content.innerHTML;
+content.innerHTML=str.substring(0, 30);
+var onOff=true;
+btn.onclick=function(){
+    if (onOff) {
+        content.innerHTML=str;
+        btn.innerHTML='收起>>';
+    } else {
+        content.innerHTML=str.substring(0, 30);
+        btn.innerHTML='展开>>';
+    }
+    onOff=!onOff;
+};
+
+</script>    
+</body>
+</html>

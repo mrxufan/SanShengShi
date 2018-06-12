@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>属性操作-加减文字字体大小</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+.red{width: 500px;padding: 10px;background-color: red;}
+.blue{width: 500px;padding: 10px;background-color: blue;}
+</style>
+</head>
+<body>
+<input type="button" name="" value="+">    
+<input type="button" name="" value="-">    
+<input type="button" name="" value="红">    
+<input type="button" name="" value="蓝"> 
+<p id="text">故事置于冷战年代的美国，主角Elisa（莎莉·霍金斯 饰）是一位失去语言功能的寂寞姑娘，她每天往返于公寓和做清洁工作的实验室之间，唯一称得上朋友的，是邻居老头和黑人同事Zelda。当Zelda带Elisa瞥见实验室运来的一个神秘水怪后，Elisa的命运就此被改变了。姑且不论这是否是评委会主席安奈特</p>   
+<script type="text/javascript">
+var btn=document.getElementsByTagName('input');
+var text=document.getElementById('text');
+var num=16;
+btn[0].onclick=function () {
+	if (num<20) {
+		num++;
+		text.style.fontSize=num+'px';
+	}
+};
+btn[1].onclick=function () {
+	num--;
+	text.style.fontSize=num+'px';
+};
+btn[2].onclick=function () {
+	text.className='red';
+};
+btn[3].onclick=function () {
+	text.className='blue';
+};
+</script>
+</body>
+</html>

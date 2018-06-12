@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>面向对象-构造函数</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+/* 
+构造函数
+
+没有显示的创建对象
+直接将属性和方法赋值给了this对象
+没有return语句
+使用new创建对象
+能够识别对象（这正是构造函数模式胜于工厂模式的地方）
+
+　构造函数虽然好用，但也并非没有缺点，使用构造函数的最大的问题在于每次创建实例的时候都要重新创建一次方法（理论上每次创建对象的时候对象的属性均不同，而对象的方法是相同的），然而创建两次完全相同的方法是没有必要的，因此，我们可以将函数移到对象外面
+
+  构造函数函数名首字母大写（不是必须），为了区别普通函数
+
+ */
+function Person(name,sex){
+	this.name=name;
+	this.sex=sex;
+	this.showName=function(){
+		alert('名字='+this.name);
+	};
+	this.showSex=function(){
+		alert('性别='+this.sex);
+	};
+}
+var p1=new Person('柳岩','女');
+var p2=new Person('宁静','女');
+p1.showName();
+p1.showSex();
+p2.showName();
+p2.showSex();
+</script>
+
+</body>
+</html>

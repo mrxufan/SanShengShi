@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link href="css/gw_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+<script src="js/iscroll-lite.min.js"></script>
+
+<script src="js/TouchSlide.1.1.js"></script>
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<style>
+
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+<!-- 本例主要代码 Start ================================ -->
+<div id="roll_pic" class="roll_pic_box">
+    <div class="hd">
+        <ul></ul>
+    </div>
+    <div class="bd">
+        <ul>
+            <li><a href="#"><img src="images/test_pic/1.jpg" /></a></li>
+            <li><a href="#"><img src="images/test_pic/2.jpg" /></a></li>
+            <li><a href="#"><img src="images/test_pic/3.jpg" /></a></li>
+            <li><a href="#"><img src="images/test_pic/4.jpg" /></a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    TouchSlide({ 
+        slideCell:"#roll_pic",
+        titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell:".bd ul", 
+        effect:"leftLoop", 
+        autoPlay:true,//自动播放
+        autoPage:true //自动分页
+    });
+</script>
+<!-- 本例主要代码 End ================================ -->
+
+<div class="index_menu_box_8" >
+    <ul>
+    	<li><a href="#" class="bj_1"><p class="p_text">资讯</p></a></li>
+        <li><a href="#" class="bj_2"><p class="p_text">关于我们</p></a></li>
+        <li><a href="#" class="bj_3"><p class="p_text">更多</p></a></li>
+    </ul>
+</div>
+
+<div class="index_title_box">
+	<p class="p_txt"><i class="icon-star"></i>最新动态</p>
+</div>
+<!--新闻列表-->
+<div class="news_list_box" style="margin-top:0;">
+	<ul>
+        <li>
+        	<a href="#">
+            <div class="news_list_nr">
+            <p class="p_img" style="background-image:url(images/mb_pic2/test_02.jpg)"></p>
+            <p class="p_tit">2015上海车展：劳伦士S60 L亚洲首发</p>
+            <p class="p_date">2014-11-15</p>
+            </div>
+            </a>
+        </li>
+        <li>
+        	<a href="#">
+            <div class="news_list_nr">
+            <p class="p_img" style="background-image:url(images/mb_pic2/test_01.jpg)"></p>
+            <p class="p_tit">哈弗H7将于11月上市 长城未来规划曝光</p>
+            <p class="p_date">2014-11-15</p>
+            </div>
+            </a>
+        </li>
+        <li>
+        	<a href="#">
+            <div class="news_list_nr">
+            <p class="p_img" style="background-image:url(images/mb_pic2/test_03.jpg)"></p>
+            <p class="p_tit">i8技术下放？浅析宝马X5混合动力技术</p>
+            <p class="p_date">2014-11-15</p>
+            </div>
+            </a>
+        </li>
+        
+        <li>
+        	<a href="#">
+            <div class="news_list_nr">
+            <!--<p class="p_img" style="background-image:url(images/mb_pic2/640X360_4.jpg)"></p>-->
+            <p class="p_tit">今夏，要么瘦，要么死！</p>
+            <p class="p_date">2014-11-15</p>
+            </div>
+            </a>
+        </li>
+        <li>
+        	<a href="#">
+            <div class="news_list_nr">
+            <p class="p_img" style="background-image:url(images/mb_pic2/640X360.jpg)"></p>
+            <p class="p_tit">蹲坑必备良品吐蹲坑必备品吐血推荐血推荐</p>
+            <p class="p_date">2014-11-15</p>
+            </div>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</body>
+
+</html>

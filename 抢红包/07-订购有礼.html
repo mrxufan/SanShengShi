@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>订购有礼</title>
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="Mint UI/mint-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+    html,body{min-height: 100%;background-image: url('images/youli_bg.jpg');background-repeat: repeat;
+  background-size: 50%;}
+    .btm_pic{position: fixed;width: 100%;height: 40vw;left: 0;bottom: 0;}
+    .btm_pic img{width: 100%;}
+    .p_money{margin: 2vw 0;}
+    .btn_wrap{margin: 3vw 0;}
+    .btn_wrap a{background-color: #17b139;}
+    .btn_wrap a:active{background-color: #169d33;}
+    </style>
+</head>
+<body ontouchstart>
+  <div id="app01">
+  	<div class="img_box"><img src="images/youli_top02.png"></div>
+    <p class="p_money"><span v-cloak>{{money}}</span>元</p>
+    <p class="p_tips">红包已经发放到您的零钱中</p>
+    <div class="btn_wrap">
+      <a href="javascript:;">我知道了</a>
+    </div>
+    <div class="btm_pic"><img src="images/youli_btm.png"></div>
+  </div>
+
+
+
+  <script type="text/javascript" src="Mint UI/vue.js"></script>
+  <script type="text/javascript" src="Mint UI/index.js"></script>
+  <script type="text/javascript">
+  	var vm01 = new Vue({
+  		el: "#app01",
+  		data:{
+  			money:100,
+     
+  		},
+      methods: {
+       
+      },
+      mounted(){
+      }
+  	});
+  </script>
+</body>
+</html>

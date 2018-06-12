@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>面向对象-混合模式（原型模式 + 构造函数模式）</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+/* 
+
+混合模式中构造函数模式用于定义实例属性，而原型模式用于定义方法和共享属性。每个实例都会有自己的一份实例属性，但同时又共享着方法，最大限度的节省了内存。另外这种模式还支持传递初始参数。优点甚多。这种模式在ECMAScript中是使用最广泛、认同度最高的一种创建自定义对象的方法
+
+ */
+
+function Person(name,sex){
+	// 属性，每个对象各不相同
+	this.name=name;
+	this.sex=sex;
+}
+
+// 方法，所有对象都一样
+Person.prototype.showName=function(){
+		alert('名字='+this.name);
+	};
+Person.prototype.showSex=function(){
+	alert('性别='+this.sex);
+};
+
+var p1=new Person('柳岩','女');
+var p2=new Person('宁静','女');
+
+p1.showName();
+p1.showSex();
+p2.showName();
+p2.showSex();
+
+// alert(p1.showName==p2.showName) //true
+
+
+</script>
+
+</body>
+</html>

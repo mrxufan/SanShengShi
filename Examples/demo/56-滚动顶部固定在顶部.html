@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>滚动顶部固定在顶部</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<style type="text/css">
+*{margin: 0;padding: 0}
+body{height: 2000px;}
+.box{height: 300px;background-color: orange;}
+.nav{height: 50px;text-align: center;line-height: 50px;background-color: black;color: #fff;width: 100%;}
+.fixed{position: fixed;left: 0;top: 0;}
+</style>
+</head>
+<body>
+<div class="box"></div>
+<div style="height: 50px;">
+	<div class="nav">我是导航</div>
+</div>
+<div>与播客有所不同，优酷不一定只有原创才能登台表演，无论业余或专业，无论个人或机构，优酷欢迎一切以微视频形式出现的视频收藏、自创与分享。据优酷网产品负责人介绍，优酷是国内首家为微视频免费提供无限量上传与存储空间并具备个人发起视频擂台及评分系统的网站；区别于某些网站的视频堆积，优酷注重利用多纬度的TOP排名、频道分类索引、标签、个人发起擂台、视频俱乐部等有效手段，兼顾技术搜索功能与人气推荐手段，最大化发挥C2C内容聚合与推荐的力量，帮助用户迅速找到喜好的视频和感兴趣的社区，让用户“看得爽、找得快、传得广、比得酷”。优与酷的融合，势必会吸引大批崇尚自由创意、喜欢收藏或欣赏微视频的网民。优酷的目标人群归属和分众聚合力将为优酷未来的商业价值创造无限可能，也为传统媒体的发行和推广提供新的平台</div>
+
+
+
+
+
+
+<script type="text/javascript">
+var nav=document.querySelector('.nav');
+window.addEventListener('scroll',function(){
+	var sTop=document.documentElement.scrollTop;
+	if (sTop>=300) {
+		nav.className='nav fixed';
+	} else {
+		nav.className='nav';
+	}
+	console.log(sTop);
+});
+</script>    
+</body>
+</html>

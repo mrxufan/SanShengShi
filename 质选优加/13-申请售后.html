@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>申请售后</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!--标准mui.css-->
+<link href="css/mui.min.css" rel="stylesheet">
+<!-- 共用样式 -->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+.mui-preview-image.mui-fullscreen {position: fixed;z-index: 20;background-color: #000;}
+.mui-preview-header,.mui-preview-footer {position: absolute;width: 100%;left: 0;z-index: 10;}
+.mui-preview-header {height: 44px;top: 0;text-align: center;}
+.mui-preview-footer {height: 50px;bottom: 0px;}
+.mui-preview-header .mui-preview-indicator {display: inline-block;line-height: 25px;color: #fff;text-align: center;margin: 15px auto 4;width: 70px;background-color: rgba(0, 0, 0, 0.4);border-radius: 12px;font-size: 16px;}
+.mui-preview-image {display: none;-webkit-animation-duration: 0.5s;animation-duration: 0.5s;-webkit-animation-fill-mode: both;animation-fill-mode: both;}
+.mui-preview-image.mui-preview-in {-webkit-animation-name: fadeIn;animation-name: fadeIn;}
+.mui-preview-image.mui-preview-out {background: none;-webkit-animation-name: fadeOut;animation-name: fadeOut;}
+.mui-preview-image.mui-preview-out .mui-preview-header,.mui-preview-image.mui-preview-out .mui-preview-footer {display: none;}
+.mui-zoom-scroller {position: absolute;display: -webkit-box;display: -webkit-flex;display: flex;
+-webkit-box-align: center;-webkit-align-items: center;align-items: center;-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;left: 0;right: 0;bottom: 0;top: 0;width: 100%;height: 100%;margin: 0;-webkit-backface-visibility: hidden;}
+/* .mui-zoom { -webkit-transform-style: preserve-3d; transform-style: preserve-3d; } .mui-slider .mui-slider-group .mui-slider-item img {width: 100%;} .mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img { width: 100%; } .mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item { display: inline-table; } .mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img { display: table-cell; vertical-align: middle; } .mui-preview-loading { position: absolute; width: 100%; height: 100%; top: 0; left: 0; display: none; } .mui-preview-loading.mui-active { display: block; } .mui-preview-loading .mui-spinner-white { position: absolute; top: 50%; left: 50%; margin-left: -25px; margin-top: -25px; height: 50px; width: 50px; } .mui-preview-image img.mui-transitioning { -webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease; transition: transform 0.5s ease, opacity 0.5s ease; } @-webkit-keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } } @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } } @-webkit-keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } } @keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } } */
+
+.mui-content .mui-content-padded li{float: left;position: relative;margin-right: 10px;margin-bottom: 10px;}
+.mui-content .mui-content-padded li #p_close{text-align: center;font-size: 12px;margin-top: 4px;}
+.mui-content .mui-content-padded li .p_img img{background-position: center center;background-repeat: no-repeat;background-size: cover;width: 70px;height: 70px;}
+
+.fb_pingjia .mui-content-padded .upload_img{width: 70px;height: 70px;border: 1px dashed #ccc;border-radius: 4px;text-align: center;position: relative;}
+.fb_pingjia .mui-content-padded .upload_img .p_icon .iconfont{font-size: 26px;display: inline-block;margin: 10px 0;}
+.fb_pingjia .mui-content-padded .upload_img .p_txt{font-size: 12px;}
+</style>
+</head>
+<body style="background-color: #fff;">
+<div class="apply_service">
+	<ul>
+		<li>
+			<p class="p_input">
+				<span class="s_service">申请服务</span>
+				<select style="width: 100%;height: 40px;">
+					<option>退货退款</option>
+					<option>仅退款</option>
+					<option>换货</option>
+				</select>
+				<i class="iconfont icon-30"></i>
+			</p>
+		</li>
+		<li>
+			<p class="p_input"><span class="s_service">退货原因</span><input type="text" placeholder="请输入退货原因"></p>
+		</li>
+		<li>
+			<p class="p_input"><span class="s_service">退款金额</span><input type="text"></p>
+			<p class="p_txt">最多100元，不含邮费</p>
+		</li>
+		<li>
+			<p class="p_input" style="padding: 10px;"><textarea placeholder="退货说明（最多200字）"></textarea></p>
+		</li>
+	</ul>
+	<div class="upload_pz">
+		<i class="iconfont icon-jia"></i>
+		<p class="p_pz">上传凭证</p>
+		<p class="p_pz">（最多三张）</p>
+	</div>
+	
+	<div class="mui-content" style="background: 0 0;">
+		<div class="mui-content-padded" style="margin: 10;">
+			<ul style="margin: 0;overflow: hidden;" id="info_list">
+				<li>
+					<p class="p_img">
+						<img src="" style="background-image: url(images/muwu.jpg);" data-preview-src="images/muwu.jpg" data-preview-group="1" />
+					</p>
+					<p id="p_close">删除</p>
+				</li>
+				<li>
+					<p class="p_img">
+						<img src="" style="background-image: url(images/cbd.jpg);" data-preview-src="images/cbd.jpg" data-preview-group="1" />
+					</p>
+					<p id="p_close">删除</p>
+
+				</li>
+				<li>
+					<p class="p_img">
+						<img src="" style="background-image: url(images/shuijiao.jpg);" data-preview-src="images/shuijiao.jpg" data-preview-group="1" />
+					</p>
+					<p id="p_close">删除</p>
+				</li>
+				
+			</ul>
+				
+		</div>
+	</div>
+	<a href="#" class="a_submit">提交申请</a>
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript" src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/mui.zoom.js"></script>
+<script type="text/javascript" src="js/mui.previewimage.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script>
+		mui.previewImage();
+
+</script>
+<script type="text/javascript">
+	// 删除订单事件
+	var del_icon = document.getElementById("info_list").querySelectorAll("#p_close");
+		for(var i=0; i<del_icon.length;i++){
+			del_icon[i].addEventListener('tap', function() {
+				var li_List = this.parentNode;
+				var btnArray = ['否', '是'];
+				mui.confirm('', '确定删除？', btnArray, function(e) {
+					if (e.index == 1) {
+						li_List.remove();
+						mui.toast('删除成功');
+					} else {
+						return;
+					}
+				});
+	
+			});
+		}
+</script>
+</body>
+</html>

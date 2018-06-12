@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>vue</title>
+<style type="text/css">
+h3{color: red;}
+[v-cloak]{display: none;}
+
+#demo02{width: 300px;height: 200px;border: 1px solid #333;}
+.tabNav{overflow: hidden;margin: 0;padding: 0;}
+.active{background-color: red;color: #fff;}
+.tabNav li{float: left;list-style: none;width: 100px;text-align: center;height: 40px;line-height: 40px;border-bottom: 1px solid #333;}
+.content{margin: 10px;}
+
+#demo01 li a{margin-left: 10px;}
+
+#demo04 li a{margin-left: 10px;}
+#demo04 li span{margin: 0 10px;}
+
+#offset{width: 300px;padding: 150px;border: 1px solid #333;text-align: center;}
+
+/* #app05 */
+#app05 span{border: 1px solid #333;}
+.changeRed{background-color: red;}    
+.changeWidth{width: 200px;display: inline-block;text-align:center;}
+
+.border{border: 1px solid #333;}
+</style>
+</head>
+<body>
+<h3>Demo:</h3>
+<!-- 添加、编辑、删除、绑定Enter键 -->
+<div id="demo01">
+    <input type="text" v-model="msg" v-on:keyup.enter="add">
+    <button v-on:click="add">添加</button>
+    <button v-on:click="search">查找</button>
+    <ul>
+        <li v-for="(item,index) in items" v-bind:class="{border:index==0}">{{item}}<a href="javascript:;" v-on:click="edit(index)">编辑</a><a href="javascript:;" v-on:click="del(index)">删除</a></li>
+    </ul>
+</div>
+
+<!-- tab切换 -->
+<div id="demo02">
+    <ul class="tabNav">
+        <li v-for="(tab,index) in tabs" :class="{active:index==num}" @click="fn(index)">{{tab}}</li>
+    </ul>
+    <div class="content">
+        <div v-for="(item,index) in items" v-show="index==num">{{item}}</div>
+    </div>
+</div>
+
+<!-- 编辑、删除图片、文字 -->
+<div id="demo03">
+    <ul>
+        <li v-for="(item,index) in items"><img style="width: 100px;" :src="item.src"><span>{{item.text}}</span><a href="javascript:;" v-on:click="editImg(index)">编辑图片</a><a href="javascript:;" v-on:click="editText(index)">编辑文字</a><a href="javascript:;" v-on:click="del(index)">删除</a></li>
+    </ul>
+</div>
+
+<hr>
+
+<!-- 数据、属性绑定 -->
+<div id="app01">
+    <p>{{name}}</p>
+    <p>{{job}}</p>
+    <p>{{fn1('我是')}}</p>
+    <a v-bind:href="web">前往百度</a>
+    <input type="text" v-bind:value="name">
+    <p v-html="webTag"></p>
+</div>
+
+<hr>
+
+<div id="app02">
+    <button v-on:click="add(1)">加1</button>
+    <button v-on:click="min(1)">减1</button>
+    <button v-on:click="add(10)">加10</button>
+    <button v-on:click="min(10)">减10</button>
+    <p>{{age}}</p>
+    <div id="offset" v-on:mousemove="fn">{{x}}px,{{y}}px-<span v-on:mousemove.stop="">stop moving</span></div>
+    <a v-on:click.prevent="alert()" href="http://www.baidu.com">百度一下</a>
+</div>
+
+<hr>
+
+<div id="app03">
+    <h3>键盘事件：</h3>
+     姓名：
+    <input type="text" v-model="nameValue" v-on:keyup.enter="alertName"><br>
+     年龄：
+    <input type="text" v-model="ageValue" v-on:keyup.enter="alertAge">
+</div>
+
+<hr>
+
+<div id="app04">
+    <h3>computed、methods</h3>
+    <button v-on:click="A++">add to A</button>
+    <button v-on:click="B++">add to B</button>
+    <p>A:{{A}}</p>
+    <p>B:{{B}}</p>
+    <p>Age+A={{addA}}</p>
+    <p>Age+B={{addB}}</p>
+</div>
+
+<hr>
+
+
+
+<div id="app05">
+    <h3>动态绑定css</h3>
+    <button v-on:click="changeRed=!changeRed">切换背景</button>
+    <button v-on:click="changeWidth=!changeWidth">切换宽度</button>
+    <span v-bind:class="change">我会改变</span>
+</div>
+
+<hr>
+
+<div id="app06">
+    <h3>v-if、v-else-if</h3>
+    <button v-on:click="success=!success">success</button>
+    <button v-on:click="error=!error">error</button>
+    <p v-if="success">success</p>
+    <p v-else-if="error">error</p>
+</div>
+
+<hr>
+
+<div id="app07">
+    <h3>v-for</h3>
+   <ul>
+       <li v-for="(item,index) in items">{{index+1}}-{{item.name}}-{{item.age}}</li>
+   </ul>
+
+   <!-- <template v-for="item in items">
+       <p>{{item.name}}</p>
+       <p>{{item.age}}</p>
+   </template> -->
+</div>
+
+<hr>
+
+<h3>改变其他实例的data</h3>
+<div id="app08">
+    <p>{{msg}}</p>
+    <p>{{computed}}</p>
+</div>
+<div id="app09">
+    <p>{{msg}}</p>
+    <p>{{computed}}</p>
+    <button v-on:click="fn1">change</button>
+</div>
+
+<hr>
+
+<div id="app10">
+    <muban></muban>
+</div>
+<div id="app11">
+    <muban></muban>
+</div>
+
+<hr>
+
+<h3>过滤</h3>
+<div id="app12">
+    {{num | filter}}
+</div>
+
+<br>
+
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+// 过滤
+var vm12=new Vue({
+    el:'#app12',
+    data:{
+        num:9
+    },
+    filters:{
+        filter(i){
+            if (i<10) {
+                return `0${i}`
+            } else {
+                return i
+            }
+        }
+    }
+})
+
+
+// 组件 Vue.component
+// var data={
+//     name:'张三'
+// }
+var muban={
+    template: `<p>
+                {{name}}，我是一个模板
+                <button v-on:click="changeName">改名</button>
+            </p>`, //es6 反斜杠，可以换行
+    data: function () {
+        return { //return必须是对象
+            name: '张三'
+        }
+        // return data
+    },
+    methods: {
+        changeName: function () {
+            this.name = '李四'
+        }
+    }
+}
+
+
+var test10=new Vue({
+    el:'#app10',
+    components: {
+        'muban':muban
+    }
+})
+var test11 = new Vue({
+    el: '#app11',
+    components: {
+        'muban':muban
+    }
+})
+
+// 改变其他实例的data
+var test08 = new Vue({
+    el: '#app08',
+    data: {
+        msg: 'two'
+    },
+    computed: {
+        computed: function () {
+            return 'hello ' + this.msg
+        }
+    },
+
+})
+var test09 = new Vue({
+    el: '#app09',
+    data: {
+        msg: 'one'
+    },
+    computed: {
+        computed: function () {
+            return 'hello ' + this.msg
+        }
+    },
+    methods: {
+        fn1: function () {
+            test08.msg = '我已经改变了' //改变其他实例的data
+        }
+    }
+})
+
+
+
+// v-for
+var test07=new Vue({
+    el:'#app07',
+    data:{
+        items:[
+            { name: '张三', age: 10 },
+            { name: '张三', age: 10 },
+            { name: '张三', age: 10 }
+        ]
+    }
+})
+
+// v -if、v -else -if
+var test06=new Vue({
+    el:'#app06',
+    data:{
+        success:false,
+        error:false
+    }
+})
+
+// 动态绑定css
+var test05=new Vue({
+    el:'#app05',
+    data:{
+        changeRed: false,
+        changeWidth: false
+    },
+    computed: {
+        change:function(){
+            return{
+                changeRed:this.changeRed,
+                changeWidth:this.changeWidth
+            }
+        }
+    }
+})
+
+
+// methods和computed区别
+// computed：当data中对应数据发生改变时，计算属性的值也会发生改变
+// methods：methods是方法，只要调用它，函数就都会执行
+var test04=new Vue({
+    el:'#app04',
+    data:{
+        A:1,
+        B:1,
+        Age:20
+    },
+    methods:{
+        // addA:function(){
+        //     console.log('addA');
+        //    return this.A+this.Age
+        // },
+        // addB: function () {
+        //     console.log('addB');
+        //     return this.B+this.Age
+        // }
+    },
+    computed: {
+        addA: function () {
+            console.log('addA');
+            return this.A + this.Age
+        },
+        addB: function () {
+            console.log('addB');
+            return this.B + this.Age
+        }
+    }
+})
+
+var test03=new Vue({
+    el:'#app03',
+    data:{
+        nameValue:'',
+        ageValue:''
+    },
+    methods:{
+        alertName:function(){
+            alert(this.nameValue)
+        },
+        alertAge:function(){
+            alert(this.ageValue)
+        }
+    }
+})
+
+var test02=new Vue({
+    el:'#app02',
+    data:{
+        age:10,
+        x:0,
+        y:0
+    },
+    methods:{
+        add:function(a){
+            this.age+=a;
+        },
+        min:function(b){
+            this.age-=b;
+        },
+        fn:function(event){
+            this.x=event.offsetX;
+            this.y=event.offsetY;
+        },
+        alert:function(){
+            alert('hello')
+        }
+    }
+});
+
+
+// 数据绑定
+var test01=new Vue({
+    el:'#app01',
+    data:{
+        name:'张三',
+        job:'会计',
+        web:'http://www.baidu.com',
+        webTag:'<a href="http://www.baidu.com">百度</a>'
+    },
+    methods:{
+        fn1:function(str){
+            return str+this.name+'，我的职业是'+this.job+'！';
+        }
+    }
+});
+
+
+///////////////////////////////////////////////////////////////// Demo
+
+// 编辑、删除图片、文字
+var vm03=new Vue({
+    el:'#demo03',
+    data:{
+        items:[
+            { text: '哈哈',src:'images/test_pic/2.jpg' },
+            { text: '啧啧', src: 'images/test_pic/1.jpg'},
+            { text: '呵呵' ,src: 'images/test_pic/3.jpg'},
+        ]
+    },
+    methods:{
+        del(i){
+            if (confirm('确认要删除'+this.items[i].text+'？')) {
+                this.items.splice(i, 1);
+            }
+        },
+        editText(i){
+            var textInfo = prompt('编辑文字');
+            if (textInfo) {
+                this.items[i].text=textInfo;
+            }
+        },
+        editImg(i){
+            var imgInfo = prompt('输入图片地址');
+            if (imgInfo) {
+                this.items[i].src = imgInfo;
+            }
+        }
+    }
+});
+
+// tab切换
+var vm02=new Vue({
+    el:'#demo02',
+    data:{
+        tabs:['标题一','标题二','标题三'],
+        items:['内容一','内容二','内容三'],
+        num:0
+    },
+    methods:{
+        fn(i){
+            this.num=i
+        },
+    }
+})
+
+// 添加、编辑、删除、绑定Enter键
+var vm01=new Vue({
+    el:'#demo01',
+    data:{
+        msg:'',
+        items:['a','b','c'],
+    },
+    methods:{
+        add:function(i){
+            if (this.msg!='') {
+                this.items.push(this.msg)
+                this.msg = ''
+            }
+        },
+        search:function(){
+            this.items.forEach(function(a){
+                alert(a)
+            });
+            
+        },
+        del:function(i){
+            if (confirm('确认删除' + this.items[i]+'？')) {
+                this.items.splice(i, 1)
+            }
+        },
+        edit:function(i){
+            var textMsg=prompt('编辑内容');
+            if (textMsg) {
+                this.items.splice(i, 1,textMsg)
+            }
+        }
+    }
+})
+
+
+
+</script> 
+</body>
+</html>

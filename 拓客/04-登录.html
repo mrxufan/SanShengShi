@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>拓客-登录</title>
+<!-- layui -->
+<link href="layui/css/layui.css" rel="stylesheet">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="font/iconfont.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+.top_nav{-webkit-box-shadow: 0 5px 8px #eee;box-shadow: 0 2px 3px #eee;}
+.top_nav .nav_info .s_dl{font-size: 18px;color: #333;border-left: 1px solid #ccc;padding: 10px;margin-left: 10px;color: #555;}
+
+
+</style>
+</head>
+<body>
+<div class="top_nav">
+	<div class="nav_info">
+		<a href="#" class="logo_wrap"><img src="images/index/logo.jpg"></a><span class="s_dl">欢迎登录</span>
+	</div>
+</div>
+<div class="login_info">
+	<div class="login_main layui-form">
+		<img src="images/index/login_bg.jpg">
+		<div class="login_form">
+			<p class="p_tit">账号登录</p>
+			<p class="p_input"><input type="text" name="" placeholder="手机号/邮箱" id="phone"></p>
+			<p class="p_input"><input type="password" name="" placeholder="密码" id="password"></p>
+			<p class="p_input p_yzm"><input type="text" name="" placeholder="输入图形验证码" id="password1"><span class="s_yzm"><img src="images/index/yzm_pic.jpg" width="100" height="45"></span></p>
+			<p class="p_type"><input type="checkbox" name="" title="记住登录状态" lay-skin="primary"></p> 
+			<div class="btn_info"><button class="layui-btn layui-btn-normal" type="button" id="login_btn">登录</button></div>
+			<p class="p_rem"><a href="#" class="fl_left">注册</a><a href="#" class="fl_right">忘记密码？</a></p>
+		</div>
+	</div>
+</div>
+<!-- <div class="login_footer">
+	<div class="login_footer_info">
+		<div class="fl_left">
+			<p class="link_info"><a href="#">企业客户</a> | <a href="#">关于我们</a> | <a href="#">拓展推广</a> | <a href="#">技术支持</a> </p>
+			<p class="login_copyright">Copyright ©2013-2017 沪ICP备10011451号-6上海工商 安全实名验证</p>
+		</div>
+		<div class="fl_right">
+			<p class="p_msg">客服热线（每天9:00到18:00）</p>
+			<p class="p_msg" style="font-size: 20px;font-weight: bold;">400-888-999</p>
+			<p class="p_msg">客服邮箱：tuoke@126.com</p>
+		</div>
+	</div>
+</div> -->
+<div class="footer_info" style="background: 0 0;">
+	<div class="footer_content">
+	<div class="copyright_info">
+		<div style="text-align: center;">
+		Copyright ©2013-2017 沪ICP备10011451号-6上海工商 安全实名验证 信用网站
+		</div>
+	</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="layui/layui.js"></script> 
+<script>
+layui.use('form', function(){
+  var form = layui.form;
+});
+
+
+// 绑定enter键
+document.onkeydown=function (event) {
+    if(event.keyCode==13){ 
+    document.getElementById('login_btn').click();
+} 
+};
+
+// 表单错误提示示例
+document.getElementById('login_btn').onclick=function () {
+ 	var phone=document.getElementById('phone').value.trim();
+    if (phone=='') {
+      	layer.tips('请输入手机号', '#phone');
+        return false;
+    } 
+};
+</script>  
+</body>
+</html>

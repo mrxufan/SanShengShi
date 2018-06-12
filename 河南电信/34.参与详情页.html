@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+<style type="text/css">
+.pro_info_gdimg .swiper-pagination { top: 5px; line-height: 100%; }
+.pro_info_gdimg .product_title_box{ overflow:hidden; width:100%; position:absolute; left:0; bottom:0; z-index:2; background-color:rgba(0,0,0,0.4); color:#fff; box-sizing:border-box; padding:6px;}
+.pro_info_gdimg .product_title_box .p_tit{ font-weight:bold; font-size:14px; margin-bottom:5px;overflow:hidden; text-overflow:ellipsis;white-space:nowrap;}
+.pro_info_gdimg .product_title_box .p_jiage{ color:#f4f4f4; }
+
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+<div class="swiper-container gg_toppic_box pro_info_gdimg">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+	<div class="product_title_box">
+    	<p class="p_tit">魅蓝note2 16GB 白色 电信4G手机 双卡双待</p>
+        <p class="p_jiage">原价：￥2564</p>
+    </div>
+</div>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+		autoplayDisableOnInteraction:false,
+		loop : true,
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+		preloadImages: false,//禁止强制加载所有图片
+		lazyLoading: true,//延时加载图片
+    });
+    </script>
+
+<style>
+.new_product_price_box{  background:#fff;  overflow: hidden; position: relative; padding:20px 10px ; }
+
+.new_product_price_box  .sp_new{ color:#c00;  font-size:16px; font-weight:bold; margin-right:10px;}
+.new_product_price_box  .sp_new em{ font-size:12px; font-weight:normal;}
+
+.new_product_price_box .sp_vip{ display:inline-block;  border:1px solid #c00; height:18px; line-height:18px; color:#c00; padding-right:4px; font-size:12px; }
+.new_product_price_box .sp_vip  i{ display:inline-block; background:#c00; vertical-align:top; height:18px;  color:#fff; font-size:14px;  padding:0px 4px; margin-right:4px;  }
+.new_product_price_box .sp_vip em{  font-size:16px; font-weight:bold;}
+
+
+.buy_number_box{ background:#fff;  overflow: hidden; position: relative; padding:10px; margin-top:10px; }
+.buy_number_box em{ line-height:30px; height:30px; display:inline-block; vertical-align:top;}
+.buy_number_box .p_input_all{ overflow:hidden;  display:inline-block;  }
+.buy_number_box .p_input_all span{ display:inline-block; border-radius:30px; margin-left:4px; }
+.buy_number_box .p_input_all .sp_btn{ width:30px; height:30px; text-align:center; line-height:30px; font-size:18px; color:#fff; font-weight:bold; background:#ccc;}
+.buy_number_box .p_input_all .sp_btn.b_1{ background:#f33380}
+.buy_number_box .p_input_all .sp_btn.b_2{ background:#28aeda}
+.buy_number_box .p_input_all .sp_btn.b_3{ background:#f90}
+.buy_number_box .p_input_all .sp_input{width:40px; height:28px; line-height:28px; vertical-align:top; border-radius:3px; border:1px solid #eee;}
+.buy_number_box .p_input_all .sp_input input{ width:100%; height:28px; line-height:28px; text-align:center; font-size:18px; }
+.buy_number_box .p_input_all .sp_input  input::-webkit-outer-spin-button { -webkit-appearance: none!important;} /*移除上下箭头*/
+.buy_number_box .p_input_all .sp_input  input::-webkit-inner-spin-button { -webkit-appearance: none!important; } /*移除上下箭头*/
+
+
+.pro_dianzan_box{ background:#fff;  overflow: hidden; position: relative; padding:10px; margin:10px 0 ; font-size:14px;}
+.pro_dianzan_box i{ color:#e71c1f; margin-right:6px;}
+.pro_dianzan_box em{ color:#f60;}
+
+.pro_info_go{ background:#fff;  overflow: hidden; position: relative; padding:10px; margin:10px 0 ; font-size:14px;}
+.pro_info_go i{ display:inline-block; position:absolute; right:10px; top:50%; font-size:20px; margin-top:-10px; z-index:1; color:#999;}
+.pro_info_go:active{ background-color:#f8f8f8;}
+
+</style>
+
+<div class="new_product_price_box">
+        <span class="sp_new"><em>会员:</em>￥200.00 </span>   
+        <span class="sp_vip"><i>VIP</i><em>200.00</em>元</span>
+</div>
+
+
+<div class="zengpin_list_box">
+    <ul>
+        <li>
+        	<div class="zengpin_body_info">
+                <a href="#">
+                <p class="p_img"><img src="images/test_003.jpg"></p>
+                <p class="p_lable"><span>赠品</span><em>数量有限，赠完为止</em></p>
+                <p class="p_tit">红罐凉茶加多宝一箱</p>
+                <p class="p_number">×1</p>
+                </a>
+            </div>
+            <i class="i_icon fa fa-angle-right"></i>
+        </li>
+    </ul>
+</div>
+
+
+<div class="buy_number_box">
+	<em>数量：</em><p class="p_input_all"><span class="sp_btn b_1">-</span><span class="sp_input"><input type="number" value="1" /></span><span class="sp_btn b_2">+</span></p>
+</div>
+
+
+<div class="pro_dianzan_box"><i class="fa fa-heart"></i>已有<em>300</em>用户点赞</div>
+
+<div class="pro_info_go">查看商品详情<i class="fa fa-angle-right"></i></div>
+
+
+
+<style>
+.footer_menu_box{ overflow:hidden; position:fixed; left:0; bottom:0; z-index:3; width:100%; height:50px; background-color:#fff; box-sizing:border-box; border-top:1px solid #eee;}
+.footer_menu_box li{ overflow:hidden; text-align:center; line-height:50px; border-right:1px solid #eee;}
+.footer_menu_box li:last-child{ border-right:0;}
+
+
+.footer_menu_box .li_shoucang{ width:50px;}
+.footer_menu_box .li_shoucang .p_btn{height:50px;  color:#555;}
+.footer_menu_box .li_shoucang .p_btn i{ color:#555; font-size:20px;}
+.footer_menu_box .li_shoucang .p_btn:active{ background-color:#f1f1f1;}
+
+.footer_menu_box .li_shoucang .p_btn.on i{ color:#f60;}
+
+
+.footer_menu_box .li_btn{ width:110px;}
+.footer_menu_box .li_btn .p_btn{ font-size:15px;}
+.footer_menu_box .li_btn .p_btn.b_1{ background-color:#df2727; color:#fff;}
+.footer_menu_box .li_btn .p_btn.b_1:active{ background-color:#d12424;}
+
+.footer_menu_box .li_btn .p_btn.b_2{ background-color:#d89e00; color:#fff;}
+.footer_menu_box .li_btn .p_btn.b_2:active{ background-color:#c79202;}
+
+
+
+</style>
+
+<div style="height:50px;">
+<div class="footer_menu_box">
+	<ul class="box_flex">
+    	<li class="li_shoucang"><p class="p_btn on"><i class="fa fa-star "></i></p></li>
+        <li class="box_flex_1"></li>
+        <li class="li_btn"><p class="p_btn b_2">加入购物车</p></li>
+        <li class="li_btn"><p class="p_btn b_1">立即购买</p></li>
+    </ul>
+</div>
+</div>
+
+</body>
+
+</html>

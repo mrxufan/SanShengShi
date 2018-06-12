@@ -1,0 +1,158 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>提醒服务</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<link rel="stylesheet" href="css/my_style.css" type="text/css">
+<style type="text/css">
+
+</style>
+</head>
+
+<body ontouchstart>
+
+<div id="app" v-cloak class="vue_body">
+    <div class="head_wrap flex_wrap">
+        <div class="flex_item">
+            <div class="head_info flex_wrap">
+                <span class="head_pic"><img :src="headImg"></span>
+                <span class="s_phone">{{phoneNum}}</span>
+            </div>
+        </div>
+        <a href="javascript:;" class="home_btn"></a>
+    </div>
+    <div class="tx_fuwu_wrap">
+            <mt-navbar v-model="navSelected" class="nav_title">
+              <mt-tab-item id="nav_1">消费提醒</mt-tab-item>
+              <mt-tab-item id="nav_2">账务提醒</mt-tab-item>
+              <mt-tab-item id="nav_3">关怀提醒</mt-tab-item>
+            </mt-navbar>
+
+            <!-- tab-container -->
+            <mt-tab-container v-model="navSelected">
+              <mt-tab-container-item id="nav_1">
+                <ul class="nav_list">
+                    <li>
+                        <div class="flex_wrap nav_item">
+                            <div class="flex_item">
+                                <p class="p_tit">流量使用不足</p>
+                                <p class="p_txt">当您订购的套餐、各类叠加包及优惠赠送合计包含的数据流量即将用完（已用50%、80%和100%）时，我们将提示您流量的使用情况</p>
+                            </div>
+                            <mt-switch v-model="switchValue1" class="switch_btn" v-on:change="switchClick1"></mt-switch>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex_wrap nav_item">
+                            <div class="flex_item">
+                                <p class="p_tit">流量使用预警</p>
+                                <p class="p_txt">当您订购的套餐、各类叠加包及优惠赠送合计包含的数据流量即将用完（已用50%、80%和100%）时，我们将提示您流量的使用情况</p>
+                            </div>
+                            <mt-switch v-model="switchValue2" class="switch_btn"></mt-switch>
+                        </div>
+                    </li>
+                   
+                </ul>
+              </mt-tab-container-item>
+              <mt-tab-container-item id="nav_2">
+                <ul class="nav_list">
+                    <li>
+                        <div class="flex_wrap nav_item">
+                            <div class="flex_item">
+                                <p class="p_tit">账务提醒</p>
+                                <p class="p_txt">当您订购的套餐、各类叠加包及优惠赠送合计包含的数据流量即将用完（已用50%、80%和100%）时，我们将提示您流量的使用情况</p>
+                            </div>
+                            <mt-switch v-model="switchValue3" class="switch_btn"></mt-switch>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex_wrap nav_item">
+                            <div class="flex_item">
+                                <p class="p_tit">账务提醒</p>
+                                <p class="p_txt">当您订购的套餐、各类叠加包及优惠赠送合计包含的数据流量即将用完（已用50%、80%和100%）时，我们将提示您流量的使用情况</p>
+                            </div>
+                            <mt-switch v-model="switchValue4" class="switch_btn"></mt-switch>
+                        </div>
+                    </li>
+                </ul>
+              </mt-tab-container-item>
+              <mt-tab-container-item id="nav_3">
+                <ul class="nav_list">
+                    <li>
+                        <div class="flex_wrap nav_item">
+                            <div class="flex_item">
+                                <p class="p_tit">关怀提醒</p>
+                                <p class="p_txt">当您订购的套餐、各类叠加包及优惠赠送合计包含的数据流量即将用完（已用50%、80%和100%）时，我们将提示您流量的使用情况</p>
+                            </div>
+                            <mt-switch v-model="switchValue5" class="switch_btn"></mt-switch>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex_wrap nav_item">
+                            <div class="flex_item">
+                                <p class="p_tit">关怀提醒</p>
+                                <p class="p_txt">当您订购的套餐、各类叠加包及优惠赠送合计包含的数据流量即将用完（已用50%、80%和100%）时，我们将提示您流量的使用情况</p>
+                            </div>
+                            <mt-switch v-model="switchValue6" class="switch_btn"></mt-switch>
+                        </div>
+                    </li>
+                </ul>
+              </mt-tab-container-item>
+            </mt-tab-container>  
+    </div>
+
+   
+</div>
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+new Vue({
+    el: '#app',
+    data:{
+       headImg:'images/head.jpeg',          //头像
+       phoneNum:'13526654665',              //手机号
+       navSelected:'nav_1',                 //tab默认选中
+       
+       switchValue1:'',                     //开关
+       switchValue2:false,
+       switchValue3:false,
+       switchValue4:false,
+       switchValue5:false,
+       switchValue6:false,
+    },
+    methods: {
+        switchClick1:function(){
+            console.log(this.switchValue1);
+        },
+        getMsg:function(){
+            // var _this=this;
+            // this.$indicator.open(); //开启加载中
+            // axios.get('http://jsonplaceholder.typicode.com/posts').then(function (response) {
+            //     console.log(response);
+            //     _this.$indicator.close();//关闭加载中
+            //   }).catch(function (error) {
+            //     console.log(error);
+            //   });
+
+
+        },
+    },
+    mounted:function(){
+        this.getMsg();
+
+    }
+});
+</script>
+	
+</html>

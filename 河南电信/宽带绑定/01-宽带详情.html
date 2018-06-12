@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>宽带详情</title>
+<!-- 默认样式 -->
+<link href="css/default.css" rel="stylesheet">
+<!-- mint ui -->
+<link rel="stylesheet" type="text/css" href="css/mint-ui.css">
+<!-- 图标 -->
+<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+.btm_btn{position: fixed;width: 100%;left: 0;bottom: 0;background-color: #fff;padding: 2vw;}
+.btm_btn .btn{background-color: #0077fe;}
+
+.num_wrap .yue_wrap{display: flex;align-items: center;}
+.num_wrap .yue_wrap .yue_info{flex: 1;}
+</style>
+</head>
+<body ontouchstart>
+<div id="app">
+	<div class="num_wrap">
+		<a href="javascript:;" class="num_info">
+			<em class="iconfont icon-msnui-pc"></em>
+			<span v-cloak class="s_num">{{number}}</span>
+			<em class="iconfont icon-arrow-right-copy"></em>
+		</a>
+		<div class="yue_wrap">
+			<div class="yue_info">
+				<h3>宽带余额：</h3>
+				<p><span v-cloak class="s_money">{{yue}}</span>元</p>
+			</div>
+			<a href="javascript:;" class="a_cz">充值</a>
+		</div>
+	</div>
+	<div class="kuandai_xq">
+		<mt-cell title="宽带详情" class="cell_tit">
+		  <em slot="icon" class="iconfont icon-luyouqi"></em>
+		</mt-cell>
+		<mt-cell class="cell_list" title="宽带速率" v-model="speed"></mt-cell>
+		<mt-cell class="cell_list" title="使用时长" v-model="time"></mt-cell>
+		<mt-cell class="cell_list" title="安装地址" v-model="add"></mt-cell>
+	</div>
+	<div class="btm_btn">
+		<mt-button size="large" type="primary" class="btn">更改绑定</mt-button>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+<script type="text/javascript">
+	var vm = new Vue({
+		el: "#app",
+		data:{
+			number:'', //身份证号码
+			yue:'', //余额
+			speed:'', //宽带速率
+			time:'', //使用时间
+			add:'' //地址
+		},
+		methods:{
+			// 截取第10位到最后用*替换
+			changeStr:function(str){
+			    var strSub=str.substring(10,str.length);
+			    var newStr=str.replace(strSub, '*****');
+			    return newStr;
+			},
+			// 获取数据
+			getMsg:function(){
+		    	this.number=410523458974125368;
+                this.yue='666';
+                this.speed='200M';
+                this.time='1年6个月';
+                this.add=this.changeStr('郑州市高新区长椿路与梧桐街交叉口大学科技园');
+			},
+
+		},
+		mounted:function(){
+			this.getMsg();
+		}
+	});
+</script>
+</body>
+</html>

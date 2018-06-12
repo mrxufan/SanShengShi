@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+<script src="js/jquery.1.9.1.min.js"></script>
+<script src="js/iscroll-lite.min.js"></script>
+
+<script src="js/TouchSlide.1.1.js"></script>
+
+<style>
+
+
+
+</style>
+</head>
+
+<body ontouchstart >
+
+
+<div class="activity_list_box">
+	<ul>
+    	<li>
+        	<div class="activity_title">
+            	<p class="p_tit">团购用户不可同时享受商家其他优惠方案内人数免费提供餐具</p>
+            </div>
+        	<div class="activity_img_box" style="background-image:url(images/mb_pic2/640x320.jpg)">
+                <div class="activity_time_pre">
+                    <p class="p_time fn-left">还有：<span class="c_start"><em>2</em>天<em>23</em>时<em>16</em>分<em>52</em>秒</span></p>
+                </div>
+            </div>
+
+        </li>
+        <li>
+        	<div class="activity_title">
+            	<p class="p_tit">团购用户不可同时享受商家其他优惠方案内人数免费提供餐具</p>
+            </div>
+        	<div class="activity_img_box" style="background-image:url(images/mb_pic2/640x320.jpg)">
+                <div class="activity_time_pre">
+                    <p class="p_time fn-left">仅剩：<span class="c_over"><em>2</em>天<em>23</em>时<em>16</em>分<em>52</em>秒</span></p>
+                </div>
+            </div>
+
+        </li>
+        
+        
+    </ul>
+</div>
+
+<div id="divdown1"></div> 
+
+<script language="javascript" type="text/javascript"> 
+var interval = 1000; 
+function ShowCountDown(year,month,day,divname) 
+{ 
+var now = new Date(); 
+var endDate = new Date(year, month-1, day); 
+var leftTime=endDate.getTime()-now.getTime(); 
+var leftsecond = parseInt(leftTime/1000); 
+//var day1=parseInt(leftsecond/(24*60*60*6)); 
+var day1=Math.floor(leftsecond/(60*60*24)); 
+var hour=Math.floor((leftsecond-day1*24*60*60)/3600); 
+var minute=Math.floor((leftsecond-day1*24*60*60-hour*3600)/60); 
+var second=Math.floor(leftsecond-day1*24*60*60-hour*3600-minute*60); 
+var cc = document.getElementById(divname); 
+cc.innerHTML = "距离<br/>"+year+"年"+month+"月"+day+"日 <br/>  还有：<br/>"+day1+"天"+hour+"小时"+minute+"分"+second+"秒"; 
+} 
+window.setInterval(function(){ShowCountDown(2015,5,2,'divdown1');}, interval); 
+</script> 
+
+
+</body>
+
+</html>

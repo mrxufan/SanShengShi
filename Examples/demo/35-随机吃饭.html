@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>随机吃饭</title>
+</head>
+<body>
+<p id="p_text"></p>
+<button id="startBtn">开始</button>
+
+<script>
+    function showRandom() {
+            var oText = document.querySelector('#p_text');
+            var startBtn = document.querySelector('#startBtn');
+            var stopBtn = document.querySelector('#stopBtn');
+            var strInfo = ['泡面', '饺子', '大盘鸡', '稀饭', '黄焖鸡', '面条', '酸辣粉', '盖浇饭'];
+            var timer = null;
+            var onOff = true;
+            function random() {
+                var i = Math.floor(Math.random() * strInfo.length);
+                oText.innerHTML = `今天吃 ${strInfo[i]}`;
+            }
+            random();
+            startBtn.onclick = function () {
+                if (onOff) {
+                    timer = setInterval(random, 30);
+                    this.innerHTML = '暂停';
+                } else {
+                    clearInterval(timer);
+                    this.innerHTML = '开始';
+                }
+                onOff = !onOff
+            };
+        }
+        showRandom();
+</script>
+</body>
+</html>

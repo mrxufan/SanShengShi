@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>splice数组去重</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+<script type="text/javascript">
+var arr=[1,2,2,4,2,3];
+for (var i = 0; i < arr.length; i++) {
+	for (var j = i+1; j <arr.length ; j++) {
+		if (arr[i]==arr[j]) {
+			arr.splice(j,1);
+			// j--;
+		}
+	}
+}
+alert(arr); //1,2,4,3
+</script>    
+</body>
+</html>

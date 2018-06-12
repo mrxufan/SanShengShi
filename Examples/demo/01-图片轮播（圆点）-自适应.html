@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<!--共用样式-->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!--swiper css-->
+<link rel="stylesheet" type="text/css" href="swiper/swiper.min.css">
+<!--swiper js-->
+<script src="swiper/swiper.min.js"></script>
+<title>图片轮播-自适应</title>
+
+<style>
+ /*图片轮播*/
+.swiper-slide img{ width:100%}
+/*圆点大小和颜色*/
+.swiper-pagination-bullet{width:6px;height:6px;display:inline-block;border-radius:100%;background:#007aff;}
+/*圆点位置*/
+.swiper-container-horizontal>.swiper-pagination{bottom:10px;left:0;width:100%}
+</style>
+</head>
+
+<body>
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><a href="#"><img src="images/test_004.jpg"></a></div>
+        <div class="swiper-slide"><a href="#"><img src="images/test_004.jpg"></a></div>
+     	<div class="swiper-slide"><a href="#"><img src="images/test_004.jpg"></a></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+
+<script>
+var swiper = new Swiper('.swiper-container', {
+    autoplay: 3000,
+	autoplayDisableOnInteraction : false,
+	loop : true,
+	pagination: '.swiper-pagination',
+    paginationClickable: true,
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+<style type="text/css">
+.lobby_info_box { overflow: hidden; background: #fff; }
+.lobby_info_box .h3_tit { font-size: 16px; font-weight: bold; color: #555; position: relative; padding: 0 10px; height: 40px; line-height: 40px; }
+.lobby_info_box .h3_tit:after { content: ""; display: block; position: absolute; left: 0; bottom: 0; z-index: 1; width: 100%; height: 1px; background: #ccc; -webkit-transform-origin: 50% 100%; -webkit-transform: scaleY(.5); }
+.lobby_info_box .dzdh_box { overflow: hidden;}
+.lobby_info_box .dzdh_box li { position: relative; overflow: hidden; padding: 10px 36px; }
+.lobby_info_box .dzdh_box li:after { content: ""; display: block; position: absolute; left: 0; bottom: 0; z-index: 1; width: 100%; height: 1px; background: #eee; -webkit-transform-origin: 50% 100%; -webkit-transform: scaleY(.5); }
+.lobby_info_box .dzdh_box li:last-child:after { display: none; }
+.lobby_info_box .dzdh_box li:active { background: #f4f4f4; }
+.lobby_info_box .dzdh_box li .p_txt { font-size: 15px; padding: 10px 0; }
+.lobby_info_box .dzdh_box li .em_tb { display: inline-block; position: absolute;left:10px; top: 50%; line-height: 100%; margin-top: -9px; font-size: 18px; }
+.lobby_info_box .dzdh_box li .em_tb.c_1 { color: #3fc300; }
+.lobby_info_box .dzdh_box li .em_tb.c_2 { color: #00ade7; }
+.lobby_info_box .dzdh_box li .em_ico { display: inline-block; position: absolute; right: 10px; top: 50%; line-height: 100%; margin-top: -9px; font-size: 18px; color: #999; }
+
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+
+<div class="swiper-container gg_toppic_box">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img data-src="images/test_004.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_006.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_009.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+</div>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+		autoplayDisableOnInteraction:false,
+		loop : true,
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+		preloadImages: false,//禁止强制加载所有图片
+		lazyLoading: true,//延时加载图片
+    });
+    </script>
+
+
+<div class="lobby_info_box">
+	<h3 class="h3_tit">十二星自提点店名</h3>
+    <ul class="dzdh_box">
+    	<li><em class="em_tb fa fa-map-marker c_1"></em><p class="p_txt">郑州市东风路文化路向西50米路北市东风路文化路向西</p><em class="em_ico fa fa-angle-right"></em></li>
+        <li><em class="em_tb fa fa-phone c_2"></em><a href="tel:0371-65758888"><p class="p_txt">0371-65758888</p></a><em class="em_ico fa fa-angle-right"></em></li>
+    </ul>
+</div>
+
+
+<div class="commodity_list">
+	<ul>
+    	<li>
+        	<div class="commodity_info">
+            	<p class="p_img" style="background-image:url(images/test_005.jpg)"></p>
+                <h3 class="h3_tit">99元2件加厚卫衣套餐快来抢了件加厚卫衣套餐快来抢了</h3>
+                <div class="price_box">
+                	<dd class="dd_old">原价:￥200.00</dd>
+                    <dd class="dd_new">会员:￥200.00 <span class="sp_zp">含赠品</span></dd>
+                    <dd class="dd_vip"><span class="sp_vip"><em>VIP</em>200.00元</span></dd>
+                </div>
+            </div>
+        </li>
+        <li>
+        	<div class="commodity_info">
+            	<p class="p_img" style="background-image:url(images/test_005.jpg)"></p>
+                <h3 class="h3_tit">99元2件加厚卫衣套餐快来抢了件加厚卫衣套餐快来抢了</h3>
+                <div class="price_box">
+                	<dd class="dd_old">原价:￥200.00</dd>
+                    <dd class="dd_new">会员:￥200.00 <span class="sp_zp">含赠品</span></dd>
+                    <dd class="dd_vip"><span class="sp_vip"><em>VIP</em>200.00元</span></dd>
+                </div>
+            </div>
+        </li>
+        <li>
+        	<div class="commodity_info">
+            	<p class="p_img" style="background-image:url(images/test_005.jpg)"></p>
+                <h3 class="h3_tit">99元2件加厚卫衣套餐快来抢了件加厚卫衣套餐快来抢了</h3>
+                <div class="price_box">
+                	<dd class="dd_old">原价:￥200.00</dd>
+                    <dd class="dd_new">会员:￥200.00 <span class="sp_zp">含赠品</span></dd>
+                    <dd class="dd_vip"><span class="sp_vip"><em>VIP</em>200.00元</span></dd>
+                </div>
+            </div>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+</body>
+
+</html>

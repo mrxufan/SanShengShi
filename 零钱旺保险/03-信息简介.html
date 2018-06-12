@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>信息简介</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome.css">
+<!-- 共用样式 -->
+<link href="css/public.css" rel="stylesheet">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!-- layer弹层组件 -->
+<script type="text/javascript" src="layer.mobile-v2.0/layer_mobile/layer.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div class="info_introduce">
+	<p class="p_txt">1、您未被诊断过如下疾病：</p>
+	<p class="p_txt">1)血小板较少性紫癜、血管炎、脉管炎、白血病等（除高血压、糖尿病之外的其他血液或血管系统疾病）；</p>
+	<p class="p_txt">2)脑、心脏、肾脏、眼部、足部的其他慢性疾病：如短暂性脑缺血、冠心病、心瓣膜病、心脏炎症、心肌梗塞、视网膜病变、视神经病变、白内障、青光眼、高度近视（>800度），肢体的严重外伤等；癌症、恶性肿瘤、脑部的良性肿瘤等；</p>
+	<p class="p_txt">3)其他未告知的能单独导致脑中风后遗症、终末期肾病、心肌梗塞、截肢、失明</p>
+
+</div>
+<div class="info_introduce_btn">
+		<a href="#" class="a_btn" style="margin-right: 20px;">是</a><a href="#" class="a_btn" onclick="lay_btn()">否</a>
+</div>
+
+<script type="text/javascript">
+// layer弹层调用
+function lay_btn(){
+	layer.open({
+    content: '抱歉，有相关健康问题的不支持投保',
+    btn: '确定'
+  });
+}
+</script> 
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+<style type="text/css">
+.yugang_box { width: 200px; height: 200px; overflow: hidden; position: relative; margin: 0 auto; margin-top: 20px; background: #fff; }
+.yugang_box .yugang_bj { position: absolute; width: 100%; height: 100%; left: 0; top: 0; z-index: 3; background-image: url(images/yugang_bj_02.png); background-position: center center; background-repeat: no-repeat; background-size: 100% 100%; }
+.yugang_lunkuo { width: 84%; height: 84%; position: relative; left: 16px; top: 10px; z-index: 0; border-radius: 100%; overflow: hidden; background:#; }
+
+.bolang_01 { position: absolute; bottom: 0; background-image: url(images/yugang_bl_01.png); background-size:600px 324px; background-repeat: no-repeat; background-position: -10px top; width: 100%; height: 100%; -webkit-animation: baidong1 2s infinite linear alternate; }
+.bolang_02 { position: absolute; bottom: 0; background-image: url(images/yugang_bl_02.png); background-size:600px 324px; background-repeat: no-repeat; background-position: -10px top; width: 100%; height: 100%; -webkit-animation: baidong2 2s infinite linear alternate; }
+ @-webkit-keyframes baidong1 {
+0% {
+background-position:-10px top;
+}
+100% {
+background-position:-300px top;
+}
+}
+@-webkit-keyframes baidong2 {
+0% {
+background-position:-10px top;
+}
+100% {
+background-position:-200px top;
+}
+}
+
+
+.jinyu_box{ -webkit-transform-origin: 50% 50%; -webkit-transform:scale(1,1); overflow:hidden;position: absolute; bottom:10%; left:35px; width:20px; height:14px; background-image: url(images/yugang_yu.png);  background-size:100% 100%; background-repeat: no-repeat; background-position: center center;  -webkit-animation: youyong 4s infinite linear;  }
+
+
+@-webkit-keyframes youyong {	
+
+0% {left:35px;} 
+
+50% {left:110px;-webkit-transform:scale(1,1); }
+53% {left:115px;-webkit-transform:scale(-1,1);}
+
+97% {left:30px;-webkit-transform:scale(-1,1);}
+100% {left:35px;}
+
+}
+
+
+.jinyu2_box{ -webkit-transform-origin: 50% 50%; -webkit-transform:scale(1,1); overflow:hidden;position: absolute; bottom:15%; left:18px; width:40px; height:22px; background-image: url(images/yugang_yu.png);  background-size:100% 100%; background-repeat: no-repeat; background-position: center center;  -webkit-animation: youyong2 6s infinite linear;  }
+
+
+@-webkit-keyframes youyong2 {	
+
+0% {left:20px;} 
+
+50% {left:105px;-webkit-transform:scale(1,1); }
+53% {left:110px;-webkit-transform:scale(-1,1);}
+
+97% {left:25px;-webkit-transform:scale(-1,1);}
+100% {left:20px;}
+
+}
+
+
+.bfb_number_box{ overflow:hidden; font-size:20px;color:#0069CB; position: absolute; bottom:40%; left:0; width:100%; text-align:center;  z-index:3;}
+
+
+
+</style>
+
+
+</head>
+
+<body ontouchstart  style="background:#fff;" >
+
+<div class="bill_info_box">
+<h3 class="h3_phone">189 3743 6688</h3>
+<p class="p_time">话费截止时间：2015年11月30日</p>
+
+</div>
+<div class="bill_info_line"><em></em></div>
+
+
+
+<div class="yugang_box">
+<div class="yugang_bj"></div>
+  <!--鱼缸背景--> 
+  <div class="yugang_lunkuo">
+  	
+        <div class="bolang_01" style="height:30%"></div>
+        <div class="bolang_02" style="height:30%"></div>
+        
+        <div class="jinyu_box"></div>
+        <div class="jinyu2_box" style="display:none;"></div>
+        
+        <div class="bfb_number_box">10%</div>
+
+  </div>
+  
+</div>
+
+
+<div class="surplus_list_box">
+	<ul>
+    	<li>
+        	<div class="content_box">
+                <div class="info_box">
+                    <h3 class="h3_tit">数据流量<span>共: 800M</span></h3>
+                    <p class="p_txt">剩余：<em class="c_1">400M</em>，已用: <em class="c_2">400M</em></p>
+                </div>
+                <div class=" histogram_box"><p class="p_line_box" style="width:50%"><span class="sp_color b_1 show_dh"></span></p></div>
+                
+                <div class="info_xq_box">
+                	<dl>
+                    	<dd>
+                        <h3>乐享4G全国A套餐</h3>
+                    	<p>全部流量: 500M，已用: 200M</p>
+                    	</dd>
+                        
+                    	<dd>
+                        <h3>30元流量包</h3>
+                    	<p>全部流量: 300M，已用: 200M</p>
+                    	</dd>
+                    </dl>
+                </div>
+                
+                <p class="p_more_info" style="display:none;">查看详情<em class="fa fa-angle-down"></em></p>
+                <p class="p_more_info">收起详情<em class="fa fa-angle-up"></em></p>
+                
+            </div>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+
+
+
+<div class="message_box"><p class="p_txt"><em class="fa fa-volume-up"></em>现在充值最低获赠100M流量，还可获赠超级大礼包！赠100M流量，还可获赠超级大</p></div>
+
+
+<div class="activity_button_box">
+	<ul>
+    	<li><p class="p_btn b_2">立即充值</p></li>
+        
+    </ul>
+</div>
+
+</body>
+
+</html>

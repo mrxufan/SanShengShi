@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css">
+<!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+<link href="css/page_style.css" rel="stylesheet" type="text/css">
+<!--页面所需样式-->
+
+<style type="text/css">
+.yugang_box { width: 200px; height: 200px; overflow: hidden; position: relative; margin: 0 auto; margin-top: 50px; background: #fff; }
+.yugang_box .yugang_bj { position: absolute; width: 100%; height: 100%; left: 0; top: 0; z-index: 3; background-image: url(images/yugang_bj_02.png); background-position: center center; background-repeat: no-repeat; background-size: 100% 100%; }
+.yugang_lunkuo { width: 84%; height: 84%; position: relative; left: 16px; top: 10px; z-index: 0; border-radius: 100%; overflow: hidden; background:#; }
+
+.bolang_01 { position: absolute; bottom: 0; background-image: url(images/yugang_bl_01.png); background-size:600px 324px; background-repeat: no-repeat; background-position: -10px top; width: 100%; height: 100%; -webkit-animation: baidong1 2s infinite linear alternate; }
+.bolang_02 { position: absolute; bottom: 0; background-image: url(images/yugang_bl_02.png); background-size:600px 324px; background-repeat: no-repeat; background-position: -10px top; width: 100%; height: 100%; -webkit-animation: baidong2 2s infinite linear alternate; }
+ @-webkit-keyframes baidong1 {
+0% {
+background-position:-10px top;
+}
+100% {
+background-position:-300px top;
+}
+}
+@-webkit-keyframes baidong2 {
+0% {
+background-position:-10px top;
+}
+100% {
+background-position:-200px top;
+}
+}
+
+
+.jinyu_box{ -webkit-transform-origin: 100% 100%; overflow:hidden;position: absolute; bottom:15%; left:18px; width:30px;-webkit-animation: youyong 5s infinite linear;  }
+.jinyu_box img{ width:100%; height:100%;}
+
+@-webkit-keyframes youyong {
+	0% {
+left:40px;
+-webkit-transform:scale(1,1);
+}
+25% {
+left:70px;
+-webkit-transform:scale(1,1);
+}
+50% {
+left:90px;
+-webkit-transform:scale(1,1);
+}
+52% {
+left:90px;
+-webkit-transform:scale(-1,1);
+}
+
+75% {
+left:70px;
+-webkit-transform:scale(-1,1);
+
+}
+98% {
+left:40px;
+-webkit-transform:scale(-1,1);
+}
+100% {
+left:40px;
+-webkit-transform:scale(1,1);
+}
+}
+
+
+
+</style>
+</head>
+
+<body ontouchstart  style="background:#fff;">
+<div class="yugang_box">
+<div class="yugang_bj"></div>
+  <!--鱼缸背景--> 
+  <div class="yugang_lunkuo">
+  	
+        <div class="bolang_01" style="height:50%"></div>
+        <div class="bolang_02" style="height:50%"></div>
+        
+        <div class="jinyu_box"><img src="images/yugang_yu.png"></div>
+
+  </div>
+  
+</div>
+
+</body>
+</html>

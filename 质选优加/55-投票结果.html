@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>投票结果</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<!--标准mui.css-->
+<link rel="stylesheet" href="css/mui.min.css">
+<!--App自定义的css-->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style>
+.vote_result .p_tit{padding: 10px;color: #333;border-bottom:1px solid #eee;font-size: 15px;}
+.vote_result .p_tit .em_num{color: #f60;font-weight: bold;}
+.vote_result .vote_result_list{margin: 10px;}
+.vote_result .vote_result_list .p_title{color: #333;}
+.vote_result .vote_result_list .p_num{font-size: 12px;margin-top: 4px;}
+.vote_result .vote_result_list .p_num .em_num{color: #f60;font-weight: bold;margin: 0 4px;}
+.vote_result .vote_result_list .p_num .em_percent{color: #007fe1;margin: 0 4px;}
+.vote_result .vote_result_list .histogram_box{height: 10px;background-color: #ccc;border-radius: 10px;margin-top: 4px;overflow: hidden;}
+.vote_result .vote_result_list .histogram_box .p_histogram{height: 10px;}
+.vote_result .vote_result_list .histogram_box .p_histogram .s_histogram{height: 10px;display: block;width: 0;}
+.vote_result .vote_result_list .histogram_box .p_histogram .s_histogram.bg_01{background-color:#007fe1; }
+.vote_result .vote_result_list .histogram_box .p_histogram .s_histogram.bg_02{background-color:#46c500; }
+.vote_result .vote_result_list .histogram_box .p_histogram .s_histogram.bg_03{background-color:#efca00; }
+.vote_result .vote_result_list .histogram_box .p_histogram .ani_show{-webkit-animation:ani_show 1.5s linear .5s forwards;}
+@-webkit-keyframes ani_show{
+	0%{width: 0%;}
+	100%{width: 100%;}
+}
+.a_login_btn{height: 40px;line-height: 40px;display: block;font-size: 15px;text-align: center;background-color: #22a2f9;color: #fff;margin: 10px;border-radius: 4px;margin-top: 20px;}
+.a_login_btn:active{background-color: #1f96e7;color: #fff;}
+</style>
+</head>
+
+<body style="background-color: #fff;">
+<div class="vote_result">
+	<p class="p_tit">共有<em class="em_num">100</em>人参与投票</p>
+	<div class="vote_result_list">
+		<p class="p_title">1、4G全国套餐</p>
+		<p class="p_num">共<em class="em_num">20</em>票，占总数<em class="em_percent">20%</em></p>
+		<div class="histogram_box"><p class="p_histogram" style="width: 20%;"><span class="s_histogram bg_01 ani_show"></span></p></div>
+	</div>
+	<div class="vote_result_list">
+		<p class="p_title">1、4G全国套餐</p>
+		<p class="p_num">共<em class="em_num">20</em>票，占总数<em class="em_percent">40%</em></p>
+		<div class="histogram_box"><p class="p_histogram" style="width: 40%;"><span class="s_histogram bg_02 ani_show"></span></p></div>
+	</div>
+	<div class="vote_result_list">
+		<p class="p_title">1、4G全国套餐</p>
+		<p class="p_num">共<em class="em_num">20</em>票，占总数<em class="em_percent">60%</em></p>
+		<div class="histogram_box"><p class="p_histogram" style="width: 60%;"><span class="s_histogram bg_03 ani_show"></span></p></div>
+	</div>
+</div>
+<a href="#" class="a_login_btn">返回</a>
+
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.check_question_list .p_radio').click(function(){
+			$(this).siblings().find('.input_radio').removeAttr('checked');
+		});
+	});
+</script>
+</body>
+
+</html>

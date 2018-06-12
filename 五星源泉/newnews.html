@@ -1,0 +1,222 @@
+
+<!doctype html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--禁止缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>分类信息</title> 
+
+    <link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="swiper/swiper.min.css">
+<style type="text/css">
+
+
+
+    <style type="text/css">
+        html, body {
+            background-color: #eee;
+        }
+
+        [v-cloak] {
+            display: none
+        }
+
+        .img_box img {
+            width: 100%;
+            display: block;
+        }
+
+        .msg_wrap {
+            padding-top: 60px;
+        }
+
+        .nav_tit {
+            border-bottom: 1px solid #eee;
+        }
+
+        .mint-navbar .mint-tab-item.is-selected {
+            margin-bottom: 0;
+        }
+
+        .nav_tit .mint-tab-item-label {
+            font-size: 14px;
+        }
+
+        .mint-cell .mint-cell-wrapper {
+            flex-direction: row-reverse;
+        }
+
+        .mint-cell-value.is-link {
+            margin-right: 10px;
+            padding: 10px 0;
+        }
+
+        .mint-cell-title {
+            padding-right: 20px;
+        }
+
+        .mint-cell-value img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .load_text {
+            text-align: center;
+            margin: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body ontouchstart>
+    <div id="app" v-cloak>
+        <mt-navbar class="nav_tit" v-model="selected" :fixed="true">
+            <mt-tab-item v-for="(nav,index) in navArr" :id="nav.Id" :key="index" v-on:click.native="tab(index)">{{nav.name}}</mt-tab-item>
+        </mt-navbar>
+
+        <div class=" page-infinite-list order_list msg_wrap" v-infinite-scroll="loadMore" infinite-scroll-disabled="CurrentItem.Loading" infinite-scroll-distance="50">
+            <mt-cell v-for="(list,index) in CurrentItem.listArr" :key="index" :title="list.title" :label="list.createTimeString" is-link v-on:click.native="GetNewsDetail(list.Id)">
+                <img :src="list.imageUrl">
+            </mt-cell>
+        </div>
+        <p class="load_text">{{CurrentItem.LoadText}}</p>
+    </div>
+
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+
+    function GetItem(id) {
+        var o = new Object();
+        o.id = id;
+        o.listArr = new Array();
+        o.Loading = false;
+        o.LoadText = '加载中...';
+        o.allNum= '';//数据总数
+        o.CurrentPage = 1;
+        o.first = 1;
+        return o;
+    }
+    var Item = GetItem(100);
+
+   var vm = new Vue({
+        el: '#app',
+        data: {
+            selected: '',
+            navArr: [],//分类
+            AllData: [],
+            CurrentItem: {
+
+                id : 2,
+                listArr : new Array(),
+                Loading : false,
+                LoadText : 'fuck...',
+                allNum : '',//数据总数
+                CurrentPage: 1,
+                first :1
+            }
+        },
+        methods: {
+            tab: function (i) {
+                console.log("进入tab");
+                console.log(i);
+                console.log(vm.AllData);
+                var temp = 0;
+                vm.CurrentItem.first = 3;
+                vm.AllData.forEach(function (e) {
+
+                    console.log("进入tab1111");
+                    if (temp == i) {
+                        console.log("进入tab2222");
+                        vm.CurrentItem = e;
+                    }
+
+                    temp++;
+                })
+                console.log(vm.CurrentItem);
+                this.loadMore();
+
+            },
+
+            getMsg: function () {
+                // 获取对应分类
+                this.selected = 2;
+                // 获取分类
+                axios.get('http://192.168.0.106/sysmanager/news/NewsClassifyList', { params: { currentPage: 1, pageSize: 10, cmd: "getlist" } }).then(function (response) {
+                    // console.log(response);
+                    response.data.Data.forEach(function (a) {
+                        vm.navArr.push(a);
+                        if (a.Id == vm.CurrentItem.id) {
+                            vm.AllData.push(vm.CurrentItem);
+                        } else {
+                            vm.AllData.push(GetItem(a.Id));
+                        }
+                    }.bind(this));
+
+                }.bind(this)).catch(function (error) {
+                    console.log(error);
+                }.bind(this));
+            },
+
+            loadMore: function () {
+                var tempe = vm.CurrentItem;
+                if (tempe.first == 1) {
+                    tempe.first = 2;
+                    vm.SetByClassifyItem(tempe);
+                } else if (tempe.first == 2) {
+                    if (tempe.listArr.length >= tempe.allNum) {
+                        return;
+                    }
+                    vm.SetByClassifyItem(tempe);
+                } else if (tempe.first == 3) {
+                    tempe.first = 2;
+                }
+
+
+            },
+            SetByClassifyItem: function (tempe) {
+                 tempe.Loading = true;
+                    console.log(vm.CurrentItem);
+                    axios.get('http://192.168.0.106/sysmanager/news/GetNewsByClassify', { params: { currentPage: tempe.CurrentPage, pageSize: 10, classifyId: tempe.id } }).then(function (response) {
+                        vm.CurrentItem.allNum = response.data.Page.TotalItem;
+                            response.data.Data.forEach(function (a) {
+                                tempe.listArr.push(a);
+                            }.bind(this));
+                            tempe.CurrentPage++;
+
+
+                            if (vm.CurrentItem.listArr.length < tempe.allNum) {
+                            tempe.LoadText = '加载中...';
+                            tempe.Loading = false;
+                        } else {
+                            tempe.LoadText = '没有更多数据啦！';
+                        }
+                        console.log(vm.CurrentItem);
+                    }.bind(this)).catch(function (error) {
+                        console.log(error);
+                    }.bind(this));
+            },
+            GetNewsDetail: function (id) {
+                location.href ='http://192.168.0.106/news/NewsDetail' + "?id=" + id;
+            }
+
+        },
+        mounted: function () {
+            this.getMsg();
+        }
+    });
+
+
+</script>
+
+</html>

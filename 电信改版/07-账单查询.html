@@ -1,0 +1,338 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>账单查询</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<link rel="stylesheet" href="css/my_style.css" type="text/css">
+<style type="text/css">
+.wrap{margin: 10px;background-color: #fff;}
+.wrap .p_tit{padding: 10px;}
+.shu_wrap li{flex: 1;position: relative;height: 200px;display: flex;flex-direction: column-reverse;padding-bottom: 30px;padding-top: 20px;}
+.shu_wrap li.active .p_month{color: #4c7bfd;}
+.shu_wrap li.active .p_num{color: #ff505c;}
+.shu_wrap li.active .shu_block{background-color: #4c7bfd;}
+.shu_wrap li.active:after{position: absolute;width: 0;height: 0;border-bottom: 6px solid #4c7bfd;content: '';border-left: 6px solid transparent;border-right: 6px solid transparent;left: 50%;bottom: 0;margin-left: -6px;}
+.shu_wrap .main .p_num{position: absolute;width: 100%;text-align: center;font-weight: bold;color: #4c7bfd;}
+.shu_wrap .main{position: relative;height: 180px;}
+.shu_wrap .shu_block{width: 24px;background-color: #9dbcfd;position: absolute;left: 50%;bottom: 0;margin-left:-12px;}
+.shu_wrap .p_month{position: absolute;left: 0;bottom: 0;width: 100%;text-align: center;border-top: 1px solid #9dbcfd;height: 30px;line-height: 30px;}
+
+.tit_wrap{background-color: #fff;padding: 10px;position: relative;}
+.tit_wrap:after{position: absolute;content: '';display: block;height: 1px;background-color: #ddd;transform: scaleY(.5);transform-origin: left bottom;left: 0;top: 0;width: 100%;}
+.sub_list .mint-cell-wrapper{padding-right: 26px;font-size: 13px;}
+
+.pay_wrap{background-color: #fff;padding: 10px;position: relative;}
+.pay_wrap:after{position: absolute;content: '';height: 1px;background-color: #ddd;transform: scaleY(.5);transform-origin: left top;display: block;left: 0;top: 0;width: 100%;}
+.pay_wrap .flex_item:last-child p{text-align: right;}
+.pay_wrap .flex_item span{font-weight: bold;font-size: 16px;}
+.pay_wrap .flex_item span.orange{color: #ff7254;}
+.pay_wrap .flex_item span.black{color: #333;}
+
+</style>
+</head>
+
+<body ontouchstart>
+
+<div id="app" v-cloak class="vue_body">
+    <div class="head_wrap flex_wrap">
+        <div class="flex_item">
+            <div class="head_info flex_wrap">
+                <span class="head_pic"><img src="images/head.jpeg"></span>
+                <span class="s_phone">{{myData.MobileNo}}</span>
+            </div>
+        </div>
+        <a href="javascript:;" class="home_btn"></a>
+    </div>
+    <div class="flex_wrap pay_wrap">
+        <div class="flex_item">
+            <p>当前余额：<span class="orange">{{myData.BCuralance}}</span>/元</p>
+        </div>
+        <div class="flex_item">
+            <p>当前消费：<span class="black">{{myData.rentCost}}</span>/元</p>
+        </div>
+    </div>
+    <div class="wrap">
+        <p class="p_tit">近6个月消费记录</p>
+        <ul class="shu_wrap flex_wrap">
+            <li v-for="(item,index) in monthArr" v-on:click="tab(index)" :class="{active:num==index}">
+                <div class="main">
+                    <p class="p_num" :style="{bottom:percentArr[index]}">{{moneyArr[index]}}</p>
+                    <div class="shu_block" :style="{height: percentArr[index]}"></div>
+                </div>
+                <p class="p_month">{{item.MonthStr}}</p>
+            </li>
+        </ul>
+        <div class="flex_wrap tit_wrap">
+            <span class="flex_item">消费概况</span>
+            <span>{{monthObj.BeginDate}}-{{monthObj.EndDate}}</span>
+        </div>
+        <div class="flex_wrap tit_wrap">
+            <span class="flex_item">科目</span>
+            <span>金额/元</span>
+        </div>
+        <ul>
+            <li v-for="sub in monthObj.OrderInfo" >
+                <mt-cell :title="sub.CostItem" v-on:click.native="sub.bool=!sub.bool">
+                      <span>{{sub.Total}}</span>元
+                      <span class="allow_right" :class="{allow_active:sub.bool}"></span>
+                </mt-cell>
+                <div v-show="sub.bool">
+                    <mt-cell-swipe v-for="sec in sub.Detail" class="sub_list" :title="sec.ItemDetail" :value="sec.Cost">
+                    </mt-cell-swipe>
+                </div>
+            </li>
+        </ul>
+    </div>
+     <div class="dx_need_box">
+        <div class="need_title">您可能需要</div>
+        <div class="need_list_body">
+            <ul class="need_list_ul">
+                <li class="list_item">
+                    <a href="javascript:;"  class="item_link">
+                        <p class="p_icon"><img src="images/icon/click_icon/zd_icon.png" width="30"></p>
+                        <p class="p_text">缴费记录</p>
+                    </a>
+                </li>
+                <li class="list_item">
+                    <a href="javascript:;"  class="item_link">
+                        <p class="p_icon"><img src="images/icon/click_icon/money.png" width="30"></p>
+                        <p class="p_text">账单查询</p>
+                    </a>
+                </li>
+                <li class="list_item">
+                    <a href="javascript:;"  class="item_link">
+                        <p class="p_icon"><img src="images/icon/click_icon/yul_icon.png" width="30"></p>
+                        <p class="p_text">余量查询</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+var vm=new Vue({
+    el: '#app',
+    data:{
+       myData:{},       //数据
+       moneyArr:[],     //每月消费总额
+       maxMoney:'',     //最大钱数
+       percentArr:[],   //百分比
+       monthArr:[],     //每个月数据
+       monthObj:{},     //一个月数据
+       num:5
+    },
+    methods: {
+        getMsg:function(){
+            this.myData={
+                    MobileNo:"13323719539",//手机号
+                    BCuralance:"15",       //当前余额
+                    rentCost:"20",   //当前消费
+                    Data:[
+                    {
+                        MonthStr:"3月",   //月份
+                        BeginDate:"3月1日",//开始时间
+                        EndDate:"3月31日", //结束时间
+                        TotalCost:"150.00",//当月消费总额
+                        OrderInfo:[        //账单信息
+                            {
+                                CostItem:"3月基本费",    //消费项目
+                                Total:"100.00",         //该项总额
+                                Detail:[                //项目详情
+                                    {
+                                        ItemDetail:"市话主叫-基本费",//具体条目
+                                        Cost:"50.00"                 //条目消费
+                                    },
+                                    {
+                                        ItemDetail:"国内主叫-基本费",
+                                        Cost:"50.00"
+                                    }
+                                ]
+                            },
+                            {
+                                CostItem:"短/彩信费",
+                                Total:"20.00",
+                                Detail:[
+                                    {
+                                        ItemDetail:"国内短信费",
+                                        Cost:"20.00"
+                                    }
+                                ]
+                            },
+                            {
+                                CostItem:"国内流量费",
+                                Total:"30.00",
+                                Detail:[
+                                    {
+                                        ItemDetail:"本地流量费",
+                                        Cost:"0.00"
+                                    },
+                                    {
+                                        ItemDetail:"省内流量费",
+                                        Cost:"0.00"
+                                    },
+                                    {
+                                        ItemDetail:"国内流量费",
+                                        Cost:"30.00"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                        {
+                            MonthStr:"4月",
+                            BeginDate:"4月1日",
+                            EndDate:"4月30日",
+                            TotalCost:"200.00",
+                            OrderInfo:[
+                                {
+                                    CostItem:"4月基本费",
+                                    Total:"70.00",
+                                    Detail:[
+                                        {
+                                            ItemDetail:"市话主叫-基本费",
+                                            Cost:"20.00"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            MonthStr:"5月",
+                            BeginDate:"5月1日",
+                            EndDate:"5月31日",
+                            TotalCost:"100.00",
+                            OrderInfo:[
+                                {
+                                    CostItem:"5月基本费",
+                                    Total:"80.00",
+                                    Detail:[
+                                        {
+                                            ItemDetail:"市话主叫-基本费",
+                                            Cost:"20.00"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            MonthStr:"6月",
+                            BeginDate:"6月1日",
+                            EndDate:"6月30日",
+                            TotalCost:"100.00",
+                            OrderInfo:[
+                                {
+                                    CostItem:"6月基本费",
+                                    Total:"90.00",
+                                    Detail:[
+                                        {
+                                            ItemDetail:"市话主叫-基本费",
+                                            Cost:"20.00"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            MonthStr:"7月",
+                            BeginDate:"7月1日",
+                            EndDate:"7月31日",
+                            TotalCost:"130.00",
+                            OrderInfo:[
+                                {
+                                    CostItem:"7月基本费",
+                                    Total:"100.00",
+                                    Detail:[
+                                        {
+                                            ItemDetail:"市话主叫-基本费",
+                                            Cost:"20.00"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            MonthStr:"8月",
+                            BeginDate:"8月1日",
+                            EndDate:"8月31日",
+                            TotalCost:"180.00",
+                            OrderInfo:[
+                                {
+                                    CostItem:"8月基本费",
+                                    Total:"60.00",
+                                    Detail:[
+                                        {
+                                            ItemDetail:"市话主叫-基本费",
+                                            Cost:"20.00"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                ]
+            };
+
+            
+            this.myData.Data.forEach(function(a){
+                this.moneyArr.push(a.TotalCost);//每月消费总额
+                this.monthArr.push(a);          //每月数据
+            }.bind(this));
+            console.log(this.moneyArr);
+            console.log(this.monthArr);
+
+
+            // 最大钱数
+            this.maxMoney=Math.max.apply(null,this.moneyArr);
+            console.log(this.maxMoney);
+
+
+            // 一个月的数据
+            this.monthObj=this.monthArr[this.num];
+            console.log(this.monthObj);
+
+
+
+            // 设置百分比
+            this.moneyArr.forEach(function(a){
+                this.percentArr.push((a/this.maxMoney)*100+'%');
+            }.bind(this));
+            console.log(this.percentArr);
+
+
+            // 页面加载就执行tab
+            this.tab(this.num);
+
+        },
+
+        tab:function(i){
+            this.num=i;
+            this.monthObj=this.monthArr[i];
+
+            // 设置bool为false
+            this.monthObj.OrderInfo.forEach(function(a){
+                this.$set(a,'bool',false);
+            }.bind(this));
+        }
+        
+    },
+    
+    mounted:function(){
+        this.getMsg();
+    }
+});
+</script>
+	
+</html>

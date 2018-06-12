@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+<style type="text/css">
+
+.delivery_input_btn{  margin:10px; overflow:hidden;}
+.delivery_input_btn li{ margin-right:20px;}
+.delivery_input_btn li:last-child{ margin-right:0;}
+.delivery_input_btn li .p_btn{ overflow:hidden;  height:36px; line-height:36px;  text-align:center; background:#f4f4f4;  border-radius:4px; color:#00c74b; font-size:15px; position:relative;}
+.delivery_input_btn li .p_btn:after { position: absolute; top: auto; right: auto; bottom: 0; left: 0; z-index: 1; content: ''; display: block; width: 200%; height: 200%; border-radius: 8px; content: ''; border: 1px solid #00c74b; box-sizing: border-box; -webkit-transform-origin: 0% 100%; -webkit-transform: scale(.5) }
+.delivery_input_btn li .p_btn.on{ background:#00c74b;color:#fff;}/*绿色*/
+.delivery_input_btn li .p_btn.on:after{ display:none;}
+
+
+.zitidian_info_box{ overflow:hidden; background:#fff; padding:10px; font-size:14px; margin-bottom:10px;}
+.zitidian_info_box p{ position:relative; color:#555;}
+.zitidian_info_box p:first-child{ margin-bottom:6px; padding-bottom:6px;}
+.zitidian_info_box p:first-child:after{position: absolute;  bottom: 0; left: 0; z-index: 1; content: ''; display: block; width: 100%; height: 1px; background:#ddd; content: ''; -webkit-transform-origin: 0% 100%; -webkit-transform: scaleY(.5) }
+
+.total_prices_box i{ font-size:12px; color:#f60; margin-left:6px;}
+
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+<div class="place_an_order_product">
+	<p class="p_img" style="background-image:url(images/test_007.jpg)"></p>
+    <p class="p_tit">飞天茅台53度500ML特价开抢茅台53度500ML特</p>
+    <p class="p_pre"><em class="em_jg">￥868.00</em> ×1 <em class="em_zp">含赠品</em></p>
+    <p class="p_input_all"><span class="sp_btn b_1">-</span><span class="sp_input"><input type="number" value="1" /></span><span class="sp_btn b_2">+</span></p>
+</div>
+
+<div class="delivery_input_btn">
+	<ul class="box-flex-box">
+    	<li class="box-flex-1"><p class="p_btn">平台配送</p></li>
+        <li class="box-flex-1"><p class="p_btn  on">上门自提</p></li>
+ 	</ul>
+</div>
+
+<div class="bj_title_box">自提点：</div>
+
+<div class="zitidian_info_box">
+	<p>河南省郑州市莲花街迎春街好想你枣总店</p>
+    <p>15566668888</p>
+</div>
+
+
+
+
+<div class="bj_title_box">配送至：</div>
+
+<div class="place_an_order_address">
+	<div class="my_address_info" style="display:none;">
+    	<p class="p_name_phone"><span>苹果蛋儿</span><em>13526873881</em></p>
+        <p class="p_address">河南省郑州市高新区迎春街总部企业基地81号楼4层</p>
+        <p class="icon_box box_1"><i class="fa fa-angle-right"></i></p>
+    </div>
+    
+    <div class="add_address_form">
+    	<div class=" box_flex input_name_phone"><p class=" box_flex_1 p_input"><input type="text" placeholder="收货人姓名"></p><p class=" box_flex_1 p_input"><input type="tel" placeholder="收货人电话"></p></div>
+        <div class="input_address"><p class="p_input"><input type="text" placeholder="收货人地址"></p></div>
+    </div>
+  
+</div>
+
+<div class="cancel_input_btn" style="display:none;">
+	<ul class="box_flex">
+    	<li class="box_flex_1"><p class="p_btn c_4">取消</p></li>
+        <li class="box_flex_1"><p class="p_btn c_2">保存</p></li>
+ 	</ul>
+</div>
+
+
+<div class="bj_title_box">选择收货地址：</div>
+<div class="add_address_select">
+    <ul>
+    	
+        <li>
+            <div class="my_address_info" style="display:;">
+                <p class="p_name_phone"><span>苹果蛋儿</span><em>13526873881</em></p>
+                <p class="p_address">河南省郑州市高新区迎春街总部企业基地81号楼4层</p>
+                <p class="icon_box box_2" style="display:none;"><i class="fa fa-check-circle"></i></p>
+            </div>
+        </li>
+        <li>
+            <div class="my_address_info" style="display:;">
+                <p class="p_name_phone"><span>王小明</span><em>13526873881</em></p>
+                <p class="p_address">河南省郑州市高新区迎春街总部企业基地81号楼4层</p>
+                <p class="icon_box box_2"><i class="fa fa-check-circle"></i></p>
+            </div>
+        </li>
+        <li>
+            <div class="my_address_info" style="display:;">
+                <p class="p_name_phone"><span>赵大明</span><em>13526873881</em></p>
+                <p class="p_address">河南省郑州市高新区迎春街总部企业基地81号楼4层</p>
+                <p class="icon_box box_2" style="display:none;"><i class="fa fa-check-circle"></i></p>
+            </div>
+        </li>
+    </ul>
+</div>
+<p class="add_address_btn" style="display:;"><i class="fa fa-plus"></i>新增收货地址</p>
+
+
+<div class="total_prices_box">总价:<span><em>868.00</em>元</span> <i>(含配送费：10元)</i></div>
+
+<div class="zf_ye_box">
+    <p class=" fn-left p_info">可用余额:<em>￥100.00</em></p>
+    <p class=" fn-right p_btn_1">使用余额 <em class="input_checkbox"><input type="checkbox" /></em></p>
+</div>
+
+
+
+<div class="pay_btn_box">
+    <ul>
+    	<li><p class="p_btn b_1">余额支付</p></li>
+        <li><p class="p_btn b_2">微信支付:768元</p></li>
+    </ul>
+</div>
+
+
+</body>
+
+</html>

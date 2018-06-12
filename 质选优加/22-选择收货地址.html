@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>选择收货地址</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!--标准mui.css-->
+<!-- <link href="css/mui.min.css" rel="stylesheet"> -->
+<!-- 共用样式 -->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+
+<!-- 选择城市js -->
+<script type="text/javascript" src="js/LAreaData1.js"></script>
+<script type="text/javascript" src="js/LAreaData2.js"></script>
+<script type="text/javascript" src="js/LArea.js"></script>
+<style type="text/css">
+
+</style> 
+</head>
+<body>
+<div class="choice_add">
+	<table class="table_choice">
+		<tr>
+			<td class="td_title">收货人</td>
+			<td class="td_input"><input type="text" class="input_info"></td>
+		</tr>
+		<tr>
+			<td class="td_title">联系电话</td>
+			<td class="td_input"><input type="text" class="input_info"></td>
+		</tr>
+		<tr>
+			<td class="td_title">所在地区</td>
+			<td class="td_input td_input_add">
+				<i class="iconfont icon-youbian"></i>
+				<div class="content-block">
+				    <input id="demo1" type="text" readonly="" value="广东省,深圳市,南山区"/ style="width: 100%;color: #a2a2a2">
+				</div>
+			</td>
+		</tr>
+	</table>
+	<p class="add_info">
+		<textarea placeholder="详细地址"></textarea>
+	</p>
+	<label><p class="moren_add">设为默认地址<input type="checkbox" class="input_checkbox"></p></label>
+	<div class="choice_add_btn"><a href="#">保存</a></div>
+</div>
+		
+						
+			
+
+
+<script type="text/javascript" src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/mui.picker.js"></script>
+<script type="text/javascript" src="js/mui.poppicker.js"></script>
+<script type="text/javascript" src="js/city.data.js"></script>
+<script type="text/javascript" src="js/city.data-3.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script>
+// 城市选择
+var area1 = new LArea();
+area1.init({
+    'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+    'valueTo': '#value1', //选择完毕后id属性输出到该位置
+    'keys': {
+        id: 'id',
+        name: 'name'
+    }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+    'type': 1, //数据源类型
+    'data': LAreaData //数据源
+});
+area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
+var area2 = new LArea();
+area2.init({
+    'trigger': '#demo2',
+    'valueTo': '#value2',
+    'keys': {
+        id: 'value',
+        name: 'text'
+    },
+    'type': 2,
+    'data': [provs_data, citys_data, dists_data]
+});
+</script>
+
+</body>
+</html>

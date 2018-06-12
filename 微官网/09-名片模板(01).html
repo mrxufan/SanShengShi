@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<link rel="stylesheet" type="text/css" href="css/public.css"><!--共用样式-->
+<link rel="stylesheet" type="text/css" href="css/page_style.css"><!--页面样式-->
+<link rel="stylesheet" type="text/css" href="font/font-awesome.css"><!--字体图标-->
+<script src="js/jquery.js"></script>
+<title>名片模板-01</title>
+<style>
+body{ background:url(images/card_mould_bg01.jpg) no-repeat center center; background-size:cover;background-attachment: fixed; background-attachment:fixed;}
+
+
+.btm_float_card{ width:100%; height:50px; background:rgba(0,0,0,.7); text-align:center; line-height:50px; color:#f48454; font-size:16px; font-weight:bold; z-index:110; position:fixed; left:0; bottom:0;}
+.btm_closed_btn{ width:80px; height:50px;position:fixed;  line-height:20px;z-index:120; right:0; bottom:0;}
+/*.btm_closed_btn i{ color:#f48454; margin-left:15px; margin-top:10px; font-size:30px;}*/
+.btm_closed_btn i{ width:24px; height:24px; border-radius:50%; background:url(images/chahao.png) no-repeat center center; background-size:cover; display:block; margin-left:45px; margin-top:13px;}
+
+
+
+
+</style>
+</head>
+
+<body ontouchstart>
+<div class="card_mould_tit_01">
+	<div class="top_btn_box">
+    	<ul class="box-flex-box">
+        	<li class="box-flex-1">
+            	<p class="p_icon" style="background-image:url(images/card_erwei_icon.png)"></p>
+            </li>
+            <li class="box-flex-1">
+            	<p class="p_icon"></p>
+            </li>
+        </ul>
+    </div>
+    <div class="card_name_box">
+    	<p class="p_img" style="background-image:url(images/card_img_01.png);margin-bottom: 0"><span class="vip_icon"></span></p>
+        <p class="p_name" id="p-click"><span class="s_tit"><i class="i_name" style="margin-top: 12px">王小蒙</i><!-- <em class="fa fa-plus em_plus"></em> --><span class="zebra-subject-hotarea"><a href="#"><span class="subject-href"><i class="anim"></i><i class="shadow"></i><i class="dot fa fa-plus"></i></span></a></span></span>
+        </p>
+        <p class="p_job" style="margin: 0;">行业经理</p>
+        
+    </div>
+</div>
+<div class="fixed_bottom_box_01">
+		<p class="p_num">100次访问</p>
+		<p class="p_company">中国联通沃名片<i class="fa fa-angle-right"></i></p>
+	<ul>
+    	
+    	<li>
+        	<p class="p_tell text-overflow"><i class="fa fa-phone"></i>18500185000<em class="e_btn">拨打</em></p>
+        </li>
+        <li>
+        	<p class="p_tell text-overflow"><i class="fa fa-envelope"></i>wo@10010.com</p>
+        </li>
+        <li>
+        	<p class="p_tell text-overflow"><i class="fa fa-weixin"></i>IM10010<em class="e_btn">加我</em></p>
+        </li>
+        <li>
+        	<p class="p_tell text-overflow"><i class="fa fa-map-marker"></i>某某省某某市第一大道1号<em class="e_btn">地图</em></p>
+        </li>
+        <li>
+        	<p class="p_tell text-overflow"><i class="fa fa-qq"></i>123456789<em class="e_btn">加我</em></p>
+        </li>
+        <li>
+        	<p class="p_tell text-overflow"><i class="fa fa-user"></i>个人说明<em class="e_btn">查看</em></p>
+        </li>
+    </ul>
+    <p class="add_txl_box">添加到通讯录</p>
+    <a href="#" style="text-align: center;display: block;text-decoration: underline;color:#f48454;margin: 10px 0;">我要使用沃名片</a>
+</div>
+
+
+<!-- 添加好友弹窗 -->
+<div class="plus-friend-box" style="display: none;">
+    <ul>
+        <li><a href="#" class="p-txt">添加到手机通讯录</a></li>
+        <li><a href="#" class="p-txt">添加微信好友</a></li>
+        <li><a href="#" class="p-txt" id="card-link">复制名片链接</a></li>
+        <li><a href="#" class="p-txt" id="a-exit">取消</a></li>
+    </ul>
+</div>
+
+<!--电话弹窗-->
+<div class="phone_eject_box">
+	<ul>
+    	<li>
+        	<a href="tel:13560042651"><p class="tell_num">13560042651</p></a>
+        </li>
+        <li>
+        	<a href="tel:13560042651"><p class="tell_num">13560042651</p></a>
+        </li>
+        <li>
+        	<a href="tel:13560042651"><p class="tell_num">13560042651</p></a>
+        </li>
+        <li>
+        	<a href="tel:13560042651"><p class="tell_num">13560042651</p></a>
+        </li>
+        <li>
+        	<a href="tel:13560042651"><p class="tell_num">13560042651</p></a>
+        </li>
+        
+    </ul>	
+</div>
+
+
+<!--底部浮动我要使用沃名片-->
+<!-- <div class="btm_float_card">我要使用小沃名片</div>
+<div class="btm_closed_btn"><i></i></div> -->
+
+
+
+<!-- 顶部提示信息 -->
+<div id="top-fixed-info" style="background:rgba(0,0,0,.5);color: #fff;position: fixed;left: 0;top: 0;width: 100%;z-index: 300;text-align: center;padding: 10px 0;"><em class="fa fa-bell-o" style="margin-right: 4px"></em>本企业信息河南联通已认证通过</div>
+
+	
+
+<!--弹窗透明层-->
+<div class="fixed_erwei_eject"></div>
+
+
+<!--二维码弹窗-->
+<p class="erwei_box"><img src="images/erwei_img.jpeg"><br>长按上方二维码，<br>快速收藏我的名片，顺手再加个标签了</p>
+
+<!--个人说明弹窗-->
+<div class="personal_introduce_eject">自我评价：我的性格自然随和，为人诚恳，在工作中责任心重，对待工作认真负责，态度端正，在团队的工作中，同样也具有较强的协同合作的能力，我的功能能力强，能够胜任一些高强度的工作，对待工作我一直都有饱满的热情自我评价：我的性格自然随和，为人诚恳，在工作中责任心重，对待工作认真负责，态度端正，在团队的工作中，同样也具有较强的协同合作的能力，我的功能能力强，能够胜任一些高强度的工作，对待工作我一直都有饱满的热情</div>
+
+<!--微信弹窗-->
+<div class="weixin_box">
+    <p class="p_img"><img src="images/erwei_img.jpeg"></p>
+    <p class="p_tit">朋友，长联系，<br>长按上方二维码，可以加我为微信好友</p>
+    <div class="login_box">
+        <p class="input_box"><input placeholder="请输入姓名"></p>
+        <p class="input_box"><input placeholder="请输入电话"></p>
+        <p class="login_btn">确定</p>
+    </div>
+</div>
+
+
+<!--头像弹窗-->
+<div class="fixed_tx_eject"><img src="images/240X240_2.jpg"></div>
+
+<style type="text/css">
+
+/*复制链接*/
+.copy_fixed_eject{width: 80%;background: #fff;position: fixed;left: 50%;top: 50%;text-align:center;border-radius: 4px;z-index: 500;border-radius: 6px;overflow: hidden;transform: translate(-50%,-50%);}
+.copy_fixed_eject .p_logo{overflow: hidden;}
+.copy_fixed_eject .p_logo span{width: 50px;display: inline-block;float: right;margin: 10px 10px 0 0;}
+.copy_fixed_eject .p_logo span img{width: 100%;}
+.copy_fixed_eject .p_title{font-size: 16px;color: #333;margin: 10px;}
+.copy_fixed_eject .p_link{color: #555;margin:10px;word-break: break-all;font-size: 14px;padding: 10px 0;}
+.copy_fixed_eject .a_btn{background: #3fa30d;color: #fff;display: block;padding: 12px;font-size: 15px;}
+</style>
+
+<!-- 复制链接半透明弹窗 -->
+<div class="copy_link_tan" style="width: 100%;height: 100%;background: rgba(0,0,0,.5);z-index: 400;position: fixed;left: 0;top: 0;display: none;"></div>
+
+<!-- 复制链接弹窗 -->
+<div class="copy_fixed_eject" style="display: none;">
+    <p class="p_logo"><span><img src="images/liantong_logo.jpg"></span></p>
+    <p class="p_title">我是王小蒙（我的名片，请惠存）</p>
+    <p class="p_link">http://www.cnnmo.com/WoCard/YiZhongYom</p>
+    <a href="#" class="a_btn">请长按上方信息，复制名片链接</a>
+</div>
+
+<script>
+// 复制链接点击事件
+$('#card-link').click(function(){
+    $('.copy_link_tan').show()
+    $('.copy_fixed_eject').show()
+});
+$('.copy_link_tan').click(function(){
+    $(this).hide()
+    $('.copy_fixed_eject').hide()
+})
+
+
+// 顶部提示2s自动消失
+$('#top-fixed-info').show().delay(5000).slideUp(200);
+
+
+//添加好友弹窗
+$("#p-click").click(function(){
+    $(".fixed_erwei_eject").show()
+    $(".plus-friend-box").show()
+})
+$("#a-exit").click(function(){
+    $(".fixed_erwei_eject").hide()
+    $(".plus-friend-box").hide()
+})
+$(".fixed_erwei_eject").click(function(){
+    $(this).hide()
+    $(".plus-friend-box").hide()
+})
+
+
+/*电话弹窗*/
+$(".fixed_erwei_eject").hide()
+$(".phone_eject_box").hide()
+$(".fixed_bottom_box_01 ul li:nth-child(1)").click(
+	function(){
+		$(".fixed_erwei_eject").show()
+		$(".phone_eject_box").show()	
+		}
+)
+
+$(".fixed_erwei_eject").click(
+	function(){
+		$(".fixed_erwei_eject").hide()
+		$(".phone_eject_box").hide()
+		}
+)
+
+
+
+
+
+/*微信弹窗*/
+$(".fixed_erwei_eject").hide()
+$(".weixin_box").hide()
+$(".fixed_bottom_box_01 ul li:nth-child(3)").click(
+		function(){
+			$(".fixed_erwei_eject").show()
+			$(".weixin_box").show()
+			}
+	)
+	$(".fixed_erwei_eject").click(
+		function(){
+			$(this).hide()
+			$(".weixin_box").hide()
+			}
+	)
+
+
+/*二维码弹窗*/	
+$(".fixed_erwei_eject").hide()
+$(".erwei_box").hide()
+$(".card_mould_tit_01 .top_btn_box ul li:first-child .p_icon").click(
+	function(){
+		$(".fixed_erwei_eject").show()
+		$(".erwei_box").show()
+		}
+)	
+$(".fixed_erwei_eject").click(
+	function(){
+		$(this).hide()
+		$(".erwei_box").hide()	
+		}
+)
+
+/*底部我要使用沃名片*/
+$(".btm_closed_btn").click(
+	function(){
+		$(".btm_float_card").hide()
+		$(".btm_closed_btn").hide()
+		}
+)
+
+
+/*头像弹窗*/
+$(".fixed_tx_eject").hide()
+$(".card_name_box .p_img").click(
+	function(){
+		$(".fixed_tx_eject").show()
+		}
+)
+$(".fixed_tx_eject").click(
+	function(){
+		$(this).hide()
+		}
+)
+
+
+/*个人说明弹窗*/
+$(".personal_introduce_eject").hide()
+$(".fixed_bottom_box_01 ul li:nth-child(6)").click(
+	function(){
+		$(".personal_introduce_eject").show()
+		$(".fixed_erwei_eject").show()
+		}
+)
+$(".fixed_erwei_eject").click(
+	function(){
+		$(this).hide()
+		$(".personal_introduce_eject").hide()
+		}
+)	
+</script>
+</body>
+</html>

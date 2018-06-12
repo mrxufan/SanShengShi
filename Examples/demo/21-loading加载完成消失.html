@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>loading加载完成后消失</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="css/public.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<style type="text/css">
+.loading_info{position: fixed;left: 50%;top: 50%;-webkit-transform: translate(-50%,-50%);z-index: 9999;background-color: rgba(0, 0, 0, .5);color: #fff;width: 50%;border-radius: 6px;padding: 10px;font-size: 14px;}
+.loading_info .s_icon{display: inline-block;width: 40px;height: 40px;margin-right: 10px;}
+.loading_info .s_icon img{width: 100%;}
+</style>
+</head>
+<body>
+<div class="loading_info"><span class="s_icon"><img src="images/loading.gif"></span>加载中...</div>
+<script type="text/javascript">
+	window.onload=function(){
+		$('.loading_info').hide();
+	};
+</script>     
+</body>
+</html>

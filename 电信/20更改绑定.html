@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+<style type="text/css">
+
+
+</style>
+
+
+</head>
+
+<body ontouchstart  >
+
+<div class="userecnter_topimg_box"><img src="images/test_010.jpg"></div>
+
+
+<div class="swiper-container">
+	<div class="my-pagination"><ul class="my-pagination-ul"></ul></div>
+	<div class="swiper-wrapper">
+    	
+		<div class="swiper-slide">
+        	<!--手机绑定GO-->
+        	<div class="user_zc_body">
+                <ul>
+                    
+                    <li>
+                        <p class="p_input"><em class="fa fa-tablet" style="font-size:18px;"></em><input type="tel" placeholder="请输入手机号"></p>
+                    </li>
+                    <li>
+                        <p class="p_input p_input_yzm"><em class="fa  fa-envelope" style="font-size:14px;"></em><input type="text" placeholder="请输入验证码"><span class="sp_btn">获取验证码</span></p>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="user_zc_btn"><p class="p_btn"><a href="#" class="c_4">确定更改</a></p></div>
+            
+            <!--手机绑定END-->
+            
+        </div>
+        
+        
+		<div class="swiper-slide">
+        
+        	<!--固话绑定GO-->
+        	<div class="user_zc_body">
+                <ul>
+                    
+                    <li>
+                        <p class="p_input"><em class="fa fa-user" style=""></em><input type="text" placeholder="客户号 / 开户人姓名"></p>
+                    </li>
+                    <li>
+                        <p class="p_input "><em class="fa fa-lock"></em><input type="text" placeholder="服务密码 / 开户人身份证号"></p>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="user_zc_btn"><p class="p_btn"><a href="#" class="c_4">确定更改</a></p></div>
+            
+            <!--固话绑定END-->
+        
+        </div>
+
+	</div>
+</div>
+
+<script> 
+var mySwiper = new Swiper('.swiper-container',{
+pagination: '.my-pagination-ul',
+paginationClickable: true,
+paginationBulletRender: function (index, className) {
+switch (index) {
+  case 0: name='手机';break;
+  case 1: name='固话';break;
+  default: name='';
+}
+      return '<li class="' + className + '">' + name + '</li>';
+  }
+})
+</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+
+<style type="text/css">
+
+
+
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+<!--浮动顶端搜索框GO-->
+<div style="height:44px;">
+	<div class="search_tools_bar">
+    	<ul class="box_flex">
+        	<li class="class_nav"><i class="fa fa-bars"></i></li>
+            <li class="box_flex_1">
+                <div class="search_box">
+                    <i class="fa fa-search"></i>
+                    <p class="p_input"><input type="search" placeholder="请输入要搜索商品名称" ></p>
+                    <p class="p_btn">搜索</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--浮动顶端搜索框END-->
+
+<div class="swiper-container gg_toppic_box">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img data-src="images/test_004.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_006.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_009.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+</div>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+		autoplayDisableOnInteraction:false,
+		loop : true,
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+		preloadImages: false,//禁止强制加载所有图片
+		lazyLoading: true,//延时加载图片
+    });
+    </script>
+
+
+
+<div class="color_block_box">
+    <ul class="box-flex-box">
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_01.png);"></p><p class="p_txt">餐饮</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_02.png);"></p><p class="p_txt">旅游</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_03.png);"></p><p class="p_txt">娱乐</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_04.png);"></p><p class="p_txt">汽车服务</p></a></li>
+    </ul>
+    <ul class="box-flex-box">
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_05.png);"></p><p class="p_txt">服装</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_06.png);"></p><p class="p_txt">票务</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_07.png);"></p><p class="p_txt">生活服务</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_08.png);"></p><p class="p_txt">黄页</p></a></li>
+    </ul>
+</div>
+
+
+<h3 class="title_bar_box"><i class="fa fa-fire"></i>热门推荐</h3>
+
+<div class="commodity_list">
+	<ul>
+    	<li>
+        	<div class="commodity_info">
+            	<p class="p_img" style="background-image:url(images/test_005.jpg)"></p>
+                <h3 class="h3_tit">99元2件加厚卫衣套餐快来抢了件加厚卫衣套餐快来抢了</h3>
+                <div class="price_box">
+                	<dd class="dd_old">原价:￥200.00</dd>
+                    <dd class="dd_new">会员:￥200.00 <span class="sp_zp">含赠品</span></dd>
+                    <dd class="dd_vip"><span class="sp_vip"><em>VIP</em>200.00元</span></dd>
+                </div>
+            </div>
+        </li>
+        <li>
+        	<div class="commodity_info">
+            	<p class="p_img" style="background-image:url(images/test_005.jpg)"></p>
+                <h3 class="h3_tit">99元2件加厚卫衣套餐快来抢了件加厚卫衣套餐快来抢了</h3>
+                <div class="price_box">
+                	<dd class="dd_old">原价:￥200.00</dd>
+                    <dd class="dd_new">会员:￥200.00 <span class="sp_zp">含赠品</span></dd>
+                    <dd class="dd_vip"><span class="sp_vip"><em>VIP</em>200.00元</span></dd>
+                </div>
+            </div>
+        </li>
+        <li>
+        	<div class="commodity_info">
+            	<p class="p_img" style="background-image:url(images/test_005.jpg)"></p>
+                <h3 class="h3_tit">99元2件加厚卫衣套餐快来抢了件加厚卫衣套餐快来抢了</h3>
+                <div class="price_box">
+                	<dd class="dd_old">原价:￥200.00</dd>
+                    <dd class="dd_new">会员:￥200.00 <span class="sp_zp">含赠品</span></dd>
+                    <dd class="dd_vip"><span class="sp_vip"><em>VIP</em>200.00元</span></dd>
+                </div>
+            </div>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

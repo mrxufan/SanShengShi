@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>订购有礼</title>
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="mint-ui/mint-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+  
+    </style>
+</head>
+<body ontouchstart>
+  <div id="app">
+    <div class="img_box">
+      <img src="images/youli_top01.png">
+    </div> 
+    <div class="bag_wrap" style="background-image: url(images/red_bag.png);margin-top: 6vw;">
+      <span @click="chaiBtn" class="btn" style="background-image: url(images/btn.png);">拆</span>
+    </div> 
+    <mt-popup v-model="popupVisible" position="right" class="popup_right">
+        <div class="img_box"><img src="images/youli_top02.png"></div>
+        <p class="p_money"><span v-cloak>{{money}}</span>元</p>
+        <p class="p_tips">红包已经发放到您的零钱中</p>
+        <div class="btn_wrap">
+          <a href="javascript:;" @click="aBtn">我知道了</a>
+        </div>
+        <div class="btm_pic"><img src="images/youli_btm.png"></div>
+  </mt-popup>
+  </div>
+
+
+
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+  <script type="text/javascript" src="mint-ui/vue.js"></script>
+  <script type="text/javascript" src="mint-ui/index.js"></script>
+  <script type="text/javascript" src="js/axios.min.js"></script>
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: "#app",
+      data:{
+        money:100,
+        popupVisible: false, //弹出层
+        code:'',
+      },
+      methods: {
+        chaiBtn:function(){
+          var _this=this;
+          this.$indicator.open(); //开启加载动画
+            axios.get('http://jsonplaceholder.typicode.com/users').then(function (response) {
+              _this.code = 1;
+              setTimeout(function () {
+                _this.$indicator.close(); //关闭加载动画
+                if (_this.code == 0) {
+                  _this.$messagebox.alert('出错啦！', '温馨提示');
+                  return;
+                }
+                if (_this.code == 1) {
+                  _this.popupVisible = true;
+                }
+              }, 3000);
+            }).catch(function (err) {
+              console.log(err);
+            });
+        },
+        aBtn:function(){
+          this.popupVisible=false;
+        }
+      },
+    });
+  </script>
+</html>

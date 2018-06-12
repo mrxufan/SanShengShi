@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>轮播图</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+ul{margin: 0;padding: 0;list-style: none;}
+p{margin: 0;padding: 0;}
+.wrap{width: 640px;height: 240px;border: 1px solid #333;margin: 20px auto;position: relative;}
+.wrap img{display: block;}
+.wrap .top,.wrap .btm{position: absolute;padding: 10px;background-color: rgba(0, 0, 0, .5);color: #fff;text-align: center;width: 100%;box-sizing: border-box;}
+.wrap .top{left: 0;top: 0;}
+.wrap .btm{left: 0;bottom : 0;}
+
+.ul1{position: absolute;width: 100%;left: 0;bottom: -30px;}
+.ul1 li{width: 20px;height: 20px;background-color: red;float: left;margin-right: 10px;}
+.ul1 li.active{background-color: blue;}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<p class="top">图片数量</p>
+		<img class="img" src="">
+	<p class="btm">图片信息</p>
+	<ul class="ul1"></ul>
+</div>
+
+<script type="text/javascript">
+var oWrap=document.querySelector('.wrap');
+var oTop=document.querySelector('.top');
+var oBtm=document.querySelector('.btm');
+var oImg=document.querySelector('.img');
+var oUl=document.querySelector('.ul1');
+var oLi=oUl.getElementsByTagName('li');
+var imgArr=['../images/001.jpg','../images/002.jpg','../images/003.jpg','../images/004.jpg','../images/005.jpg'];
+var textArr=['变形金刚5','敦刻尔克','缝纫机乐队','神奇女侠','摔跤吧，爸爸'];
+var timer;
+var num=0;
+
+
+for (var i = 0; i < imgArr.length; i++) {
+	oUl.innerHTML+='<li></li>';
+}
+
+function autoPlay(){
+	oTop.innerHTML=''+(num+1)+'/'+imgArr.length+'';
+	oBtm.innerHTML=textArr[num];
+	oImg.src=imgArr[num];
+	for (var i = 0; i < oLi.length; i++) {
+		oLi[i].index=i;
+		oLi[i].className='';
+		oLi[i].onclick=function(){
+			for (var j = 0; j < oLi.length; j++) {
+				oLi[j].className='';
+			}
+			this.className='active';
+			oTop.innerHTML=''+(this.index+1)+'/'+imgArr.length+'';
+			oImg.src=imgArr[this.index];
+			oBtm.innerHTML=textArr[this.index];
+		};
+	}
+	oLi[num].className='active';
+	num++;
+	if (num>imgArr.length-1) {
+		num=0;
+	}
+}
+autoPlay();
+
+timer=setInterval(autoPlay,1000);
+
+oWrap.onmouseover=function(){
+	clearInterval(timer);
+};
+oWrap.onmouseout=function(){
+	timer=setInterval(autoPlay,1000);
+};
+
+
+</script>    
+</body>
+</html>

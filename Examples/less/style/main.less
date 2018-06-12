@@ -1,0 +1,173 @@
+@charset 'UTF-8';
+
+@width:100px;
+.box{
+	width: @width;
+	height: @width;
+	background-color: red;
+	.border;
+}
+
+// 混合 可带参数
+.border{
+	border:2px solid #333;
+}
+
+.border_02(@border_width){
+	border: solid yellow @border_width;
+}
+
+.box2{
+	.box;
+	margin-left: 100px;
+}
+
+.test_hunhe{
+	.border_02(30px)
+}
+
+
+// 混合、默认带值
+.border_03(@border_width:10px){
+	border: red solid @border_width;
+}
+
+.test_hunhe_04{
+	// 如不传值就是默认参数设置的 10px，要带着'()'
+	// .border_03(50px)  
+	.border_03()
+}
+
+
+
+.border_radius(@radius:10px){
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+.radius_test{
+	width: 100px;
+	height: 100px;
+	background-color: green;
+	.border_radius();
+}
+
+
+.sanjiao{
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 50px solid red;
+}
+
+
+
+// 匹配模式，可以理解为 if 和混合有些相似
+// 例子：定义上下左右边框的样式
+.border1(top;@border_width:5px;@border_color:red){
+	border-top: @border_width solid @border_color;
+}
+.border1(bottom;@border_width:5px;@border_color:red){
+	border-bottom: @border_width solid @border_color;
+}
+.border1(left;@border_width:5px;@border_color:red){
+	border-left: @border_width solid @border_color;
+}
+.border1(right;@border_width:5px;@border_color:red){
+	border-right: @border_width solid @border_color;
+}
+// 默认都带上
+.border1(@_;@border_width:5px;@border_color:red){
+	width: 100px;
+	height: 100px;
+	background-color: #333;
+}
+
+.border_test{
+	margin-top: 20px;
+	.border1(left);//选择和if差不多 如果是left就调用上面对应的
+}
+
+
+
+// 运算
+@add_width:100px;
+.add_less{
+	width: @add_width+50
+}
+
+
+
+
+
+
+
+// 匹配模式 - 定位
+
+.pos(r){
+	position: relative;
+}
+.pos(a){
+	position: absolute;
+}
+.pos(f){
+	position: fixed;
+}
+
+.pos_test{
+	width: 100px;
+	height: 100px;background-color: green;
+	.pos(r)
+}
+
+
+
+// 嵌套
+.list{
+	li{
+		background-color: orange;
+		margin-bottom: 10px;
+		padding: 10px;
+		overflow: hidden;
+	}
+	span{
+			float: right;
+			&:hover{
+				color: green;
+			};
+		}
+	a{
+		float: left;
+		// & 代表它的上一层选择器
+		&:hover{
+			color: yellow;
+		}
+	}	
+}
+
+
+
+// @arguments 变量
+.border_arg(@w:30px,@c:red,@s:solid){
+	border: @arguments;
+}
+.test_arguments{
+	// 只改其中一个变量
+	.border_arg(10px)
+}
+
+
+
+// 避免编译
+.test_03{
+	width: ~'calc(100px-10px)'
+}
+
+
+
+// important
+
+.test_important{
+	.border_02(10px) !important
+}

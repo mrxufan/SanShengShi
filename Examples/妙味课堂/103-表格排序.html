@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>js表格操作（添加、删除、搜索）</title>
+<style type="text/css">
+table{border-collapse: collapse;}
+tbody tr:nth-child(odd){background-color: #eee}
+tbody tr:hover{background-color: yellow;}
+tbody td{padding:4px 10px;}
+</style>
+</head>
+<body>
+<input type="button" name="" value="排序" id="btn">
+<table border="1" width="400" id="tab">
+	<thead>
+		<td>ID</td>
+		<td>姓名</td>
+		<td>操作</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td>2</td>
+			<td>red</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>green</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>blue</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>black</td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<script type="text/javascript">
+var oTab=document.getElementById('tab');
+var oBtn=document.getElementById('btn');
+var iNow=true;
+oBtn.onclick=function(){
+	// 转成数组
+	var arr=[];
+	for (var i = 0; i < oTab.tBodies[0].rows.length; i++) {
+		arr[i]=oTab.tBodies[0].rows[i];
+	}
+	// 数组排序
+	arr.sort(function(tr1,tr2){
+		if (iNow) {
+			return parseInt(tr1.cells[0].innerHTML)-parseInt(tr2.cells[0].innerHTML);
+
+		} else {
+			return parseInt(tr2.cells[0].innerHTML)-parseInt(tr1.cells[0].innerHTML);
+		}
+	});
+
+	iNow=!iNow;
+	// 重新插入
+	for (var i = 0; i < arr.length; i++) {
+		oTab.tBodies[0].appendChild(arr[i]);
+	}
+};
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>拓客-登录</title>
+<!-- layui -->
+<link href="layui/css/layui.css" rel="stylesheet">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="font/iconfont.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+.login_info .login_main .login_form{box-shadow: 0 0 5px 5px #cdcdcd;}
+</style>
+</head>
+<body style="background:#eee;">
+<div class="login_info" style="background: 0 0;">
+	<div class="login_main layui-form" style="width: 370px;">
+		<div class="login_form">
+			<p class="p_tit">账号登录</p>
+			<p class="p_input"><input type="text" name="" placeholder="账号" id="phone"></p>
+			<p class="p_input"><input type="password" name="" placeholder="密码" id="password"></p>
+			<p class="p_type"><input type="checkbox" name="" title="记住登录状态" lay-skin="primary"></p> 
+			<div class="btn_info"><button class="layui-btn layui-btn-normal" type="button" id="login_btn">登录</button></div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="layui/layui.js"></script> 
+<script>
+layui.use('form', function(){
+  var form = layui.form;
+});
+
+
+// 绑定enter键
+var LoginBtn=document.querySelector('#login_btn');
+var Phone=document.querySelector('#phone');
+var Password=document.querySelector('#password');
+
+document.onkeydown=function (event) {
+    if(event.keyCode==13){ 
+    LoginBtn.click();
+} 
+};
+LoginBtn.onclick=function () {
+	if (Phone.value=='') {
+		layer.tips('请输入账号', '#phone');
+		return false;
+	} else {
+		layer.tips('请输入密码', '#password');
+	}
+
+};
+
+</script>  
+</body>
+</html>

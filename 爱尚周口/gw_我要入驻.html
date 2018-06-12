@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<style>
+
+
+/* 表单 */
+
+.form_list_box{ overflow:hidden; margin:10px auto;}
+
+.table_box_01{ width:100%;}
+.table_box_01 tr{ background:#fff; border-bottom:1px solid #eee;}
+.table_box_01 tr:last-child{border-bottom:0;}
+.table_box_01 td{ padding:10px 0;}
+
+.table_box_01 .td_name{ width:80px; padding-left:10px; color:#888; vertical-align:top;}
+.table_box_01 .td_name span{ height:36px; line-height:36px;}
+.table_box_01 .td_form{ padding-right:10px; overflow:hidden; vertical-align:middle;}
+
+.table_box_01 .label_input_text{ overflow:hidden; display:block;}
+.table_box_01 .label_input_text input{ width:100%; height:36px;}
+
+.table_box_01 .label_textarea{ display:block; padding:8px 0; overflow:hidden;}
+.table_box_01 .label_textarea textarea{ height:48px; width:100%;}
+
+
+</style>
+
+</head>
+
+<body ontouchstart>
+
+<div class="form_list_box">
+	<table class="table_box_01">
+    	<tr>
+        	<td class="td_name"><span>企业名称</span></td>
+            <td class="td_form"><label class="label_input_text"><input type="text"   placeholder="请填写企业名称" ></label></td>
+        </tr>
+        <tr>
+        	<td class="td_name"><span>联系人</span></td>
+            <td class="td_form"><label class="label_input_text"><input type="text"   placeholder="请填写联系人姓名" ></label></td>
+        </tr>
+        <tr>
+        	<td class="td_name"><span>联系电话</span></td>
+            <td class="td_form"><label class="label_input_text"><input type="tel"   placeholder="请填写联系电话" ></label></td>
+        </tr>
+    </table>
+</div>
+
+<div class="form_list_box">
+	<table class="table_box_01">
+        <tr>
+        	<td class="td_name"><span>备注</span></td>
+            <td class="td_form"><label class="label_textarea"><textarea style="height:120px;" placeholder="请填写备注信息"></textarea></label></td>
+        </tr>
+    </table>
+</div>
+
+
+<div class="button_box"><p class="p_btn b_1">确认提交</p></div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+ html,body{min-height: 100%;background-image: url('../images/youli_bg.jpg');background-repeat: repeat;
+  background-size: 50%;font-size: 4vw;color: #333;}
+
+  .popup_right{width: 100%;height: 100%;background-color: #eee;overflow-y: auto;}
+  .btm_pic{position: fixed;width: 100%;height: 40vw;left: 0;bottom: 0;}
+  .btm_pic img{width: 100%;}
+
+.img_box img,.ad_wrap img{width: 100%;display: block;}
+[v-cloak] {display: none;}
+
+
+.p_money{text-align: center;color: #ee1d3d;font-weight: bold;font-size: 6vw;margin: 2vw 0;}
+.p_money span{font-size: 9vw;margin-right: 2vw;}
+.btn_wrap{text-align: center;margin: 4vw 0;}
+.btn_wrap a{background-color: #17b139;color: #fff;width: 60%;display:block;text-align: center;margin: 0 auto;height: 10vw;line-height: 10vw;border-radius: 10vw;font-weight: bold;}
+.btn_wrap a:active{background-color: #149d32;}
+.ad_wrap{margin: 5vw;border-radius: 2vw;overflow: hidden;display: block;margin-top: 2vw;}
+.p_tips{text-align: center;}
+
+
+.bag_wrap{width: 90vw;height: 92vw;background-repeat: no-repeat;background-position: bottom:  center; background-size: contain;margin: 0 auto;overflow: hidden;position: relative;}
+.bag_wrap .btn{position: absolute;width: 25vw;height: 25vw;background-repeat: no-repeat;background-position: center center;background-size: cover;left: 35.5%;top: 15.2%;text-align: center;line-height: 25vw;color: #e90013;font-size: 9vw;font-weight: bold;-webkit-animation:ani 1s infinite alternate linear;animation:ani 1s infinite alternate linear;}
+.bag_wrap .btn:active{opacity: .8;}
+
+
+@-webkit-keyframes ani{
+      0%{-webkit-transform: rotate(-15deg)}
+      100%{-webkit-transform: rotate(15deg)}
+    }
+@keyframes ani{
+  0%{transform: rotate(-15deg)}
+  100%{transform: rotate(15deg)}
+}
+
+
+
+
+
+

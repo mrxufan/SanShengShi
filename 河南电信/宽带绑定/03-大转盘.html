@@ -1,0 +1,185 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>大转盘</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="css/mint-ui.css" type="text/css">
+<style type="text/css">
+    html,body{min-height: 100%; background-color:#f4f4f4;}
+
+    .wheel{margin:10vw auto; overflow: hidden; position: relative;  width: 90vw; height: 90vw; background: #d40; border-radius: 50%; box-shadow: inset 0 2px 0 2px rgba(255,255,255,.3), inset 0 -2px 0 2px rgba(0,0,0,.2), 1px 2px 2px rgba(0,0,0,.2);}
+    .wheel-list{ width: 85vw; height: 85vw; margin:0 auto; margin-top:2.5vw; overflow: hidden; transition: all 3s ease-in-out; position: relative; z-index: 20; display: block; background: #fff; border-radius: 50%; box-shadow: 0 0 6px 2px rgba(0,0,0,.4);}
+    .wheel-list:before{position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; content: ''; border-radius: 50%; box-shadow: inset 0 0 0 8px rgba(255,255,155,.5); background: rgb(255,255,255); background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 40%, rgba(255,102,0,1) 85%); background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(40%,rgba(255,255,255,1)), color-stop(85%,rgba(255,102,0,1))); background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 40%,rgba(255,102,0,1) 85%); background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 40%,rgba(255,102,0,1) 85%); background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 40%,rgba(255,102,0,1) 85%); background: radial-gradient(ellipse at center, rgba(255,255,255,1) 40%,rgba(255,102,0,1) 85%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ff6600',GradientType=1 );}
+    .wheel-list li{position: absolute; top: 0; left: 0; width:85vw; height:42.5vw; -moz-transform-origin: center bottom; -webkit-transform-origin: center bottom; -o-transform-origin: center bottom; -ms-transform-origin: center bottom; transform-origin: center bottom;}
+    .wheel-list li i{position: absolute; top: 0; left: 0; margin-left: -50%; display: block; width: 100%; height: 100%; background: rgba(255,221,0,.3); content: ''; box-shadow: inset -1px 0 0 rgba(255,153,0,.7), inset 0 -1px 0 rgba(255,255,255,.4); -moz-transform-origin: right bottom; -webkit-transform-origin: right bottom; -o-transform-origin: right bottom; -ms-transform-origin: right bottom; transform-origin: right bottom;}
+
+    .wheel-list .thanks{position: relative; margin: 0 auto; padding-top: 20px; width: 1em; color: #900; font-size: 18px; font-weight: 700; text-shadow: 0 1px 0 rgba(255,255,255,.4);font-weight: normal;}
+    .wheel-list .prize{position: relative; margin: 0 auto; padding-top: 2vw; width: 50%; overflow: hidden; text-align: center;  text-shadow: 0 1px 0 rgba(255,255,255,.5);}
+    .wheel-list .prize p{font-size:3vw;}
+    .wheel-light li:nth-child(2n){opacity: .5; -moz-animation-delay: 1s; -webkit-animation-delay: 1s; -o-animation-delay: 1s; -ms-animation-delay: 1s; animation-delay: 1s;}
+    .wheel-pointer{position: absolute; z-index: 30; top: 35vw; left:35vw; width:20vw; height:20vw; border: 0.1vw solid #e60; box-shadow: 0 0 2px 2px rgba(0,0,0,.1); border-radius: 50%;}
+
+    .activity{position: relative; margin: 50px auto; padding: 0 25px 30px; width: 800px; overflow: hidden; border-bottom: 3px solid #e5e5e5; background: #fff; font: 12px/1.5 "microsoft yahei"; border-radius: 20px; box-shadow: 0 1px 6px 3px rgba(0,0,0,.1);}
+
+    .wheel-pointer:before{position: absolute; top: -6vw; left: 50%; display: block; width: 10vw; height: 10vw; border: .1vw solid #e60; background: #fb0; content: ''; box-shadow: inset 1px 1px 0 rgba(255,255,255,.5); -moz-transform-origin: left top; -webkit-transform-origin: left top; -o-transform-origin: left top; -ms-transform-origin: left top; transform-origin: left top; -moz-transform: rotate(30deg) skewY(30deg); -webkit-transform: rotate(30deg) skewY(30deg); -o-transform: rotate(30deg) skewY(30deg); -ms-transform: rotate(30deg) skewY(30deg); transform: rotate(30deg) skewY(30deg);}
+    .wheel-pointer:after{position: relative; display: block; width: 100%; height: 100%; background: #ffcc00; content: ''; border-radius: 50%; box-shadow: inset 1px 1px 0 rgba(255,255,255,.5); background: -moz-linear-gradient(-45deg, #ffcc00 0%, #ff8800 50%, #ffcc00 100%); background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ffcc00), color-stop(50%,#ff8800), color-stop(100%,#ffcc00)); background: -webkit-linear-gradient(-45deg, #ffcc00 0%,#ff8800 50%,#ffcc00 100%); background: -o-linear-gradient(-45deg, #ffcc00 0%,#ff8800 50%,#ffcc00 100%); background: -ms-linear-gradient(-45deg, #ffcc00 0%,#ff8800 50%,#ffcc00 100%); background: linear-gradient(135deg, #ffcc00 0%,#ff8800 50%,#ffcc00 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcc00', endColorstr='#ffcc00',GradientType=1 );}
+    .wheel-pointer i{position: absolute; z-index: 35; top: -6vw; left: 0; right: 0; margin: 0 auto; display: block; width: 10vw; height: 10vw; overflow: hidden;}
+    .wheel-pointer i:before{display: block; width: 100%; height: 100%; content: ''; -moz-transform-origin: left top; -webkit-transform-origin: left top; -o-transform-origin: left top; -ms-transform-origin: left top; transform-origin: left top; -moz-transform: translateX(50%) rotate(30deg) skewY(30deg); -webkit-transform: translateX(50%) rotate(30deg) skewY(30deg); -o-transform: translateX(50%) rotate(30deg) skewY(30deg); -ms-transform: translateX(50%) rotate(30deg) skewY(30deg); transform: translateX(50%) rotate(30deg) skewY(30deg); background: rgb(255,178,0); background: -moz-linear-gradient(40deg, rgba(255,178,0,1) 0%, rgba(255,179,0,1) 45%, rgba(254,214,86,1) 46%, rgba(255,146,0,1) 90%); background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,178,0,1)), color-stop(45%,rgba(255,179,0,1)), color-stop(46%,rgba(254,214,86,1)), color-stop(90%,rgba(255,146,0,1))); background: -webkit-linear-gradient(40deg, rgba(255,178,0,1) 0%,rgba(255,179,0,1) 45%,rgba(254,214,86,1) 46%,rgba(255,146,0,1) 90%); background: -o-linear-gradient(40deg, rgba(255,178,0,1) 0%,rgba(255,179,0,1) 45%,rgba(254,214,86,1) 46%,rgba(255,146,0,1) 90%); background: -ms-linear-gradient(40deg, rgba(255,178,0,1) 0%,rgba(255,179,0,1) 45%,rgba(254,214,86,1) 46%,rgba(255,146,0,1) 90%); background: linear-gradient(50deg, rgba(255,178,0,1) 0%,rgba(255,179,0,1) 45%,rgba(254,214,86,1) 46%,rgba(255,146,0,1) 90%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb200', endColorstr='#ff9200',GradientType=1 );}
+    .wheel-btn{ position: absolute; z-index: 40; top: 35vw;  left:35vw; width: 20vw; height: 20vw; box-shadow: inset 0 1px 1px rgba(255,102,0,.4), inset 0 -1px 1px rgba(255,238,0,.4); background: -moz-linear-gradient(top, rgba(255,85,0,0.7) 0%, rgba(255,221,0,1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,85,0,0.7)), color-stop(100%,rgba(255,221,0,1))); background: -webkit-linear-gradient(top, rgba(255,85,0,0.7) 0%,rgba(255,221,0,1) 100%); background: -o-linear-gradient(top, rgba(255,85,0,0.7) 0%,rgba(255,221,0,1) 100%); background: -ms-linear-gradient(top, rgba(255,85,0,0.7) 0%,rgba(255,221,0,1) 100%); background: linear-gradient(to bottom, rgba(255,85,0,0.7) 0%,rgba(255,221,0,1) 100%); border-radius: 60px; }
+    .wheel-btn strong{ display: block; color: #fff; font-size: 18px; text-shadow: 2px 0 0 #c30, -2px 0 0 #c30, 0 2px 0 #c30, 0 -2px 0 #c30, 1px 1px 0 #c30, -1px -1px 0 #c30, -1px 1px 0 #c30, -1px -1px 0 #c30, 0 2px 6px #a30;}
+    .wheel-btn a{color: #ff0; margin:0 auto; margin-top:1vw; position: relative; display:block; width: 18vw; height: 18vw; line-height: 18vw; overflow: hidden; color: #ff0; font-size: 16px; text-align: center; text-decoration: none; border-radius: 50%; box-shadow: -1px -1px 10px rgba(255,255,255,.5), 1px 1px 3px rgba(0,0,0,.4), inset -1px -2px 0 #a30; text-shadow: 1px 0 0 #c30, -1px 0 0 #c30, 0 1px 0 #c30, 0 -1px 0 #c30, 0 0 3px #fff; background: rgb(204,51,0); background: -moz-linear-gradient(top, rgba(204,51,0,1) 0%, rgba(255,221,0,1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(204,51,0,1)), color-stop(100%,rgba(255,221,0,1))); background: -webkit-linear-gradient(top, rgba(204,51,0,1) 0%,rgba(255,221,0,1) 100%); background: -o-linear-gradient(top, rgba(204,51,0,1) 0%,rgba(255,221,0,1) 100%); background: -ms-linear-gradient(top, rgba(204,51,0,1) 0%,rgba(255,221,0,1) 100%); background: linear-gradient(to bottom, rgba(204,51,0,1) 0%,rgba(255,221,0,1) 100%);}
+    .wheel-btn a:after{position: absolute; bottom: 7px; right: 5px; display: block; width:20vw; height: 20vw; content: ''; border-radius: 50%; opacity: .8; background: -moz-linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 30%); background: -webkit-gradient(linear, right bottom, left top, color-stop(0%,rgba(255,255,255,1)), color-stop(30%,rgba(255,255,255,0))); background: -webkit-linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 30%); background: -o-linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 30%); background: -ms-linear-gradient(135deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 30%); background: linear-gradient(-45deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 30%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffffff', endColorstr='#00ffffff',GradientType=1 );}
+    .wheel-btn a:active strong{ color: #f60; }
+    [v-cloak] {display: none;}
+
+
+</style>
+
+</head>
+
+<body ontouchstart >
+<div id="app">
+
+    <div class="wheel">
+
+        <ul id="wheel" class="wheel-list" :style="styleWheel">
+            <li v-for="(item,index) in items" :style="{transform:'rotate('+(index*60+30)+'deg)'}">
+                <i style="transform: rotate(30deg) skewY(30deg);"></i>
+                <div class="prize">
+                    <h3 v-cloak>{{item.id}}</h3>
+                    <p v-cloak>{{item.name}}</p>
+                </div>
+            </li>
+           <!--  <li style="transform:rotate(30deg)">
+                <i style="transform: rotate(30deg) skewY(30deg);"></i>
+                <div class="prize">
+                    <h3>01</h3>
+                    <p>苹果</p>
+                </div>
+            </li>
+            <li style="transform:rotate(90deg)">
+                <i style="transform: rotate(30deg) skewY(30deg);"></i>
+                <div class="prize">
+                    <h3>02</h3>
+                    <p>桔子</p>
+                </div>
+            </li>
+            <li style="transform:rotate(150deg)">
+                <i style="transform: rotate(30deg) skewY(30deg);"></i>
+                <div class="prize">
+                    <h3>03</h3>
+                    <p>香蕉</p>
+                </div>
+            </li>
+            <li style="transform:rotate(210deg)">
+                <i style="transform: rotate(30deg) skewY(30deg);"></i>
+                <div class="prize">
+                    <h3>04</h3>
+                    <p>葡萄</p>
+                </div>
+            </li>
+            <li style="transform:rotate(270deg)">
+                <i style="transform: rotate(30deg) skewY(30deg);"></i>
+                <div class="prize">
+                    <h3>05</h3>
+                    <p>樱桃</p>
+                </div>
+            </li>
+            <li style="transform:rotate(330deg)">
+                <i style="transform: rotate(30deg) skewY(30deg);"></i>
+                <div class="prize">
+                    <h3>06</h3>
+                    <p>菠萝</p>
+                </div>
+            </li> -->
+
+        </ul>
+        <div id="pointer" class="wheel-pointer"><i></i></div>
+        <div class="wheel-btn" @click="startBtn">
+            <a id="button" href="javascript:;">
+                <strong>GO</strong>
+            </a>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+<!--去掉点击300ms延时-->
+<script src="js/fastclick.js"></script>
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="js/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            userId:0,//用户id
+            jdNum1:[[-10,-50],[-70,-110],[-130,-170],[-190,-230],[-250,-290],[-310,-350]],
+            items:[
+                {id:0,name:'苹果'},
+                {id:1,name:'桔子'},
+                {id:2,name:'香蕉'},
+                {id:30,name:'葡萄'},
+                {id:14,name:'樱桃'},
+                {id:51,name:'菠萝'}
+            ],
+            styleWheel:{
+                transform:'rotate(0deg)'
+            },
+        },
+        methods: {
+            // 给items每项添加对应的jd:jdNum1
+            setJd:function(){
+                for (var i = 0; i < this.jdNum1.length; i++) {
+                    // var sjNum=Math.floor(Math.random()*this.jdNum1[i].length);
+                    // var sjNum=Math.floor(Math.random()*(this.jdNum1[i][0]-this.jdNum1[i][1])+this.jdNum1[i][0]);
+                    // this.items[i].jd=this.jdNum1[i][sjNum];
+
+                    // this.sjNum2=Math.floor(Math.random()*(this.jdNum1[i][0]-this.jdNum1[i][1])+this.jdNum1[i][0]);
+                    
+                    this.items[i].jd=Math.floor(Math.random()*(this.jdNum1[i][0]-this.jdNum1[i][1])+this.jdNum1[i][1]);
+                    console.log('随机度数：'+this.items[i].jd);
+                }
+            },
+            // 过滤参数==userId的数组
+            setfilter:function(i){
+                return this.items.filter(function(column) {
+                    return column.id==i;
+                })[0];
+            },
+            // 点击
+            startBtn:function(){
+                var _this=this;
+                console.log(this.setfilter(this.userId).name);
+
+                this.styleWheel.transform='rotate('+(360*5+this.setfilter(this.userId).jd)+'deg)';
+                axios.get('http://jsonplaceholder.typicode.com/posts').then(function (response) {
+                    console.log(response);
+                      }).catch(function (error) {
+                        console.log(error);
+                });
+
+                // 转完之后弹出奖品
+                setTimeout(function(){
+                    _this.$messagebox.alert('奖品：'+_this.setfilter(_this.userId).name+'', '获奖信息').then(function(){
+                    });
+                }, 3200);
+            }
+        },
+        mounted:function(){
+            this.setJd();
+        }
+
+    });
+</script>
+	
+</html>

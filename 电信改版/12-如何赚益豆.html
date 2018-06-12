@@ -1,0 +1,103 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>如何赚益豆</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<style type="text/css">
+html,body{background-color: #eee;}
+.img_box img{display: block;width: 100%;}
+.yidou_wrap li{background-color: #fff;margin: 10px;border-radius: 4px;}
+.yidou_wrap li .item .top_tit{position: relative;text-align: center;height: 35px;line-height: 35px;color: #8a8a8a;font-size: 15px;margin: 0 10px;}
+.yidou_wrap li .item .top_tit:after{position: absolute;content: '';height: 0;border-bottom: 1px dashed #8a8a8a;width: 100%;left: 0;top: 50%;}
+.yidou_wrap li .item .top_tit span{background-color: #fff;padding:0 10px;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);z-index: 2;height: 30px;}
+.yidou_wrap li .item .main{border-bottom: 1px solid #eee;padding-bottom: 10px;}
+.yidou_wrap li .item .main:last-child{border-bottom: none;}
+.yidou_wrap li .item .main .p_tit{font-size: 15px;padding:5px 10px;}
+.yidou_wrap li .item .main .p_txt{color: #8a8a8a;margin: 0 10px;/* text-indent: 1.5em; */}
+.yidou_wrap li .item .main .btn_wrap{display: flex;justify-content: flex-end;margin: 0 10px;}
+.yidou_wrap li .item .main .btn_wrap .btn_bg1{background: linear-gradient(90deg,#fd9133,#ffae46)}
+.yidou_wrap li .item .main .btn_wrap .btn_bg2{background: linear-gradient(90deg,#5996ff,#29b2fe)}
+.yidou_wrap li .item .main .btn_wrap .btn_bg3{background: linear-gradient(90deg,#fa677d,#fd6aa3)}
+</style>
+</head>
+
+<body ontouchstart>
+
+<div id="app">
+   <div class="img_box"><img src="images/yidou1.jpg"></div>
+   <ul class="yidou_wrap">
+       <li>
+           <div class="item">
+               <p class="top_tit"><span>益豆能做什么</span></p>
+               <div class="main">
+                   <p class="p_tit">1、兑换省内流量</p>
+                   <p class="p_txt">10个豆兑换1G省内流量，兑换流量当月有效</p>
+                    <p class="p_txt">每月最多兑换20G</p>
+                    <div class="btn_wrap">
+                        <mt-button class="btn_bg1" type="primary" size="small">立即兑换</mt-button>
+                    </div>
+               </div>
+               <div class="main">
+                   <p class="p_tit" style="margin-top: 10px">2、在益粉圈下单抵钱用</p>
+                   <p class="p_txt">优惠购，拥有超值商品</p>
+                    <div class="btn_wrap">
+                        <mt-button class="btn_bg2" type="primary" size="small">立即订购</mt-button>
+                    </div>
+               </div>
+           </div>
+       </li>
+       <li>
+           <div class="item">
+               <p class="top_tit"><span>如何赚益豆</span></p>
+               <div class="main">
+                   <p class="p_tit">使用公众菜单服务随机派豆，每月最高获得100个豆</p>
+                   <p class="p_txt">10个豆兑换1G省内流量，兑换流量当月有效，</p>
+                   <p class="p_txt">每月最多兑换20G</p>
+                    <div class="btn_wrap">
+                        <mt-button class="btn_bg3" type="primary" size="small">立即赚豆</mt-button>
+                    </div>
+               </div>
+           </div>
+       </li>
+       <li>
+           <div class="item">
+               <p class="top_tit"><span>益豆有效期</span></p>
+               <div class="main">
+                   <p class="p_tit">每年12月31日23点59分59秒之前所有益豆清零</p>
+               </div>
+           </div>
+       </li>
+   </ul>
+</div>
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+var vm=new Vue({
+    el: '#app',
+    data:{
+      
+    },
+    methods: {
+        
+    },
+    
+    mounted:function(){
+        
+    }
+})
+
+</script>
+	
+</html>

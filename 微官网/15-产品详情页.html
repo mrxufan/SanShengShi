@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<link rel="stylesheet" type="text/css" href="css/public.css"><!--共用样式-->
+<link rel="stylesheet" type="text/css" href="css/page_style.css"><!--页面样式-->
+<link rel="stylesheet" type="text/css" href="font/font-awesome.css"><!--字体图标-->
+<script src="js/jquery.1.9.1.min.js"></script>
+<script src="js/iscroll-lite.min.js"></script>
+
+<script src="js/TouchSlide.1.1.js"></script>
+<title>产品详情页</title>
+<style>
+/*商品详情*/
+.focus_pic_box{ margin:0 auto; position:relative; overflow:hidden;}
+.focus_pic_box .hd{ position:absolute; z-index:1; right:10px; bottom:10px;}
+.focus_pic_box .hd ul{ overflow:hidden; display:-moz-box; display:-webkit-box; display:box; height:5px;}
+.focus_pic_box .hd ul li{ -moz-box-flex:1; -webkit-box-flex:1; box-flex:1; font-size:0;}
+.focus_pic_box .hd ul .on{ background:#92c800;}
+.focus_pic_box .hd .yema_bj { text-align:center; width:30px; height:30px; line-height:30px; background-color:rgba(0,0,0,0.5); color:#fff; border-radius:50px;}
+.focus_pic_box .hd .yema_bj span{ font-size:12px;}
+
+.focus_pic_box .bd{ position:relative; z-index:0; }
+.focus_pic_box .bd li img{ width:100%; }
+.shop_pro_title{overflow:hidden; margin:10px;}
+.shop_pro_title .p_1{ font-size:14px; font-weight:bold; line-height:22px;}
+.shop_cuxiao{ overflow:hidden; margin:10px; color:#999; font-size:12px;}
+.shop_cuxiao span{font-size:13px;}
+.shop_cuxiao span em{font-size:14px; font-weight:bold;}
+.shop_cuxiao span.c_start{color:#0CC;}
+.shop_cuxiao span.c_over{color:#ff7373;}
+.shop_pro_btn { overflow:hidden; margin:10px;}
+.shop_pro_btn .p_info .sp_1{ font-size:12px; color:#999; line-height:30px;}
+.shop_pro_btn .p_info .sp_1 em{ font-size:20px; color:#ff7373;}
+.shop_pro_btn .p_btn{ height:30px; line-height:30px; padding:0 10px; background:#ff7373; color:#fff; border-radius:4px;}
+.shop_pro_btn .p_btn:active{background:#e66363;}
+.shop_info_title{ overflow:hidden; border-top:1px solid #eee; border-bottom:1px solid #eee; height:30px; line-height:30px; padding:0 10px; background:#f4f4f4;}
+.shop_info_title .p_tit{ font-size:13px; color:#666;}
+.shop_info_canshu_box{ overflow:hidden; background:#fff; margin-bottom:10px;}
+.shop_info_canshu_box table{ width:100%;}
+.shop_info_canshu_box tr{ border-bottom:1px solid #eee;}
+.shop_info_canshu_box tr:last-child{ border-bottom:0}
+.shop_info_canshu_box td{ padding:8px 10px; font-size:12px; color:#999;}
+.shop_info_canshu_box .td_name{ text-align:left; width:80px;}
+.shop_info_nr_box{ background:#fff; padding:10px; font-size:13px;color:#666; margin-bottom:10px; overflow:hidden; text-indent:2em;}
+.shop_info_nr_box img{ max-width:100%;}
+
+.shop_pro_btn .p_zx{ background:#ff4d07; padding:6px 10px; color:#fff; border-radius:4px;}
+.shop_pro_btn .p_zx a{ color:#fff;}
+.shop_pro_btn .p_zx:active{ background:#df4508;}
+</style>
+</head>
+
+<body ontouchstart style="background:#f8f8f8;">
+<div id="focus_pic" class="focus_pic_box">
+    <div class="hd">
+        <ul style="display:none"></ul>
+        <div class="yema_bj"><p class="pageState"></p></div>
+    </div>
+    <div class="bd">
+        <ul>
+                <li><a href="#"><img src="images/240X240_2.jpg"/></a></li>
+                <li><a href="#"><img src="images/240X240_2.jpg" /></a></li>
+                <li><a href="#"><img src="images/240X240_2.jpg" /></a></li>
+                <li><a href="#"><img src="images/240X240_2.jpg" /></a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    TouchSlide({ 
+        slideCell:"#focus_pic",
+        titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell:".bd ul", 
+        effect:"leftLoop", 
+        autoPlay:true,//自动播放
+        autoPage:true //自动分页
+    });
+</script>
+<div class="shop_pro_title">
+	<p class="p_1">外观更具动感全新雷克萨斯RX外观更具动感全新雷克萨斯RX外观</p>
+</div>
+<div class="shop_pro_btn">
+	<p class=" fn-left p_info"><span class="sp_1"><em>35.5</em>元</span></p>
+    <p class="fn-right p_zx"><a href="#">我要咨询</a></p>
+	
+</div>
+<div class="shop_info_title"><p class="p_tit">商品详情</p></div>
+<div class="shop_info_nr_box">
+	2015纽约车展已经正式拉开了帷幕，虽然纽约车展的规模无法与北美车展、巴黎车展等车展相比，但仍有诸多厂商在这次车展上带来了新的产品。<img src="images/mb_pic2/640X360_2.jpg">截止到目前，已经有二十余款重磅新车在纽约车展期间正式亮相，其中包括雪佛兰全新迈锐宝、凯迪拉克CT6、起亚全新K5（Optima）、保时捷全新Boxster Spyder、迈凯伦570S等等，下面请大家跟我们走进文章，看看这些新车的具体情况。
+</div>
+
+
+</body>
+</html>

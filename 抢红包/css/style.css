@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+html,body{min-height: 100%;background-image: url('../images/bg_repeat.jpg');background-repeat: repeat;background-size: 50%;font-size: 4vw;}
+
+/* index */
+.top_main_wrap{margin: 5vw 0;}
+.top_bag_bg{width: 59vw;height: 30vw;background-image: url('../images/bag_top.png');background-repeat: no-repeat;background-position: center center;background-size: cover;margin: 0 auto;position: relative;}
+.top_bag_bg .top_dog_wrap{width: 52.5vw;height: 26.7vw;position: absolute;left: 0;top: 0;overflow: hidden;}
+.a_btn{display: block;position: absolute;width: 20vw;height: 20vw;background-repeat: no-repeat;background-size: cover;background-position: center center;}
+.btn1{background-image: url('../images/btn_qiang.png');left: 19vw;top: 0;}
+.btn2{background-image: url('../images/btn_chai.png');left: 12vw;top: 0;}
+
+.dog_info{width: 20vw;height: 20vw;position: absolute;background-repeat: no-repeat;background-position: center center;background-size: cover;display: inline-block;}
+.dog_01{background-image: url('../images/dog_02.png');right: -4vw;bottom: -4vw;animation: rotate1 1.3s linear infinite alternate;transform-origin: center bottom;}
+.dog_02{background-image: url('../images/dog_03.png');left: 14vw;bottom: -6vw;animation: rotate2 1.3s linear .2s infinite alternate;transform-origin: center bottom;}
+.dog_03{background-image: url('../images/dog_04.png');left: 12vw;bottom: -6vw;animation: rotate3 1.3s linear .2s infinite alternate;transform-origin: center bottom;}
+@keyframes rotate1{
+  0%{transform: rotate(0deg)}
+  50%{transform: rotate(-10deg)}
+  100%{transform: rotate(0deg)}
+}
+@keyframes rotate2{
+  0%{transform: rotate(0deg)}
+  50%{transform: rotate(-10deg)}
+  100%{transform: rotate(0deg)}
+}
+@keyframes rotate3{
+  0%{transform: rotate(0deg)}
+  50%{transform: rotate(10deg)}
+  100%{transform: rotate(0deg)}
+}
+
+.text_wrap{text-align: center;}
+.text_wrap h3{color: #f30c00;font-size: 5vw;font-weight: bold;}
+.text_wrap p{color: #282828;font-size: 3.5vw;}
+
+.bottom_main_wrap{display:flex;}
+.bottom_main_wrap .b_item{flex: 1;}
+.bottom_main_wrap .b_item .b_item_wrap{width: 45vw;height: 35vw;margin: 0 auto;background-repeat: no-repeat;background-position: center center;background-size: cover;position:relative;}
+.bottom_main_wrap .b_item .b_item_wrap .b_main{position: absolute;width: 38.5vw;height: 32.3vw;
+top: 0;overflow: hidden;left: 0;}
+.bag_left{background-image: url('../images/bag_left.png')}
+.bag_right{background-image: url('../images/bag_right.png')}
+
+.activity_btn{margin: 5vw 0;}
+.activity_btn a{width: 60%;display:block;text-align: center;margin: 0 auto;height: 10vw;line-height: 10vw;background-color: #fde6bd;color: #f30c00;border: .3vw dashed #f79100;border-radius: 10vw;font-weight: bold;}
+.activity_btn a:active{background-color: #fde1af;}
+
+
+
+
+/* 已发红包 */
+.img_box img,.ad_wrap img{width: 100%;display: block;}
+[v-cloak] {display: none;}
+
+
+.p_money{text-align: center;color: #ee1d3d;font-weight: bold;font-size: 6vw;margin: 5vw 0;}
+.p_money span{font-size: 9vw;margin-right: 2vw;}
+.p_tips{text-align: center;color: #737373;}
+.btn_wrap{text-align: center;margin: 5vw 0;}
+.btn_wrap a{background-color: #f5192f;color: #fff;width: 60%;display:block;text-align: center;margin: 0 auto;height: 10vw;line-height: 10vw;border-radius: 10vw;font-weight: bold;}
+.btn_wrap a:active{background-color: #e3162b;}
+.ad_wrap{margin: 5vw;border-radius: 2vw;overflow: hidden;display: block;margin-top: 2vw;}
+
+
+
+/* 普天同庆 */
+.bg_border{width: 85vw;height: 65vw;font-size: 4vw;text-align: center;color: #853800;background-repeat: no-repeat;background-position: center center;background-size: contain;margin: 0 auto;box-sizing: border-box;}
+.dog_wrap{overflow: hidden;margin: 0 5vw}
+.dog_bg{width: 40vw;height: 40vw;background-repeat: no-repeat;background-position: center center;background-size: cover;}
+.dog_bg img{width: 100%;}
+
+
+
+/* 提钱乐红包 */
+.bag_wrap{width: 90vw;height: 92vw;background-repeat: no-repeat;background-position: bottom:  center; background-size: contain;margin: 0 auto;overflow: hidden;position: relative;}
+.bag_wrap .time_info{text-align: center;color: #fff;margin-top: 5vw;font-size: 6vw;}
+.bag_wrap .btn{position: absolute;width: 25vw;height: 25vw;background-repeat: no-repeat;background-position: center center;background-size: cover;left: 35.5%;top: 15.2%;text-align: center;line-height: 25vw;color: #e90013;font-size: 9vw;font-weight: bold;-webkit-animation:ani 1s infinite alternate linear;animation:ani 1s infinite alternate linear;}
+.bag_wrap .btn:active{opacity: .8;}
+.bag_wrap .sheng_yu{text-align: center;color: #fff;position: absolute;top: 46%;left: 50%;-webkit-transform: translateX(-50%);transform: translateX(-50%);font-size: 5vw;width: 100%;}
+.bag_wrap .dog_img{width: 30vw;height: 30vw;left: 50%;bottom: 5%;-webkit-transform: translateX(-50%);transform: translateX(-50%);position: absolute;background-repeat: no-repeat;background-position: center center;background-size: cover;}
+@-webkit-keyframes ani{
+      0%{-webkit-transform: rotate(-15deg)}
+      100%{-webkit-transform: rotate(15deg)}
+    }
+@keyframes ani{
+  0%{transform: rotate(-15deg)}
+  100%{transform: rotate(15deg)}
+}
+
+
+
+
+
+

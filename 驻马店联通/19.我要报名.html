@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link href="css/page_style.css" rel="stylesheet" type="text/css">
+<style>
+/*----投票-报名页面----*/
+.vote_rank{ background:#c06;  color:#fff;}
+.vote_rank .box-flex-1{ padding:5px 10px; border-right:1px solid #fff;}
+.vote_rank .box-flex-1 p{ text-align:center; line-height:22px;}
+.vote_rank .box-flex-1 p.vote_p_tit{ font-size:12px;}
+.vote_rank .box-flex-1 p.vote_p_num{ font-size:13px; font-weight:600;}
+/*报名-box*/
+.bm_box{ margin:0px 15px; margin-bottom:10px; padding-top:10px; background:rgba(255,255,255,0.2); border-radius:3px; }
+.h3_title{ font-size:18px; font-weight:bold; color:#ffc600; margin:20px 0;}
+.h3_title i{ margin-right:4px;}
+.bm_box dl dt i{ margin-right:10px;}
+.bm_box dl .bm_con_li{ padding:15px 0px 0px 0px;}
+.bm_box dl .bm_con_li .bm_li_tit{ display:block; width:65px; padding:0px 15px 0px 10px; font-size:14px; line-height:34px; color:#323232; text-align:right;}
+.bm_box dl .bm_con_li .bm_li_con{ padding:0px 15px 0px 0px;}
+.bm_box dl .bm_con_li .bm_li_con input[type=text]{ width:100%; height:34px; padding:0 5px; box-sizing:border-box; background:#fff;  border-radius:3px;}
+.bm_box dl .bm_con_li .bm_li_con textarea{ width:100%; box-sizing:border-box; min-height:90px; padding:5px; background:#fff;  border-radius:3px; line-height:20px;}
+.bm_box dl .bm_con_li .bm_li_con a{ display:inline-block; width:60px; height:60px; background:#fff;border-radius:3px; text-align:center; font-size:50px; color:#C8C8C8; line-height:60px; font-size:18px; font-weight:100; position:relative;}
+.bm_box dl .bm_con_li .bm_li_con a input[type=file]{ position:absolute; width:60px; height:60px; overflow:hidden; top:0px; left:0px; opacity:0; z-index:999;}
+.bm_box dl .bm_con_li .bm_li_con a img{ position:absolute; width:60px; height:60px; top:0px; left:0px;}
+.bm_box dl .bm_con_jpg{ margin:5px 5px 0px 95px; padding-top:5px; height:auto; border-top:1px dashed #d8a801;}
+.bm_box dl dd:nth-child(4) .bm_con_li .bm_li_con span{ display:inline-block; font-size:10px; color:#ffc600; line-height:15px;}
+.bm_box dl .bm_con_jpg li{ display:inline-block; width:40px; height:auto; overflow:hidden; margin-right:5px;}
+.bm_box dl .bm_con_jpg li img{ width:100%; border-radius:3px; background:#fff;}
+.bm_box dl .bm_con_jpg li p{ font-size:12px; line-height:18px; color:#ffc600; text-align:center;}
+.bm_attention{ padding:15px 20px; font-size:10px; line-height:15px; text-align:justify; color:#D8A801;}
+.vote_djs{ padding:5px 10px; color:#fff; width:100%; position:absolute; left:0; bottom:0; background-color:rgba(0,0,0,0.4); box-sizing:border-box;}
+.vote_djs p span{ margin:0px 3px; font-size:15px; color:#fff;}
+.vote_djs p i{ margin-right:5px; font-size:15px;}
+
+.vote_rank_new{ overflow:hidden; margin:10px 0; margin-top:10px;}
+.vote_rank_new li{  height:40px; line-height:40px; background-image:url(images/nav_info_01.png); background-repeat:no-repeat; background-position:center center; background-size:100% 100%;}
+.vote_rank_new li:last-child{ margin-right:0;}
+.vote_rank_new li .vote_p_tit{text-align:center;  font-size:12px;  overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.vote_rank_new li .vote_p_tit em{ font-size:14px; font-weight:bold;}
+
+
+
+.search_box{ margin:0 10px; overflow:hidden;}
+.search_box  .p_search_nr{ position:relative; padding-right:60px; height:34px;}
+.search_box  .p_search_nr input{ width:100%; height:34px; background:#ffdcfb; box-sizing:border-box; padding:0 5px;}
+.search_box  .p_search_nr .sp_btn{ position:absolute; top:0; right:0; z-index:1; width:80px; height:34px; display:inline-block; line-height:34px; overflow:hidden; text-align:center; background:#C0C; color:#fff;}
+
+
+
+.vote_list_box{ overflow:hidden; margin:10px 5px;}
+.vote_list_box li{ width:50%; float:left;box-sizing:border-box; margin-bottom:10px;}
+
+.vote_list_box li .photo_body{ overflow:hidden; background:#fff; margin:0 5px; overflow:hidden; padding:6px;}
+.vote_list_box li .photo_body .p_img{ overflow:hidden; min-width:140px; min-height:203px; margin:0 auto; margin-bottom:4px;}
+.vote_list_box li .photo_body .p_img img{ width:100%;}
+
+.vote_list_box li .photo_body .p_info_01{ overflow:hidden; border-bottom:1px solid #eee; padding-bottom:4px; margin-bottom:4px;}
+
+.vote_list_box li .photo_body .p_info_02{ overflow:hidden;}
+.vote_list_box li .photo_body .p_info_02 .s_name{ font-size:16px; line-height:30px;}
+.vote_list_box li .photo_body .p_info_02 .s_btn{ display:inline-block; height:30px; line-height:30px; text-align:center; width:60px; background:#f90; color:#fff;}
+.vote_list_box li .photo_body .p_info_02 .s_btn:active{ background:#f09001;}
+
+.vote_btm_btn{ background:#eee; }
+.vote_btm_btn li{ position:relative;line-height:50px; height:50px;}
+.vote_btm_btn li:after{ width:1px; height:100%; background:#fff;-webkit-transform:scaleX(.5);-webkit-transform-origin:100% 50%; right:0; top:0; position:absolute; content:"";}
+.vote_btm_btn li:active{ background:#f1f1f1;}
+.vote_btm_btn li p{ color:#444; font-size:15px; font-weight:bold; text-align:center;}
+.vote_btm_btn li:last-child{ border:none; position:relative;}
+.btm_fixed .box-flex-1:active{ background:#C36}
+.vote_rank_new .box-flex-1{ background:#c06; width:100%; color:white; border-right:1px solid white;  box-sizing:border-box; padding:0 10px;}
+.box-flex-1:last-child{ border-right:0;}
+.search_box .sp_btn{ border-bottom-right-radius:4px; border-top-right-radius:4px;}
+
+/*上传图片*/
+.upload_box{ overflow:hidden; }
+.upload_box li{ float:left; width:70px; height:70px;  overflow:hidden; margin-right:10px; margin-bottom:10px;}
+.upload_box li .pic_box{ width:70px; height:70px;  background-position:center center; background-repeat:no-repeat; background-size:cover; border-radius:4px; overflow:hidden; position:relative;}
+.upload_box li .pic_box .del_btn{ width:20px; height:20px; line-height:20px; border-radius:20px; background:#fff; color:#F36; font-size:16px; text-align:center; position:absolute; top:4px; right:4px; z-index:1;}
+
+
+.upload_box .upload_btn{ position:relative;}
+.upload_box .upload_btn .up_button_box{ height:70px; background:#fff; border-radius:4px; overflow:hidden; text-align:center;}
+.upload_box .upload_btn .up_button_box .p_ico{ font-size:30px; color:#999; margin-top:20px;}
+.upload_box .upload_btn .up_button_box .p_txt{ font-size:12px; color:#999; margin-top:4px;}
+.upload_box .upload_btn .input_file{ position:absolute; left:0; top:0; z-index:2; height:50px; width:50px;}
+.upload_box .upload_btn .input_file input{ opacity:0; height:70px;}
+</style>
+</head>
+
+<body ontouchstart style="background:#fff;">
+<div class="activity_toppic_box">
+    <img src="images/test_004.jpg">
+</div>
+<div class="vote_rank">
+    <ul class="box-flex-box">
+        <li class="box-flex-1">
+            <p class="vote_p_tit">参选人</p>
+            <p class="vote_p_num v_left" style="font-weight:bold">1000</p>
+        </li>
+        <li class="box-flex-1">
+            <p class="vote_p_tit">总票数</p>
+            <p class="vote_p_num v_center" style="font-weight:bold">2000</p>
+        </li>
+        <li class="box-flex-1">
+            <p class="vote_p_tit">浏览量</p>
+            <p class="vote_p_num v_right" style="font-weight:bold">1000</p>
+        </li>
+    </ul>
+</div>
+<!--报名-box-->
+<h3 class="h3_title text-center" style="color:#323232"></i>报名处</h3>
+<div class="bm_box" style="background:#eaeaea">
+    <dl>
+        
+        <dd>
+            <div class="bm_con_li box-flex-box">
+                <p class="bm_li_tit">昵称:</p>
+                <p class="bm_li_con box-flex-1"><input type="text" placeholder="请输入昵称"></p>
+            </div>
+        </dd>
+        <dd>
+            <div class="bm_con_li box-flex-box">
+                <p class="bm_li_tit">联系方式:</p>
+                <p class="bm_li_con box-flex-1"><input type="text" placeholder="请输入您的真实手机号"></p>
+            </div>
+        </dd>
+        <dd>
+            <div class="bm_con_li box-flex-box">
+                <p class="bm_li_tit">出生日期:</p>
+                <p class="bm_li_con box-flex-1"><input type="text" placeholder=""></p>
+            </div>
+        </dd>
+        <dd>
+            <div class="bm_con_li box-flex-box">
+                <p class="bm_li_tit">星座:</p>
+                <p class="bm_li_con box-flex-1"><input type="text" placeholder=""></p>
+            </div>
+            <p style="padding-left:90px; font-size:12px; color:#999; line-height:2em;"><a href="http://www.baidu.com" style="color:#fa53aa;">如何获取视频ID</a></p>
+        </dd>
+        <dd>
+            <div class="bm_con_li box-flex-box">
+                <p class="bm_li_tit">上传照片:</p>
+                <div class="upload_box">
+                
+	<ul>
+    	
+        <li class="upload_btn"><div class="up_button_box"><p class="p_ico">+</p><p class="p_txt">上传照片</p></div><div class="input_file"><input type="file"></div></li>
+        
+    </ul>
+</div>
+
+                
+            </div>
+            <p style="padding-left:85px; font-size:12px; color:#999;">（最多可上传4张照片）</p>
+            <div class="bm_con_jpg">
+                <ul>
+                    <li>
+                        <img src="images/6.png"/>
+                        <p onClick="_close()" style="color:#666;">删除</p>
+                    </li>
+                    <li>
+                        <img src="images/6.png"/>
+                        <p onClick="_close()" style="color:#666;">删除</p>
+                    </li>
+                    <li>
+                        <img src="images/6.png"/>
+                        <p onClick="_close()" style="color:#666;">删除</p>
+                    </li>
+                    <li>
+                        <img src="images/6.png"/>
+                        <p onClick="_close()" style="color:#666;">删除</p>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </dd>
+        <dd>
+            <div class="bm_con_li box-flex-box" style="padding-top:0;">
+                <p class="bm_li_tit">内容介绍:</p>
+                <p class="bm_li_con box-flex-1"><textarea rows="4" cols="20" placeholder="填写简要信息"></textarea></p>
+            </div>
+        </dd>
+    </dl>
+    <div class="bm_attention">
+        
+    </div>
+</div>
+</div>
+
+<div class="activity_button_box" style="background:none; padding:0 30px; margin-bottom:20px;">
+        <ul>
+    	<li><p class="p_btn b_3" style="background:#fa53aa; color:#fff;">确认报名</p></li>
+        </ul>
+    </div>
+
+<script type="text/javascript">
+function _close(){
+	var btn = event.srcElement,
+		par = btn.parentNode;
+	console.log(btn);
+	console.log(par);
+	par.style.display = 'none';
+	par.style.height = '0px';
+}
+</script>
+
+
+
+<style>
+.new_hd_info_box{ overflow:hidden; margin:15px; background:rgba(255,255,255,0.3); color:#111; padding:10px; padding-bottom:0; border-radius:4px;}
+.new_hd_info_box .h3_tit{ color:#ffe400;}
+.new_hd_info_box .info_body{ overflow:hidden; line-height:1.8em; margin-bottom:10px; font-size:14px;}
+.new_hd_info_box .info_body span{ font-weight:bold; font-size:12px; color:#eee}
+</style>
+<div style="height:50px;">
+<div class="btm_fixed">
+    <ul class="box-flex-box vote_btm_btn" style="background:#c06; ">
+        <li class="box-flex-1">
+            
+            <p class="vote_p_tit" style="color:white;">首页</p>
+        </li>
+        <li class="box-flex-1 ">
+            
+            <p class="vote_p_tit" style="color:white;">活动介绍</p>
+        </li>
+        <li class="box-flex-1 ">
+            
+            <p class="vote_p_tit" style="color:white;">我要报名</p>
+        </li>
+        <li class="box-flex-1">
+            
+            <p class="vote_p_tit" style="color:white;">排行榜</p>
+            
+        </li>
+        
+    </ul>
+</div>
+</div>
+
+
+
+
+</body>
+</html>

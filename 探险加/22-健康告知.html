@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>健康告知</title>
+<!-- mui.css -->
+<link rel="stylesheet" type="text/css" href="css/mui.min.css">
+<!-- iconfont -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!-- page.css -->
+<link href="css/page.css" rel="stylesheet">
+<style type="text/css">
+/* 健康告知 */
+.healthy_gaozhi{background-color: #fff;}
+.healthy_gaozhi .h_title{text-align: center;font-size: 18px;color: #333;padding: 10px;font-weight: bold;}
+.healthy_gaozhi .healthy_gaozhi_list .p_tit{color: #333;margin: 10px;}
+.healthy_gaozhi .healthy_gaozhi_list > li{margin: 10px 0;border-bottom: 1px solid #eee;}
+.healthy_gaozhi .healthy_gaozhi_list > li:last-child{border-bottom: none;}
+.healthy_gaozhi .healthy_gaozhi_list .sub_list{font-size: 12px;margin: 10px;margin-top: -10px;}
+.healthy_gaozhi .healthy_gaozhi_list .radio_check_info{margin: 10px;}
+.healthy_gaozhi .healthy_gaozhi_list .radio_check_info label{margin-left: 10px;}
+.healthy_gaozhi .healthy_gaozhi_list .radio_check_info .s_txt{margin-right: 6px;}
+.healthy_gaozhi .healthy_gaozhi_list .radio_check_info input[type=radio]{width: 20px;height: 20px;border: 1px solid #ccc;border-radius: 50%;margin-right: 4px;position: relative;}
+.healthy_gaozhi .healthy_gaozhi_list .radio_check_info input[type=radio]:checked:after{position: absolute;width: 14px;height: 14px;background-color: #07c9d2;border-radius: 50%;content: '';left: 2px;top: 2px;}
+.healthy_gaozhi .healthy_gaozhi_list .enter_info td:first-child{width: 30%;}
+.healthy_gaozhi .healthy_gaozhi_list .enter_info td{padding: 10px;border-bottom: 1px solid #eee;font-size: 12px;}
+.healthy_gaozhi .healthy_gaozhi_list .enter_info td input{margin-bottom: 0;height: 35px;padding: 10px;border: none;}
+.healthy_gaozhi_btn{height: 40px;text-align: center;line-height: 40px;font-size: 16px;color: #fff;border-radius: 4px;margin: 10px;background-color: #07c9d2;display: block;} 
+.healthy_gaozhi_btn:active{background-color: #06b8c0;color: #fff;}
+</style>
+</head>
+<body>
+<div class="healthy_gaozhi">
+	<p class="h_title">健康告知</p>
+	<ul class="healthy_gaozhi_list">
+		<li>
+			<p class="p_tit">1、最近6个月是否有新发或任何身体不适？</p>
+			<div class="radio_check_info">
+				<label><span class="s_txt">是</span><input type="radio" name="check"></label>
+				<label><span class="s_txt">否</span><input type="radio" name="check"></label>
+			</div>
+		</li>
+		<li>
+			<p class="p_tit">2、保险人或被保人是否在国外生活超过5年</p>
+			<!-- 标题下有多项子项加此标签 -->
+			<ul class="sub_list">
+				<li>（1）先天性疾病、身体或智力残疾</li>
+				<li>（2）先天性疾病、身体或智力残疾</li>
+				<li>（3）先天性疾病、身体或智力残疾</li>
+				<li>（4）先天性疾病、身体或智力残疾</li>
+			</ul>
+			<!-- <div class="radio_check_info">
+				<label><span class="s_txt">是</span><input type="radio" name="check_1" checked></label>
+				<label><span class="s_txt">否</span><input type="radio" name="check_1"></label>
+			</div> -->
+		</li>
+		<li>
+			<p class="p_tit">3、您是否存在以上任意一种情况？</p>
+			<div class="radio_check_info">
+				<label><span class="s_txt">是</span><input type="radio" name="check_3"></label>
+				<label><span class="s_txt">否</span><input type="radio" name="check_3"></label>
+			</div>
+		</li>
+		<li>
+			<p class="p_tit">4、请填写保险人的信息</p>
+			<div class="enter_info">
+				<table width="100%">
+					<tr>
+						<td>身高（cm）：</td>
+						<td><input type="number" name="" placeholder="请输入身高"></td>
+					</tr>
+					<tr>
+						<td>体重（kg）：</td>
+						<td><input type="number" name="" placeholder="请输入体重"></td>
+					</tr>
+				</table>
+			</div>
+		</li>
+	</ul>
+</div>
+<a href="javascript:;" class="healthy_gaozhi_btn">提交</a>
+
+
+<script type="text/javascript" src="js/mui.min.js"></script> 
+
+</body>
+</html>

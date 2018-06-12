@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+
+<script src="js/jquery.1.9.1.min.js"></script>
+<script src="js/TouchSlide.1.1.js"></script>
+<script src="js/jq.textSlider.js"></script>
+
+<style>
+/*文字滚动*/
+.text_auto_box{ overflow:hidden;  background:#fff; height:30px; padding:5px;position:relative; }
+.text_auto_box .text_auto{ overflow:hidden; height:30px; position:relative;}
+.text_auto_box .text_auto li{ overflow:hidden; height:30px; line-height:30px; text-overflow:ellipsis;white-space:nowrap;}
+</style>
+
+
+
+</head>
+
+<body style="background:#eee;">
+<div class="text_auto_box">
+
+    <div class="text_auto">
+        <ul>
+            <li>每次切换效果开始时执行函数</li>
+            <li>用于处理特殊情更多或创建建更处理特殊情更多</li>
+            <li>121于处理特殊情更多或创建建更</li>
+        </ul>
+    </div>
+    
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".text_auto").textSlider({line:1,speed:500,timer:2000});
+	})
+</script>
+
+</body>
+
+</html>

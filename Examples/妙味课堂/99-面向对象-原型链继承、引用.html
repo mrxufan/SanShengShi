@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Examples</title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+function Person(name,sex){
+	this.name=name;
+	this.sex=sex;
+}
+Person.prototype.showName = function(){
+	alert(this.name);
+};
+Person.prototype.showSex=function(){
+	alert(this.sex);
+};
+
+
+
+
+function Worker(name,sex,job){
+	// this—— new出来的Worker对象
+	//构造函数伪装   调用父级的构造函数——为了继承属性
+	Person.call(this,name,sex); 
+	this.job=job; //自己的属性
+}
+
+ //原型链   通过原型来继承父级的方法，子类会影响父类
+// Worker.prototype=Person.prototype; //alert(Person.prototype.showJob) Person此时也有了showJob方法，这是不希望的
+
+
+// 这种不会影响父类
+for (i in Person.prototype) {
+	Worker.prototype[i]=Person.prototype[i];
+}
+
+Worker.prototype.showJob=function(){
+	alert(this.job);
+};
+
+
+var p1=new Person('柳岩','女');
+
+var p2=new Worker('林志玲','女','明星');
+
+p1.showName();
+p1.showSex();
+
+p2.showName();
+p2.showSex();
+p2.showJob();
+
+
+
+
+
+// 引用
+
+// var arr1=[1,2,3];
+// var arr2=arr1;
+// arr2.push(4);
+// console.log(arr1+','+arr2); 
+// arr1:1,2,3,4
+// arr2:1,2,3,4
+
+// var arr1=[1,2,3];
+// var arr2=[];
+// for (i in arr1) {
+// 	arr2[i]=arr1[i];
+// }
+// arr2.push(4);
+// console.log(arr1+','+arr2); 
+// arr1:1,2,3
+// arr2:1,2,3,4
+</script>
+
+</body>
+</html>

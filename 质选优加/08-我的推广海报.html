@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>我的推广海报</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!--标准mui.css-->
+<link href="css/mui.min.css" rel="stylesheet">
+<!-- 共用样式 -->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+
+</style>
+</head>
+<body style="background-color: #fff;">
+<div class="tg_banner">
+	<ul>
+		<li>
+			<label>
+				<div class="tg_banner_info">
+					<p class="p_banner on"><img src="images/7.jpg"></p>
+					<input type="radio" checked><br>
+				</div>
+				<span class="s_haibao">生成海报</span>
+			</label>
+		</li>
+		<li>
+			<label>
+				<div class="tg_banner_info">
+					<p class="p_banner"><img src="images/7.jpg"></p>
+					<input type="radio"><br>
+				</div>
+				<span class="s_haibao">生成海报</span>
+			</label>
+		</li>
+		<li>
+			<label>
+				<div class="tg_banner_info">
+					<p class="p_banner"><img src="images/7.jpg"></p>
+					<input type="radio"><br>
+				</div>
+				<span class="s_haibao">生成海报</span>
+			</label>
+		</li>
+		<li>
+			<label>
+				<div class="tg_banner_info">
+					<p class="p_banner"><img src="images/7.jpg"></p>
+					<input type="radio"><br>
+				</div>
+				<span class="s_haibao">生成海报</span>
+			</label>
+		</li>
+		<li>
+			<label>
+				<div class="tg_banner_info">
+					<p class="p_banner"><img src="images/7.jpg"></p>
+					<input type="radio"><br>
+				</div>
+				<span class="s_haibao">生成海报</span>
+			</label>
+		</li>
+	</ul>
+</div>
+					
+
+
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.tg_banner li',this).click(function(){
+			$(this).find('.p_banner').addClass('on');
+			$(this).siblings().find('.p_banner').removeClass('on');
+			$(this).siblings().find('input').removeAttr('checked');
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>分类信息</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<style type="text/css">
+html,body{background-color: #eee;}
+[v-cloak] { display: none }
+.img_box img{width: 100%;display: block;}
+
+.msg_wrap{padding-top: 60px;}
+.nav_tit{border-bottom: 1px solid #eee;} 
+.mint-navbar .mint-tab-item.is-selected{margin-bottom: 0;}
+.nav_tit .mint-tab-item-label{font-size: 14px;}
+
+.mint-cell .mint-cell-wrapper{flex-direction: row-reverse;}
+.mint-cell-value.is-link{margin-right: 10px;padding: 10px 0;}
+.mint-cell-title{padding-right: 20px;}
+.mint-cell-value img{width: 60px;height: 60px;}
+.load_text{text-align: center;margin: 10px;color: #555;}
+</style>
+</head>
+
+<body ontouchstart>
+
+<div id="app" v-cloak>
+    <mt-navbar class="nav_tit" v-model="selected" :fixed="true">
+      <mt-tab-item v-for="(nav,index) in navArr" :id="nav.Id" :key="index" v-on:click.native="tab(index)">{{nav.name}}</mt-tab-item>
+    </mt-navbar>
+    
+    <div class="msg_wrap" class="page-infinite-list order_list msg_wrap" v-infinite-scroll="loadMore" infinite-scroll-disabled="Loading" infinite-scroll-distance="50">
+        <mt-cell v-for="(list,index) in listArr" :key="index" :title="list.title" :label="list.createTimeString" is-link>
+              <img src="images/today_youjia.jpg">
+              {{index+1}}
+        </mt-cell>
+    </div>
+    <p class="load_text">{{LoadText}}</p>
+</div>
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+new Vue({
+    el: '#app',
+    data:{
+        selected:'',
+        classId:'',
+        navArr:[],//分类
+        listArr:[],//分类列表
+        Loading:false,
+        LoadText:'加载中...',
+        allNum:'', //数据总数
+        CurrentPage:1,
+    },
+    methods: {
+        tab:function(i){
+            this.classId=this.navArr[i].Id;
+            if (i==i) {
+                this.listArr=[];
+                this.Loading=false;
+                this.CurrentPage=1;
+                this.allNum='';
+                this.LoadText='加载中...';
+                this.loadMore();
+            }
+        },
+
+        getMsg:function(){
+            // 获取对应分类
+            this.classId=5;
+            // 获取分类
+            axios.get('http://192.168.0.106/sysmanager/news/NewsClassifyList?currentPage=1&pageSize=10&cmd=getlist').then(function (response) {
+                response.data.Data.forEach(function(a){
+                    this.navArr.push(a);
+                    this.selected=this.navArr[0].Id;
+                    this.classId=this.navArr[0].Id;
+                }.bind(this));
+              }.bind(this)).catch(function (error) {
+                console.log(error);
+              }.bind(this));
+
+        },
+
+        loadMore:function(){
+            this.Loading = true;
+            axios.get('http://192.168.0.106/sysmanager/news/GetNewsByClassify',{params:{currentPage:this.CurrentPage,pageSize:10,classifyId:this.classId}}).then(function(response){
+                this.allNum=response.data.Page.TotalItem;
+                console.log(this.allNum);
+                response.data.Data.forEach(function(a){
+                    this.listArr.push(a);
+                        }.bind(this));
+                if (this.listArr.length<this.allNum) {
+                    this.LoadText='加载中...';
+                    this.CurrentPage++;
+                    this.Loading = false;
+                } else {
+                    this.LoadText='没有更多数据啦！';
+                }
+            }.bind(this)).catch(function(error){
+                console.log(error);
+            }.bind(this));
+            
+      }
+
+    },
+    mounted:function(){
+        this.getMsg();
+    }
+});
+
+
+</script>
+	
+</html>

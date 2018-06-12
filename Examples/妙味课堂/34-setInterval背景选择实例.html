@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>setInterval背景选择实例</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+#wrap{width: 600px;height: 300px;background-repeat: no-repeat;background-position: center center;background-size: cover;}
+</style>
+</head>
+<body>
+<button id="btn1">开始</button>
+<button id="btn2">停止</button>
+<div id="wrap"></div>
+
+
+
+<script type="text/javascript">
+var start=document.querySelector('#btn1');
+var stop=document.querySelector('#btn2');
+var wrap=document.querySelector('#wrap');
+var arr=['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg'];
+var num=0;
+var time='';
+start.onclick=function () {
+	clearInterval(time);//先清除定时器，不然连续点击等于每次加一个点击事件，最后停不下来
+	time=setInterval(function () {
+		wrap.style.backgroundImage = 'url('+arr[num]+')';
+		num++;
+		if (num==arr.length) {
+			num=0;
+		}
+	},1000);
+};
+stop.onclick=function () {
+	clearInterval(time);
+};
+
+
+
+
+
+// var i=0;
+// var time=null;
+// function fn() {
+// 	i++;
+// 	document.title=i;
+// 	if (i==10) {
+// 		clearInterval(time);  //清除
+// 	}
+// }
+// var time=setInterval(fn,1000); //定时器，重复执行
+// // clearInterval(time);  //清除
+
+
+
+
+
+</script>  
+</body>
+</html>

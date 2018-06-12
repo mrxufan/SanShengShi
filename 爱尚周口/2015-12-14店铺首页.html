@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+<script src="js/TouchSlide.1.1.js"></script>
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+   <!-- Swiper JS -->
+    <script src="swiper/swiper.min.js"></script>
+
+<style>
+
+
+ .swiper-container {  width: 100%; overflow:hidden; }
+.swiper-slide {	text-align: center;	background: #fff;}
+.swiper-slide img{ width:100%}
+ .swiper-container .swiper-pagination{ bottom:8px; overflow:hidden; height:8px;}
+  .swiper-container .swiper-pagination span:after{content:".";  overflow:hidden; color:rgba(0,0,0,0);}
+  .swiper-container .swiper-pagination .swiper-pagination-bullet-active{ background:#f90;}
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+
+<!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="#"><img src="images/mb_pic2/001.jpg" /></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/mb_pic2/004.jpg" /></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/mb_pic2/003.jpg" /></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/mb_pic2/002.jpg" /></a></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+ 
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+		autoplayDisableOnInteraction : false,
+		loop : true,
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+    });
+    </script>
+
+
+<style>
+.swiper-container2{ position:relative; overflow:hidden;}
+.swiper-container2 .swiper-pagination2{ bottom:8px; width:100%; height:2px; left:0; position:absolute; z-index:10; text-align:center;}
+.swiper-container2 .swiper-pagination2 span:after{content:"."; display:block; overflow:hidden; color:rgba(0,0,0,0)}
+.swiper-container2 .swiper-pagination-bullet { height:2px; border-radius:0; margin:0 3px;}
+.swiper-container2 .swiper-pagination-bullet-active{ background:#f90;}
+</style>
+
+
+<!-- Swiper -->
+    <div class="swiper-container2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="color_block_box" style="background:#fff;">
+                    <ul class="box-flex-box">
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/mlkf_more_icon/mlkf_icon_001_1.png);"></p><p class="p_txt">餐饮</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/mlkf_more_icon/mlkf_icon_002_1.png);"></p><p class="p_txt">旅游</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/mlkf_more_icon/mlkf_icon_003_1.png);"></p><p class="p_txt">娱乐</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/mlkf_more_icon/mlkf_icon_004_1.png);"></p><p class="p_txt">汽车服务</p></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                    <div class="color_block_box" style="background:#fff;">
+                        <ul class="box-flex-box">
+                            <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/mlkf_more_icon/mlkf_icon_001_1.png);"></p><p class="p_txt">餐饮</p></a></li>
+                            <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/mlkf_more_icon/mlkf_icon_002_1.png);"></p><p class="p_txt">旅游</p></a></li>
+                            <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/mlkf_more_icon/mlkf_icon_003_1.png);"></p><p class="p_txt">娱乐</p></a></li>
+                            <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/mlkf_more_icon/mlkf_icon_004_1.png);"></p><p class="p_txt">汽车服务</p></a></li>
+                        </ul>
+                    </div>
+            </div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination2"></div>
+    </div>
+
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container2', {
+       // autoplay: 3000,
+		autoplayDisableOnInteraction : false,
+		loop : true,
+		pagination: '.swiper-pagination2',
+        paginationClickable: true,
+    });
+    </script>
+
+<style>
+.page_title_box{ overflow:hidden; font-size:14px; color:#555; padding:6px 10px; font-weight:normal;}
+.page_title_box em{ display:inline-block; width:3px; height:12px; background:#f90; margin-right:10px;}
+
+.koubei_shopping_box{ overflow:hidden; padding:10px 5px; background:#fff; padding-bottom:20px;}
+.koubei_shopping_box li{ margin:0 5px;}
+.koubei_shopping_box li a{ position:relative; display:block; width: 95px; height:95px; overflow:hidden; margin:0 auto;}
+.koubei_shopping_box li .p_img{ width:95px; height:95px; margin: 0 auto; background-position: center center; background-repeat: no-repeat; background-size: cover; }
+.koubei_shopping_box li  .p_txt { position:absolute; width:100%; left:0; bottom:0; z-index:1; box-sizing:border-box; padding:0 6px; overflow:hidden; text-overflow:ellipsis;white-space:nowrap; background:rgba(2,2,2,0.5); text-align: center; color: #fff; font-size: 12px;}
+
+</style>
+
+
+<h3 class="page_title_box"><em></em>口碑商品推荐</h3>
+
+
+<style>
+.swiper-container3{ position:relative; overflow:hidden;}
+.swiper-container3 .swiper-pagination3{ bottom:7px; width:100%; height:2px; left:0; position:absolute; z-index:10; text-align:center;}
+.swiper-container2 .swiper-pagination3 span:after{content:"."; display:block; overflow:hidden; color:rgba(0,0,0,0)}
+.swiper-container3 .swiper-pagination-bullet { height:2px; border-radius:0; margin:0 3px; vertical-align:top;}
+.swiper-container3 .swiper-pagination-bullet-active{ background:#f90;}
+</style>
+
+
+<!-- Swiper -->
+    <div class="swiper-container3">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="koubei_shopping_box">
+                    <ul class="box-flex-box">
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/00.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/3.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/4.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                    <div class="koubei_shopping_box">
+                        <ul class="box-flex-box">
+                            <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/00.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                            <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/3.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                            <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/4.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                            
+                        </ul>
+                    </div>
+            </div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination3"></div>
+    </div>
+
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container3', {
+       // autoplay: 3000,
+		autoplayDisableOnInteraction : false,
+		loop : true,
+		pagination: '.swiper-pagination3',
+        paginationClickable: true,
+    });
+    </script>
+    
+
+    
+<h3 class="page_title_box"><em></em>今日好店推荐</h3>
+
+<style>
+.shopping_listinfo_box{ overflow:hidden; background:#fff;}
+.shopping_listinfo_box li{ overflow:hidden; position:relative;}
+.shopping_listinfo_box li:last-child{ margin-bottom:0;}
+.shopping_listinfo_box li:after{position: absolute;top: auto;right: auto;bottom: 0; left: 0; z-index:0; display: block; width: 100%;height: 1px; background:#ddd; content:'';  box-sizing:border-box;  -webkit-transform-origin: 50% 100%;-webkit-transform: scaleY(.5)}
+.shopping_listinfo_box li:last-child:after{ display:none;}
+.shopping_listinfo_box li:active{ background:#f4f4f4;}
+
+
+.shopping_listinfo_box li .content_info{ overflow:hidden; margin:20px 10px; height:65px; position:relative; box-sizing:border-box; padding-left:100px;}
+.shopping_listinfo_box li .content_info .p_img{ position:absolute; left:0; top:0; z-index:1; width:90px; height:65px; border-radius:4px; overflow:hidden; background-position:center center; background-repeat:no-repeat; background-size:cover;}
+
+.shopping_listinfo_box li .content_info .p_tit{font-size:15px; color:#555; font-weight:bold;  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.shopping_listinfo_box li .content_info .p_info{ line-height:2em; font-size:12px; color:#666;  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+.shopping_listinfo_box li .content_info .p_zt{ line-height:2em; font-size:12px; color:#26C300; }
+.shopping_listinfo_box li .content_info .p_zt span{ margin-right:4px;}
+
+
+
+.shopping_listinfo_box li .content_info .p_btn{ position:absolute; right:0; top:0; z-index:1; }
+.shopping_listinfo_box li .content_info .p_btn i{ color:#ccc; font-size:18px; margin-left:10px;}
+.shopping_listinfo_box li .content_info .p_btn i.on{ color:#f60}
+
+</style>
+
+<div class="shopping_listinfo_box">
+	<ul>
+    	<li>
+        	<div class="content_info">
+            	<p class="p_img" style="background-image:url(images/test_pic/00.jpg);"></p>
+                <p class="p_tit">中共周口市委组织部</p>
+                <p class="p_info">为人民服务，不怕苦、不怕累</p>
+                <p class="p_zt"><span><i class="fa fa-check-circle-o"></i>联通认证</span><span><i class="fa fa-check-circle-o"></i>诚信企业</span><span><i class="fa fa-check-circle-o"></i>工商备案</span><span><i class="fa fa-check-circle-o"></i>假一赔十</span></p>
+                <!--p class="p_btn"><i class="fa fa-map-marker" title="导航"></i><i class="fa fa-star" title="收藏"></i></p-->
+            </div>
+        </li>
+        <li>
+        	<div class="content_info">
+            	<p class="p_img" style="background-image:url(images/test_pic/00.jpg);"></p>
+                <p class="p_tit">周口市公安局</p>
+                <p class="p_info">为人民服务，不怕苦、不怕累</p>
+                <p class="p_zt"><span><i class="fa fa-check-circle-o"></i>联通认证</span><span><i class="fa fa-check-circle-o"></i>诚信企业</span><span><i class="fa fa-check-circle-o"></i>工商备案</span></p>
+                
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>有奖问答</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<!--标准mui.css-->
+<link rel="stylesheet" href="css/mui.min.css">
+<!--App自定义的css-->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style>
+.check_question_banner img{width: 100%;}
+.check_question .p_tit{color: #333;font-weight: bold;margin: 10px;font-size: 13px;}
+.check_question .p_txt{color: #333;font-size: 13px;}
+.check_question_tit{background-color: #fff;padding:10px;}
+.check_question_tit .p_tit{color: #333;font-weight: bold;}
+.check_question_tit .p_time{font-size: 12px;}
+.check_question_tit .p_time .em_time{color: #007aff;margin: 0 6px;}
+.check_question_list{background-color: #fff;margin-top: 10px;padding: 10px;}
+.check_question_list .p_radio{position: relative;padding-left: 30px;margin-top: 10px;}
+.check_question_list .p_radio:nth-child(1){margin-top: 0;}
+.check_question_list .p_radio .input_radio{position: absolute;width: 20px;height: 20px;border: 1px solid #ddd;border-radius: 50%;left: 0;top: 0;}
+.check_question_list .p_radio .input_radio:checked:after{position: absolute;content: '';width: 14px;height: 14px;background-color: #007aff;border-radius: 50%;left: 2px;top: 2px;}
+.check_question_list .p_tit{color: #333;}
+.check_question_tit .p_txt{font-size: 12px;}
+.a_login_btn{height: 40px;line-height: 40px;display: block;font-size: 15px;text-align: center;background-color: #22a2f9;color: #fff;margin: 10px;border-radius: 4px;}
+.a_login_btn:active{background-color: #1f96e7;color: #fff;}
+</style>
+</head>
+
+<body>
+	<div class="check_question_banner"><img src="images/top_banner_01.jpg"></div>
+	<div class="check_question_tit">
+		<p class="p_tit">投票，你最喜欢哪个套餐</p>
+		<p class="p_time">活动时间：<em class="em_time">2017-05-01</em>至<em class="em_time">2017-06-01</em></p>
+		<p class="p_txt">
+    	自10月1日起，国内三大运营商将正式推出“流量滚存”服务模式，当月计费的手机套餐中的剩余流量将会自动转移至下月优先使用，结转流量次月月底失效。</p>
+	</div>
+	
+	<a href="#" class="a_login_btn">开始答题</a>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.check_question_list .p_radio').click(function(){
+			$(this).siblings().find('.input_radio').removeAttr('checked');
+		});
+	});
+</script>
+</body>
+
+</html>

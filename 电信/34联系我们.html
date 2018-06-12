@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+<style type="text/css">
+
+
+.lx_top_tit_txt{ overflow:hidden; text-align:center;padding-top:30px;}
+.lx_top_tit_txt .p_1{ font-size:26px; margin-bottom:20px; color:#555; }
+.lx_top_tit_txt .p_2{ font-size:20px;  margin-bottom:20px; color:#777; }
+
+.lx_top_img_box{ overflow:hidden;}
+.lx_top_img_box img{ width:100%;}
+
+
+
+.lx_d_input_box{ overflow:hidden; padding:10px; background:#fff;}
+.lx_d_input_box li { overflow: hidden; position: relative; }
+.lx_d_input_box li:after { position: absolute; top: auto; right: auto; bottom: 0; left: 0; z-index: 0; display: block; width: 100%; height: 1px; background: #ddd; content: ''; box-sizing: border-box; -webkit-transform-origin: 50% 100%; -webkit-transform: scaleY(.5) }
+.lx_d_input_box li:last-child:after { display: none; }
+
+
+.d_input_info{ overflow:hidden; position:relative; background-color:#fff; border-radius:6px; padding:10px; margin:10px; margin-top:0;}
+.d_input_info .p_textarea{ overflow:hidden;}
+.d_input_info .p_textarea textarea{ width:100%; height:100px; font-size:15px;}
+
+
+.lx_d_btn_box { margin: 20px; overflow: hidden; }
+.lx_d_btn_box .p_btn { font-size: 16px; height: 40px; line-height: 40px; text-align: center; background: #ccc; color: #fff; border-radius: 4px; }
+.lx_d_btn_box .p_btn.b_1 { background: #22a2f9 }
+.lx_d_btn_box .p_btn.b_1:active { background: #2098ea }
+
+.lx_d_btn_box .p_btn.b_2 { background: #2e9500 }
+.lx_d_btn_box .p_btn.b_2:active { background: #2a8801 }
+
+.lx_d_line{ height:2px; overflow: hidden; position: relative; }
+.lx_d_line:after { position: absolute; top: auto; right: auto; bottom: 0; left: 0; z-index: 0; display: block; width: 100%; height: 1px; background: #ccc; content: ''; box-sizing: border-box; -webkit-transform-origin: 50% 100%; -webkit-transform: scaleY(.5) }
+
+
+.lx_liuyan_info_box{ overflow:hidden; margin:10px 0;}
+.lx_liuyan_info_box .ly_info_time{ margin:0 auto; text-align:center;}
+.lx_liuyan_info_box .ly_info_time .p_time{ display:inline-block; background-color:#c2c2c2; color:#fff; font-size:12px; line-height:100%; padding:2px 4px; border-radius:3px;}
+.lx_liuyan_info_box .ly_info_body{ background-color:#fff; border-radius:4px; margin:10px; padding:10px; overflow:hidden; }
+
+.lx_liuyan_info_box .ly_info_body .p_my{ font-size:14px;}
+
+.lx_liuyan_info_box .ly_info_body .p_line{ height:2px; overflow: hidden; position: relative; margin:6px 0;}
+.lx_liuyan_info_box .ly_info_body .p_line:after { position: absolute; top: auto; right: auto; bottom: 0; left: 0; z-index: 0; display: block; width: 100%; height: 1px; background: #ddd; content: ''; box-sizing: border-box; -webkit-transform-origin: 50% 100%; -webkit-transform: scaleY(.5) }
+
+.lx_liuyan_info_box .ly_info_body .dx_huifu_info{ overflow:hidden;}
+.lx_liuyan_info_box .ly_info_body .dx_huifu_info .dx_time{ color:#999; font-size:12px; }
+.lx_liuyan_info_box .ly_info_body .dx_huifu_info .hf_info{ font-size:14px; color:#00abfb;}
+
+
+</style>
+
+
+</head>
+
+<body ontouchstart  >
+
+
+<div class="lx_top_tit_txt"><p class="p_1">您的建议</p><p class="p_2">是我们最宝贵的财富！</p></div>
+
+<div class="lx_top_img_box"><img src="images/lianxi_img_01.jpg"></div>
+
+
+<div class="d_input_info"><p class="p_textarea"><textarea placeholder="小主，使用中有任何问题请尽量在这儿说吧！"></textarea></p></div>
+
+
+<div class="lx_d_btn_box"><p class="p_btn b_2">提交</p></div>
+
+
+<div class="lx_d_line"></div> <!--如果从未提交过留言信息，请将此线隐藏-->
+
+<div class="lx_liuyan_info_box">
+	<div class="ly_info_time"><p class="p_time">2016-02-24 18:55</p></div>
+    <div class="ly_info_body">
+    	<p class="p_my">打开微信后台连不上，无新消息通知</p>
+        <p class="p_line"></p><!--如果后台没有回复，请将此线隐藏-->
+        <div class="dx_huifu_info">
+            <p class="dx_time">2016-02-24 18:55</p>
+            <p class="hf_info">请把微信退出，稍后再试下！</p>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="lx_liuyan_info_box">
+	<div class="ly_info_time"><p class="p_time">2016-02-24 18:55</p></div>
+    <div class="ly_info_body">
+    	<p class="p_my">打开微信后台连不上，无新消息通知</p>
+        <p class="p_line"></p><!--如果后台没有回复，请将此线隐藏-->
+        <div class="dx_huifu_info">
+            <p class="dx_time">2016-02-24 18:55</p>
+            <p class="hf_info">请把微信退出，稍后再试下！</p>
+        </div>
+    </div>
+    
+</div>
+
+</body>
+
+</html>

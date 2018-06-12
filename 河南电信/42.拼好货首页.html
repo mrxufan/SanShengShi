@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>拼好货首页</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js" type="text/javascript"></script>
+<script src="js/jquery.1.9.1.min.js" type="text/javascript"></script>
+<script src="js/TouchSlide.1.1.js"></script>
+<script src="js/jq.textSlider.js"></script>
+
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+
+<style type="text/css">
+.pin_container{ width:100%; height:30px; background:#fff; margin:10px 0; overflow:hidden; border-radius:4px;}
+.pin_product{ width:100%; padding:0 10px;box-sizing:border-box;}
+.pin_container_text{ line-height:30px; padding-left:10px; padding-right:10px; position:relative; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.commodity_list_box{ width:100%; padding:0 10px; box-sizing:border-box;}
+.commodity_list:last-child{ margin-bottom:10px;}
+.dd_new01{ color:#999;}
+.out_line{ width:100%; height:6px; border:1px solid #F90; border-radius:20px; box-sizing:border-box; overflow:hidden;}
+.in_line{ width:30%; height:10px; background:#f90;}
+.price_box dd{ margin:5px 0;}
+.commodity_info .h3_tit{ margin-top:5px;}
+.commodity_list_box { background:#ebebeb;}
+.commodity_list{ border:none; position:relative;}
+.commodity_list:after{ position:absolute; content:""; border:1px solid #ccc; width:200%; height:200%; transform:scale(.5); transform-origin:0 100%; left:0; bottom:0; box-sizing:border-box; border-radius:8px; overflow:hidden;}
+
+/*文字滚动*/
+.text_auto_box{ overflow:hidden;  background:#fff; height:30px; padding:5px;position:relative; margin:10px 0 10px 0; padding-left:40px;}
+.text_auto_box i{ position:absolute; width:40px; height:40px; left:0; top:0; text-align:center; line-height:40px; color:#e23d3c; font-size:20px;}
+.text_auto_box .text_auto{ overflow:hidden; height:30px; position:relative;}
+.text_auto_box .text_auto li{ overflow:hidden; height:30px; line-height:30px; text-overflow:ellipsis;white-space:nowrap;}
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+
+
+<div class="swiper-container gg_toppic_box">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img data-src="images/test_004.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_006.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_009.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+</div>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+		autoplayDisableOnInteraction:false,
+		loop : true,
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+		preloadImages: false,//禁止强制加载所有图片
+		lazyLoading: true,//延时加载图片
+    });
+    </script>
+
+<!--<div class="pin_product">
+	<div class="pin_container">
+    	<p class="pin_container_text"><em class="fa fa-volume-up" style="font-size:18px; line-height:30px; margin-right:5px; color:#e23d3c"></em>已经有541人以50元价格获得了XX产品（轮播）</p>
+    </div>	
+</div>-->
+
+<div class="text_auto_box">
+
+    <div class="text_auto">
+        <ul>
+            <li>每次切换效果开始时执行函数每次切换效果开始时执行函数</li>
+            <li>用于处理特殊情更多或创建建更处理特殊情更多每次切换效果开始时执行函数</li>
+            <li>121于处理特殊情更多或创建建更每次切换效果开始时执行函数</li>
+        </ul>
+    </div>
+    <i class="fa fa-volume-up"></i>
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".text_auto").textSlider({line:1,speed:500,timer:3000});
+	})
+</script>
+
+<div class="nav_big_btn">
+	<ul class="box-flex-box">
+    	<li class="box-flex-1 on">最新</li>
+        <li class="box-flex-1">进度</li>
+        <li class="box-flex-1">我参与的</li>
+    </ul>
+</div>
+
+
+<div class="commodity_list_box">
+<div class="commodity_list">
+	<ul>
+    	<li>
+        	<div class="commodity_info">
+            	<p class="p_img" style="background-image:url(images/test_005.jpg)"></p>
+                <h3 class="h3_tit">99元2件加厚卫衣套餐快来抢了件加厚卫衣套餐快来抢了</h3>
+                <div class="price_box">
+                	
+                    <dd class="dd_new"><span class="sp_zp">￥568</span><i style="color:#999; text-decoration:line-through;">￥800</i><p style="float:right; color:#C00">立省323元</p> </dd>
+                    <dd class="dd_new01"><span class="sp_zp"><b style="color:#F90;">12人</b>已拼团</span><p style="float:right;">总需20人</p> </dd>
+                    <dd class="out_line">
+                    	<p class="in_line"></p>
+                    </dd>
+                    
+                </div>
+            </div>
+        </li>
+        
+    </ul>
+    
+</div>
+<div class="commodity_list">
+	<ul>
+    	<li>
+        	<div class="commodity_info">
+            	<p class="p_img" style="background-image:url(images/test_005.jpg)"></p>
+                <h3 class="h3_tit">99元2件加厚卫衣套餐快来抢了件加厚卫衣套餐快来抢了</h3>
+                <div class="price_box">
+                	
+                    <dd class="dd_new"><span class="sp_zp">￥568</span><i style="color:#999; text-decoration:line-through;">￥800</i><p style="float:right; color:#C00">立省323元</p> </dd>
+                    <dd class="dd_new01"><span class="sp_zp"><b style="color:#F90;">12人</b>已拼团</span><p style="float:right;">总需20人</p> </dd>
+                    <dd class="out_line">
+                    	<p class="in_line"></p>
+                    </dd>
+                    
+                </div>
+            </div>
+        </li>
+        
+    </ul>
+    
+</div>
+<div class="commodity_list">
+	<ul>
+    	<li>
+        	<div class="commodity_info">
+            	<p class="p_img" style="background-image:url(images/test_005.jpg)"></p>
+                <h3 class="h3_tit">99元2件加厚卫衣套餐快来抢了件加厚卫衣套餐快来抢了</h3>
+                <div class="price_box">
+                	
+                    <dd class="dd_new"><span class="sp_zp">￥568</span><i style="color:#999; text-decoration:line-through;">￥800</i><p style="float:right; color:#C00">立省323元</p> </dd>
+                    <dd class="dd_new01"><span class="sp_zp"><b style="color:#F90;">12人</b>已拼团</span><p style="float:right;">总需20人</p> </dd>
+                    <dd class="out_line">
+                    	<p class="in_line"></p>
+                    </dd>
+                    
+                </div>
+            </div>
+        </li>
+        
+    </ul>
+    
+</div>
+<div class="commodity_list">
+	<ul>
+    	<li>
+        	<div class="commodity_info">
+            	<p class="p_img" style="background-image:url(images/test_005.jpg)"></p>
+                <h3 class="h3_tit">99元2件加厚卫衣套餐快来抢了件加厚卫衣套餐快来抢了</h3>
+                <div class="price_box">
+                	
+                    <dd class="dd_new"><span class="sp_zp">￥568</span><i style="color:#999; text-decoration:line-through;">￥800</i><p style="float:right; color:#C00">立省323元</p> </dd>
+                    <dd class="dd_new01"><span class="sp_zp"><b style="color:#F90;">12人</b>已拼团</span><p style="float:right;">总需20人</p> </dd>
+                    <dd class="out_line">
+                    	<p class="in_line"></p>
+                    </dd>
+                    
+                </div>
+            </div>
+        </li>
+        
+    </ul>
+    
+</div>
+</div>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>currentStyle与getComputedStyle应用</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+#box{width: 100px;height: 100px;background-color: red;}
+</style>
+</head>
+<body>
+<button id="btn">按钮</button>   
+<div id="box" style="width: 200px;"></div>
+<script type="text/javascript">
+var Btn=document.getElementById('btn');
+var Box=document.getElementById('box');
+Btn.onclick=function () {
+	Box.style.cssText='width:350px';
+	// alert(getComputedStyle(Box).width); //获取到的是计算机计算后的样式 IE6、7、8不支持
+	// alert(Box.currentStyle.width);  //标准浏览器不兼容
+
+	// if (Box.currentStyle) {  //判断浏览器
+	// 	alert(Box.currentStyle.width);
+	// } else {
+	// 	alert(getComputedStyle(Box).width);
+	// }
+	alert(getStyle(Box,'height'));
+};
+
+// 封装成方法
+function getStyle(obj,attr) {
+	if (obj.currentStyle) {  
+		return obj.currentStyle[attr];
+	} else {
+		return getComputedStyle(obj)[attr];
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我的个人资料</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		
+		<!--App自定义的css 不要加入模板页-->
+		<link rel="stylesheet" type="text/css" href="css/yh_myself.css"/>
+		
+		
+		<style type="text/css">
+			
+			
+		</style>
+
+		
+	</head>
+	<body>
+
+		
+		<div class="mui-content ml_my_nav">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="#picture">
+						<img class="mui-media-object mui-pull-right" src="images/muwu.jpg" style="width:60px;max-width:60px;height:60px;" data-preview-src="images/shuijiao.jpg" data-preview-group="1">
+						<div class="mui-media-body">头像	</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					
+					<a href="javascript:;" id="promptBtn">
+						<div class="mui-pull-right"><span id="user_name">苹果蛋儿</span></div>
+						<div class="mui-media-body">昵称</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="mui-content ml_my_nav">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="mui-media-body">管理收货地址</div>
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+		
+		
+		<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#" onclick="alert(0)">拍照</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#">相册选取</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#picture"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+	
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.zoom.js"></script>
+	<script src="js/mui.previewimage.js"></script>
+	<script>
+		
+		mui.previewImage();
+		
+		var user_name = document.getElementById("user_name");
+		document.getElementById("promptBtn").addEventListener('tap', function(e) {
+				
+				e.detail.gesture.preventDefault(); //修复iOS 8.x平台存在的bug，使用plus.nativeUI.prompt会造成输入法闪一下又没了
+				
+				var btnArray = ['取消', '确定'];
+				
+				mui.prompt('', '请输入新的昵称', '修改昵称', btnArray, function(e) {
+										
+					if (e.index == 1 && e.value!=""){
+						var str;
+						str = e.value.replace(/\s/g, "")
+						if(str!=""){
+							user_name.innerText = str;
+							mui.toast('修改成功！');
+						}else{
+							mui.toast('请输入有效昵称！');
+							return;
+						}
+						
+					} else {
+						return;
+					}
+				})
+			});
+		
+		
+		mui('body').on('shown', '.mui-popover', function(e) {
+			//console.log('shown', e.detail.id);//detail为当前popover元素
+		});
+		mui('body').on('hidden', '.mui-popover', function(e) {
+			//console.log('hidden', e.detail.id);//detail为当前popover元素
+		});
+		
+		//关闭actionsheet
+		//mui('#' + parent.id).popover('toggle');
+		
+	</script>
+	
+</html>

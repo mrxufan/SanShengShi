@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>个人资料</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link href="css/mui.min.css" rel="stylesheet">
+
+		<link rel="stylesheet" type="text/css" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="css/page.css">
+		
+		<style>
+		.ml_my_nav .mui-table-view .mui-table-view-cell .mui-navigate-right .mui-icon{margin-right: 10px;}
+		.ml_my_nav .mui-table-view .mui-table-view-cell .ml_my_nav_file{position: absolute;width: 100%;height: 100%;left: 0;top: 0;opacity: 0;}
+		</style>
+		
+	</head>
+	<body>		
+		<div class="mui-content ml_my_nav">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="mui-icon mui-icon-person" style="color: #fe406e"></span>点击修改头像
+					</a>
+					<input type="file" class="ml_my_nav_file">
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" onclick="return true;" href="http://www.baidu.com">
+						<span class="mui-icon mui-icon-location" style="color: #09c8ff"></span>管理收货地址
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="mui-icon mui-icon-compose" style="color: #cfb500"></span>修改显示昵称
+					</a>
+				</li>
+			</ul>
+			
+		</div>
+		<div class="mui-content new_nicheng" style="background-color: #fff;margin-top: 10px;display: none;">
+			<form class="mui-input-group">
+						<div class="mui-input-row" style="height: auto;padding: 10px;">
+							<label style="width: 30%;">新的昵称</label>
+							<input type="text" style="width: 70%;border: 1px solid #ccc;border-radius: 4px;padding:0 10px;background-color: #eee;">
+						</div>
+
+						
+						<div class="mui-button-row">
+							<button type="button" class="mui-btn mui-btn-danger" style="padding: 4px 20px;"><em class="iconfont icon-baocun" style="margin-right: 10px;"></em>保存</button>
+						</div>
+			</form>
+		</div>
+	</body>
+	
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+
+		// 取消禁止a链接点击不跳转
+		// mui('body').on('tap','a',function(){document.location.href=this.href;});
+
+		$(document).ready(function() {
+			$('.ml_my_nav .mui-table-view .mui-table-view-cell:nth-child(3)').click(function(){
+				$('.new_nicheng').toggle();
+			});
+		});
+	</script>		
+</html>

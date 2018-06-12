@@ -1,0 +1,84 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>宽带专区</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<style type="text/css">
+[v-cloak] { display: none }
+.img_wrap img,.main_wrap li .icon_wrap img{width: 100%;}
+.main_wrap ul{overflow: hidden;margin: 3vw;}
+.main_wrap li{width: 50%;float: left;}
+.main_wrap li a{padding: 3vw 0;border-radius: 2vw;display: block;margin: 3vw;}
+.main_wrap li .p_tit{text-align: center;color: #fff;font-size: 5vw;line-height: 2.5em;}
+
+.bg_1{background-color: #ffd23f;}
+.bg_1:active{background-color: #f1c63c;}
+.bg_2{background-color: #8ab6ff;}
+.bg_2:active{background-color: #81abf1;}
+.bg_3{background-color: #9de18f;}
+.bg_3:active{background-color: #93d485;}
+.bg_4{background-color: #ff9867;}
+.bg_4:active{background-color: #f19061;}
+</style>
+</head>
+
+<body ontouchstart>
+<div id="app" v-cloak>
+    <div class="img_wrap">
+        <img src="images/kuandai/banner.jpg">
+    </div>
+    <div class="main_wrap">
+        <ul>
+            <li>
+                <a class="bg_1" href="http://www.baidu.com">
+                    <p class="p_tit">我的宽带</p>
+                    <div class="icon_wrap"><img src="images/kuandai/icon_01.png"></div>
+                </a>
+            </li>
+             <li>
+                <a class="bg_2" href="javascript:;">
+                    <p class="p_tit">进度查询</p>
+                    <div class="icon_wrap"><img src="images/kuandai/icon_02.png"></div>
+                </a>
+            </li>
+            <li>
+                <a class="bg_3" href="javascript:;">
+                    <p class="p_tit">自助服务</p>
+                    <div class="icon_wrap"><img src="images/kuandai/icon_03.png"></div>
+                </a>
+            </li>
+            <li>
+                <a class="bg_4" href="javascript:;">
+                    <p class="p_tit">账号绑定</p>
+                    <div class="icon_wrap"><img src="images/kuandai/icon_04.png"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+new Vue({
+    el: '#app',
+    data:{
+        
+    }
+})
+
+
+
+</script>
+	
+</html>

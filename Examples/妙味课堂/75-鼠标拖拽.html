@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Examples</title>
+<style type="text/css">
+#box{width: 100px;height: 100px;background-color: red;position: absolute;}
+#box1{width: 100px;height: 100px;background-color: green;position: absolute;}
+#box2{width: 100px;height: 100px;background-color: blue;position: absolute;}
+</style>
+
+
+</head>
+<body>
+<div id="box"></div>
+<div id="box1"></div>
+<div id="box2"></div>
+
+
+<script type="text/javascript">
+window.onload=function(){
+	Drag('box');
+	Drag('box1');
+	Drag('box2');
+};
+
+
+/*
+onmousedown:选择元素
+onmousemove:移动元素
+onmouseup:释放元素
+*/
+function Drag(id){
+	var Box=document.getElementById(id);
+	Box.onmousedown=function (ev) {
+		var ev=ev||event;
+		var disX=ev.clientX-Box.offsetLeft;  //鼠标当前位置 - Box偏移位置 = 鼠标在Box中心位置
+		var disY=ev.clientY-Box.offsetTop;
+
+		// Box 如果用Box鼠标移动的速度快了会跑出去，所以当鼠标按下去的时候给document加onmousemove事件，这样不管鼠标移动多块只要在文档内都不会跑出去
+		document.onmousemove=function (ev) {
+			var ev=ev||event;
+			Box.style.left=ev.clientX-disX+'px';
+			Box.style.top=ev.clientY-disY+'px';
+		};
+		document.onmouseup=function () {
+			document.onmousemove=null;
+		};
+	};
+
+};
+</script>
+
+
+</body>
+</html>

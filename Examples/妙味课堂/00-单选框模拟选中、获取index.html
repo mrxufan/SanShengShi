@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>单选框模拟选中、获取index</title>
+<style type="text/css">
+#wrap{overflow: hidden;}
+input[type='radio']{display: none;}
+span{padding: 8px 30px;display: inline-block;border-radius: 20px;border: 1px solid #333;float: left;margin-right: 10px;}
+input:checked+span{background-color: red;color: #fff;border-color: red;}
+</style>
+</head>
+<body>
+
+
+<div id="wrap">
+	<label>
+		<input type="radio" name="val" value="一般">
+		<span>一般</span>
+	</label>
+	<label>
+		<input type="radio" name="val" value="良好">
+		<span>良好</span>
+	</label>
+	<label>
+		<input type="radio" name="val" value="及格">
+		<span>及格</span>
+	</label>
+	<label>
+		<input type="radio" name="val" value="优秀">
+		<span>优秀</span>
+	</label>
+</div>
+<p id="num"></p>
+<p id="text"></p>
+
+
+<script type="text/javascript">
+var Input=document.querySelectorAll('#wrap label input');
+var Num=document.querySelector('#num');
+var Text=document.querySelector('#text');
+for (var i = 0; i < Input.length; i++) {
+	Input[i].index=i;
+	Input[i].onclick=function () {
+		Num.innerHTML='index:'+(this.index+1);
+		Text.innerHTML='value:'+(this.getAttribute('value'));
+	};
+}
+</script>
+</body>
+</html>

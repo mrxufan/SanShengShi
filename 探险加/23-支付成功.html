@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>支付成功</title>
+<!-- mui.css -->
+<link rel="stylesheet" type="text/css" href="css/mui.min.css">
+<!-- iconfont -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!-- page.css -->
+<link href="css/page.css" rel="stylesheet">
+<style type="text/css">
+.set_msg .icon{width: 100px;height: 100px;color: #fff;border-radius: 50%;text-align: center;line-height: 100px;margin: 30px auto;}
+.set_msg .icon.success{background-color: #09bb07;}
+.set_msg .icon.error{background-color: #f76260;}
+.set_msg .icon .mui-icon{font-size: 100px;}
+.set_msg .p_title{font-size: 22px;color: #333;text-align: center;}
+.set_msg .p_tips{margin: 20px;text-align: center;}
+.set_msg .a_btn{height: 40px;text-align: center;line-height: 40px;font-size: 16px;color: #fff;border-radius: 4px;margin: 20px;background-color: #1aad19;display: block}
+.set_msg .a_btn:active{background-color: #179b16;}
+</style>
+</head>
+<body style="background-color: #fff;">
+<div class="set_msg">
+	<div class="icon success"><i class="mui-icon mui-icon-checkmarkempty"></i></div>
+	<p class="p_title">支付成功</p>
+	<p class="p_tips">辅助信息，可根据实际需要安排可根据实际需要安排可根据实际需要安排</p>
+	<a href="javascript:;" class="a_btn">返回</a>
+</div>
+
+
+
+<script type="text/javascript" src="js/mui.min.js"></script> 
+<script type="text/javascript">
+	document.querySelector('.set_msg .a_btn').onclick=function () {
+		document.querySelector('.success').setAttribute('class', 'icon error');
+		document.querySelector('.mui-icon-checkmarkempty').setAttribute('class', 'mui-icon mui-icon-closeempty');
+		document.querySelector('.set_msg .p_title').innerHTML='支付失败';
+	};
+</script>
+</body>
+</html>

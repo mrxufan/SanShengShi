@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link href="css/gw_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+<script src="js/jquery.1.9.1.min.js"></script>
+<script src="js/iscroll-lite.min.js"></script>
+
+<style>
+
+
+</style>
+</head>
+
+<body onload="loaded()" ontouchstart>
+
+
+<div class="fenlei_class_nav_box">
+	<div class="fenlei_tag_nav">
+        <ul id="Tag_txt">
+            <li>
+            	<a href="#" class="scroll_click on" >全部</a>
+            	<a href="#" class="scroll_click" >国际</a>
+                <a href="#" class="scroll_click">国内</a>
+                <a href="#" class="scroll_click">民生</a>
+                <a href="#" class="scroll_click">科技</a>
+                <a href="#" class="scroll_click">娱乐资讯</a>
+                <a href="#" class="scroll_click">体育</a>
+                <a href="#" class="scroll_click">魅力开封</a>
+                <a href="#" class="scroll_click">轻松一刻</a>
+            </li>
+        </ul>
+    </div>
+    <p class="p_all_btn"><em class="fa fa-angle-down css_show"></em><em class="fa fa-angle-up css_hide"></em></p>
+</div>
+<div class="fenlei_class_list_all css_hide">
+	<ul>
+    	<li><a href="#">国际</a></li>
+        <li><a href="#">国内</a></li>
+        <li><a href="#">民生</a></li>
+        <li><a href="#">科技</a></li>
+        <li><a href="#">娱乐资讯</a></li>
+        <li><a href="#">体育</a></li>
+        <li><a href="#">魅力开封</a></li>
+        <li><a href="#">军事</a></li>
+        <li><a href="#">历史</a></li>
+        <li><a href="#">轻松一刻</a></li>
+        <li><a href="#">房产</a></li>
+        <li><a href="#">财经</a></li>
+        <li><a href="#">游戏</a></li>
+        <li><a href="#">彩票</a></li>
+    </ul>
+</div>
+
+<script>
+$(function(){
+	$('.fenlei_class_nav_box .p_all_btn').click(function(){
+		if($(this).find('.fa-angle-down').hasClass('css_show')){
+			$(this).find('.fa-angle-down').removeClass('css_show').addClass('css_hide');
+			$(this).find('.fa-angle-up').removeClass('css_hide').addClass('css_show');
+			$('.fenlei_class_list_all').removeClass('css_hide').addClass('css_show');
+			}else{
+				$(this).find('.fa-angle-down').removeClass('css_hide').addClass('css_show');
+				$(this).find('.fa-angle-up').removeClass('css_show').addClass('css_hide');
+				$('.fenlei_class_list_all').addClass('css_hide').removeClass('css_show');
+				}
+		})
+	})
+</script>
+
+
+<script type="text/javascript">
+var myScroll;
+function loaded () {
+	myScroll = new IScroll('#Tag_txt', { scrollX: true, scrollY: false, preventDefaultException: { className: /(^|\s)scroll_click(\s|$)/ } });	
+}
+</script>
+
+<!--新闻列表-->
+<div class="news_list_box">
+	<ul>
+        <li>
+        	<a href="#">
+            <div class="news_list_nr">
+            <p class="p_img" style="background-image:url(images/mb_pic2/640x320.jpg)"></p>
+            <p class="p_tit">蹲坑必备良品吐蹲坑必备品吐血推荐血推荐</p>
+            <p class="p_info">蹲坑必备良品吐蹲坑必蹲坑必备良品吐蹲坑必备品吐血推荐血推荐备品吐血推荐血推荐</p>
+            <p class="p_date">2014-11-15</p>
+            </div>
+            </a>
+        </li>
+        <li>
+        	<a href="#">
+            <div class="news_list_nr">
+            <!--<p class="p_img" style="background-image:url(images/mb_pic2/640X360_2.jpg)"></p>-->
+            <p class="p_tit">又是一年中秋时，你回家团圆吗？</p>
+            <p class="p_date">2014-11-15</p>
+            </div>
+            </a>
+        </li>
+        <li>
+        	<a href="#">
+            <div class="news_list_nr">
+            <p class="p_img" style="background-image:url(images/mb_pic2/640X360_3.jpg)"></p>
+            <p class="p_tit">中国男人配不上中国女人？</p>
+            <p class="p_date">2014-11-15</p>
+            </div>
+            </a>
+        </li>
+        <li>
+        	<a href="#">
+            <div class="news_list_nr">
+            <!--<p class="p_img" style="background-image:url(images/mb_pic2/640X360_4.jpg)"></p>-->
+            <p class="p_tit">今夏，要么瘦，要么死！</p>
+            <p class="p_date">2014-11-15</p>
+            </div>
+            </a>
+        </li>
+        <li>
+        	<a href="#">
+            <div class="news_list_nr">
+            <p class="p_img" style="background-image:url(images/mb_pic2/640X360.jpg)"></p>
+            <p class="p_tit">蹲坑必备良品吐蹲坑必备品吐血推荐血推荐</p>
+            <p class="p_date">2014-11-15</p>
+            </div>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!--新闻详情-->
+<div class="news_particulars_top">
+	<p class="p_tit">今夏，要么瘦，要么死！</p>
+    <p class="p_ms">英雄联盟网</p>
+    <p class="p_date">2014-11-16</p>
+</div>
+
+<div class="news_particulars_body">
+大楚正昌二十一年，出身草根的秦飞不慎被官宦千金的绣球砸中，从此扶摇直上，群芳环绕。然而西楚诸子夺嫡、燕王雄踞北疆、东吴厚积薄发、蛮夷蠢蠢欲动……乱世英雄，风云际会，谁与天下豪杰争锋？爱恨情仇，千秋家国，看秦飞只手遮天，皇图霸业谈笑中……
+<img src="images/mb_pic2/640X360_3.jpg">
+真是没想到，他不就是爱上了姐姐嘛！有必要有这么多人跳出来大叫阻止吗？也不想想他可是一个人孤苦伶仃流落异乡之后才得到佳人心的！所以他要好好捍卫他的爱情！看谁敢来阻止他？没有想到她这个打小就麻烦的弟弟居然对她说他爱她！这怎么可以？赶紧口出狠语把他吓跑，免得日后他后悔！可是她没有想到把他吓得跑出了国！ 
+<img src="images/mb_pic2/240X240_3.jpg">
+</div>
+
+
+
+</body>
+
+</html>

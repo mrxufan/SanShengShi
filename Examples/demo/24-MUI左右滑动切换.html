@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="MUI/css/mui.min.css">
+<script type="text/javascript" src="MUI/js/mui.min.js"></script>
+<title>MUI-左右滑动切换</title>
+<style type="text/css">
+.mui-content{background-color: #F1E9DC;}
+.mui-slider-indicator.mui-segmented-control{background: #FFF;}
+.mui-segmented-control.mui-scroll-wrapper .mui-control-item.mui-active{color: #fff;background-color: #78909C;}
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{border-top: none;border-bottom: none;}
+</style>
+</head>
+<body>
+<div class="mui-content">
+    <div id="slider" class="mui-slider mui-fullscreen">
+        <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+            <div class="mui-scroll">
+                <a class="mui-control-item mui-active" data-index="0">卡片</a>
+                <a class="mui-control-item" data-index="1">图表</a>
+                <a class="mui-control-item" data-index="2">其他</a>
+                <a class="mui-control-item" data-index="3">其他</a>
+                <a class="mui-control-item" data-index="4">其他</a>
+                <a class="mui-control-item" data-index="5">其他</a>
+            </div>
+        </div>
+        <div class="mui-slider-group">
+            <div class="mui-slider-item mui-control-content mui-active">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        自行脑补画面
+                    </div>
+                </div>
+            </div>
+            <div class="mui-slider-item mui-control-content">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        自行脑补画面
+                    </div>
+                </div>
+            </div>
+            <div class="mui-slider-item mui-control-content">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        自行脑补页面
+                    </div>
+                </div>
+            </div>
+            <div class="mui-slider-item mui-control-content">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        自行脑补页面
+                    </div>
+                </div>
+            </div>
+            <div class="mui-slider-item mui-control-content">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        自行脑补页面
+                    </div>
+                </div>
+            </div>
+            <div class="mui-slider-item mui-control-content">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        自行脑补页面
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+mui.init();
+mui.ready(function() {
+    mui('.mui-scroll-wrapper').scroll({
+        bounce: true,
+        indicators: true,
+        deceleration:mui.os.ios?0.003:0.0009
+    });
+    mui('.mui-scroll').on('tap','.mui-control-item:not(.mui-active)',function(){
+        mui('.mui-slider').slider().gotoItem(this.getAttribute('data-index'));
+    });
+});
+</script>   
+</body>
+</html>

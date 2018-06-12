@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>账户与安全</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!--标准mui.css-->
+<link href="css/mui.min.css" rel="stylesheet">
+<!-- 共用样式 -->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+.mui-content .mui-table-view .mui-table-view-divider{text-align: center;}
+.mui-table-view-divider:before{display: none;}
+.mui-table-view-divider{padding: 10px;}
+.mui-table-view-cell .iconfont{margin-right: 10px;}
+</style>  
+</head>
+<body>
+<div class="mui-content">
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+            <i class="iconfont icon-banshoukuai" style="color: #6fcbda"></i>
+               设置或修改登录密码
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+            <i class="iconfont icon-banshou" style="color: #fb4f4f"></i>
+                <span class="mui-badge mui-badge-danger mui-badge-inverted">仅推广员可使用</span>
+               设置或修改提现密码
+            </a>
+        </li>
+    </ul>
+</div>
+		
+
+
+<script type="text/javascript" src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		window.addEventListener('toggle', function(event) {
+			if (event.target.id === 'M_Toggle') {
+				var isActive = event.detail.isActive;
+				var table = document.querySelector('.mui-table-view');
+				var card = document.querySelector('.mui-card');
+				if (isActive) {
+					card.appendChild(table);
+					card.style.display = '';
+				} else {
+					var content = document.querySelector('.mui-content');
+					content.insertBefore(table, card);
+					card.style.display = 'none';
+				}
+			}
+		});
+	</script>
+</body>
+</html>

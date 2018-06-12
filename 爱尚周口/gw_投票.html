@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link href="css/gw_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+<script src="js/iscroll-lite.min.js"></script>
+
+<script src="js/TouchSlide.1.1.js"></script>
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<style>
+
+
+
+</style>
+</head>
+
+<body ontouchstart >
+
+<h3 class="toupiao_title">小伙伴们来投票吧~！</h3>
+
+
+<div class="toupiao_pic_box" style="background-image:url(images/mb_pic2/640x360.jpg)">
+    <div class="activity_time_pre">
+        <p class="p_time fn-left">仅剩：<span class="c_over"><em>2</em>天<em>23</em>时<em>16</em>分<em>52</em>秒</span></p>
+    </div>
+</div>
+
+
+<div class="toupiao_nr_text">
+    <p class="p_tit_bar"><span>活动说明</span></p>
+    <p class="p_nr">如果右侧只有一个操作图标，则赶紧送礼物祝她生日快乐吧赶紧送礼物祝她生日快乐吧赶紧送礼物祝她生日快乐吧赶紧送礼物祝她生日快乐吧赶紧送礼物祝她生日快乐吧赶紧送礼物祝她生日快乐吧不添加</p>
+</div>
+
+
+
+<div class="survey_list">
+    <ul>
+        <li>
+            <div class="sur_div sur_div_tp">
+            	<p class="p_img"><img src="images/mb_pic2/640x360.jpg"></p>
+                <p class="p_tit">绿色的房绿色的房间绿色的房间绿色的房间绿色的房间绿色的房间间</p>
+                <p class="p_xz p_xz_tp">
+                    <span><label class="checkbox_check"><em><input type="checkbox" /></em></label></span>
+                </p>
+            </div>
+        </li>
+        
+        <li>
+            <div class="sur_div sur_div_tp">
+            	<p class="p_img"><img src="images/mb_pic2/640x360.jpg"></p>
+                <p class="p_tit">红色的房间</p>
+                <p class="p_xz p_xz_tp">
+                    <span><label class="checkbox_check"><em><input type="radio" /></em></label></span>
+                </p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+<div class="button_box box-flex-box"><p class=" box-flex-1 p_btn b_1">确认投票</p><p style="width:20px;"></p><p class=" box-flex-1 p_btn b_3">查看投票</p></div>
+
+<script>
+$.fn.study_vote= function(options,totle){
+	var settings=options;
+	if(totle!=null)
+	{
+		if(isNaN(totle))
+		{
+			alert('参数错误');
+			return;
+		}
+	}
+	if(typeof(settings)!='object')
+	{
+		alert('参数错误');
+		return;
+	}
+	var container = jQuery(this);
+	container.html('<dl id="studyvote"></dl>');
+	var study_voteCount=0;
+	if(totle==null||totle=='')
+	{//单项投票
+		for(i=0;i<settings.length;i++)
+		{
+			study_voteCount += parseInt(settings[i].data);
+		}
+	}
+	else
+	{//多项投票
+		study_voteCount = parseInt(totle);
+	}
+	var study_votestr="";
+		for(i=0;i<settings.length;i++)
+		{
+			var studyplay_present=settings[i].data/study_voteCount*100;
+			if(parseInt(studyplay_present)!=studyplay_present)
+			{
+				studyplay_present=studyplay_present.toFixed(2);
+			}
+			study_votestr +='<dd class="dd">'+
+			'<div class="tit_box">'+
+				'<div class="name_pic fl" style="background-image:url('+settings[i].image+')"></div>'+
+				'<div class="name_title">'+settings[i].name+'</div>'+
+			'</div>'+
+			'<div class="outbar">'+
+				'<div class="inbar" style="width:'+studyplay_present+'%;background:'+settings[i].color+';"></div>'+
+			'</div>'+
+			'<div class="bfb_txt fl">'+studyplay_present+'%</div>'+
+			'<span class="ps_txt fl">['+settings[i].data+']</span>'+
+			'</dd>';
+		}
+	container.find('#studyvote').html(study_votestr)
+	}
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	   $("#TouPiao_list").study_vote([
+			{"image":"images/mb_pic2/160x120_2.jpg","name":"好评","data":"30","color":"#39c"},
+			{"image":"images/mb_pic2/160x120_3.jpg","name":"中评","data":"15","color":"#f00"},
+			{"image":"images/mb_pic2/160x120_4.jpg","name":"差评","data":"50","color":"#00a20b"},
+			{"image":"images/mb_pic2/160x120_5.jpg","name":"你你好吗你好吗你好吗你好吗你好吗你好吗你好吗好吗","data":"2","color":"#000"},
+			{"image":"images/mb_pic2/160x120_6.jpg","name":"好评","data":"14","color":"#c09"}
+		]);
+	   });	
+</script>
+
+
+<div class="toupiao_ck_box">
+    <div id="TouPiao_list" >
+    
+    </div>
+</div>
+
+
+<div class="button_box"><p class="p_btn b_3">返回</p></div>
+
+</body>
+
+</html>

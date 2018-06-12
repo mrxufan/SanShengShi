@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>setInterval运动</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+#box{width: 100px;height: 100px;background-color: red;position: absolute;left: 0;top: 50px;}
+</style>
+</head>
+<body>
+<button id="btn" onclick="startMove('box')">开始</button>    
+<div id="box"></div>
+<script type="text/javascript">
+var timer='';
+function startMove(id) {
+	var Box=document.getElementById(id);
+	clearInterval(timer); //先清除定时器，否则每次点击都会加一个定时器
+	timer=setInterval(function () {
+		if (Box.offsetLeft>=300) {  //判断自身的位置
+			clearInterval(timer);
+		} else {
+			Box.style.left=Box.offsetLeft+1+'px';
+		}
+	},20);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<link href="css/public
+.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.js"></script>
+<title>High卡-弹窗</title>
+<style>
+/*bg_img*/
+body{ background:url(images/04-active_repeat.png) repeat center ; background-size:contain;}
+.bg_img{ width:100%; height:100%; position:relative; left:0; top:0;}
+.bg_img img{ width:100%;}
+.bg_img .p_text{ position:absolute; z-index:2; text-align:center; top:37%; width:100%; font-size:12px;}
+.bg_img .p_text .p_2{ text-align:center;color:#cd1a47; font-weight:bold;}
+.bg_img .btn_box{ position:absolute; top:64%; width:100%; margin:0 auto;}
+.bg_img .btn_box ul{ padding:0 20px;}
+.bg_img .btn_box li{ padding-left:10px; padding-right:10px;}
+.bg_img .btn_box li:last-child{ padding-left:0;}
+.bg_img .btn_box .p_1{ text-align:center; color:#fff; font-size:16px;  line-height:4em;}
+.bg_img .btn_box .p_1 b{ font-weight:bold;}
+.bg_img .btn_box .p_2{ text-align:center; color:#231815;font-size:12px; padding:0 10px;}
+.bg_img .btn_box .p_2 a{ color:#231815; text-decoration:underline; }
+.bg_img .btn_box .p_2 em{ color:#fce703;}
+/*bg_box*/
+.bg_box{ width:100%; height:100%; background:rgba(0,0,0,.5); z-index:100; position:fixed; left:0; top:0;display: flex;align-items: center;justify-content: center;}
+.contain_box{ background:#fff; border-radius:5px; overflow:hidden; padding-top:10px; margin:0 30px;}
+.contain_box .p_tit{ padding:20px 30px;}
+.contain_box .p_tit img{ width:100%;}
+.contain_box .p_text{ color:#41210f; font-size:13px; padding:0 10px;}
+.contain_box .p_text:last-child{ text-align:center;}
+.contain_box .btm_btn{ height:40px; background:#0095df; color:#fff; font-size:16px; text-align:center; line-height:40px; border-radius:0 0 4px 4px; margin-top:20px;}
+.contain_box .btm_btn:active{ background:#0279b8;}
+
+.btn_box li:active{ opacity:.9}
+</style>
+</head>
+
+<body ontouchstart>
+<div class="bg_img"><img src="images/01-active_bg (2).png">
+	<div class="p_text">
+    	
+        <p class="p_2">天翼30元超值High卡，每月1G流量、30元话费，想要吗？<br>快来玩游戏，抢金币得积分，排名前517名就可以获得。</p>
+    </div>
+    <div class="btn_box">
+    	<ul class="box-flex-box">
+        	<li class="box-flex-1">
+            	<a href="#"><img src="images/02-active_btn.png"></a>
+          </li>
+          <li class="box-flex-1">
+          	<a href="#"><img src="images/03-active_btn.png"></a>
+          </li>
+      </ul>
+        <p class="p_1">目前<b>100</b>人在玩游戏，咱也hi起来！</p>
+        <p class="p_2"><em>推广</em> 有一种卡每月50元，包含2G流量、50元话费。购买请点击下方链接哦！<br><a href="#">中国电信河南公司网上营业厅</a>为您服务</p>
+    </div>
+   
+</div>
+
+<div class="bg_box">
+      <div class="contain_box">
+              <p class="p_tit"><img src="images/05-active_text.png"></p>
+              <p class="p_text">1、将活动页面发送给微信好友或朋友圈，一个好友点开，100M流量立即送到。</p>
+              <p class="p_text">2、流量赠送需微信关注“河南电信”，并已经绑定手机号。</p>
+              <p class="p_text" style="margin:10px 0;">想要看到游戏排行榜有您朋友的微信号吗？一起来PK吧，豪礼等您拿！</p>
+              <p class="p_text" style="text-align:center; font-size:12px; color:#231815;">温馨提示：无线宽带套餐、流量时长型套餐、free（福卡）用户无法参与送流量活动。</p>
+              
+              <a href="#"><p class="btm_btn">我知道了</p></a>
+      </div>
+</div>
+<script>
+$(".bg_box").hide()
+$(".btn_box li:first-child a").click(
+	function(){
+		$(".bg_box").show()
+		}
+)
+$(".bg_box .btm_btn").click(
+	function(){
+		$(".bg_box").hide()
+		}
+)
+
+</script>
+</body>
+</html>

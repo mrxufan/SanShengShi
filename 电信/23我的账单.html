@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+<style type="text/css">
+
+</style>
+
+
+</head>
+
+<body ontouchstart  style="background:#fff;" >
+
+<div class="bill_info_box">
+<h3 class="h3_phone">189 3743 6688</h3>
+<p class="p_time">话费截止时间：2015年11月30日</p>
+
+</div>
+<div class="bill_info_line"><em></em></div>
+
+<div class="my_bill_zs"><p class="p_1">12月总额</p><p class="p_2">￥29.56</p></div>
+
+
+
+<!-- Swiper -->
+    <div class="swiper-container my_bill">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="graph_box"><p class="p_line" style="height:100%"><span></span><em>1000.00</em><b></b></p></div><div class="bill_date">07月</div></div>
+            <div class="swiper-slide"><div class="graph_box"><p class="p_line" style="height:80%"><span></span><em>800.00</em><b></b></p></div><div class="bill_date">08月</div></div>
+            <div class="swiper-slide"><div class="graph_box"><p class="p_line" style="height:40%"><span></span><em>10.00</em><b></b></p></div><div class="bill_date">09月</div></div>
+            <div class="swiper-slide"><div class="graph_box"><p class="p_line" style="height:6%"><span></span><em>0.00</em><b></b></p></div><div class="bill_date">10月</div></div>
+            <div class="swiper-slide"><div class="graph_box"><p class="p_line" style="height:6%"><span></span><em>0.00</em><b></b></p></div><div class="bill_date">11月</div></div>
+            <div class="swiper-slide"><div class="graph_box"><p class="p_line" style="height:70%"><span></span><em>700.00</em><b></b></p></div><div class="bill_date">12月</div></div>
+
+        </div>
+   		<div class="my_bill_bottom_line"></div>
+    </div>
+
+     <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+		initialSlide :5,//初始化显示第6个
+        slidesPerView: 4,//一行显示4列
+		touchRatio : 0.5,
+		freeMode: true,
+    });
+    </script>
+
+
+
+<div class="activity_button_box">
+	<ul>
+    	<li><p class="p_btn b_1">查看往年帐单</p></li>
+    </ul>
+</div>
+
+
+</body>
+
+</html>

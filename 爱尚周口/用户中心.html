@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+<script src="js/TouchSlide.1.1.js"></script>
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+<style>
+
+.zk_uc_top_box{ overflow:hidden; margin:0 auto; height:110px;  position:relative; background-repeat:no-repeat; background-position:center center; background-size:cover;}
+.zk_uc_top_box .p_img{ width:60px; height:60px; position:absolute; top:20px; left:20px; z-index:1;  background-repeat:no-repeat; background-position:center center; background-size:cover; border-radius:50px;  border:4px solid rgba(255,255,255,0.6); background-origin:border-box;}
+.zk_uc_top_box .p_img img{ width:100%;}
+
+.zk_uc_top_box .p_name{ font-size:15px; color:#111; position:absolute; top:30px; left:100px; z-index:1;}
+.zk_uc_top_box .p_phone{ color:#666; position:absolute; top:60px; left:100px; z-index:1; font-size:12px;}
+
+.zk_uc_top_box .p_jf{ position:absolute; top:34px; right:20px; z-index:1; text-align:center;}
+.zk_uc_top_box .p_jf .sp_01{ font-size:18px; color:#0CF}
+.zk_uc_top_box .p_jf .sp_02{ font-size:12px; color:#666;}
+.zk_uc_top_box .p_jf .sp_02 em{ font-size:15px; color:#f66;}
+
+.zk_uc_btn_01{ background:#fff; overflow:hidden;border-bottom:1px solid #eee;}
+
+.zk_uc_btn_01 li{ height:40px; line-height:40px; text-align:center; border-right:1px solid #eee;}
+.zk_uc_btn_01 li:last-child{ border-right:0;}
+.zk_uc_btn_01 li a{ display:block; height:40px;}
+.zk_uc_btn_01 li a:active{ background:#f1f1f1;}
+.zk_uc_btn_01 i{ font-size:16px; margin-right:10px;}
+.zk_uc_btn_01 i.c_1{ color:#3CF}
+.zk_uc_btn_01 i.c_2{ color:#FC6}
+.zk_uc_btn_01 em{ color:#f66; font-weight:bold;}
+
+
+.zk_uc_btn_02{ overflow:hidden; margin:10px auto; background:#fff;}
+.zk_uc_btn_02 .p_title{ height:30px; line-height:30px; padding:0 20px; font-size:14px; border-bottom:1px solid #eee;}
+.zk_uc_btn_02 .btn_box{ overflow:hidden; text-align:center;}
+.zk_uc_btn_02 .btn_box li{ border-right:1px solid #eee;}
+.zk_uc_btn_02 .btn_box li:last-child{ border-right:0;}
+.zk_uc_btn_02 .btn_box li a{ display:block; padding:8px 0;}
+.zk_uc_btn_02 .btn_box li a:active{ background:#f1f1f1;}
+.zk_uc_btn_02 .btn_box li .p_tb{ font-size:16px;}
+.zk_uc_btn_02 .btn_box li .p_tb i{ position:relative; color:#666;}
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz{ width:14px; height:14px; display:inline-block; position:absolute; top:-5px; right:-10px; z-index:1; background-size:100%; background-position:center center; background-repeat:no-repeat; border-radius:50px;}
+.zk_uc_btn_02 .btn_box li .p_zi{ font-size:12px; margin-top:4px; color:#999;}
+
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz.numb_0{background-image:url(images/uc_numb/numb_0.png)}
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz.numb_1{background-image:url(images/uc_numb/numb_1.png)}
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz.numb_2{background-image:url(images/uc_numb/numb_2.png)}
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz.numb_3{background-image:url(images/uc_numb/numb_3.png)}
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz.numb_4{background-image:url(images/uc_numb/numb_4.png)}
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz.numb_5{background-image:url(images/uc_numb/numb_5.png)}
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz.numb_6{background-image:url(images/uc_numb/numb_6.png)}
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz.numb_7{background-image:url(images/uc_numb/numb_7.png)}
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz.numb_8{background-image:url(images/uc_numb/numb_8.png)}
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz.numb_9{background-image:url(images/uc_numb/numb_9.png)}
+.zk_uc_btn_02 .btn_box li .p_tb .em_sz.numb_10{background-image:url(images/uc_numb/numb_9_.png)}
+
+.user_btn_list a{ padding-left:30px; position:relative;}
+.user_btn_list a i{ width:24px; height:24px; border-radius:50%; position:absolute; left:0; top:10px; text-align:center; line-height:24px; color:#fff;}
+</style>
+
+
+
+</head>
+
+<body ontouchstart >
+
+
+<div class="zk_uc_top_box" style="background-image:url(images/usercenter_bg.jpg)">
+	<p class="p_img" style="background-image:url(images/u_icon2.png)"></p>
+    <p class="p_name">苹果蛋儿</p>
+    <p class="p_phone">13526873881</p>
+    
+    <p class="p_jf"><span class="sp_01"><i class="fa fa-pencil"></i><i class="fa fa-smile-o hidden"></i></span>&nbsp;<span class="sp_02"><em>20</em></span></p>
+    
+</div>
+
+<div class="zk_uc_btn_01">
+	<ul class="box-flex-box">
+    	<li class="box-flex-1"><a href="#"><i class="fa fa-money c_1"></i>余额：<em>300</em></a></li>
+        <li class="box-flex-1"><a href="#"><i class="fa fa-star c_2"></i>我的收藏</a></li>
+    </ul>
+</div>
+
+
+<div class="zk_uc_btn_02">
+	<p class="p_title">我的优惠券</p>
+    <div class="btn_box">
+    	<ul class="box-flex-box">
+        	<li class="box-flex-1"><a href="#"><p class="p_tb"><i class="fa fa-laptop"><em class="em_sz numb_9"></em></i></p><p class="p_zi">可使用</p></a></li>
+            <li class="box-flex-1"><a href="#"><p class="p_tb"><i class="fa fa-credit-card"><em class="em_sz numb_9"></em></i></p><p class="p_zi">未付款</p></a></li>
+            <li class="box-flex-1"><a href="#"><p class="p_tb"><i class="fa fa-check-square-o"><em class="em_sz numb_9"></em></i></p><p class="p_zi">已完成</p></a></li>
+            <li class="box-flex-1"><a href="#"><p class="p_tb"><i class="fa fa-minus-square-o"><em class="em_sz numb_10"></em></i></p><p class="p_zi">已取消</p></a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="zk_uc_btn_02">
+	<p class="p_title">我的商品</p>
+    <div class="btn_box">
+    	<ul class="box-flex-box">
+        	<li class="box-flex-1"><a href="#"><p class="p_tb"><i class="fa fa-credit-card"><em class="em_sz numb_5"></em></i></p><p class="p_zi">未付款</p></a></li>
+            <li class="box-flex-1"><a href="#"><p class="p_tb"><i class="fa fa-check-square-o"><em class="em_sz numb_10"></em></i></p><p class="p_zi">已完成</p></a></li>
+            <li class="box-flex-1"><a href="#"><p class="p_tb"><i class="fa fa-minus-square-o"><em class="em_sz numb_0"></em></i></p><p class="p_zi">已取消</p></a></li>
+        </ul>
+    </div>
+</div>
+
+<!--
+
+<div class="info_top_box" style="display:none;">
+	<p class="p_bjimg" style="background-image:url(images/usercenter_bg2.jpg)"></p>
+	<p class="p_img" style="background-image:url(images/u_icon2.png)"></p>
+    <p class="p_title text-overflow" style="margin-top:10px;">苹果蛋儿</p>
+    <p class="p_info">13526873881</p>
+</div>
+
+<div class="user_sign_box" style="display:none;">
+    <p class="fn-left p_1">积分：<span>200</span></p>
+    <p class="fn-right p_2 "><em class="icon-pencil"></em>签到</p>
+    <p class="fn-right p_2 c_1 hidden"><em class="icon-smile"></em>已签到</p>
+</div>
+
+-->
+<div class="user_btn_list">
+    <ul>
+    	<li>
+            <a href="#">
+            <p class="p_txt">参与活动</p>
+            <p class="fa fa-angle-right p_ico_1"></p>
+            <i class="fa fa-heart-o" style="background:#f79f6d"></i>
+            </a>
+        </li>
+        
+        <li>
+            <a href="#">
+            <p class="p_txt">我的发现</p>
+            <p class="fa fa-angle-right p_ico_1"></p>
+            <i class="fa fa-camera-retro" style="background:#43d8f8;"></i>
+            </a>
+        </li>
+        
+        <li>
+            <a href="#">
+            <p class="p_txt">我要合作<span class="fn-right" style="margin-right:26px; color:#f25246; font-size:12px;">轻松开店，大吉大利</span></p>
+            <p class="fa fa-angle-right p_ico_1"></p>
+            <i class="fa fa-briefcase" style="background:#8ed869;"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <p class="p_txt">积分商城</p>
+            <p class="fa fa-angle-right p_ico_1"></p>
+            <i class="fa fa-credit-card" style="background:#fa8890"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="user_center_btn"><a href="#">退出登录</a></div>
+
+
+
+</body>
+
+</html>

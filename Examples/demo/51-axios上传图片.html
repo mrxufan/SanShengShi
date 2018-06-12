@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>axios上传图片</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+<div id="app1">
+	<!-- 单张上传 -->
+	<input  name="file" type="file" accept="image/png,image/gif,image/jpeg" @change="update"/>
+	<img :src="imgSrc">
+</div>
+<div id="app2">
+	<!-- 多张上传 -->
+	<input  name="file" type="file" accept="image/png,image/gif,image/jpeg" @change="update"/>
+	<img src="">
+</div>
+
+<script type="text/javascript" src="js/vue.js"></script>   
+<script type="text/javascript" src="js/axios.min.js"></script>
+<script type="text/javascript">
+var vm1 = new Vue({
+	el: "#app1",
+	data:{
+		imgSrc:''
+	},
+	methods:{
+		update:function (e) {   // 上传照片
+		      let file = e.target.files[0];
+		      let param = new FormData()  // 创建form对象
+		      param.append('file', file, file.name)  // 通过append向form对象添加数据
+		      // console.log(param.get('file')) // FormData私有类对象，访问不到，可以通过get判断值是否传进去
+		      console.log(e.target.files[0])
+		    axios.post('http://www.cnnmo.com/wuxing/sysmanager/common/UpImage2', param, {headers: {'Content-Type': 'multipart/form-data'}})
+		        .then(response => {
+		          console.log(response)
+		          if (response.data.code==0) {
+		          	this.imgSrc=response.data.data.src
+		          }
+		        });
+		    }
+	}
+})
+
+var vm2 = new Vue({
+
+	el: "#app2",
+	data:{
+		srcArr:[]
+	},
+	methods:{
+		update:function (e) {   // 上传照片
+		      let file = e.target.files[0];
+		      let param = new FormData()  // 创建form对象
+		      param.append('file', file, file.name)  // 通过append向form对象添加数据
+		      // console.log(param.get('file')) // FormData私有类对象，访问不到，可以通过get判断值是否传进去
+		      console.log(e.target.files[0])
+		    axios.post('http://47.98.111.73/common/post', param, {headers: {'Content-Type': 'multipart/form-data'}})
+		        .then(response => {
+		          console.log(response)
+		          
+		        });
+		    }
+	}
+
+})
+</script>
+</body>
+</html>

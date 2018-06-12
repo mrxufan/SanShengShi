@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>获取系统时间</title>
+</head>
+<body>
+<h3 id="p_time"></h3>
+<script>
+    function showTime() {
+            function fnNum(i) {
+                if (i < 10) {
+                    i = `0${i}`
+                } else {
+                    i = `${i}`
+                }
+                return i;
+            }
+            function showDate() {
+                var oTime = document.querySelector('#p_time');
+                var myDate = new Date();
+                var oYear = myDate.getFullYear();
+                var oMonth = myDate.getMonth() + 1;
+                var oDay = myDate.getDate();
+                var iWeek = myDate.getDay();
+                var oWeek = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+                var oHour = myDate.getHours();
+                var oMin = myDate.getMinutes();
+                var oSec = myDate.getSeconds();
+                oTime.innerHTML = `${oYear}年 ${oMonth}月${oDay}日 ${oWeek[iWeek]} ${fnNum(oHour)}:${fnNum(oMin)}:${fnNum(oSec)}`
+            }
+            showDate();
+            setInterval(showDate, 1000);
+        }
+        showTime();
+</script>
+</body>
+</html>

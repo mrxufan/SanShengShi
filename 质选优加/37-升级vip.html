@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>升级vip会员</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="css/page.css">
+		<style>
+		.shengji_vip .vip_list .p_tit{color: #333;}
+		.shengji_vip .vip_list .p_btm{font-size: 12px;}
+		.shengji_vip .vip_list input[type=radio]{top: 15px;}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content shengji_vip">
+			<ul class="mui-table-view" style="margin-top: 0;">
+				<li class="mui-table-view-cell mui-media" style="margin-bottom: 10px;">
+					<a href="javascript:;" style="margin: -11px -20px;">
+						<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg" style="min-width: 60px;height: 60px;">
+						<div class="mui-media-body" style="margin-top: 10px;">
+							<p class="p_tit">你还不是VIP用户</p>
+							<p class='mui-ellipsis'>升级vip会员享受优惠</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view vip_list">
+					<li class="mui-table-view-cell mui-radio mui-left">
+						<input name="radio" type="radio" checked>
+						<p class="p_tit">会员一</p>
+						<p class="p_btm">会员说明</p>
+						<span class="mui-badge mui-badge-inverted">￥14</span>
+					</li>
+					<li class="mui-table-view-cell mui-radio mui-left">
+						<input name="radio" type="radio">
+						<p class="p_tit">会员一</p>
+						<p class="p_btm">会员说明</p>
+						<span class="mui-badge mui-badge-inverted">￥14</span>
+					</li>
+					<li class="mui-table-view-cell mui-radio mui-left">
+						<input name="radio" type="radio">
+						<p class="p_tit">会员一</p>
+						<p class="p_btm">会员说明</p>
+						<span class="mui-badge mui-badge-inverted">￥14</span>
+					</li>
+			</ul>
+			<div class="pay_btn_box">
+				<p class="p_price">总计：<em class="em_price">￥100</em></p>
+				<a href="javascript:;" class="a_btn" id="sure_pay">确认支付</a>
+			</div>
+		</div>
+		<!-- 支付方式弹层 -->
+<div class="pay_tan" style="display: none;">
+	<div class="pay_tan_info">
+		<p class="p_pay"><i class="iconfont icon-chahao"></i>付款</p>
+		<p class="p_time">还剩<em>00</em>:<em>30</em>:<em>30</em>自动关闭订单</p>
+		<div class="pay_list">
+			<ul>
+				<li>
+					<a href="#">
+						<label>
+							<p class="p_tit">推荐使用</p>
+							<div class="choice_bank">
+								<input type="radio" checked><i class="iconfont icon-yinxingqia" style="color: #666666;"></i>银行卡支付<em class="iconfont icon-youbian"></em>
+							</div>
+						</label>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<label>
+							<p class="p_tit">其他支付方式</p>
+							<div class="choice_bank">
+								<input type="radio"><i class="iconfont icon-weixin" style="color: #0ecd1b;"></i>微信支付<em class="iconfont icon-youbian"></em>
+							</div>
+						</label>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<label>
+							<p class="p_tit" style="visibility: hidden;">推荐使用</p>
+							<div class="choice_bank">
+								<input type="radio"><i class="iconfont icon-zhifubao" style="color: #00aaee;"></i>支付宝支付<em class="iconfont icon-youbian"></em>
+							</div>
+						</label>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="price_box">
+			<p class="p_price">支付：<em class="em_price">￥100</em></p>
+			<a href="#" class="a_pay">去付款</a>
+		</div>
+	</div>
+</div>	
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.pay_tan .pay_tan_info li',this).click(function(){
+			$(this).siblings().find('input').removeAttr('checked');
+		});
+		// 调取支付弹层
+		$('#sure_pay').click(function(){
+			$('.pay_tan').show();
+		});
+		$('.pay_tan_info .p_pay i').click(function(){
+			$('.pay_tan').hide();
+		});
+	});
+
+</script>
+<script>
+	mui.init({
+		swipeBack:true //启用右滑关闭功能
+	});
+</script>
+</body>
+
+</html>

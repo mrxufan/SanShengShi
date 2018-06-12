@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>参选人详情</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link href="css/page_style.css" rel="stylesheet" type="text/css">
+<style>
+/*投票-列表页面*/
+.vote_djs{ padding:5px 10px; color:#fff; width:100%; position:absolute; left:0; bottom:0; background-color:rgba(0,0,0,0.4); box-sizing:border-box;}
+.vote_djs p span{ margin:0px 3px; font-size:15px; color:#fff;}
+.vote_djs p i{ margin-right:5px; font-size:15px;}
+
+.vote_rank_new{ overflow:hidden; margin:10px; margin-top:10px;}
+.vote_rank_new li{  height:40px; line-height:40px; background-image:url(images/nav_info_01.png); background-repeat:no-repeat; background-position:center center; background-size:100% 100%;}
+.vote_rank_new li:last-child{ margin-right:0;}
+.vote_rank_new li .vote_p_tit{text-align:center;  font-size:12px;  overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.vote_rank_new li .vote_p_tit em{ font-size:14px; font-weight:bold;}
+
+
+
+.search_box{ margin:0 10px; overflow:hidden;}
+.search_box  .p_search_nr{ position:relative; padding-right:60px; height:34px;}
+.search_box  .p_search_nr input{ width:100%; height:34px; background:#ffdcfb; box-sizing:border-box; padding:0 5px;}
+.search_box  .p_search_nr .sp_btn{ position:absolute; top:0; right:0; z-index:1; width:80px; height:34px; display:inline-block; line-height:34px; overflow:hidden; text-align:center; background:#C0C; color:#fff;}
+
+
+
+.vote_list_box{ overflow:hidden; margin:10px 5px;}
+.vote_list_box li{ width:50%; float:left;box-sizing:border-box; margin-bottom:10px;}
+
+.vote_list_box li .photo_body{ overflow:hidden; background:#fff; margin:0 5px; overflow:hidden; padding:6px;}
+.vote_list_box li .photo_body .p_img{ overflow:hidden; min-width:140px; min-height:203px; margin:0 auto; margin-bottom:4px;}
+.vote_list_box li .photo_body .p_img img{ width:100%;}
+
+.vote_list_box li .photo_body .p_info_01{ overflow:hidden; border-bottom:1px solid #eee; padding-bottom:4px; margin-bottom:4px;}
+
+.vote_list_box li .photo_body .p_info_02{ overflow:hidden;}
+.vote_list_box li .photo_body .p_info_02 .s_name{ font-size:16px; line-height:30px;}
+.vote_list_box li .photo_body .p_info_02 .s_btn{ display:inline-block; height:30px; line-height:30px; text-align:center; width:60px; background:#f90; color:#fff;}
+.vote_list_box li .photo_body .p_info_02 .s_btn:active{ background:#f09001;}
+
+.vote_btm_btn{ background:#eee; }
+.vote_btm_btn li{  border-right:1px solid white;  line-height:50px; height:50px;}
+.vote_btm_btn li:active{ background:#f1f1f1;}
+.vote_btm_btn li p{ color:#444; font-size:15px; font-weight:bold; text-align:center;}
+.vote_btm_btn li:last-child{ border:none; position:relative;}
+.btm_fixed .box-flex-1:active{ background:#C36}
+.vote_rank_new .box-flex-1{ background:#c06; margin-right:10px; color:white; border-radius:4px; box-sizing:border-box; padding:0 10px;}
+.search_box .sp_btn{ border-bottom-right-radius:4px; border-top-right-radius:4px;}
+.xq_container{  box-sizing:border-box; margin-top:10px;}
+.xq_text{ padding:10px;}
+.xs_introduce{ font-size:16px; margin:10px 0;}
+.xq_container_pic{ padding:10px;}
+.tou_btn{ width:80%; height:40px; font-size:18 px;background:#fa53aa; margin:auto; color:white; font-weight:bold; text-align:center; line-height:40px; border-radius:4px; margin-bottom:10px;}
+</style>
+</head>
+<body ontouchstart style="background:#f2f2f2; ">
+
+
+
+
+<div class="xq_container">
+	<p class="xq_text"><em style="font-size:18px; color:#c06; margin-right:5px; font-weight:bold;">刘文</em>130号</p>
+</div>
+<div class="vote_rank_new">
+    <ul class="box-flex-box">
+        <li class="box-flex-1"><p class="vote_p_tit">参选人:<em>100</em></p></li>
+        <li class="box-flex-1"><p class="vote_p_tit">总票数:<em>5000</em></p></li>
+        
+    </ul>
+    <p class="xs_introduce">选手介绍：</p>
+    <p>刘文，1991年5月12日出生，广东省广州人，汉族。刘文：1991年5月12日出生，广东省广州人，汉族。刘文：1991年5月12日出生，广东省广州人，汉族。刘文：1991年5月12族。</p>
+</div>
+<div class="xq_container_pic"><img src="images/test_tx_01.png" style=" width:100%;"></div>
+<div class="xq_container_pic"><img src="images/test_tx_01.png" style=" width:100%;"></div>
+<div class="tou_btn" style="font-size:16px;">投一票</div>
+<div style="height:50px;">
+<div class="btm_fixed">
+    <ul class="box-flex-box vote_btm_btn" style="background:#c06; ">
+        <li class="box-flex-1">
+            
+            <p class="vote_p_tit" style="color:white;">首页</p>
+        </li>
+        <li class="box-flex-1 ">
+            
+            <p class="vote_p_tit" style="color:white;">活动介绍</p>
+        </li>
+        <li class="box-flex-1">
+            
+            <p class="vote_p_tit" style="color:white;">排行榜</p>
+            
+        </li>
+        
+    </ul>
+</div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+
+</body>
+</html>

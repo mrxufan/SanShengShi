@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<link rel="stylesheet" type="text/css" href="css/public.css"><!--共用样式-->
+<link rel="stylesheet" type="text/css" href="css/page_style.css"><!--页面样式-->
+<link rel="stylesheet" type="text/css" href="font/font-awesome.css"><!--字体图标-->
+<!-- swiper -->
+<link rel="stylesheet" type="text/css" href="swiper/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="swiper/animate.min.css">
+<title>名片滑动</title>
+<style>
+html,body{height: 100%;}
+.swiper-container {width: 100%;height: 100%;}
+.swiper-slide {text-align: center;height: 100%;}
+
+.card_01{text-align: center;color: #fff;background-color: #ff7704;height: 100%;}
+.card_01 .banner_img img{width: 100%;}
+.card_01 .a_submit{display: inline-block;font-size: 16px;color: #fff;border: 1px solid #fff;padding: 6px 20px;border-radius: 4px;margin: 15px 0;}
+.card_01 .a_submit:active{background-color:#fff;color:#ff7704; }
+.card_01 .p_txt{font-size: 14px;margin: 4px 10px;}
+
+.card_02{text-align: center;color: #fff;background-color: #ff7704;height: 100%;}
+.card_02 .banner_img img{width: 100%;}
+.card_02 .s_logo{display: inline-block;width: 90px;margin-bottom: 10px;}
+.card_02 .s_logo img{width: 100%;}
+.card_02 .p_txt{font-size: 14px;margin: 4px 10px;}
+
+.card_03{height: 100%;}
+.card_03 .card_img{background-position: center center;background-repeat:no-repeat;background-size: cover;height: 25%;}
+
+.card_01 .tiyan_btn .btn{color: #fff;padding: 8px 20px;border-radius: 4px;background-color: #FFB980;}
+.card_01 .tiyan_btn .btn:active{background-color: #f1ae78;}
+</style>
+</head>
+
+<body>
+ <!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+    	<div class="swiper-slide">
+    		<div class="card_02">
+			    <div class="banner_img ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"><img src="images/card_img/img_02.png"></div>
+			    <span class="s_logo ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0s"><img src="images/card_img/card_logo.png"></span>
+			    <p class="p_txt ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.1s">一款企业员工专用的二维码单子名片</p>
+			    <p class="p_txt ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.2s">信息更丰富，分享更方便</p>
+			    <p class="p_txt ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.3s">有效弥补纸质名片缺陷</p>
+			</div>
+    	</div>
+    </div>
+    <div class="swiper-wrapper">
+    	<div class="swiper-slide">
+    		<div class="card_03">
+				<div class="card_img ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="0s" style="background-image: url(images/card_img/img_03.png)"></div>
+				<div class="card_img ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0.1s" style="background-image: url(images/card_img/img_04.png)"></div>
+				<div class="card_img ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="0.3s" style="background-image: url(images/card_img/img_05.png)"></div>
+				<div class="card_img ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0.5s" style="background-image: url(images/card_img/img_06.png)"></div>
+			</div>
+    	</div>
+    </div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+        	<div class="card_01">
+			    <div class="banner_img ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"><img src="images/card_img/img_01.png"></div>
+			    <a href="#" class="a_submit ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="0s" style="display: none;">提交体验</a>
+			    <p class="p_txt ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="0.1s" style="display: none;">版权所有：中国联通郑州市公司</p>
+			    <p class="p_txt ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="0.2s" style="margin-top: 20px;">服务电话：0371-65731001</p>
+                <p class="p_txt ani tiyan_btn" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s" style="margin-top: 20px;"><a href="#" class="btn">我要体验</a></p>
+			</div>
+        </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+<script type="text/javascript" src="swiper/swiper.min.js"></script>
+<script type="text/javascript" src="swiper/swiper.animate1.0.2.min.js"></script>
+
+<script>
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    direction: 'vertical',
+    slidesPerView: 1,
+    paginationClickable: true,
+    // spaceBetween: 30,
+    mousewheelControl: true,
+    onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+	swiperAnimateCache(swiper); //隐藏动画元素 
+	swiperAnimate(swiper); //初始化完成开始动画
+		}, 
+	onSlideChangeEnd: function(swiper){ 
+	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+		} 
+});  
+</script>
+
+</body>
+
+</html>

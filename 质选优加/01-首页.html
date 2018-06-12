@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>首页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!--标准mui.css-->
+<link href="css/mui.min.css" rel="stylesheet">
+<!-- 共用样式 -->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+.mui-content .mui-segmented-control.mui-segmented-control-inverted{background-color: #fff;color: #333;}
+.mui-content .mui-segmented-control.mui-scroll-wrapper .mui-control-item{padding: 0 10px;}
+.mui-content .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{color: #01a8ee;border-bottom-color:#01a8ee;}
+
+.mui-content .mui-slider-indicator .mui-active.mui-indicator{background: #d30a00;}
+.mui-content .mui-slider-indicator .mui-indicator{background-color: #fff;}
+
+.ad_text_auto .text_auto_box .text_auto li .p_txt:nth-child(1){border-bottom: 1px solid #eee;}
+.ad_text_auto .text_auto_box .text_auto li .p_txt:nth-child(1) .s_txt_1{color: #fe406e;}
+
+.index_btm_nav a{color: #999;}
+
+
+.user_layer{width: 100%;height: 100%;position: fixed;left: 0;top: 0;background-color: rgba(0, 0, 0, .5);z-index: 999;}
+.user_layer .user_layer_info{display: block;width: 80%;position: relative;left: 50%;top: 50%;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);}
+.user_layer .user_layer_info img{width: 100%;}
+.user_layer .user_layer_info .closed_icon{position: absolute;right: -8px;top: -20px;background: #eee;width: 40px;height: 40px;border-radius: 50%;text-align: center;line-height: 40px;font-size: 40px;color: #ff4764;}
+
+
+.jinzuan_space .jinzuan_space_box .price_box .p_price .s_zgui{font-size: 12px;color: #999;margin-left: 4px;text-decoration: line-through;}
+
+.jinzuan_space ul li:last-child .jinzuan_space_txt{border-bottom: none;}
+</style>
+</head>
+<body>
+
+<div class="mui-content">
+	<!-- 顶部可拨动导航开始 -->
+	<div style="height: 40px;">
+	<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="height: 40px;position: fixed;">
+	    <div class="mui-scroll">
+	        <a class="mui-active mui-control-item">
+	            首页
+	        </a>
+	        <a class="mui-control-item">
+	            美妆护肤
+	        </a>
+	        <a class="mui-control-item">
+	            服饰鞋靴
+	        </a>
+	        <a class="mui-control-item">
+	            母婴用品
+	        </a>
+	        <a class="mui-control-item">
+	            箱包家居
+	        </a>
+	        <a class="mui-control-item">
+	            水果生鲜
+	        </a>
+	    </div>
+    </div>
+    </div>
+    <!-- 顶部可拨动导航结束 -->
+
+    <!-- 轮播图开始 -->
+    <div id="slider" class="mui-slider">
+		<div class="mui-slider-group mui-slider-loop">
+			<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+			<div class="mui-slider-item mui-slider-item-duplicate">
+				<a href="#">
+					<img src="images/cbd.jpg">
+				</a>
+			</div>
+			<!-- 第一张 -->
+			<div class="mui-slider-item">
+				<a href="#">
+					<img src="images/shuijiao.jpg">
+				</a>
+			</div>
+			<!-- 第二张 -->
+			<div class="mui-slider-item">
+				<a href="#">
+					<img src="images/muwu.jpg">
+				</a>
+			</div>
+			<!-- 第三张 -->
+			<div class="mui-slider-item">
+				<a href="#">
+					<img src="images/cbd.jpg">
+				</a>
+			</div>
+			<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+			<div class="mui-slider-item mui-slider-item-duplicate">
+				<a href="#">
+					<img src="images/shuijiao.jpg">
+				</a>
+			</div>
+		</div>
+		<div class="mui-slider-indicator">
+			<div class="mui-indicator mui-active"></div>
+			<div class="mui-indicator"></div>
+			<div class="mui-indicator"></div>
+		</div>
+	</div>
+	<!-- 轮播图结束 -->
+</div>
+<div class="nav_container">
+	<ul>
+		<li>
+			<a href="javascript:;">
+				<div class="nav_container_box">
+					<p class="p_icon"><img src="images/index_nav_icon/clock.png"></p>
+					<p class="p_txt">限时秒杀</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<div class="nav_container_box">
+					<p class="p_icon"><img src="images/index_nav_icon/package.png"></p>
+					<p class="p_txt">超值大牌</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<div class="nav_container_box">
+					<p class="p_icon"><img src="images/index_nav_icon/orange.png"></p>
+					<p class="p_txt">品质水果</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<div class="nav_container_box">
+					<p class="p_icon"><img src="images/index_nav_icon/qunzi.png"></p>
+					<p class="p_txt">爱逛街</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<div class="nav_container_box">
+					<p class="p_icon"><img src="images/index_nav_icon/TV.png"></p>
+					<p class="p_txt">电器城</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<div class="nav_container_box">
+					<p class="p_icon"><img src="images/index_nav_icon/temai.png"></p>
+					<p class="p_txt">9.9特卖</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<div class="nav_container_box">
+					<p class="p_icon"><img src="images/index_nav_icon/paper.png"></p>
+					<p class="p_txt">家居优品</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<div class="nav_container_box">
+					<p class="p_icon"><img src="images/index_nav_icon/food.png"></p>
+					<p class="p_txt">美食汇</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<div class="nav_container_box">
+					<p class="p_icon"><img src="images/index_nav_icon/prize.png"></p>
+					<p class="p_txt">抽奖</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<div class="nav_container_box">
+					<p class="p_icon"><img src="images/index_nav_icon/free.png"></p>
+					<p class="p_txt">免费试用</p>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="ad_text_auto">
+	<div class="ad_pic" style="background-image: url(images/index_ad.jpg);"></div>
+	<div class="text_auto_box">
+	    <div class="text_auto">
+	        <ul>
+	            <li>
+	            	<p class="p_txt"><em class="iconfont icon-laba"></em>一起拼团：<span class="s_txt_1">哈哈哈</span></p>
+	            	<p class="p_txt"><em class="iconfont icon-laba"></em>活动预告：<span class="s_txt_1">你好</span></p>
+	            </li>
+	            <li>
+	            	<p class="p_txt"><em class="iconfont icon-laba"></em>一起拼团：<span class="s_txt_1">咯咯咯咯咯</span></p>
+	            	<p class="p_txt"><em class="iconfont icon-laba"></em>活动预告：<span class="s_txt_1">问问潍坊我无法侧</span></p>
+	            </li>
+	            <li>
+	            	<p class="p_txt"><em class="iconfont icon-laba"></em>一起拼团：<span class="s_txt_1">weifuh </span></p>
+	            	<p class="p_txt"><em class="iconfont icon-laba"></em>活动预告：<span class="s_txt_1">的财富吧</span></p>
+	            </li>
+	        </ul>
+	    </div>
+	</div>
+	</div>
+</div>
+<div class="banner_box">
+	<p class="banner_tit">精选品牌</p>
+	<img src="images/cbd.jpg">
+	<p class="p_btm"><span class="s_left">鲜果专汤</span><span class="s_right">剩余<em>10</em>天</span></p>
+</div>
+<div class="jinzuan_space">
+	<p class="p_tit"><i class="iconfont icon-gengduo" style="color: #fe4070;font-weight: normal;"></i>金钻专区</p>
+	<ul>
+		
+		<li>
+			<a href="http://www.baidu.com" class="jinzuan_space_box">
+				<p class="p_img" style="background-image: url(images/cbd.jpg);"></p>
+				<div class="jinzuan_space_txt">
+					<p class="p_txt">打造水感瓷肌，雪花秀气垫BB，肌肤吹弹可破！</p>
+					<div class="price_box">
+						<p class="p_price">￥339<span class="s_zgui">专柜价：<em>100</em></span></p>
+						<p class="p_pay">300人已购买</p>
+						<i class="iconfont icon-xiangbao"></i>
+					</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;" class="jinzuan_space_box">
+				<p class="p_img" style="background-image: url(images/cbd.jpg);"></p>
+				<div class="jinzuan_space_txt">
+					<p class="p_txt">打造水感瓷肌，雪花秀气垫BB，肌肤吹弹可破！</p>
+					<div class="price_box">
+						<p class="p_price">￥339</p>
+						<p class="p_pay">300人已购买</p>
+						<i class="iconfont icon-xiangbao"></i>
+					</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;" class="jinzuan_space_box">
+				<p class="p_img" style="background-image: url(images/cbd.jpg);"></p>
+				<div class="jinzuan_space_txt">
+					<p class="p_txt">打造水感瓷肌，雪花秀气垫BB，肌肤吹弹可破！</p>
+					<div class="price_box">
+						<p class="p_price">￥339</p>
+						<p class="p_pay">300人已购买</p>
+						<i class="iconfont icon-xiangbao"></i>
+					</div>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="select_fenlei">
+	<p class="select_fenlei_tit">精选分类</p>
+	<ul>
+		<li>
+			<a href="#">
+				<p class="p_img"><img src="images/logo.png"></p>
+				<p class="p_fenlei">女装</p>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<p class="p_img"><img src="images/logo.png"></p>
+				<p class="p_fenlei">女装</p>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<p class="p_img"><img src="images/logo.png"></p>
+				<p class="p_fenlei">女装</p>
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="product_list_box">
+	<p class="p_tit">人气单品</p>
+	<ul>
+		<li>
+			<a href="#">
+				<p class="p_img"><img src="images/240X240_2.jpg"></p>
+				<p class="p_txt">榴莲朋友圈220g榴莲朋友圈220g</p>
+				<div class="price_box">
+					<p class="p_price"><span class="s_price">￥68</span><span class="s_wrong">￥98</span></p><i class="iconfont icon-shop-add"></i>
+				</div>
+				
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<p class="p_img"><img src="images/240X240_2.jpg"></p>
+				<p class="p_txt">榴莲朋友圈220g榴莲朋友圈220g</p>
+				<div class="price_box">
+					<p class="p_price"><span class="s_price">￥68</span><span class="s_wrong">￥98</span></p><i class="iconfont icon-shop-add"></i>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<p class="p_img"><img src="images/240X240_2.jpg"></p>
+				<p class="p_txt">榴莲朋友圈220g榴莲朋友圈220g</p>
+				<div class="price_box">
+					<p class="p_price"><span class="s_price">￥68</span><span class="s_wrong">￥98</span></p><i class="iconfont icon-shop-add"></i>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
+
+
+
+<!-- 固定底部导航 -->
+<div style="height: 45px;">
+	<div class="index_btm_nav">
+		<a href="#" class="color">
+			<i class="iconfont icon-shouye-shouye"></i><br>
+			<span class="p_nav">首页</span>
+		</a>
+		<a href="#">
+			<i class="iconfont icon-tuandui1"></i><br>
+			<span class="p_nav">伙拼</span>
+		</a>
+		<a href="#">
+			<i class="iconfont icon-zhibo1"></i><br>
+			<span class="p_nav">部落</span>
+		</a>
+		<a href="#">
+			<i class="iconfont icon-lijigoumaigouwuchetubiaobaise"></i><br>
+			<span class="p_nav">购物车</span>
+		</a>
+		<a href="#">
+			<i class="iconfont icon-gerenzhongxin"></i><br>
+			<span class="p_nav">我的</span>
+		</a>
+	</div>
+</div>
+
+<!-- 返回顶部 -->
+<div class="back_top"><i class="iconfont icon-xiangshang"></i><br>顶部</div>
+
+
+<!-- 新老用户弹窗 -->
+<div class="user_layer" id="user_layer" style="display: none;">
+	<div class="user_layer_info">
+		<span class="mui-icon mui-icon-closeempty closed_icon" id="closed_icon"></span>
+		<a href="http://www.baidu.com" >
+			<img src="images/user_layer01.png">
+		</a>
+	</div>
+</div>
+
+
+
+<script type="text/javascript" src="js/mui.min.js"></script>
+ <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript" src="js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="js/jq.textSlider.js"></script> 
+
+<script type="text/javascript">
+
+// 关闭用户弹窗
+document.getElementById('closed_icon').addEventListener('tap',function () {
+	document.getElementById('user_layer').style.display='none';
+});
+
+
+
+
+// mui.init({
+// 		swipeBack:true //启用右滑关闭功能
+// });
+var slider = mui("#slider");
+	slider.slider({
+		interval: 3000
+});
+</script>
+
+<script type="text/javascript">
+	mui('.mui-scroll-wrapper').scroll({
+	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+});
+</script>
+
+<script type="text/javascript">
+//自动滚动广告
+$(function(){
+	$(".text_auto").textSlider({line:1,speed:0,timer:3000});
+	});
+
+</script>
+
+
+<script> 
+// 返回顶部
+$(function(){ 
+//当滚动条的位置处于距顶部100像素以下时，返回顶部按钮出现，否则消失 
+$(function () {
+$(".back_top").hide();
+$(window).scroll(function(){ 
+if ($(window).scrollTop()>100){ 
+$(".back_top").fadeIn(500); 
+} 
+else 
+{ 
+$(".back_top").fadeOut(500); 
+} 
+}); 
+//当点击返回顶部按钮后，回到页面顶部位置 
+$(".back_top").click(function(){ 
+$('body,html').animate({scrollTop:0},200); 
+return false; 
+});
+}); 
+}); 
+</script> 
+
+<script type="text/javascript">
+// 底部导航选中状态
+	$(document).ready(function() {
+		$('.index_btm_nav a',this).click(function(){
+			$(this).addClass('color').siblings().removeClass('color');
+		});
+	});
+
+
+</script>
+</body>
+</html>

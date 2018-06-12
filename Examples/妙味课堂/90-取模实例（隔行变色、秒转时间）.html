@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>取模实例（隔行变色、秒转时间）</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+<ul id="ul1">
+	<li>一行文字</li>
+	<li>一行文字</li>
+	<li>一行文字</li>
+	<li>一行文字</li>
+	<li>一行文字</li>
+</ul>
+
+
+
+<script type="text/javascript">
+//隔行变色
+var oLi=document.getElementById('ul1').getElementsByTagName('li');
+for (var i = 0; i < oLi.length; i++) {
+	if (i%2==0) {
+		oLi[i].style.backgroundColor = 'red';
+	}
+}
+
+//秒转时间
+var n=75;
+console.log(parseInt(75/60)+'分'+n%60+'秒'); //1分15秒
+</script>   
+</body>
+</html>

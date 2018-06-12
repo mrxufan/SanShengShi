@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+
+<style type="text/css">
+.color_block_box { overflow: hidden; margin: 0px auto; padding:16px 0; background:#fff; }
+.color_block_box ul { margin-bottom:16px; }
+.color_block_box ul:last-child{ margin-bottom:0px;}
+.color_block_box li:active .p_txt{color:#f66;}
+.color_block_box li a { display: block;}
+
+.color_block_box li .p_img { border-radius: 0px; width: 40px; height: 40px; margin: 0 auto; background-position: center center; background-repeat: no-repeat; background-size: cover; }
+.color_block_box li .p_txt { margin-top: 4px; text-align: center; color: #333; font-size: 13px;}
+
+.paixu_nav_box{ overflow:hidden;border-top:1px solid #ddd; border-bottom:1px solid #ddd; background:#fff;}
+.paixu_nav_box li{ overflow:hidden;}
+
+.paixu_nav_box li .p_txt{ height:36px; line-height:36px; text-align:center; }
+
+.paixu_nav_box li .p_txt.on{ color:#c00;}
+
+
+.pro1_list_box{ overflow:hidden;background:#fff;}
+.pro1_list_box li{ float:left; width:50%; box-sizing:border-box; background:#fff; border-right:1px solid #ddd; border-bottom:1px solid #ddd; padding:10px;}
+.pro1_list_box>ul>li:first-child{border-left:0;}
+.pro1_list_box li:active{ background-color:#f3f3f3;}
+
+.pro1_list_box .proinfo_box{ overflow:hidden;}
+.pro1_list_box .proinfo_box .p_img{ height:100px; background-position:center center; background-repeat:no-repeat; background-size:contain; margin-bottom:6px;}
+.pro1_list_box .proinfo_box .p_title{ font-size:12px; color:#444; line-height:16px; height:32px; overflow:hidden;margin-bottom:6px;}
+
+.pro1_list_box .proinfo_box .footer_info{ overflow:hidden; position:relative; padding-right:60px; height:30px;}
+.pro1_list_box .proinfo_box .footer_info .p_jindu_tit{ font-size:12px; color:#999; margin-bottom:4px;}
+.pro1_list_box .proinfo_box .footer_info .p_jindu_tit em{ color:#0066CC; padding-left:2px;}
+.pro1_list_box .proinfo_box .footer_info .p_jindu_tiao{ overflow:hidden; height:5px; border-radius:5px; background-color:#ddd;}
+.pro1_list_box .proinfo_box .footer_info .p_jindu_tiao span{ display:inline-block; height:5px; vertical-align:top;  background-color:#ECBF00;}
+.pro1_list_box .proinfo_box .footer_info .p_btn{ position:absolute; right:0; top:2px; z-index:1; border:1px solid #f60; color:#f60; background-color:#fff; border-radius:3px; width:55px; text-align:center; font-size:12px; height:26px; line-height:26px; box-sizing:border-box;}
+.pro1_list_box .proinfo_box .footer_info .p_btn:active{ background-color:#f60; color:#fff;}
+.pro1_list_box li:nth-child(2n){ border-right:none;}
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+<div class="color_block_box">
+    <ul class="box-flex-box">
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_05.png);"></p><p class="p_txt">十元专区</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_02.png);"></p><p class="p_txt">即将揭晓</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_03.png);"></p><p class="p_txt">常见问题</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/uc_icon_04.png);"></p><p class="p_txt">我的参与</p></a></li>
+    </ul>
+</div>
+
+<div class="paixu_nav_box">
+	<ul class="box-flex-box">
+        <li class="box-flex-1"><p class="p_txt on">人气</p></li>
+        <li class="box-flex-1"><p class="p_txt">最新</p></li>
+        <li class="box-flex-1"><p class="p_txt">进度</p></li>
+        <li class="box-flex-1"><p class="p_txt">总需人次</p></li>
+    </ul>
+</div>
+
+
+<div class="pro1_list_box">
+	
+    <ul>
+    	<li>
+        	<div class="proinfo_box">
+            	<p class="p_img" style="background-image:url(images/test_003.jpg)"></p>
+                <p class="p_title">商品的名称最多两行，请注意字数限制</p>
+                <div class="footer_info">
+                	<p class="p_jindu_tit">开奖进度 <em>100%</em></p>
+                    <p class="p_jindu_tiao"><span style="width:50%"></span></p>
+                    <p class="p_btn">立即参与</p>
+                </div>
+            </div>
+        </li>
+        <li>
+        	<div class="proinfo_box">
+            	<p class="p_img" style="background-image:url(images/test_003.jpg)"></p>
+                <p class="p_title">商品的名称最多两行，请注意字数限制</p>
+                <div class="footer_info">
+                	<p class="p_jindu_tit">开奖进度 <em>100%</em></p>
+                    <p class="p_jindu_tiao"><span style="width:50%"></span></p>
+                    <p class="p_btn">立即参与</p>
+                </div>
+            </div>
+        </li>
+        <li>
+        	<div class="proinfo_box">
+            	<p class="p_img" style="background-image:url(images/test_003.jpg)"></p>
+                <p class="p_title">商品的名称最多两行，请注意字数限制</p>
+                <div class="footer_info">
+                	<p class="p_jindu_tit">开奖进度 <em>100%</em></p>
+                    <p class="p_jindu_tiao"><span style="width:50%"></span></p>
+                    <p class="p_btn">立即参与</p>
+                </div>
+            </div>
+        </li>
+        
+    </ul>
+
+</div>
+
+</body>
+
+</html>

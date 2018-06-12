@@ -1,0 +1,138 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>更改绑定</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<link rel="stylesheet" href="css/my_style.css" type="text/css">
+<style type="text/css">
+body{background-color: #fff;}
+.nav_item .mint-cell:first-child .mint-cell-wrapper{background-origin: content-box;}
+.nav_item .mint-field.is-nolabel .mint-cell-title{display: block;width: 40px;height: 40px;background-position: center center;background-size: cover;background-repeat: no-repeat;background-size: 22px;}
+.nav_item .mint-field-core{font-size: 14px;}
+.nav_item .phone_icon .mint-cell-title{background-image:url('images/icon/zs_icon/phone_icon.png')} 
+.nav_item .yzm_icon .mint-cell-title{background-image:url('images/icon/zs_icon/msg_icon.png')} 
+.nav_item .user_icon .mint-cell-title{background-image:url('images/icon/zs_icon/wo_icon.png')} 
+.nav_item .guhua_icon .mint-cell-title{background-image:url('images/icon/zs_icon/guhua.png')} 
+
+.nav_item .mint-cell-wrapper{background-size: 100% 1px;background-position: bottom left;}
+</style>
+</head>
+
+<body ontouchstart>
+
+<div id="app" v-cloak class="vue_body">
+   <div class="img_box">
+       <img src="images/icon/other_icon/change_bd_01.jpg">
+   </div>
+   <div class="tab_wrap">
+        <mt-navbar v-model="navTab" class="nav_title">
+          <mt-tab-item id="1">手机</mt-tab-item>
+          <mt-tab-item id="2">固话</mt-tab-item>
+        </mt-navbar>
+
+        <!-- tab-container -->
+        <mt-tab-container v-model="navTab">
+          <mt-tab-container-item id="1">
+            <div class="nav_item">
+                <mt-field placeholder="请输入手机号" type="text" class="phone_icon">
+                </mt-field>
+                <mt-field placeholder="请输入验证码" type="tel" class="yzm_icon">
+                    <mt-button type="primary" size="small" class="yzm_btn" :disabled="disType" v-on:click.native="yzmBtn">{{yzmText}}</mt-button>
+                </mt-field>
+                <div class="btn_wrap">
+                    <mt-button type="primary" size="large" class="change_btn" v-on:click="changePhone">确定更改</mt-button>
+                </div>
+            </div>
+          </mt-tab-container-item>
+          <mt-tab-container-item id="2">
+            <div class="nav_item">
+              <mt-field placeholder="区号+固话号码" type="text" class="guhua_icon">
+                </mt-field>
+                <mt-field placeholder="开户人姓名" type="tel" class="user_icon">
+                </mt-field>
+                <div class="btn_wrap">
+                    <mt-button type="primary" size="large" class="change_btn">确定更改</mt-button>
+                </div>
+            </div>
+          </mt-tab-container-item>
+        </mt-tab-container>
+    </div>
+   </div>
+
+</body>
+<script src="js/fastclick.js"></script> 
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+new Vue({
+    el: '#app',
+    data:{
+     navTab:'1',//默认tab切换
+     phoneNum:'',
+     phoneYzm:'',
+     code:'',
+     yzmText:'获取验证码',
+     disType:false,
+     timer:'', 
+    },
+    methods: {
+        changePhone:function(){
+            var _this=this;
+            var reg=/^((1[3,5,8][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$/;
+            if (!reg.test(this.phoneNum)) {
+                this.$messagebox.alert('请输入正确的手机号码','温馨提示');
+                return;
+            }
+            if (this.phoneYzm=='') {
+                this.$messagebox.alert('请输入验证码','温馨提示');
+                return;
+            }
+            this.$indicator.open(); //开启加载中
+            axios.post('http://jsonplaceholder.typicode.com/posts',{
+                PhoneNum:_this.phoneNum,
+                PhoneYzm:_this.phoneYzm
+            }).then(function(){
+                _this.code=0;
+                _this.$indicator.close();//关闭加载中
+                if (_this.code==0) {
+                    _this.$messagebox.alert('该号码不是电信号码','温馨提示');
+                    return;
+                }
+            }).catch(function(error){
+                console.log(error);
+            });
+
+        },
+        yzmBtn:function(){
+            var yzmNum=10;
+            this.disType=true;
+            this.yzmText='重新获取 '+yzmNum+' 秒';
+            this.timer=setInterval(function(){
+                yzmNum--;
+                if (yzmNum<1) {
+                    clearInterval(this.timer);
+                    this.disType=false;
+                    this.yzmText='获取验证码';
+                    return;
+                }
+                this.yzmText='重新获取 '+yzmNum+' 秒';
+            }.bind(this), 1000);
+        },
+        
+    },
+    mounted:function(){
+        
+    }
+});
+</script>
+	
+</html>

@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link href="css/page_style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body ontouchstart>
+<div class="user_center_info">
+	<div class="info_box">
+    	<p class="p_tx" style="background-image:url(images/add_faxian.png)"></p>
+        <p class="p_name">刘**</p>
+        <p class="p_phone">13346888888</p>
+    </div>
+</div>
+<div class="user_center_menu">
+    <ul class="box-flex-box">
+        <li class="box-flex-1"><a href="#"><p class="p_icon" style="background-image:url(images/center_8.png)"></p><p class="p_text">我的绑定</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_icon" style="background-image:url(images/center_7.png)"></p><p class="p_text">我的预约</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_icon" style="background-image:url(images/center_6.png)"></p><p class="p_text">兑奖记录</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_icon" style="background-image:url(images/center_1.png)"></p><p class="p_text">河南联通</p></a></li>
+    </ul>
+    <ul class="box-flex-box">
+        <li class="box-flex-1"><a href="#"><p class="p_icon" style="background-image:url(images/center_4.png)"></p><p class="p_text">调查问卷</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_icon" style="background-image:url(images/center_3.png)"></p><p class="p_text">有奖问答</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_icon" style="background-image:url(images/center_5.png)"></p><p class="p_text">转盘抽奖</p></a></li>
+        <li class="box-flex-1"><a href="#"><p class="p_icon" style="background-image:url(images/center_2.png)"></p><p class="p_text">刮刮卡</p></a></li>
+    </ul>
+</div>
+<div class="service_btn"><p class="p_btn"><em class="fa fa-commenting "></em>在线客服</p></div>
+</body>
+</html>

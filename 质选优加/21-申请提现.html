@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>提现记录</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!--标准mui.css-->
+<link href="css/mui.min.css" rel="stylesheet">
+<!-- 共用样式 -->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+.record_info td{padding: 10px;}
+.record_info .tr_info{border-bottom: 1px solid #eee;position: relative;}
+.record_info .tr_info .td_time .em_price{color: #ed3c67;margin: 0 4px;font-weight: bold;}
+.record_info .tr_info .td_btn .s_tx{background-color: #ed3c67;color: #fff;padding: 4px 6px;border-radius: 3px;}
+.record_info .tr_info td:nth-child(2){text-align: right;}
+.record_info .tr_info td .s_bank{font-size: 12px;color: #fff;background-color: #007aff;padding: 4px 8px;
+    border-radius: 4px;} 
+.record_info .tr_info td .s_bank:active{background-color: #0574ee;}
+.record_info .a_btn{display: block;color: #fff;border-radius: 4px;height: 40px;line-height: 40px;
+ background-color: #ed3c67;color: #fff;font-size: 15px;text-align: center;margin: 10px;}
+.record_info .a_btn_record{display: block;color: #fff;border-radius: 4px;height: 40px;line-height: 40px;
+ background-color: #3BC0ED;color: #fff;font-size: 15px;text-align: center;margin: 10px;}
+ .record_info .a_btn_record:active{background-color: #36b1db;}
+.record_info .a_btn:active{background-color: #dc365f;}
+.record_info .tx_rule{margin: 10px;font-size: 12px;color: #999;}
+.record_info input{margin-bottom: 0;border: none;padding: 0;height: 15px;}
+.mui-checkbox input[type=checkbox]:before{font-size: 22px;}
+</style> 
+</head>
+<body style="background-color: #fff">
+<div class="record_info">
+	<table width="100%">
+		<tr class="tr_info">
+			<td class="td_time">可提金额：<em class="em_price">100</em>元</td>
+			<td class="td_input"><span class="s_bank">修改银行卡</span></td>
+		</tr>
+		<tr class="tr_info">
+			<td class="td_time">李海龙 尾号1111</td>
+			<td class="td_input">
+				<div class=" mui-checkbox">
+					<label style="padding: 0;"><input name="checkbox1" value="Item 3" type="checkbox" checked style="top: -1px;right: 0px;"></label>
+				</div>
+			</td>
+		</tr>
+		<tr class="tr_info">
+			<td class="td_time" colspan="2"><input type="number" placeholder="输入提款金额" id="input"></td>
+			<!-- <td class="td_input"></td> -->
+		</tr>
+	</table>
+	<a href="#" class="a_btn"  id="tx_btn">提交申请</a>
+	<a href="#" class="a_btn_record">提现记录</a>
+	<p class="tx_rule">提现规则：当提现金额大于或等于3800时，系统自动计算个人所得税，所显示的提现金额为系统自动计算完以后的实际应得金额。</p>
+</div>
+		
+		
+		
+
+<script type="text/javascript" src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript">
+	// document.getElementById("tx_btn").addEventListener('tap', function() {
+	// 	var btnArray = ['取消', '确认'];
+	// 	mui.confirm('', '确认提现？', btnArray, function(e) {
+	// 		if (e.index == 1) {
+	// 			mui.toast('提现成功');
+	// 		} else {
+	// 			return;
+	// 		}
+	// 	});
+	// });
+	document.getElementById('tx_btn').onclick=function(){
+		var btnArray=['取消','确认'];
+		var input = document.getElementById('input').value; 
+			if (input<=0) {
+				mui.alert('','请输入有效金额');
+				return false;
+			} else {
+				mui.confirm('','确认提现？',btnArray,function(e){
+					if (e.index==1) {
+						mui.toast('提现成功');
+					} else {
+						return;
+					}
+				});
+			}
+	};
+</script>
+</body>
+</html>

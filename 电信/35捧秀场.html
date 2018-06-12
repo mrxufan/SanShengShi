@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>捧秀场</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+<style type="text/css">
+
+.pxc_info_box{ overflow:hidden; background-image:url(images/pxc_img_02.png); background-repeat:no-repeat; background-size:100% 100%; padding-top:50%; margin-top:55%; position:relative;}
+.pxc_info_box .pxc_nr{ position:absolute; left:0; top:0; z-index:0; width:100%; height:100%; box-sizing:border-box; padding:8% 14%; overflow:hidden;  }
+
+.pxc_info_box .pxc_nr .info_01{ overflow:hidden; text-align:center;color:#fff; font-size:16px;  margin-bottom:4%;}
+.pxc_info_box .pxc_nr .info_01 i{ display:inline-block; line-height:100%; width:14px; border-radius:3px; padding:3px 2px; background-color:#ffe61a; color:#f75959; font-weight:bold; margin:2px;}
+
+.pxc_info_box .pxc_nr .info_02{ overflow:hidden;  margin-bottom:4%;}
+.pxc_info_box .pxc_nr .info_02 p{ text-align:center; color:#222; font-size:15px;}
+
+.pxc_info_box .pxc_nr .info_btn{ text-align:center; }
+.pxc_info_box .pxc_nr .info_btn a{ overflow:hidden; display:inline-block;  text-align:center; background-color:#ffe61a; color:#f75959; font-weight:bold; width:120px; height:36px; line-height:36px; font-size:16px; border-radius:50px; box-shadow:1px 1px 0 #dfc700 }
+.pxc_info_box .pxc_nr .info_btn a:active{ background-color:#eed400}
+
+.pxc_number_one{ overflow:hidden; background:#ffeaa1; border:4px solid #e87c09; margin:5% 10%; box-sizing:border-box; padding:4% 8%; text-align:center;}
+.pxc_number_one p{ font-size:14px; color:#555}
+.pxc_number_one p em{ font-weight:bold; color:#f75959}
+
+.pxc_footer_box{ overflow:hidden; margin:0 10px;}
+.pxc_footer_box li{ margin:10px;}
+.pxc_footer_box .p_btn{ overflow:hidden; height:36px; line-height:36px; border-radius:4px; text-align:center; background:#e87c09; color:#fff; font-size:14px; box-shadow:1px 1px 0 #c96b08;}
+.pxc_footer_box .p_btn:active{ background:#d97409;}
+.pxc_footer_box .p_btn a{ display:block; height:36px; color:#fff;}
+
+
+
+
+.pxc_show_div_bj { position: fixed; width: 100%; height: 100%; left: 0; top: 0; z-index: 9; background: rgba(0,0,0,0.5) }
+.pxc_show_div_box { position: fixed; width: 300px; height: 320px; background: #fff; border-radius: 5px; left: 50%; top: 50%; margin-left: -150px; margin-top: -160px; z-index: 10; overflow: hidden; box-shadow: 0px 2px 4px rgba(2,2,2,0.5); }
+.pxc_show_div_box .content_box { overflow: hidden;height: 280px; line-height: 1.8em; display: table; width: 100%; }
+.pxc_show_div_box .content_box .content_nr {padding:16px; overflow:hidden;}
+.pxc_show_div_box .content_box span { font-size: 18px; color: #f60; text-align:center; display:inline-block; width:100%;}
+.pxc_show_div_box .content_box em { color: #666;}
+.pxc_show_div_box .content_btn { overflow: hidden; }
+.pxc_show_div_box .content_btn .p_btn { height: 40px; line-height: 40px; background: #21a4f2; color: #fff; text-align: center; font-size: 16px; border-radius:0 0 5px 5px; }
+.pxc_show_div_box .content_btn .p_btn:active { background: #1e9ae4; }
+
+
+</style>
+
+
+</head>
+
+<body ontouchstart   style=" background-color:#feb312; background-image:url(images/pxc_img_01.jpg); background-size:100%; background-position:center top; background-repeat:no-repeat">
+
+<div class="pxc_info_box">
+	<div class="pxc_nr">
+    	<div class="info_01">已有<i>0</i><i>9</i>个朋友给我捧场了！</div>
+        
+        <div class="info_02">
+        	<p>朋友圈想静静了，还没人捧场，快看攻略吧！</p>
+            
+        </div>
+        
+        <div class="info_btn"><a href="#">我要试一试</a></div>
+        
+    </div>
+</div>
+
+<div class="pxc_number_one">
+	<p>当前最高人气<em>25</em>人</p>
+    <p>微信昵称:****，是个<em>美女</em>哦！</p>
+</div>
+
+<div class="pxc_footer_box">
+	<ul class=" box-flex-box">
+    	<li class="box-flex-1"><p class="p_btn"><a href="#">人气攻略</a></p></li>
+        <li class="box-flex-1"><p class="p_btn"><a href="#">看谁给我捧场</a></p></li>
+    </ul>
+</div>
+
+
+
+
+<div class="pxc_show_div_box" style="display:none;">
+	<div class="content_box">
+    	<div class="content_nr">
+        	<span>人气攻略</span><br>
+            <em>1、点击“我要试一试”，拼个朋友圈。<br>
+                        2、积攒人气10人以上，您将获得1000M流量券，点击领取后，进入微信卡包（微信-我-卡包查看）。<br>
+                        3、您的朋友识别你发送的二维码，视为有效人气。<br>
+                        4、点对点发送会提高您的人气哦！<br>
+                        5、月底0点,活动重新开始,原有人气清 0，在来一个月的。
+                        </em>
+        </div>
+    </div>
+    <div class="content_btn"><p class="p_btn">我知道了</p></div>
+</div>
+<div class="pxc_show_div_bj" style="display:none;"></div>
+
+
+
+</body>
+
+</html>

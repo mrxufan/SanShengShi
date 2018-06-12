@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+<script src="js/TouchSlide.1.1.js"></script>
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+
+
+<style>
+
+
+ .swiper-container {       width: 100%; 
+    }
+.swiper-slide {	text-align: center;
+	background: #fff;
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.swiper-slide img{ width:100%}
+
+</style>
+
+
+<style>
+.fx_top_bar{ background-color:rgba(0,0,0,0.8); height:44px; width:100%; position:fixed; top:0; left:0; z-index:99;}
+.fx_top_bar .nr_box{ overflow:hidden; color:#fff;}
+.fx_top_bar .nr_box .i_icon{ width:24px; height:24px; text-align:center; line-height:24px; font-size:18px; color:#f66; margin:0 10px; margin-top:10px; position:relative;}
+.fx_top_bar .nr_box .i_icon:after{ content:""; position:absolute; left:0; top:0; z-index:1; width:100%; height:100%; display:block; border:1px solid #f66; border-radius:50px; box-sizing:border-box;}
+.fx_top_bar .nr_box .p_logo{ height:32px; width:32px; border-radius:4px; margin-top:6px; overflow:hidden; background-position:center center; background-repeat:no-repeat; background-size:contain;}
+.fx_top_bar .nr_box .p_name{ font-size:16px; margin-left:10px; overflow:hidden; line-height:44px;}
+.fx_top_bar .nr_box .p_btn{ padding:0 10px; background:#37B9E8; height:30px; line-height:30px;  border-radius:4px;margin-top:7px; margin-right:10px; }
+
+
+.page_title_box{ overflow:hidden; font-size:14px; color:#555; padding:6px 10px; font-weight:normal;}
+.page_title_box em{ display:inline-block; width:3px; height:12px; background:#f90; margin-right:10px;}
+
+
+</style>
+
+
+</head>
+
+<body ontouchstart >
+<div style=" height:44px;">
+	<div class="fx_top_bar">
+    	<div class="nr_box">
+        	<ul class="box-flex-box">
+            <li><i class="i_icon fa fa-close"></i></li>
+        	<li class="box-flex-1"><p class="p_logo fn-left" style="background-image:url(images/xz_logo.png)"></p><p class="p_name fn-left">爱尚周口</p></li>
+        	<li><p class="p_btn">下载客户端</p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="#"><img src="images/mb_pic2/001.jpg" /></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/mb_pic2/004.jpg" /></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/mb_pic2/003.jpg" /></a></div>
+            <div class="swiper-slide"><a href="#"><img src="images/mb_pic2/002.jpg" /></a></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="swiper/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+		autoplayDisableOnInteraction : false,
+		loop : true,
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+    });
+    </script>
+
+
+
+<style>
+
+</style>
+
+<div class="home_toutiao_box" style="margin-top:0px;margin-bottom:0px;">
+	<div class="fn-left tit_box"><a href="#"></a></div>
+
+    <div class="body_box">
+        <ul>
+            <li><a href="#">每次切换效果开始时执行函数</a></li>
+            <li><a href="#">用于处理特殊情更多或创建建更处理特殊情更多</a></li>
+            <li><a href="#">121于处理特殊情更多或创建建更</a></li>
+        </ul>
+    </div>
+    
+</div>
+<script src="js/jq.textSlider.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".body_box").textSlider({line:1,speed:0,timer:2000});
+	})
+</script>
+
+<h3 class="page_title_box"><em></em>今日好店推荐</h3>
+
+<style>
+
+
+.koubei_shopping_box{ overflow:hidden; padding:10px 5px; background:#fff; padding-bottom:20px;width:100%;}
+.koubei_shopping_box li{ margin:0 5px;}
+.koubei_shopping_box li a{ position:relative; display:block; width: 95px; height:95px; overflow:hidden; margin:0 auto;}
+.koubei_shopping_box li .p_img{ width:95px; height:95px; margin: 0 auto; background-position: center center; background-repeat: no-repeat; background-size: cover; }
+.koubei_shopping_box li  .p_txt { position:absolute; width:100%; left:0; bottom:0; z-index:1; box-sizing:border-box; padding:0 6px; overflow:hidden; text-overflow:ellipsis;white-space:nowrap; background:rgba(2,2,2,0.5); text-align: center; color: #fff; font-size: 12px;}
+
+.swiper-container3{ position:relative; overflow:hidden;}
+.swiper-container3 .swiper-pagination3{ bottom:7px; width:100%; height:2px; left:0; position:absolute; z-index:10; text-align:center;}
+.swiper-container2 .swiper-pagination3 span:after{content:"."; display:block; overflow:hidden; color:rgba(0,0,0,0)}
+.swiper-container3 .swiper-pagination-bullet { height:2px; border-radius:0; margin:0 3px; vertical-align:top;}
+.swiper-container3 .swiper-pagination-bullet-active{ background:#f90;}
+
+
+
+</style>
+
+
+<!-- Swiper -->
+    <div class="swiper-container3">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="koubei_shopping_box" >
+                    <ul class="box-flex-box">
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/00.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/3.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/4.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="swiper-slide">
+                <div class="koubei_shopping_box" >
+                    <ul class="box-flex-box">
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/00.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/3.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/4.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination3"></div>
+    </div>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container3', {
+       // autoplay: 3000,
+		autoplayDisableOnInteraction : false,
+		loop : true,
+		pagination: '.swiper-pagination3',
+        paginationClickable: true,
+    });
+    </script>
+    
+此处放自定义模板
+    
+<h3 class="page_title_box"><em></em>今日商品推荐</h3>
+<style>
+.swiper-container4{ position:relative; overflow:hidden;}
+.swiper-container4 .swiper-pagination4{ bottom:7px; width:100%; height:2px; left:0; position:absolute; z-index:10; text-align:center;}
+.swiper-container4 .swiper-pagination4 span:after{content:"."; display:block; overflow:hidden; color:rgba(0,0,0,0)}
+.swiper-container4 .swiper-pagination-bullet { height:2px; border-radius:0; margin:0 3px; vertical-align:top;}
+.swiper-container4 .swiper-pagination-bullet-active{ background:#f90;}
+
+</style>
+<!-- Swiper -->
+    <div class="swiper-container4">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="koubei_shopping_box" >
+                    <ul class="box-flex-box">
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/00.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/3.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/4.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="swiper-slide">
+                <div class="koubei_shopping_box" >
+                    <ul class="box-flex-box">
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/00.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/3.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                        <li class="box-flex-1"><a href="#"><p class="p_img" style="background-image:url(images/test_pic/4.jpg);"></p><p class="p_txt">2016春装上新</p></a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination4"></div>
+    </div>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container4', {
+       // autoplay: 3000,
+		autoplayDisableOnInteraction : false,
+		loop : true,
+		pagination: '.swiper-pagination4',
+        paginationClickable: true,
+    });
+    </script>
+ 
+ 
+ <h3 class="page_title_box"><em></em>今日生活推荐</h3>
+   
+ 
+</body>
+
+</html>

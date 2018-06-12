@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>动画-进度条</title>
+<style>
+*{ margin:0;}
+.jindu_box{ width:500px; height:20px; background:#ccc; border-radius:30px; overflow:hidden;}
+.jindu_box .out_jindu{ width:50%; height:20px; }
+.jindu_box .out_jindu .in_jindu{ display:inline-block; width:100%; height:20px; background:#F00;animation:move 3s;}
+@keyframes move{
+	0%{ width:0;}
+	100%{ width:100%;}
+	}
+</style>
+</head>
+
+<body>
+<div class="jindu_box"><p class="out_jindu"><span class="in_jindu"></span></p></div>
+</body>
+</html>

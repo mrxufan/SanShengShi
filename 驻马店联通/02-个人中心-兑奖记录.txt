@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+<style type="text/css">
+/*个人中心-兑奖记录*/
+.my_award_info{ overflow:hidden; background:#fff;}
+.my_award_info .p_txt{ overflow:hidden; text-align:center; color:#333; height:50px; line-height:50px;}
+.my_award_info .p_txt .em_1{ font-size:16px; font-weight:bold; color:#f60;}
+.my_award_info .p_txt .em_2{ font-size:16px; font-weight:bold; color:#00b4ec;}
+
+.my_award_box{ overflow:hidden; margin-top:10px; background:#fff;}
+
+.my_award_box li{ overflow:hidden; position:relative;}
+.my_award_box li:after{position: absolute;top: auto;right: auto;bottom: 0; left: 0; z-index:0; display: block; width: 100%;height: 1px; background:#ddd; content:'';  box-sizing:border-box;  -webkit-transform-origin: 50% 100%;-webkit-transform: scaleY(.5)}
+.my_award_box li:last-child:after{ display:none;}
+.my_award_box li:active{ background:#f4f4f4;}
+
+.my_award_box .content_box{ overflow:hidden; padding:20px 10px; }
+.my_award_box .content_box .dd_jl{ width:100px;}
+
+.my_award_box .content_box .p_tit{ font-size:15px; font-weight:bold; color:#555;}
+.my_award_box .content_box .p_time{ margin-top:6px; color:#999;}
+
+.my_award_box .content_box .p_jl{ color:#00b4ec; font-size:14px; }
+</style>
+</head>
+
+<body ontouchstart style="background:#ebebeb;">
+<div class="userecnter_topimg_box"><img src="images/test_005.jpg"></div>
+
+<div class="my_award_info"><p class="p_txt">您共参加了<em class="em_1">4</em>次活动，获得<em class="em_2">400M</em>流量奖励！</p></div>
+
+<div class="my_award_box">
+	<ul>
+    	<li>
+        	<div class="content_box">
+				<dl class="box-flex-box">
+                <dd class="box-flex-1">
+                    <p class="p_tit">手机充值抢红包</p>
+                    <p class="p_time">2016-01-01 12:25</p></dd>
+                 <dd class="dd_jl">
+                 	<p class="p_jl">200M流量</p>
+                 </dd>
+                 </dl>
+            </div>
+        </li>
+        <li>
+        	<div class="content_box">
+                <dl class="box-flex-box">
+                <dd class="box-flex-1">
+                    <p class="p_tit">手机充值抢红包</p>
+                    <p class="p_time">2016-01-01 20:42</p></dd>
+                 <dd class="dd_jl">
+                 	<p class="p_jl">50M流量</p>
+                 </dd>
+                 </dl>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

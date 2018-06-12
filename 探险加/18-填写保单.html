@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>填写保单</title>
+<!-- mui.css -->
+<link rel="stylesheet" type="text/css" href="css/mui.min.css">
+<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css">
+<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css">
+<!-- iconfont -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!-- page.css -->
+<link href="css/page.css" rel="stylesheet">
+<style type="text/css">
+.mui-segmented-control .mui-control-item{border-left: 1px solid #ccc;line-height: inherit;color: #555;padding: 4px 0;}
+.mui-segmented-control .mui-control-item .s_tit{font-weight: bold;} 
+.mui-segmented-control .mui-control-item .s_btm{font-size: 12px;}
+.mui-segmented-control .mui-control-item.mui-active{color: #fff;}
+.mui-content>.mui-table-view:first-child{margin-top: 0;}
+.mui-table-view-cell.mui-active{background: 0 0;}
+.edit_order_btm_msg input[type=checkbox]:before{font-size: 20px;}
+
+.edit_order_tab .mui-control-content .mui-table-view-cell{color: #999;}
+</style>
+</head>
+<body>
+<div class="edit_order">
+	<div class="banner_box" style="background-image: url(images/bx_banner_01.jpg);">
+		<div class="banner_box_bg">
+			<div class="banner_box_info">
+				<p class="p_tit">意外伤害保障</p>
+				<p class="p_conpany text_overflow"><em class="iconfont icon-baodanshouhou"></em>探险加保险有限公司</p>
+				<p class="p_txt text_overflow">最高保额100万，有社保人群价格更便宜</p>
+				<a href="javascript:;" class="a_xq">详情<em class="iconfont icon-arrow-right"></em></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mui-content edit_order_tab">
+	<div>
+		<div id="segmentedControl" class="mui-segmented-control" style="border: none;background-color: #fff;">
+			<a class="mui-control-item mui-active" href="#item1">
+				<span class="s_tit">￥10起</span><br><span class="s_btm">保额10万</span>
+			</a>
+			<a class="mui-control-item" href="#item2">
+				<span class="s_tit">￥20起</span><br><span class="s_btm">保额10万</span>
+			</a>
+			<a class="mui-control-item" href="#item3">
+				<span class="s_tit">￥30起</span><br><span class="s_btm">保额10万</span>
+			</a>
+		</div>
+	</div>
+	<div>
+		<div id="item1" class="mui-control-content mui-active">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<span class="fl_left">意外伤残</span><span class="fl_right">10万元</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<span class="fl_left">意外伤残</span><span class="fl_right">10万元</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<span class="fl_left">意外伤残</span><span class="fl_right">10万元</span>
+				</li>
+			</ul>
+		</div>
+		<div id="item2" class="mui-control-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<span class="fl_left">暴乱身故</span><span class="fl_right">5万元</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<span class="fl_left">暴乱身故</span><span class="fl_right">5万元</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<span class="fl_left">暴乱身故</span><span class="fl_right">5万元</span>
+				</li>
+			</ul>
+		</div>
+		<div id="item3" class="mui-control-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<span class="fl_left">一般医疗保险金</span><span class="fl_right">1万元</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<span class="fl_left">一般医疗保险金</span><span class="fl_right">1万元</span>
+				</li>
+				<li class="mui-table-view-cell">
+					<span class="fl_left">一般医疗保险金</span><span class="fl_right">1万元</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="mui-content">
+	<ul class="mui-table-view">
+		 <li class="mui-table-view-cell">
+		 保障金额1万元
+		 </li>
+	     <li class="mui-table-view-cell">
+	     涵盖45种重大疾病
+	     </li>
+	</ul>
+</div>
+<div class="mui-content edit_order_list">
+	<ul class="mui-table-view">
+		 <li class="mui-table-view-cell">
+		 	<span class="fl_left s_big">生效日期</span><span class="fl_right">2017-01-01</span>
+		 </li>
+	     <li class="mui-table-view-cell">
+	     	<span class="fl_left s_big">保障期限</span><span class="fl_right">1年</span>
+	     </li>
+	     <li class="mui-table-view-cell">
+	     	<span class="fl_left s_big">支付金额（元）</span><span class="fl_right s_price">30</span>
+	     </li>
+	</ul>
+</div>
+<div class="mui-content edit_order_form">
+	<ul class="mui-table-view">
+	 	 <li class="mui-table-view-cell">
+		 	<span class="fl_left">购买人</span><span class="fl_right" style="font-size: 12px;color: #999;">购买人需与持卡人一致</span></p>
+		 </li>
+		 <li class="mui-table-view-cell">
+		 	<p class="p_input"><span class="s_name">姓名</span><input type="" name=""></p>
+		 </li>
+	     <li class="mui-table-view-cell">
+		 	<p class="p_input"><span class="s_name">手机号</span><input type="" name=""></p>
+		 </li>
+		 <li class="mui-table-view-cell">
+		 	<p class="p_input"><span class="s_name">身份证号</span><input type="" name=""></p>
+		 </li>
+		 <li class="mui-table-view-cell">
+		 	<a href="javascript:;" class="mui-navigate-right" id="city_layer">
+			 	<div class="p_input"><span class="s_name">地址</span>
+					<div id="city_layer_info" style="white-space: normal;">北京市 北京市 东城区</div>
+			 	</div>
+		 	</a>
+		 </li>
+		 <li class="mui-table-view-cell">
+		 	<textarea placeholder="详细地址" class="xx_add"></textarea>
+		 </li>
+	</ul>
+</div>
+<div class="mui-content edit_order_list">
+	<ul class="mui-table-view">
+		 <li class="mui-table-view-cell">
+		 	<a href="javascript:;" class="mui-navigate-right">
+		 	<span class="fl_left s_big">被保人</span>
+		 		<select class="s_select fl_right" style="width: 50px;">
+		 			<option>本人</option>
+		 			<option>父母</option>
+		 			<option>配偶</option>
+		 		</select>
+		 	</a>
+		 </li>
+	     <li class="mui-table-view-cell">
+	     	<span class="fl_left s_big">受益人</span><span class="fl_right">法定</span>
+	     </li>
+	</ul>
+</div>
+<div class="mui-checkbox edit_order_btm_msg">
+	<input name="checkbox" value="Item 1" type="checkbox" style="position: initial;width: 20px;" checked>
+	本人已充分了解本保险产品，并承诺投保信息的真实性，理解并同意<a href="javascript:;" class="a_link">《产品条款》</a><a href="javascript:;" class="a_link">《产品条款》</a>的全部内容
+</div>
+
+<div class="edit_order_btn"><a href="javascript:;">确认购买</a></div>
+
+
+
+<script type="text/javascript" src="js/mui.min.js"></script> 
+<script type="text/javascript" src="js/mui.picker.js"></script>
+<script type="text/javascript" src="js/mui.poppicker.js"></script>
+<script type="text/javascript" src="js/city.data.js"></script>
+<script type="text/javascript" src="js/city.data-3.js"></script>
+
+<script>
+// 选择城市
+(function($, doc) {
+	$.init();
+	$.ready(function() {
+		var cityPicker3 = new $.PopPicker({
+			layer: 3
+		});
+		cityPicker3.setData(cityData3);
+		var city_layer = document.getElementById('city_layer');
+		var city_layer_info = document.getElementById('city_layer_info');
+		city_layer.addEventListener('tap', function(event) {
+			cityPicker3.show(function(items) {
+				city_layer_info.innerText =(items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+			});
+		}, false);
+	});
+})(mui, document);
+</script>
+</body>
+</html>

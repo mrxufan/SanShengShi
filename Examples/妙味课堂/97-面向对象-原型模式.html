@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>面向对象-原型模式</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+/*
+
+原型对象
+
+原型是class，修改他可以影响一类元素
+给对象添加方法，类似于行间样式
+给原型添加方法，类似于class
+
+我们创建的每个函数都有prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。使用原型对象的好处就是可以让所有对象实例共享它所包含的属性及方法
+
+原型模式缺点：
+首先，它省略了构造函数传递初始化参数这一环节，结果所有实例在默认情况下都取得了相同的属性值，这样非常不方便，但这还是不是原型的最大问题，原型模式的最大问题在于共享的本性所导致的，由于共享，因此一个实例修改了引用，另一个也随之更改了引用。因此我们通常不单独使用原型，而是结合原型模式与构造函数模式
+
+*/
+function Person(name) {
+	this.name=name;
+}
+Person.prototype.showName = function(){
+	alert(this.name);
+};
+var p1=new Person('徐凡');
+p1.showName(); //徐凡
+
+
+
+</script>
+
+</body>
+</html>

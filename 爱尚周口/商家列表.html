@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+<script src="js/TouchSlide.1.1.js"></script>
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+<style>
+
+
+
+</style>
+
+
+
+</head>
+
+<body ontouchstart >
+
+<div class="shop_list">
+    <ul>
+        <li>
+            <div class="shop_list_nr">
+                <p class="p_img" style="background-image:url(images/mb_pic2/0.jpg);"></p>
+                <p class="p_tit">仙味传奇火锅</p>
+                <p class="p_ms">最好的美味时刻停不下来，欢迎前来品尝。</p>
+            </div>
+
+            <div class="btn_box box-flex-box">
+                <p class="box-flex-1 c_1"><em class="fa fa-bank"></em>进入微官网</p>
+                <p class="box-flex-1 c_2"><em class="fa fa-cc-paypal"></em>进入店铺</p>
+            </div>
+            
+        </li>
+        <li>
+            <div class="shop_list_nr">
+                <p class="p_img" style="background-image:url(images/mb_pic2/001.jpg);"></p>
+                <p class="p_tit">老狼大盘鸡中原万达店</p>
+                <p class="p_ms">20元代金券元代金券元代金券元代金券元代金券元代金券元代金券</p>
+            </div>
+            
+            <div class="btn_box box-flex-box" style="display:none;">
+                <p class="box-flex-1 c_1"><em class="fa fa-bank"></em>进入微官网</p>
+                <p class="box-flex-1 c_2"><em class="fa fa-cc-paypal"></em>进入店铺</p>
+            </div>
+            
+        </li>
+         <li class="text_li">
+         暂无数据
+         </li>
+    </ul>
+    <div class="noinfo_box"><p class="p_1"><i class="fa fa-frown-o"></i>暂无信息</p></div>
+</div>
+
+<div style="height:3000px;"></div>
+000
+
+<style>
+
+.gotop_box{ background-color:rgba(255,255,255,0.5); position:fixed; width:30px; height:30px; line-height:30px; text-align:center; right:20px; bottom:100px;  z-index:5; border-radius:6px; box-shadow:0 1px 3px #ccc;}
+.gotop_box i{ font-size:20px; color:#6CF}
+
+</style>
+
+<div id="back-to-top" class="gotop_box"><i class="fa fa-angle-up"></i></div>
+
+
+</body>
+<script> 
+$(function(){ 
+//当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失 
+$(function () {
+$("#back-to-top").hide();
+$(window).scroll(function(){ 
+if ($(window).scrollTop()>500){ 
+$("#back-to-top").fadeIn(1500); 
+} 
+else 
+{ 
+$("#back-to-top").fadeOut(1500); 
+} 
+}); 
+//当点击跳转链接后，回到页面顶部位置 
+$("#back-to-top").click(function(){ 
+$('body,html').animate({scrollTop:0},1000); 
+return false; 
+});
+}); 
+}); 
+</script> 
+
+</html>

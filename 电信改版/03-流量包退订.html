@@ -1,0 +1,136 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>流量包退订</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<link rel="stylesheet" href="css/my_style.css" type="text/css">
+<style type="text/css">
+
+
+</style>
+</head>
+
+<body ontouchstart>
+
+<div id="app" v-cloak>
+    <div class="head_wrap flex_wrap">
+        <div class="flex_item">
+            <div class="head_info flex_wrap">
+                <span class="head_pic"><img :src="headImg"></span>
+                <span class="s_phone">{{phoneNum}}</span>
+            </div>
+        </div>
+        <a href="javascript:;" class="home_btn"></a>
+    </div>
+   
+     <div class="liuliang_wrap">
+          <ul>
+            <li v-for="(item,index) in items">
+                <div v-on:click="tabClick(index)">
+                    <mt-cell :title="item.title" class="clear_border">
+                      <span class="allow_right" :class="{allow_active:item.bool}"></span>
+                    </mt-cell>
+                </div>
+              <div v-show="item.bool">
+              <div>
+                  <div v-for="list in item.lists" class="liuliang_item_list flex_wrap">
+                        <div class="flex_item">
+                          <p class="p_tit">{{list.name}}</p>
+                          <p class="p_txt">生效日期：{{list.date}}</p>
+                          <p class="p_txt">自费标准：{{list.money}}</p>
+                        </div>
+                        <a href="javascript:;" class="tui_btn">退订</a>
+                  </div>
+              </div>
+              <div class="no_wrap" v-show="item.lists.length==0">
+                    <img src="images/icon/click_icon/kefu_icon.png" width="30">
+                    <p>暂无数据</p>
+              </div>
+            </div>
+            </li>
+          </ul>
+    </div>
+    <div class="dx_need_box">
+        <div class="need_title">您可能需要</div>
+        <div class="need_list_body">
+            <ul class="need_list_ul">
+                <li class="list_item">
+                    <a href="javascript:;"  class="item_link">
+                        <p class="p_icon"><img src="images/icon/click_icon/zd_icon.png" width="30"></p>
+                        <p class="p_text">缴费记录</p>
+                    </a>
+                </li>
+                <li class="list_item">
+                    <a href="javascript:;"  class="item_link">
+                        <p class="p_icon"><img src="images/icon/click_icon/money.png" width="30"></p>
+                        <p class="p_text">账单查询</p>
+                    </a>
+                </li>
+                <li class="list_item">
+                    <a href="javascript:;"  class="item_link">
+                        <p class="p_icon"><img src="images/icon/click_icon/yul_icon.png" width="30"></p>
+                        <p class="p_text">余量查询</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+new Vue({
+    el: '#app',
+    data:{
+       headImg:'images/head.jpeg',      //头像
+       phoneNum:'13526654665',          //手机号
+       items:[],   
+    },
+    methods: {
+        getMsg:function(){
+            this.items=[
+                {
+                    title:'您订购的流量包',
+                    lists:[
+                        {name:'爱看4G 0元流量包',date:'2018-01-02',money:'20'},
+                        {name:'爱看4G 0元流量包',date:'2018-01-02',money:'20'},
+                    ]
+                },
+                {
+                    title:'您订购的增值业务',
+                    lists:[
+                        {name:'爱看4G 0元流量包',date:'2018-01-02',money:'20'},
+                        {name:'爱看4G 0元流量包',date:'2018-01-02',money:'20'},
+                    ]
+                },
+            ];
+            this.setStatus();
+        },
+        setStatus:function(){
+            this.items.forEach(function(a,i){
+                Vue.set(a,'bool',false);
+            });
+        },
+        tabClick:function(i){
+          this.items[i].bool=!this.items[i].bool;
+        },
+    },
+    mounted:function(){
+        this.getMsg();
+    }
+});
+</script>
+	
+</html>

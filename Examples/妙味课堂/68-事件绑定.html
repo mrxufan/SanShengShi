@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Examples</title>
+<style type="text/css">
+
+</style>
+
+
+</head>
+<body>
+<button id="btn">按钮</button>
+
+
+
+<script type="text/javascript">
+function fn1(){
+	alert('aaa');
+}
+function fn2(){
+	alert('bbb');
+}
+
+/*
+
+绑定匿名函数，会无法删除
+
+标准：element.addEventListener(event, function, useCapture)  事件不加“on”
+	  removeEventListener(事件名称, 函数, 捕获)，解除绑定
+
+IE：element.attachEvent(event, function) 事件加“on”
+	detachEvent(事件名称, 函数)，解除绑定
+注：IE下 this——>window
+*/
+
+
+
+// if (oBtn.attachEvent) {
+// 	oBtn.attachEvent('onclick',fn1);
+// 	oBtn.attachEvent('onclick',fn2);
+// } else {
+// 	oBtn.addEventListener('click', fn1);
+// 	oBtn.addEventListener('click', fn2);
+// }
+
+
+// 封装函数
+function addEvent(obj,event,fn){
+	if (obj.attachEvent) {
+		obj.attachEvent('on'+event,fn);
+	} else {
+		obj.addEventListener(event,fn,false);
+	}
+}
+
+
+var oBtn=document.getElementById('btn');
+addEvent(oBtn,'click',fn1);
+addEvent(oBtn,'click',fn2);
+</script>
+
+
+</body>
+</html>

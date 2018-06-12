@@ -1,0 +1,117 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>如何赚益豆</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<style type="text/css">
+html,body{background: linear-gradient(to left,#02eee4, #0184fa);}
+.flex_wrap{display: flex;}
+.flex_item{flex: 1;}
+.img_box img{display: block;width: 100%;}
+
+.main_wrap{position: absolute;width: 100%;left: 0;top: 32vw;}
+.main_wrap .text_wrap{margin: 10px;margin-bottom: 20px;}
+.main_wrap .text_wrap .p_tit{color: #fff;margin: 10px 0;}
+.main_wrap .text_wrap .p_txt{color: #ffff01;}
+
+
+.tit_wrap{position: relative;text-align: center;height: 35px;line-height: 35px;color: #ffff01;font-size: 15px;margin: 0 10px;}
+.tit_wrap .text{font-size: 16px;font-weight: bold;margin: 0 10px;}
+.tit_wrap .on{position: relative;}
+.tit_wrap .on:after{width: 100%;height: 1px;border-bottom: 1px dashed #fff;left: 0;top: 50%;content: '';position: absolute;margin-top: -2px;}
+
+
+.yidou_wrap li{background-color: #fff;margin: 10px;border-radius: 4px;}
+.yidou_wrap li .item{padding: 10px;}
+.yidou_wrap li .item .main{border-bottom: 1px solid #eee;padding-bottom: 10px;}
+.yidou_wrap li .item .main .btn_wrap .icon_wrap{flex: 1;text-align: right;}
+.yidou_wrap li .item .main:last-child{border-bottom: none;}
+.yidou_wrap li .item .main .p_tit{font-size: 15px;padding:5px 10px;}
+.yidou_wrap li .item .main .p_txt{color: #8a8a8a;margin: 0 10px;}
+.yidou_wrap li .item .main .btn_wrap{display: flex;margin: 0 10px;align-items: center;}
+.yidou_wrap li .item .main .btn_wrap .btn{border-radius: 50px;padding: 0 20px;width: 100px;}
+.yidou_wrap li .item .main .btn_wrap .btn_bg1{background-color: #1f87ff;}
+.yidou_wrap li .item .main .btn_wrap .btn_bg2{background-color: #f55643;}
+</style>
+</head>
+
+<body ontouchstart>
+
+<div id="app">
+   <div class="img_box"><img src="images/banner.jpg"></div>
+   <div class="main_wrap">
+        <div class="tit_wrap flex_wrap">
+            <div class="flex_item on"></div>
+            <div class="text">益豆能做什么？</div>
+            <div class="flex_item on"></div>
+        </div>
+        <ul class="yidou_wrap">
+           <li>
+               <div class="item">
+                   <div class="main">
+                       <p class="p_tit">兑换省内流量</p>
+                       <p class="p_txt">10个豆兑换1G省内流量，兑换流量当月有效，每月最多兑换10G</p>
+                        <div class="btn_wrap">
+                            <mt-button class="btn btn_bg1" type="primary" size="small">立即兑换</mt-button>
+                            <div class="icon_wrap"><img src="images/ll_icon.png" width="100"></div>
+                        </div>
+                   </div>
+               </div>
+           </li>
+           <li>
+               <div class="item">
+                   <div class="main">
+                       <p class="p_tit">在益粉圈下单抵钱用</p>
+                       <p class="p_txt">优惠购，拥有超值商品</p>
+                        <div class="btn_wrap">
+                            <mt-button class="btn btn_bg2" type="primary" size="small">优惠购</mt-button>
+                            <div class="icon_wrap"><img src="images/phone_icon.png" width="70" style="margin-right: 15px;"></div>
+                        </div>
+                   </div>
+               </div>
+           </li>
+       </ul>
+       <div class="tit_wrap flex_wrap">
+            <div class="flex_item on"></div>
+            <div class="text">如何赚益豆？</div>
+            <div class="flex_item on"></div>
+        </div>
+       <div class="text_wrap">
+           <p class="p_tit">使用公众菜单随机派豆，每月最高获得100个豆，更多送豆活动点击公众底部菜单</p>
+           <p class="p_txt">（每年12月31日23点59分59秒之前所有益豆清零）</p>
+       </div>
+   </div>
+
+</div>
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+var vm=new Vue({
+    el: '#app',
+    data:{
+      
+    },
+    methods: {
+        
+    },
+    
+    mounted:function(){
+        
+    }
+})
+
+</script>
+	
+</html>

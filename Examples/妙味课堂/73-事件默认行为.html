@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>事件默认行为</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+body{height: 2000px;}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+/*
+事件默认行为：当一个事件发生的时候浏览器会默认做的事情
+怎么阻止：
+当前这个行为是什么事件触发的，然后在这个事件的处理函数中使用 return false
+*/
+// document.onkeydown=function () {
+// 	return false;
+// };
+
+
+
+// oncontextmenu：右键菜单事件，事件在元素中用户右击鼠标时触发并打开上下文菜单
+document.oncontextmenu=function () {
+	// alert(1);
+	return false; //阻止右键菜单
+};
+</script>    
+</body>
+</html>

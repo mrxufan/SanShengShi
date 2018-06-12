@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link href="css/page_style.css" rel="stylesheet" type="text/css">
+</head>
+<body ontouchstart>
+<div class="box-flex-box exam-info">
+    <p class="box-flex-1 p-order text-left">第<span class="order">1</span>题</p>
+    <p class="box-flex-1 p-timer text-center">30:00</p>
+    <p class="box-flex-1 p-jifen text-right"><span class="jifen">10</span>积分</p>
+</div>
+<div class="exam-content">
+    <dl>
+        <dt class="dt-tit">彩虹有几种颜色?</dt>
+        <dd class="dd-choose box-flex-box">
+            <p class="zimu">A</p>
+            <p class="txt text-overflow">我不知道</p>
+        </dd>
+        <dd class="dd-choose box-flex-box">
+            <p class="zimu">B</p>
+            <p class="txt text-overflow">1</p>
+        </dd>
+        <dd class="dd-choose box-flex-box">
+            <p class="zimu">C</p>
+            <p class="txt text-overflow">2</p>
+        </dd>
+        <dd class="dd-choose box-flex-box">
+            <p class="zimu">D</p>
+            <p class="txt text-overflow">3</p>
+        </dd>
+    </dl>
+</div>
+<!--弹窗-->
+<div class="alert-box" style="">
+    <div class="alert-bg"></div>
+    <div class="alert-content">
+        <div class="an-false" style="">
+            <p><img src="images/cw.png"/></p>
+            <p class="alert-txt">对不起，答错了，再接再厉</p>
+            <p class="">正确答案：<span class="answer">A</span></p>
+            <p class="p_btn">下一题</p>
+        </div>
+        <div class="an-right" style="">
+            <p><img src="images/zq.png"/></p>
+            <p class="alert-txt">恭喜你！答对了！</p>
+            <p class="p_btn">下一题</p>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>form</title>
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="mint-ui/style.css">
+<style type="text/css">
+body{background-color: #eee;}
+[v-cloak] { display: none }
+
+.flex_wrap{display: flex;}
+.flex_item{flex: 1;}
+
+.form_wrap{background-color: #fff;padding-bottom: 10px;}
+.form_wrap .form_item{padding: 10px 10px 0;}
+.form_wrap .form_item .file_wrap{border: 1px dotted #ccc;border-radius: 4px;position: relative;}
+.form_wrap .form_item .file_wrap:active{background-color: #f8f8f8;}
+.form_wrap .form_item .file_wrap .say_text{align-items: center;height: 100%;padding: 4px;}
+.form_wrap .form_item .file_wrap .say_text .txt_wrap{width: 100%;}
+.form_wrap .form_item .sfz_wrap{width: 70px;height: 70px;text-align: center;justify-content: center;align-items: center;}
+.form_wrap .form_item .sfz_wrap img{width: 40px;}
+.form_wrap .form_item .sfz_wrap p{font-size: 12px;color: #666;}
+.form_wrap .form_item .pre_wrap{width: 72px;height: 72px;margin-left: 10px;border-radius: 4px;background-position: center center;background-repeat: no-repeat;background-size: cover;overflow: hidden;}
+
+
+.btn_wrap{padding: 15px;}
+
+</style>
+</head>
+
+<body ontouchstart>
+<div id="app" v-cloak>
+    <div class="form_wrap">
+        <div class="form_item">
+            <div class="flex_wrap">
+                <div class="flex_wrap flex_item file_wrap">
+                    <div class="sfz_wrap flex_wrap">
+                        <img src="images/sfz_icon.png">
+                    </div>
+                    <div class="flex_item">
+                       <div class="flex_wrap say_text">
+                           <div class="txt_wrap">
+                                <p>上传身份证正面</p>
+                                <p>上传身份证正面</p>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="pre_wrap" style="background-image: url('images/001.jpg')"></div>
+            </div>
+        </div>
+        <div class="form_item">
+            <div class="flex_wrap">
+                <div class="flex_wrap flex_item file_wrap">
+                    <div class="sfz_wrap flex_wrap">
+                        <img src="images/sfz_icon.png">
+                    </div>
+                    <div class="flex_item">
+                       <div class="flex_wrap say_text">
+                           <div class="txt_wrap">
+                                <p>上传身份证正面</p>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="pre_wrap" style="background-image: url('images/pre_icon.png')"></div>
+            </div>
+        </div>
+        <div class="form_item">
+            <div class="flex_wrap">
+                <div class="flex_wrap flex_item file_wrap">
+                    <div class="sfz_wrap flex_wrap">
+                        <img src="images/zz_icon.png">
+                    </div>
+                    <div class="flex_item">
+                       <div class="flex_wrap say_text">
+                           <div class="txt_wrap">
+                                <p>上传营业执照</p>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+                <div class="pre_wrap" style="background-image: url('images/pre_icon.png')"></div>
+            </div>
+        </div>
+
+       
+    </div>
+    <div class="btn_wrap">
+        <mt-button size="large" type="primary">提交</mt-button>
+    </div>
+</div>
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+new Vue({
+    el: '#app',
+    data:{
+        
+    },
+    methods:{
+        
+    }
+})
+</script>
+	
+</html>

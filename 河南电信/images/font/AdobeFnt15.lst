@@ -1,0 +1,30 @@
+%!Adobe-FontList 1.15
+%Locale:0x804
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:E:\work\wxpage\images\Font\font-awesome.css
+FileModTime:1458787880
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:FontAwesome
+FamilyName:FontAwesome
+StyleName:Regular
+FullName:FontAwesome Regular
+MenuName:FontAwesome
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\work\wxpage\images\Font\fontawesome-webfont.ttf
+DataFormat:sfntData
+FileLength:138204
+FileModTime:1458787880
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,FontAwesome
+%EndFont
+

@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>购物车</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!--标准mui.css-->
+<link href="css/mui.min.css" rel="stylesheet">
+<!-- 共用样式 -->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+
+<style>
+/*购物车*/
+
+.shopping_car_list{ overflow:hidden; background:#fff;}
+.shopping_car_list li{ overflow:hidden; position:relative; padding:10px 36px; }
+.shopping_car_list li:after{ content: ""; display: block; position: absolute; left: 0; bottom: 0; z-index: 1; width: 100%; height: 1px; background: #ddd; -webkit-transform-origin: 50% 100%; -webkit-transform: scaleY(.5); }
+
+.shopping_car_list li .mui-checkbox input[type=checkbox]:checked:before,.shopping_car_footer_box .mui-checkbox input[type=checkbox]:checked:before{color: #f40943;}
+.shopping_car_list li .mui-checkbox{position: absolute;left: -6px;top: 23px;}
+.shopping_car_footer_box .shopping_car_footer_input .mui-checkbox .s_all{}
+
+.shopping_car_list li .p_edit{ position:absolute; right:6px; top:50%;  font-size:24px; margin-top:-12px; z-index:1; color:#ff687b;}
+.shopping_car_list li .p_edit:active{ color:#c00;}
+
+.shopping_car_list li .p_return_zt{ position:absolute; top:0; right:10px; z-index:1; background-color:#e7a300; color:#fff; font-size:12px; padding:2px 4px; line-height:100%;}
+.shopping_car_list li .pro_body{ overflow:hidden;}
+.shopping_car_list li .pro_body .p_img{ float:left; margin-right:6px; width:68px; height:68px; overflow:hidden; border-radius:4px;}
+.shopping_car_list li .pro_body .p_img img{ width:100%;}
+.shopping_car_list li .pro_body .p_title{ color:#555; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-bottom:4px;}
+.shopping_car_list li .pro_body .p_canshu{ color:#888; font-size:12px; margin-bottom:4px;}
+.shopping_car_list li .pro_body .p_canshu .s_canshu{margin-right: 6px;}
+.shopping_car_list li .pro_body .p_pre .sp_pre{ color:#f40943; font-weight:bold; font-size:14px;}
+.shopping_car_list li .pro_body .p_pre .sp_number{ color:#c00;}
+
+
+.shopping_car_footer_box{ overflow:hidden; background:#fff; position:fixed; left:0; bottom:0; z-index:2; width:100%; height:40px;border-top: 1px solid #eee;}
+.shopping_car_footer_box .shopping_car_footer_input{position: relative;padding-left: 40px;}
+.shopping_car_footer_box ul{ display:flex; overflow:hidden;padding-left: 80px;}
+.shopping_car_footer_box ul li{ overflow:hidden;}
+.shopping_car_footer_box ul .li_pre{ flex:1;}
+
+.shopping_car_footer_box ul  .p_all_check{ overflow:hidden; padding-top:10px; padding-left:6px;}
+.shopping_car_footer_box ul  .p_all_check .em_checkbox{ margin-right:4px; }
+.shopping_car_footer_box ul  .p_all_check .em_checkbox input{ width:20px; height:20px; display:inline-block; position:relative; vertical-align: top; border-radius: 20px; box-sizing:border-box;border: 1px solid #ccc;}
+.shopping_car_footer_box ul  .p_all_check .em_checkbox input:checked::after { content: ''; display: block; position: relative; top: 0px; left: 0px;}
+.shopping_car_footer_box ul .p_all_pre{ margin:0 10px; padding-top:6px; overflow:hidden; font-size:14px; line-height:100%; font-weight:bold; color:#555; text-align:right;}
+.shopping_car_footer_box ul .p_all_pre em{ color:#999; font-size:12px; font-weight:normal; }
+
+.shopping_car_footer_box ul  .p_btn{ height:40px; line-height:40px; padding:0 10px; font-size:15px; font-weight:bold; background-color:#f40943; color:#fff;}
+.shopping_car_footer_box ul  .p_btn em{ font-size:10px; font-weight:normal;}
+.shopping_car_footer_box ul  .p_btn:active{ background-color:#e4073e;}
+
+/*购物车商品属性修改*/
+
+.shopping_car_pro_info_edit{ overflow:hidden; background:#fff; position:fixed; width:100%;  left:0; bottom:0; z-index:3;}
+.shopping_car_pro_info_edit .pro_info_nr{ overflow:hidden; padding:10px;}
+.shopping_car_pro_info_edit .pro_info_nr .p_img{ float:left; margin-right:6px; width:68px; height:68px; overflow:hidden; border-radius:4px;}
+.shopping_car_pro_info_edit .pro_info_nr .p_img img{ width:100%;}
+.shopping_car_pro_info_edit .pro_info_nr .p_title{ color:#555; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-bottom:4px;}
+.shopping_car_pro_info_edit .pro_info_nr .p_pre{ font-size:15px; color:#f60; font-weight:bold;}
+
+
+/* 选择商品参数弹层 */
+.shop_canshu_layer{position: fixed;width: 100%;height: 100%;left: 0;top: 0;background-color: rgba(0, 0, 0, .4);z-index: 10;display: none;}
+.shop_canshu_layer .shop_canshu_info{background-color: #fff;width: 100%;left: 0;bottom: 0;position: absolute;}
+.shop_canshu_layer .shop_canshu_info .tit_box{overflow: hidden;margin: 10px;border-bottom: 1px solid #eee;padding-bottom: 10px;position: relative;padding-right: 25px;}
+.shop_canshu_layer .shop_canshu_info .tit_box .mui-icon-close{position: absolute;right: 0;top: 0;}
+.shop_canshu_layer .shop_canshu_info .tit_box .p_img{width: 70px;height: 70px;background-repeat: no-repeat;background-position: center center;background-size: cover;float: left;margin-right: 10px;border-radius: 4px;}
+.shop_canshu_layer .shop_canshu_info .tit_box .shop_name_info{margin-top: 6px;}
+.shop_canshu_layer .shop_canshu_info .tit_box .shop_name_info .p_name{font-size: 16px;color: #333;}
+.shop_canshu_layer .shop_canshu_info .tit_box .shop_name_info .p_price{color: #f40943;font-size: 16px;font-weight: bold;margin-top: 6px;}
+.shop_canshu_layer .shop_canshu_info .shop_canshu_list li{border-bottom: 1px solid #eee;font-size: 14px;overflow: hidden;margin: 10px;}
+.shop_canshu_layer .shop_canshu_info .shop_canshu_list span,.shop_canshu_layer .shop_canshu_info .shop_canshu_list em{float: left;}
+.shop_canshu_layer .shop_canshu_info .shop_canshu_list .em_canshu{padding: 4px 8px;background-color: #eee;margin-left: 10px;border-radius: 4px;margin-bottom: 10px;} 
+.shop_canshu_layer .shop_canshu_info .shop_canshu_list .em_canshu.on{background-color: #f40943;color: #fff;}
+.shop_canshu_layer .shop_canshu_info .shop_canshu_btn{display: flex;margin: 10px;}
+.shop_canshu_layer .shop_canshu_info .shop_canshu_btn span{flex: 1;text-align: center;display: block;color: #fff;height: 40px;line-height: 40px;font-size: 16px;border-radius: 4px;}
+.shop_canshu_layer .shop_canshu_info .shop_canshu_btn span:nth-child(1){background-color: #4abbeb;margin-right: 10px;}
+.shop_canshu_layer .shop_canshu_info .shop_canshu_btn span:nth-child(2){background-color: #01a8ee;}
+.shop_canshu_layer .shop_canshu_info .shop_canshu_btn span:nth-child(1):active{background-color: #45afdb;}
+.shop_canshu_layer .shop_canshu_info .shop_canshu_btn span:nth-child(2):active{background-color: #019cdd;}
+
+</style>
+
+</head>
+
+<body ontouchstart>
+<!-- 购物车列表 -->
+<div class="shopping_car_list">
+	<ul id="shop_list">
+    	<li data-edit=0>
+        	<div class="mui-checkbox check_input">
+				<label></label>
+				<input name="checkbox" value="Item 2" type="checkbox">
+			</div>
+            <p class="p_edit"><i class="mui-icon mui-icon-gear-filled"></i></p>
+            
+        	<div class="pro_body">
+            	<p class="p_img"><img src="images/240X240_2.jpg"></p>
+                <p class="p_title">商品名称</p>
+                <p class="p_canshu"><span class="s_canshu">颜色: 紫色</span><span class="s_canshu">尺码: XXL</span></p>
+                <p class="p_pre"><span class="fn-left sp_pre">￥256.00</span><span class="fn-right sp_number">×1</span></p>
+            </div>
+        </li>
+        <li data-edit=1>
+        	<div class="mui-checkbox check_input">
+				<label></label>
+				<input name="checkbox" value="Item 2" type="checkbox">
+			</div>
+            <p class="p_edit"><i class="mui-icon mui-icon-gear-filled"></i></p>
+            
+        	<div class="pro_body">
+            	<p class="p_img"><img src="images/240X240_2.jpg"></p>
+                <p class="p_title">商品名称</p>
+                <p class="p_canshu"><span class="s_canshu">颜色: 紫色</span><span class="s_canshu">尺码: XXL</span></p>
+                <p class="p_pre"><span class="fn-left sp_pre">￥256.00</span><span class="fn-right sp_number">×2</span></p>
+            </div>
+        </li>
+        <li data-edit=2>
+        	<div class="mui-checkbox check_input">
+				<label></label>
+				<input name="checkbox" value="Item 2" type="checkbox">
+			</div>
+            <p class="p_edit"><i class="mui-icon mui-icon-gear-filled"></i></p>
+            
+        	<div class="pro_body">
+            	<p class="p_img"><img src="images/240X240_2.jpg"></p>
+                <p class="p_title">商品名称</p>
+                <p class="p_canshu"><span class="s_canshu">颜色: 紫色</span><span class="s_canshu">尺码: XXL</span></p>
+                <p class="p_pre"><span class="fn-left sp_pre">￥256.00</span><span class="fn-right sp_number">×3</span></p>
+            </div>
+        </li>
+        <li data-edit=3>
+        	<div class="mui-checkbox check_input">
+				<label></label>
+				<input name="checkbox" value="Item 2" type="checkbox">
+			</div>
+            <p class="p_edit"><i class="mui-icon mui-icon-gear-filled"></i></p>
+            
+        	<div class="pro_body">
+            	<p class="p_img"><img src="images/240X240_2.jpg"></p>
+                <p class="p_title">商品名称</p>
+                <p class="p_canshu"><span class="s_canshu">颜色: 紫色</span><span class="s_canshu">尺码: XXL</span></p>
+                <p class="p_pre"><span class="fn-left sp_pre">￥256.00</span><span class="fn-right sp_number">×4</span></p>
+            </div>
+        </li>
+        <li data-edit=4>
+        	<div class="mui-checkbox check_input">
+				<label></label>
+				<input name="checkbox" value="Item 2" type="checkbox">
+			</div>
+            <p class="p_edit"><i class="mui-icon mui-icon-gear-filled"></i></p>
+            
+        	<div class="pro_body">
+            	<p class="p_img"><img src="images/240X240_2.jpg"></p>
+                <p class="p_title">商品名称</p>
+                <p class="p_canshu"><span class="s_canshu">颜色: 紫色</span><span class="s_canshu">尺码: XXL</span></p>
+                <p class="p_pre"><span class="fn-left sp_pre">￥256.00</span><span class="fn-right sp_number">×5</span></p>
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+<!-- 固定底部结算 -->
+<div style="height:40px;">
+	<div class="shopping_car_footer_box">
+			<div class="mui-input-row mui-checkbox mui-left" style="position: absolute;left: -15px;top: 1px;">
+				<label>全选</label>
+				<input name="checkbox" value="Item 2" type="checkbox"  id="select_all">
+			</div>
+	    	<ul>
+	            <li class="li_pre"><p class="p_all_pre">合计: ￥658.00<br><em>不含运费</em></p></li>
+	            <li><p class="p_btn">结算<em>(6)</em></p></li>
+	        </ul>
+    </div>
+</div>
+
+
+<!-- 选择商品参数弹层 -->
+<div class="shop_canshu_layer">
+	<div class="shop_canshu_info">
+		<div class="tit_box">
+			<p class="p_img" style="background-image: url(images/cbd.jpg);"></p>
+			<div class="shop_name_info">
+				<p class="p_name">商品名称</p>
+				<p class="p_price">￥100</p>
+			</div>
+			<em class="mui-icon mui-icon-close" id="close_icon"></em>
+		</div>
+		<ul class="shop_canshu_list">
+			<li><span class="s_canshu">颜色：</span><em class="em_canshu on">黑色</em><em class="em_canshu">黑色</em><em class="em_canshu">黑色</em></li>
+			<li><span class="s_canshu">尺寸：</span><em class="em_canshu on">XL</em><em class="em_canshu">XXL</em><em class="em_canshu">XXXL</em></li>
+			<li>
+				<span class="s_canshu">数量：</span>
+				<div class="mui-numbox" data-numbox-min='1' style="margin-left: 10px;margin-bottom: 10px;">
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input id="test" class="mui-input-numbox" type="number" value="1" />
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div>
+			</li>
+		</ul>
+		<div class="shop_canshu_btn">
+			<span class="s_btn" id="s_del">删除</span>
+			<span class="s_btn">确定</span>
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript" src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript">
+// var id = null;
+	$(document).ready(function() {
+		// 点击设置弹出参数选项
+		$('.shopping_car_list .p_edit').click(function(){ 
+			$('.shop_canshu_layer').fadeIn(100);
+			id = $(this).parents().attr('data-edit');
+		});
+		$('.shop_canshu_layer .shop_canshu_btn span:nth-child(1)').click(function(){
+			$('.shop_canshu_layer').fadeOut(100);
+		});
+
+		//点击叉号关闭选项卡
+		$('#close_icon').click(function(){  
+			$('.shop_canshu_layer').fadeOut(100);
+		});
+
+		// 点击当前参数改变样式
+		$('.shop_canshu_layer .shop_canshu_list li .em_canshu').click(function(){
+			$(this).addClass('on').siblings().removeClass('on');
+		});
+	});
+
+	// 删除对应列表
+	document.getElementById('s_del').addEventListener('tap', function() {
+					var btnArray = ['否', '是'];
+					mui.confirm('', '确定删除？', btnArray, function(e) {
+						if (e.index == 1) {
+							$('#shop_list li[data-edit='+id+']').remove();
+							$('.shop_canshu_layer').fadeOut(100);
+							mui.toast('删除成功');
+						} else {
+							return;
+						}
+					});
+				});
+</script>
+
+<script type="text/javascript">
+// 全选事件
+var sure = document.getElementById('select_all'); 
+//获取id名位sure的元素
+var list = document.getElementById("shop_list");//获取id名位list的元素
+var lis = list.getElementsByTagName('input');//定义一个变量为lis的元素来获取list内的input标签
+var index =0;
+//定义index来计数
+
+sure.onclick = function(){
+if(sure.checked ==true){
+for (var i = 0; i < lis.length; i++) {
+lis[i].checked=true;
+index=10;
+}
+
+
+}else{
+for (var i = 0; i < lis.length; i++) {
+lis[i].checked = false;
+index=0;
+}
+}
+}
+//以上是对全选框做得函数(只要sure被点击 则全部被选中，否则都不选中。即sure可控制所有按钮的被选择状态)
+
+for (var i = 0; i < lis.length; i++) {//获取一下i的范围
+lis[i].onclick = function(){//对每个lis[i]设置一个点击函数 如果为真 index++（自增1）
+if(this.checked ==true){
+index++;
+if(index ==lis.length){//当index的值为i(也就是说明ol下面的所有复选框被选中了)
+sure.checked=true;//全选框将会自动被选中
+}
+}else{
+index--;  //假如lis[i]没有被选中 那么index的值减一
+sure.checked=false;//只要是lis[i]没有全部被选中，sure就默认不被选中
+}
+}
+}
+</script>
+</body>
+</html>

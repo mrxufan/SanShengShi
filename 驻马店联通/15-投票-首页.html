@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link href="css/page_style.css" rel="stylesheet" type="text/css">
+<style>
+/*投票-列表页面*/
+.vote_djs{ padding:5px 10px; color:#fff; width:100%; position:absolute; left:0; bottom:0; background-color:rgba(0,0,0,0.4); box-sizing:border-box;}
+.vote_djs p span{ margin:0px 3px; font-size:15px; color:#fff;}
+.vote_djs p i{ margin-right:5px; font-size:15px;}
+
+.vote_rank_new{ overflow:hidden; margin:10px 0; margin-top:10px; }
+.vote_rank_new li{    background-image:url(images/nav_info_01.png); background-repeat:no-repeat; background-position:center center; background-size:100% 100%;}
+.vote_rank_new li:last-child{ margin-right:0;}
+.vote_rank_new li .vote_p_tit{text-align:center;  font-size:12px;}
+.vote_rank_new li .vote_p_tit em{ font-size:14px; font-weight:bold;}
+
+
+
+.search_box{ margin:0 10px; overflow:hidden;}
+.search_box  .p_search_nr{ position:relative; padding-right:60px; height:34px;}
+.search_box  .p_search_nr input{ width:100%; height:34px; background:#ffdcfb; box-sizing:border-box; padding:0 5px;}
+.search_box  .p_search_nr .sp_btn{ position:absolute; top:0; right:0; z-index:1; width:70px; height:34px; display:inline-block; line-height:34px; overflow:hidden; text-align:center; background:#fa53aa; color:#fff;}
+.search_box  .p_search_nr .sp_btn:active{ background:#d2448e;}
+
+
+.vote_list_box{ overflow:hidden; margin:10px 5px;}
+.vote_list_box li{ width:50%; float:left;box-sizing:border-box; margin-bottom:10px;}
+
+.vote_list_box li .photo_body{ overflow:hidden; background:#fff; margin:0 5px; overflow:hidden; padding:6px;}
+.vote_list_box li .photo_body .p_img{ overflow:hidden; min-width:140px; min-height:203px; margin:0 auto; margin-bottom:4px;}
+.vote_list_box li .photo_body .p_img img{ width:100%;}
+
+.vote_list_box li .photo_body .p_info_01{ overflow:hidden; border-bottom:1px solid #eee; padding-bottom:4px; margin-bottom:4px;}
+
+.vote_list_box li .photo_body .p_info_02{ overflow:hidden;}
+.vote_list_box li .photo_body .p_info_02 .s_name{ font-size:16px; line-height:30px;}
+.vote_list_box li .photo_body .p_info_02 .s_btn{ display:inline-block; height:30px; line-height:30px; text-align:center; width:60px; background:#f90; color:#fff;}
+.vote_list_box li .photo_body .p_info_02 .s_btn:active{ background:#f09001;}
+
+.vote_btm_btn{ background:#eee; }
+.vote_btm_btn li{  line-height:50px; height:50px; position:relative;}
+.vote_btm_btn li:after{ position:absolute; content:""; width:1px; height:100%;-webkit-transform:scaleX(.5);-webkit-transform-origin:100% 50%; left:0; bottom:0; background:#fff;}
+.vote_btm_btn li:active{ background:#f1f1f1;}
+.vote_btm_btn li p{ color:#444; font-size:15px; font-weight:bold; text-align:center;}
+.vote_btm_btn li:last-child{ border:none; position:relative;}
+.btm_fixed .box-flex-1:active{ background:#96024c;}
+.vote_rank_new li{ background:#c06; width:100%; color:#fff;   padding:5px 10px;}
+.box-flex-1:last-child{ border-right:0;}
+.search_box .sp_btn{ border-bottom-right-radius:4px; border-top-right-radius:4px;}
+
+</style>
+</head>
+<body ontouchstart style="background:#f2f2f2; ">
+<div class="activity_toppic_box" style="position:relative;">
+    <img src="images/test_004.jpg">
+    <div class="vote_djs">
+        <p><i class="fa fa-bell-o"></i>距结束：<span>23</span>时<span>54</span>分<span>30</span>秒</p>
+    </div>
+</div>
+
+
+
+
+<div class="vote_rank_new">
+    <ul class="box-flex-box">
+        <li class="box-flex-1"><p class="vote_p_tit">参选人<br><em>100</em></p></li>
+        <li class="box-flex-1"><p class="vote_p_tit">总票数<br><em>500</em></p></li>
+        <li class="box-flex-1"><p class="vote_p_tit">浏览量<br><em>1000</em></p></li>
+    </ul>
+</div>
+<div class="search_box">
+    
+            <p class="p_search_nr">
+                <input class="box-flex-1" style="background:#fff;  border-top-left-radius:4px; border-bottom-left-radius:4px;" type="text" placeholder="请输入编号或姓名"/>
+                <span class="sp_btn">搜索</span>
+            </p> 
+
+</div>    
+<div class="vote_list_box">
+    <ul >
+        <li>
+            <div class="photo_body">
+                <p class="p_img" style="background:url(images/test_tx_01.png) no-repeat center center; background-size:cover;"></p>
+                <p class="p_info_01"><span class="fn-left">130号</span><span class="fn-right"><em style="color:#f66">200</em> 票</span></p>
+                <p class="p_info_02"><span class="fn-left s_name">王小明</span><span class="fn-right s_btn" style="background:#c06;">投一票</span></p>
+            </div>
+        </li>
+        <li>
+            <div class="photo_body">
+                <p class="p_img" style="background:url(images/1.png) no-repeat center center; background-size:cover;"></p>
+                <p class="p_info_01"><span class="fn-left">130号</span><span class="fn-right"><em style="color:#f66">200</em> 票</span></p>
+                <p class="p_info_02"><span class="fn-left s_name">王小明</span><span class="fn-right s_btn" style="background:#c06;">投一票</span></p>
+            </div>
+        </li>
+        <li>
+            <div class="photo_body">
+                <p class="p_img" style="background:url(images/3.png) no-repeat center center; background-size:cover;"></p>
+                <p class="p_info_01"><span class="fn-left">130号</span><span class="fn-right"><em style="color:#f66">200</em> 票</span></p>
+                <p class="p_info_02"><span class="fn-left s_name">王小明</span><span class="fn-right s_btn" style="background:#c06;">投一票</span></p>
+            </div>
+        </li>
+        <li>
+            <div class="photo_body">
+                <p class="p_img" style="background:url(images/test_tx_01.png) no-repeat center center; background-size:cover;"></p>
+                <p class="p_info_01"><span class="fn-left">130号</span><span class="fn-right"><em style="color:#f66">200</em> 票</span></p>
+                <p class="p_info_02"><span class="fn-left s_name">王小明</span><span class="fn-right s_btn" style="background:#c06;">投一票</span></p>
+            </div>
+        </li>
+        <li>
+            <div class="photo_body">
+                <p class="p_img" style="background:url(images/test_tx_01.png) no-repeat center center; background-size:cover;"></p>
+                <p class="p_info_01"><span class="fn-left">130号</span><span class="fn-right"><em style="color:#f66">200</em> 票</span></p>
+                <p class="p_info_02"><span class="fn-left s_name">王小明</span><span class="fn-right s_btn" style="background:#c06;">投一票</span></p>
+            </div>
+        </li>
+        
+        
+        
+        
+    </ul>
+</div>
+<div style="height:50px;">
+<div class="btm_fixed">
+    <ul class="box-flex-box vote_btm_btn" style="background:#c06; ">
+        <li class="box-flex-1">
+            
+            <p class="vote_p_tit" style="color:white;">首页</p>
+        </li>
+        <li class="box-flex-1 ">
+            
+            <p class="vote_p_tit" style="color:white;">活动介绍</p>
+        </li>
+        <li class="box-flex-1 ">
+            
+            <p class="vote_p_tit" style="color:white;">我要报名</p>
+        </li>
+        <li class="box-flex-1">
+            
+            <p class="vote_p_tit" style="color:white;">排行榜</p>
+            
+        </li>
+        
+    </ul>
+</div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+
+</body>
+</html>

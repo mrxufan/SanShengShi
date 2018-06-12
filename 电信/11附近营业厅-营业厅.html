@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+<style type="text/css">
+
+
+</style>
+
+
+</head>
+
+<body ontouchstart  >
+
+<div class="swiper-container lobby_toppic_box">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img data-src="images/test_004.png" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_004.png" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_004.png" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+</div>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+		autoplayDisableOnInteraction:false,
+		loop : true,
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+		preloadImages: false,//禁止强制加载所有图片
+		lazyLoading: true,//延时加载图片
+    });
+    </script>
+
+<div class="lobby_info_box">
+	<h3 class="h3_tit">东风路营业厅</h3>
+    <ul class="dzdh_box">
+    	<li><em class="em_tb fa fa-map-marker c_1"></em><p class="p_txt">郑州市东风路文化路向西50米路北市东风路文化路向西</p><em class="em_ico fa fa-angle-right"></em></li>
+        <li><em class="em_tb fa fa-phone c_2"></em><a href="tel:0371-65758888"><p class="p_txt">0371-65758888</p></a><em class="em_ico fa fa-angle-right"></em></li>
+    </ul>
+</div>
+
+
+<div class="product_list_box">
+    <ul>
+    	<li>
+        	<a href="#">
+                <div class="shangpin_pro_nr">
+                    <p class="p_img" style="background-image:url(images/bd_img_bj_02.jpg)"></p>
+                    <p class="p_tit">超级流量卡（本地打全国0.1元/分钟）</p>
+                    <p class="p_tit_f">终身送费29元/月</p>
+                    <p class="p_pre"><em>9.00</em>元</p>
+                    
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="#">
+                <div class="shangpin_pro_nr">
+                    <p class="p_img" style="background-image:url(images/bd_img_bj_02.jpg)"></p>
+                    <p class="p_tit">Free卡无月租 低门槛用4G网络</p>
+                    <p class="p_tit_f">国内主叫0.1元/分钟 国内接听免费</p>
+                    <p class="p_pre"><em>0.00</em>元</p>
+                    
+                </div>
+            </a>
+        </li>
+        <li>
+        	<a href="#">
+                <div class="shangpin_pro_nr">
+                
+                    <p class="p_img" style="background-image:url(images/bd_img_bj_02.jpg)"></p>
+                    <p class="p_tit">魅族PRO5银白色双4G 64G存储</p>
+                    <p class="p_tit_f">32G抢先开卖</p>
+                    <p class="p_pre"><em>3099.00</em>元</p>
+                    
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+</body>
+
+</html>

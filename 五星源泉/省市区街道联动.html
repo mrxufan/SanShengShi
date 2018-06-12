@@ -1,0 +1,131 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>省市区街道联动</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<style type="text/css">
+body{background-color: #eee;}
+[v-cloak] { display: none }
+.popup{width: 100%;}
+.popup_pos{width: 100%;height: 100%;}
+
+.mint-cell-value input{display: none;}
+</style>
+</head>
+
+<body ontouchstart>
+
+<div id="app" v-cloak>
+    <mt-field v-on:click.native="getAdd" :readonly="true">{{province}} {{city}} {{country}} {{town}}</mt-field>
+    <mt-popup v-model="addPopup" position="bottom" class="popup">
+      <mt-picker :slots="addressSlots" v-on:change="onAddressChange" :visible-item-count="5"></mt-picker>
+    </mt-popup>
+</div>
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+
+<!-- 省市区街道数据 -->
+<script type="text/javascript" src="js/address_pcd.js"></script>
+<script type="text/javascript" src="js/address_town.js"></script>
+
+<script>
+
+
+var vm=new Vue({
+    el: '#app',
+    data:{
+        provinceArr:[], //省
+        addPopup:true,
+        addressSlots:[
+            {flex:1,values:[]},
+            {flex:1,values:[]},
+            {flex:1,values:[]},
+            {flex:1,values:[]},
+        ],
+        province:'', //省
+        city:'', //市
+        country:'',//区
+        town:'', //街道
+    },
+    methods:{
+        getProvince:function(){
+            proData_.forEach(function(a){
+                this.provinceArr.push(a.pv);
+            }.bind(this));
+            
+            this.addressSlots[0].values=this.provinceArr;
+            this.addressSlots[0].defaultIndex=6; //设置默认显示省
+        },
+        onAddressChange:function(picker,values){
+            var cityArr=[]; //市
+            var countryArr=[]; //区
+            var townArr=[]; //街道
+
+            var cityPk='';
+            var countryCk='';
+            var townCyk='';
+
+            this.province=values[0];
+            this.city=values[1];
+            this.country=values[2];
+            this.town=values[3];
+
+            picker.setSlotValues(1, cityArr);
+            picker.setSlotValues(2, countryArr);
+            picker.setSlotValues(3, townArr);
+
+            proData_.forEach(function(a){
+                if (a.pv==values[0]) {
+                    cityPk=a.pk;
+                }
+            }.bind(this));
+
+            cityData_.forEach(function(a){
+                if (a.pk==cityPk) {
+                    cityArr.push(a.cv);
+                }
+                if (a.cv==values[1]) {
+                    countryCk=a.ck;
+                }
+            }.bind(this));
+            
+
+            countryData_.forEach(function(a){
+                if (a.ck==countryCk) {
+                    countryArr.push(a.cyv);
+                }
+                if (a.cyv==values[2]) {
+                    townCyk=a.cyk;
+                }
+            }.bind(this));
+
+
+            townData_.forEach(function(a){
+                if (a.cyk==townCyk) {
+                    townArr.push(a.tv);
+                }
+            }.bind(this));
+
+        }
+        
+    },
+    mounted:function(){
+        this.getProvince();
+    }   
+});
+
+</script>
+	
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>宜众拓客-api</title>
+<!-- layui -->
+<link href="layui/css/layui.css" rel="stylesheet">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="font/iconfont.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+.yz_api{width: 600px;margin: 15px;}
+.yz_api h1{text-align: center;font-size: 18px;margin: 10px;font-weight: bold;}
+.yz_api .p_tit{font-size: 16px;margin: 10px 0;font-weight: bold;}
+.yz_api .img_wrap img{width: 100%;}
+</style>
+</head>
+<body>
+<div class="yz_api">
+	<h1>宜众拓客Api</h1>
+	<p class="p_tit">资源引用地址获取方法：</p>
+	<p class="p_tit">1.	在【资源管理】页面选择对应资源项目，点击进入【查看】</p>
+	<div class="img_wrap"><img src="images/api_img_01.png"></div>
+	<p class="p_tit">2.	获取资源引用地址</p>
+	<div class="img_wrap"><img src="images/api_img_02.png"></div>
+	<p class="p_tit">3.	在资源引用地址面后可按要求传入业务参数</p>
+	<div class="img_wrap"><img src="images/api_img_03.png"></div>
+	<p class="p_tit">请求数据</p>
+	<table class="layui-table">
+	  <colgroup>
+	    <col width="150">
+	    <col width="200">
+	    <col>
+	  </colgroup>
+	  <thead>
+	    <tr>
+	      <th>名称</th>
+	      <th>类型</th>
+	      <th>描述</th>
+	    </tr> 
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>id</td>
+	      <td>整型</td>
+	      <td>资源id，后台可查看</td>
+	    </tr>
+	    <tr>
+	      <td>bizContent</td>
+	      <td>字符串</td>
+	      <td>请求参数字符串（建议加密）</td>
+	    </tr>
+	  </tbody>
+	</table>
+	<p class="p_tit">用户兑换资源回调参数</p>
+	<table class="layui-table">
+	  <colgroup>
+	    <col width="150">
+	    <col width="200">
+	    <col>
+	  </colgroup>
+	  <thead>
+	    <tr>
+	      <th>名称</th>
+	      <th>类型</th>
+	      <th>描述</th>
+	    </tr> 
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>bizContent</td>
+	      <td>字符串</td>
+	      <td>请求时传入参数，原样传回</td>
+	    </tr>
+	    <tr>
+	      <td>reciveContent</td>
+	      <td>Json字符串</td>
+	      <td>资源相关内容</td>
+	    </tr>
+	    <tr>
+	      <td>apiType</td>
+	      <td>字符串</td>
+	      <td>1资源 2活动</td>
+	    </tr>
+	    <tr>
+	      <td>appName</td>
+	      <td>字符串</td>
+	      <td>应用名称</td>
+	    </tr>
+	    <tr>
+	      <td>activeName</td>
+	      <td>字符串</td>
+	      <td>资源或活动名称</td>
+	    </tr>
+	    <tr>
+	      <td>changeMobile</td>
+	      <td>字符串</td>
+	      <td>兑换手机号</td>
+	    </tr>
+	    <tr>
+	      <td>reciveMobile</td>
+	      <td>字符串（资源为实物有值）</td>
+	      <td>收货人手机号码</td>
+	    </tr>
+	    <tr>
+	      <td>reciveName</td>
+	      <td>字符串（资源为实物有值）</td>
+	      <td>收货人姓名</td>
+	    </tr>
+	    <tr>
+	      <td>reciveAddress</td>
+	      <td>字符串（资源为实物有值）</td>
+	      <td>收货人地址</td>
+	    </tr>
+	    <tr>
+	      <td>receiveTime</td>
+	      <td>字符串（资源为实物有值）<br>yyyy-MM-dd HH:mm:ss</td>
+	      <td>领取时间</td>
+	    </tr>
+	    <tr>
+	      <td>changeTime</td>
+	      <td>字符串（资源为实物有值）<br>yyyy-MM-dd HH:mm:ss</td>
+	      <td>兑换时间</td>
+	    </tr>
+	  </tbody>
+	</table>
+	<p class="p_tit">回调数据解密后</p>
+	<div>
+		<pre>
+{
+    "bizContent": "89456",
+    "reciveContent": {
+        "apiType": "2",
+        "appName": "flappy-bird",
+        "activeName": “十九大”,
+        "changeMobile": "17796655539",
+        "reciveMobile": "",
+        "reciveName": "",
+        "reciveAddress": "",
+        "receiveTime": "2017-10-01 00:12:17",
+        "changeTime": "2017-10-18 13:10:22"
+    }
+}
+		</pre>
+	</div>
+	<p class="p_tit">请求方式：post请求，请求地址在后台api设置</p>
+	<p class="p_tit">加密方式：Des 加密</p>
+</div>
+ 
+
+
+
+
+
+
+<script type="text/javascript" src="layui/layui.js"></script> 
+<script>
+
+
+</script>  
+
+
+</body>
+</html>

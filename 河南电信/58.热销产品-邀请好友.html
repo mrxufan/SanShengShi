@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+<title>热销产品推广-邀请好友</title>
+<style>
+.top_banner img{width: 100%;}
+
+.table-box{margin: 10px;}
+.table-box table{width: 100%;border-top: 1px solid #ddd;border-left: 1px solid #ddd;}
+.table-box table tr:first-child td{text-align: center;font-weight:bold;}
+.table-box table td{border-right: 1px solid #ddd;border-bottom: 1px solid #ddd;padding:8px 5px;font-size: 12px;}
+
+.btn-box{margin:15px 10px;}
+.btn-box .a-btn{height: 40px;background-color: #feba35;color: #fff;display: block;text-align: center;line-height: 40px;border-radius: 4px;font-size: 16px;}
+.btn-box .a-btn:active{background-color: #e8aa31;}
+
+.share-bg{position: fixed;width: 100%;height: 100%;left: 0;top: 0;background-color: rgba(0,0,0,.6);}
+.share-bg .p-img{margin: 10px;}
+.share-bg .p-img img{width: 100%;}
+.share-bg .btn-box{text-align: center;}
+.share-bg .btn-box .s-btn{color: #fff;background-color: #22a2f9;padding: 10px 30px;border-radius: 4px; box-shadow: 0 2px 3px #555;}
+.share-bg .btn-box .s-btn:active{background-color: #1c93e3;}
+</style>
+</head>
+
+
+
+<body>
+<div class="top_banner"><img src="images/test_004.jpg"></div>
+<div class="table-box">
+	<table>
+		<tr>
+			<td>产品名称</td>
+			<td>星级服务</td>
+		</tr>
+		<tr>
+			<td>产品名称</td>
+			<td>五星</td>
+		</tr>
+		<tr>
+			<td>产品名称</td>
+			<td>五星</td>
+		</tr>
+		<tr>
+			<td>产品名称</td>
+			<td>星级服务</td>
+		</tr>
+		<tr>
+			<td>产品名称</td>
+			<td>五星</td>
+		</tr>
+	</table>
+</div>
+<div class="btn-box"><a href="#" class="a-btn">邀请好友一起赚</a></div>
+<div class="share-bg hidden">
+	<p class="p-img"><img src="images/hot-product/pyq_img_03.png"></p>
+	<div class="btn-box"><span class="s-btn">我知道了</span></div>
+</div>
+
+<script type="text/javascript">
+$(document)	.ready(function(){
+	$('.btn-box .a-btn').click(function(){
+		$('.share-bg').show();
+	});
+	$('.share-bg .s-btn').click(function(){
+		$('.share-bg').hide();
+	});
+});
+</script>
+</body>
+
+</html>

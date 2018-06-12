@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<link href="css/page_style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.yyt_list_box{ overflow:hidden; margin:10px;}
+
+.yyt_list_box li{ overflow:hidden; position:relative; height:100px; border-radius:3px; margin-bottom:10px; background:#fff;}
+.yyt_list_box li:last-child{ margin-bottom:0;}
+.yyt_list_box li:after{position: absolute;top: auto;right: auto;bottom: 0; left: 0; z-index:0; display: block; width: 200%;height: 200%;content:'';border:1px solid #ddd; border-radius:6px;  box-sizing:border-box;  -webkit-transform-origin: 0% 100%;-webkit-transform: scale(.5)}
+.yyt_list_box li:active{ background:#f4f4f4;}
+
+.yyt_list_box .content_box{ overflow:hidden; padding:10px; position: absolute;top: auto;right: auto;bottom: 0; left: 0; z-index:1; width: 100%;height: 100%;  box-sizing:border-box; }
+.yyt_list_box .content_box .p_img{ overflow:hidden; width:80px; height:80px; float:left; border-radius:4px; margin-right:6px; background-position:center center; background-repeat:no-repeat; background-size:cover;}
+.yyt_list_box .content_box .p_tit{ font-size:15px; font-weight:bold; color:#555; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.yyt_list_box .content_box .p_tit_f{ font-size:13px; color:#aaa; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.yyt_list_box .content_box .p_tit_f .f_award{ color:#f60;}
+.yyt_list_box .content_box .p_cjtime{ font-size:11px; color:#aaa;}
+.yyt_list_box .content_box .p_cjtime em{ font-size:14px;}
+.yyt_list_box .content_box .p_cjtime em.c_1{ color:#f60;}
+
+.yyt_list_box .content_box .p_tit,.yyt_list_box .content_box .p_tit_f,.yyt_list_box .content_box .p_cjtime{ line-height:2em;}
+</style>
+</head>
+<body ontouchstart style="background:#f2f2f2;">
+<div class="yyt_list_box">
+	<ul>
+    	<li>
+        	<a href="#">
+        	<div class="content_box">
+            	<p class="p_img" style="background-image:url(images/start.jpg)"></p>
+                <p class="p_tit">刮刮卡</p>
+                <p class="p_tit_f">获奖情况：<em class="f_award">一等奖</em></p>
+                 <p class="p_cjtime">参与时间：<em class="c_1">2015.12.25</em></p>
+            </div>
+            </a>
+        </li>
+    	<li>
+        	<a href="#">
+        	<div class="content_box">
+            	<p class="p_img" style="background-image:url(images/start.jpg)"></p>
+                <p class="p_tit">大转盘</p>
+                <p class="p_tit_f">获奖情况：<em class="f_award">一等奖</em></p>
+                <p class="p_cjtime">参与时间：<em class="c_1">2015.12.25</em></p>
+            </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

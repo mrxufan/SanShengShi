@@ -1,0 +1,81 @@
+@charset 'UTF-8';
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border: 2px solid #333;
+}
+.border {
+  border: 2px solid #333;
+}
+.box2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border: 2px solid #333;
+  margin-left: 100px;
+}
+.test_hunhe {
+  border: solid #ffff00 30px;
+}
+.test_hunhe_04 {
+  border: #ff0000 solid 10px;
+}
+.radius_test {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.sanjiao {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid red;
+}
+.border_test {
+  margin-top: 20px;
+  border-left: 5px solid #ff0000;
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+}
+.add_less {
+  width: 150px;
+}
+.pos_test {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  position: relative;
+}
+.list li {
+  background-color: orange;
+  margin-bottom: 10px;
+  padding: 10px;
+  overflow: hidden;
+}
+.list span {
+  float: right;
+}
+.list span:hover {
+  color: green;
+}
+.list a {
+  float: left;
+}
+.list a:hover {
+  color: yellow;
+}
+.test_arguments {
+  border: 10px #ff0000 solid;
+}
+.test_03 {
+  width: calc(100px-10px);
+}
+.test_important {
+  border: solid #ffff00 10px !important;
+}

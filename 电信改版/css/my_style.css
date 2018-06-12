@@ -1,0 +1,143 @@
+html,body{background-color:#e1e9f6;color: #333;}
+[v-cloak]{display: none;}
+
+.flex_wrap{display: flex;}
+.flex_item{flex: 1;}
+.img_box img{width: 100%;display: block;}
+.vue_body{ overflow: hidden;}
+
+
+/*标题前圆点*/
+.yuan{display: inline-block;width: 6px;height: 6px;border-radius: 50%;margin-right: 5px;vertical-align: middle;}
+.yuan.yellow{background-color: #ecb922;}
+.yuan.green{background-color: #00e42a;}
+.yuan.blue{background-color: #8a91d9;}
+
+
+/* 标题前竖线 */
+.shu{width: 3px;height: 12px;display: inline-block;margin-right: 5px;}
+.shu.yellow{background-color: #ecb922;}
+.shu.green{background-color: #00e42a;}
+.shu.blue{background-color: #8a91d9;}
+
+.clear_border .mint-cell-wrapper{background-image: none;}
+
+
+
+
+/*头部*/
+.head_wrap{background-color: #fff;padding: 10px;align-items: center;}
+.head_wrap .head_pic{width: 40px;height: 40px;display: inline-block;background-color: #eee;border-radius: 50%;overflow: hidden;}
+.head_wrap .head_pic img{width: 100%;}
+.head_wrap .head_info{align-items: center;}
+.head_wrap .head_info .s_phone{margin-left: 10px;font-size: 16px;}
+.head_wrap .home_btn{display: inline-block;width: 25px;height: 25px;background: url('../images/icon/other_icon/home_icon.png') no-repeat center center;background-size: cover;}
+
+/*箭头*/
+.allow_right{border: solid 1px #8a9ab3;border-bottom-width: 0;border-left-width: 0;content: " ";width: 8px;height: 8px;margin-left: 10px;transform: translateY(-50%) rotate(135deg);transition: all .2s;}
+.allow_active{transform: translateY(-50%) rotate(-45deg);margin-top: 10px;}
+
+
+
+/*你可能需要*/
+.dx_need_box{ margin:10px; background-color: #fff;}
+.dx_need_box .need_title{ position: relative; padding:10px; color:#777;}
+.dx_need_box .need_title:after{content: ''; display: block; position: absolute; left:0; bottom:0;  background-color: #ddd; width:100%; height:1px; transform: scaleY(.5); transform-origin: left bottom;  }
+.dx_need_box .need_list_body{}
+.dx_need_box .need_list_body .need_list_ul{ display: flex; flex-flow:row wrap;}
+.dx_need_box .need_list_body .need_list_ul .list_item{flex:1; padding:10px;}
+.dx_need_box .need_list_body .need_list_ul .list_item:active{ background-color: #f8f8f8;}
+.dx_need_box .need_list_body .need_list_ul .list_item .item_link{ display: block;  text-align: center;}
+.dx_need_box .need_list_body .need_list_ul .list_item .item_link .p_text{ color: #555;font-size: 13px;}
+
+
+/* 缴费记录 */
+.pay_corder_list{margin: 10px;}
+.pay_corder_list ul > li{margin-bottom: 10px;}
+.pay_corder_list .pay_corder_main .green{color: #00e42a;}
+.pay_corder_list .pay_corder_main .sub_list{color: #666;margin-top: -1px;}
+.pay_corder_list .pay_corder_main .sub_list .mint-cell-value{margin-right: 17px;}
+.pay_corder_list .pay_corder_main .sub_list.show .allow_right{transform: translateY(-50%) rotate(-45deg);margin-top: 10px;}
+
+
+/* 账户余额 */
+.account_yue_info{background-color: #fff;margin: 10px;}
+.account_yue_info .top_msg{text-align: center;font-size: 15px;font-weight: bold;position: relative;padding: 15px 0;}
+.account_yue_info .top_msg .p_money{font-size: 26px;margin-top: 4px;}
+.account_yue_info .top_msg:after{content: '';display: block;width: 100%;height: 1px;background-color: #ddd;transform: scaleY(.5);transform-origin: left bottom;position: absolute;left: 0;bottom: 0;}
+.account_yue_info .center_msg{position: relative;}
+.account_yue_info .center_msg .center_item{text-align: center;position: relative;padding: 10px 0;}
+.account_yue_info .center_msg .center_item:after{width: 1px;height: 100%;background-color: #ddd;position: absolute;right: 0;top: 0;transform: scaleX(.5);transform-origin: 0 0;content: '';}
+.account_yue_info .center_msg .center_item:last-child:after{display: none;}
+.account_yue_info .center_msg .center_item p:nth-child(1){color: #555;}
+.account_yue_info .center_msg .center_item p:nth-child(2){color: #333;font-weight: bold;font-size: 18px;}
+
+.account_yue_info .center_msg:after{content: '';display: block;width: 100%;height: 1px;background-color: #ddd;transform: scaleY(.5);transform-origin: left bottom;position: absolute;left: 0;bottom: 0;}
+
+.account_yue_info .btm_msg{padding: 10px;color: #555;}
+
+
+.account_yue_list{margin: 10px;background-color: #fff;}
+.account_yue_list .p_tit{padding:15px 10px;position: relative;} 
+.account_yue_list .p_tit:after{content: '';display: block;width: 100%;height: 1px;background-color: #ddd;transform: scaleY(.5);transform-origin: left bottom;position: absolute;left: 0;bottom: 0;}
+.account_yue_list .account_yue_item{align-items: center;padding-bottom: 10px;}
+.account_yue_list .account_yue_item .s_yuan{display: inline-block;}
+
+.account_yue_list .account_yue_item .font_green,.account_yue_list .account_yue_item .font_red{font-weight: bold;font-size: 15px;margin-right: 4px;}
+.account_yue_list .account_yue_item .font_green{color: #00e42a;}
+.account_yue_list .account_yue_item .font_red{color: #e41330;}
+.account_yue_list ul li{margin: 10px;position: relative;}
+.account_yue_list ul li:after{content: '';display: block;width: 100%;height: 1px;background-color: #ddd;transform: scaleY(.5);transform-origin: left bottom;position: absolute;left: 0;bottom: 0;}
+.account_yue_list ul li:last-child:after{display: none;}
+
+
+/* 流量包退订 */
+.liuliang_wrap > ul > li{background-color: #fff;margin: 10px;}
+.liuliang_wrap .liuliang_item_list{background-color: #fff;align-items: center;padding: 10px 0;position: relative;margin: 0 10px;}
+.liuliang_wrap .liuliang_item_list:after{content: ''; display: block; position: absolute; left:0; bottom:0;  background-color: #ddd; width:100%; height:1px; transform: scaleY(.5); transform-origin: left bottom;}
+.liuliang_wrap .liuliang_item_list:last-child:after{display: none;}
+.liuliang_wrap .liuliang_item_list .p_tit{font-weight: bold;}
+.liuliang_wrap .liuliang_item_list .p_txt{color: #666;font-size: 13px;}
+.liuliang_wrap .liuliang_item_list .tui_btn{ background: linear-gradient(to right,#6290ff, #2cb1ff);color: #fff;padding: 6px 20px;}
+.liuliang_wrap .liuliang_item_list .tui_btn:active{opacity: .8;}
+.liuliang_wrap .mint-cell .mint-cell-title{padding-left: 10px;}
+.liuliang_wrap li:nth-child(odd) .mint-cell:after{content: '';width: 3px;height: 15px;background-color: #8a91d9;position: absolute;left: 10px;top: 16px;}
+.liuliang_wrap li:nth-child(even) .mint-cell:after{content: '';width: 3px;height: 15px;background-color: #ecb922;position: absolute;left: 10px;top: 16px;}
+
+.liuliang_wrap .no_wrap{background-color: #fff;text-align: center;padding: 10px;}
+
+
+
+/*提醒服务*/
+.tx_fuwu_wrap{margin: 10px;}
+.nav_title .mint-tab-item-label{font-size: 16px;}
+.nav_title .mint-tab-item.is-selected{margin-bottom: 0;}
+.nav_title .mint-tab-item{border-bottom: 1px solid #ccc;}
+.tx_fuwu_wrap .nav_list{background-color: #fff;}
+.tx_fuwu_wrap .nav_list .nav_item{padding: 10px 0;position: relative;margin: 0 10px;}
+.tx_fuwu_wrap .nav_list .nav_item .switch_btn{margin-left: 20px;}
+.tx_fuwu_wrap .nav_list .nav_item .p_tit{font-weight: bold;}
+.tx_fuwu_wrap .nav_list .nav_item .p_txt{font-size: 13px;color: #555;}
+.tx_fuwu_wrap .nav_list .nav_item:after{position: absolute;content: '';display: block;width: 100%;height: 1px;background-color: #ddd;left: 0;bottom: 0;transform: scaleY(.5);transform-origin: left bottom;}
+.tx_fuwu_wrap .nav_list li:last-child .nav_item:after{display: none;}
+.tx_fuwu_wrap .nav_list .nav_item .switch_btn .mint-switch-input:checked + .mint-switch-core{background-color: #56d761;border-color: #56d761;}
+
+
+
+/*更改绑定、更改密码*/
+.nav_title .mint-tab-item-label{font-size: 16px;}
+.nav_title .mint-tab-item.is-selected{margin-bottom: 0;}
+.nav_title .mint-tab-item{border-bottom: 1px solid #ccc;}
+.tab_wrap .nav_item .p_input{position: relative;background-color: #fff;padding: 5px;padding-left: 30px;margin: 0 20px;}
+.tab_wrap .nav_item .p_input:after{content: ''; display: block; position: absolute; left:0; bottom:0;  background-color: #ddd; width:100%; height:1px; transform: scaleY(.5); transform-origin: left bottom;}
+.tab_wrap .nav_item .p_input .s_icon{position: absolute;width: 20px;height: 20px;background-position: center center;background-repeat: no-repeat;background-size: cover;left: 0;top: 15px;}
+.tab_wrap .nav_item .p_input .s_icon.icon1{background-image: url('../images/icon/zs_icon/wo_icon.png')} 
+.tab_wrap .nav_item .p_input .s_icon.icon2{background-image: url('../images/icon/zs_icon/msg_icon.png')} 
+.tab_wrap .nav_item .p_input .s_icon.icon3{background-image: url('../images/icon/zs_icon/phone_icon.png')}.tab_wrap .nav_item .p_input .s_icon.icon4{background-image: url('../images/icon/zs_icon/suo_icon.png')}  
+
+.tab_wrap .nav_item .p_input input{border: none;width: 100%;height: 40px;}
+.tab_wrap .nav_item .p_yzm{padding-right: 100px;}
+.tab_wrap .nav_item .p_yzm .a_yzm{position: absolute;padding: 6px 10px;background: linear-gradient(to right, #5a95ef , #2daeff);color: #fff;right: 0;top: 10px;border-radius: 2px;}
+.tab_wrap .nav_item .p_yzm .a_yzm:active{opacity: .8;}
+.tab_wrap .nav_item .btn_wrap{margin:20px;}
+.tab_wrap .nav_item .btn_wrap .change_btn{background-color: #4c7bfd;}

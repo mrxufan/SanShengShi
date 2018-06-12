@@ -1,0 +1,93 @@
+<!doctype html>
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+
+<title>天翼视讯</title>
+<style>
+.img_box img{width: 100%;}
+.ewm_box{width: 30%;margin: 20px auto;background-color: #fff;padding: 5px;}
+.ewm_box img{width: 100%;}
+.btn_info a{display: block;text-align: center;height: 40px;line-height: 40px;color: #fff;font-size: 16px;margin: 10px;border-radius: 4px;}
+.btn_info .a_btn_1{background-color: #50a9ed;}
+.btn_info .a_btn_1:active{background-color: #4a9ddd;}
+.btn_info .a_btn_2{background-color: #73c968;}
+.btn_info .a_btn_2:active{background-color: #6aba60;}
+.p_guize{text-align: center;color: #ffe119;text-decoration: underline;}
+.guize_info{background-color: #f8f2d7;margin: 10px;padding: 10px;border-radius: 6px;}
+.guize_info .p_title{font-size: 18px;color: #564a3e;text-align: center;margin: 10px;}
+.friends_uesr_info{background-color: #fff;margin: 10px;border-radius: 6px;overflow: hidden;}
+.friends_uesr_info .p_title{background-color: #53c6f6;text-align: center;padding: 10px;color: #fff;font-size: 16px;}
+.friends_uesr_info table td{padding: 10px;border-bottom: 1px solid #eee;font-size: 14px;width: 33.33%;}
+.friends_uesr_info table td:last-child{text-align: right;}
+.friends_uesr_info .p_user{overflow: hidden;padding: 10px;}
+.friends_uesr_info .p_user .s_left{float: left;}
+.friends_uesr_info .p_user .s_right{float: right;}
+.friends_uesr_info .p_user .s_right.s_big{color: #ea2481;font-size: 16px;font-weight: bold;}
+.friends_uesr_info .no_friends{text-align: center;padding: 30px 10px;}
+</style>
+</head>
+
+<body style="background-color: #387fda;">
+<div class="img_box"><img src="images/2017-08-09/01.jpg"></div>
+<div class="ewm_box"><img src="images/2017-08-09/ewm.jpg"></div>
+<div class="img_box"><img src="images/2017-08-09/02.jpg"></div>
+<div class="btn_info">
+	<a href="javascript:;" class="a_btn_1">领取10G省内通用流量</a>
+	<a href="javascript:;" class="a_btn_2">当月实务礼品</a>
+</div>
+<p class="p_guize" id="p_guize">活动规则</p>
+<div class="guize_info" id="guize_info" style="display: none;">
+	<p class="p_title">活动规则</p>
+	<p class="p_text">1、将二维码发给好友，好友识别后，成功领取或者已经领取30G天翼视讯定向流量三个月，即成为您的天翼视讯好友。</p>
+	<p class="p_text">2、您的天翼视讯好友需是河南电信手机号，关注”河南电信”微信公众号并验证手机号。</p>
+	<p class="p_text">3、您的天翼视讯好友当月天翼视讯定向流量累计达到20G，即可领取10G省内通用流量，领取的流量当月有效。</p>
+	<p class="p_text">4、成功添加天翼视讯好友后，好友双方互为天翼视讯好友。</p>
+	<p class="p_text">5、每月精选限量实物礼品50份，好友先到20G，并进入页面的先得。</p>
+</div>
+<div class="friends_uesr_info">
+	<p class="p_title">我的天翼视讯好友流量使用情况</p>
+	<div class="friends_info">
+		<table width="100%" style="">
+		<tr>
+			<td>昵称</td>
+			<td>手机号</td>
+			<td>流量消耗</td>
+		</tr>
+		<tr>
+			<td>张三</td>
+			<td>13535353535</td>
+			<td>100M</td>
+		</tr>
+		<tr>
+			<td>张三</td>
+			<td>13535353535</td>
+			<td>100M</td>
+		</tr>
+		<tr>
+			<td>张三</td>
+			<td>13535353535</td>
+			<td>100M</td>
+		</tr>
+	</table>
+	<p class="p_user"><span class="s_left">流量消耗合计：</span><span class="s_right s_big">1000M</span></p>
+	</div>
+	
+	<div class="no_friends">
+		您还没有天翼好友呢<br>赶快看活动说明，行动起来吧！
+	</div>
+</div>
+<div class="img_box"><img src="images/2017-08-09/03.jpg"></div>
+<script type="text/javascript" src='js/jquery.1.9.1.min.js'></script>
+<script type="text/javascript">
+$('#p_guize').click(function () {
+	$('#guize_info').toggle();
+})
+</script>
+</body>
+
+</html>

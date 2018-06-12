@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>拼团-支付成功</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!--标准mui.css-->
+<link href="css/mui.min.css" rel="stylesheet">
+<!-- 共用样式 -->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+/* 拼团-支付成功 */
+.pintuan_pay_success .column_1,.pintuan_pay_success .column_2,.pintuan_pay_success .column_3{background-color: #fff;padding: 10px;margin-bottom: 10px;} 
+.pintuan_pay_success .column_1 .p_time{text-align: center;}
+.pintuan_pay_success .column_1 .p_time span{display: inline-block;background-color: #f2f2f2;padding: 2px 10px;margin: 10px;}
+.pintuan_pay_success .column_1 .p_title{font-weight: bold;font-size: 18px;text-align: center;color: #333;margin: 20px 0;}
+.pintuan_pay_success .column_1 .p_title .em_ren{color: #e93b65;}
+.pintuan_pay_success .column_1 .btn_box a{display: block;text-align: center;height: 40px;line-height: 40px;margin: 10px;border-radius: 4px;font-size: 16px;}
+.pintuan_pay_success .column_1 .btn_box .a_btn_1{background-color: #fe406e;color: #fff;}
+.pintuan_pay_success .column_1 .btn_box .a_btn_1:active{background-color: #e93b65;}
+.pintuan_pay_success .column_1 .btn_box .a_btn_2{border: 1px solid #ccc;color: #fe406e;}
+.pintuan_pay_success .column_1 .btn_box .a_btn_2:active{background-color: #f5f5f5;}
+.pintuan_pay_success .column_2 .head_box{text-align: center;}
+.pintuan_pay_success .column_2 .p_head{width: 80px;height: 80px;border-radius: 50%;margin: 0 auto;border: 1px solid #fac134;background-repeat: no-repeat;background-position: center center;background-size: cover;position: relative;margin-bottom: 10px;display: inline-block;} 
+.pintuan_pay_success .column_2 .p_head .s_txt{position: absolute;background-color: #fe406e;color: #fff;padding: 2px 6px;border-radius: 4px;left: -10px;top: 0;font-size: 12px;}
+.pintuan_pay_success .column_2 .table_shop tr{border-top: 1px solid #eee;}
+.pintuan_pay_success .column_2 .table_shop td{padding: 10px 0;}
+.pintuan_pay_success .column_2 .table_shop .right_icon .td_txt{padding-right: 15px;}
+.pintuan_pay_success .column_2 .table_shop .td_tit{width:90px;color: #333;}
+.pintuan_pay_success .column_2 .table_shop .td_txt{text-align: right;position: relative;}
+.pintuan_pay_success .column_2 .table_shop .td_txt .iconfont{font-size: 12px;position: absolute;right: 0;top: 50%;margin-top: -10px;color: #999;}
+.pintuan_pay_success .column_3 .p_xz{color: #333;margin-bottom: 10px;}
+.pintuan_pay_success .column_3 ul{overflow: hidden;}
+.pintuan_pay_success .column_3 ul li{width: 33.33%;float: left;font-size: 12px;color: #999;}
+
+.share_friends{position: fixed;width: 100%;height: 100%;left: 0;top: 0;background-color: rgba(0, 0, 0, .6);}
+.share_friends .share_friends_info{padding: 20px;}
+.share_friends .share_friends_info p{color: #fff;margin: 10px;text-align: center;}
+.share_friends .share_friends_info .p_tit{font-weight: bold;font-size: 16px;}
+.share_friends .share_friends_info .p_tit em{color: #fe406e;}
+.share_friends .share_friends_info .share_icon{color: #fff;text-align: right;}
+.share_friends .share_friends_info .share_icon .mui-icon-redo{font-size: 30px;}
+
+.share_friends .share_friends_info .share_icon .s_share_icon{display: inline-block;width: 30px;}
+.share_friends .share_friends_info .share_icon .s_share_icon img{width: 100%;}
+</style>
+</head>
+<body>
+<div class="pintuan_pay_success">
+	<div class="column_1">
+		<p class="p_time"><span>21:00:00</span></p>
+		<p class="p_title">还差<em class="em_ren">1</em>人，赶快邀请好友来参团吧</p>
+		<div class="btn_box">
+			<a href="javascript:;" class="a_btn_1">1键邀请好友[伙拼]</a>
+			<a href="javascript:;" class="a_btn_2">返回拼团首页</a>
+		</div>
+	</div>
+	<div class="column_2" style="padding-bottom: 0;">
+		<div class="head_box">
+			<p class="p_head" style="background-image: url(images/cbd.jpg);"><span class="s_txt">发起人</span></p>
+		</div>
+		<table width="100%" class="table_shop">
+			<!-- 右边带箭头 -->
+			<tr class="right_icon">  
+				<td class="td_tit">商品名称</td>
+				<td class="td_txt"><p class="p_txt">美特斯邦威</p><i class="iconfont icon-youbian"></i></td>
+			</tr>
+			<!-- 右边带箭头 -->
+			<tr>
+				<td class="td_tit">商品名称</td>
+				<td class="td_txt"><p class="p_txt">美特斯邦威</p></td>
+			</tr>
+		</table>
+	</div>
+	<div class="column_3">
+		<p class="p_xz">拼团须知</p>
+		<ul>
+			<li>邀请好友参团</li>
+			<li>人满人别发货</li>
+			<li>人不满24小时退款</li>
+		</ul>
+	</div>
+</div>
+
+<!-- 分享给朋友 -->
+<div class="share_friends">
+	<div class="share_friends_info">
+	<div class="share_icon"><!-- <span class="mui-icon mui-icon-redo"></span> --><span class="s_share_icon"><img src="images/share_icon.png"></span></div>
+		<p class="p_tit">还差<em>1</em>人，点击右上角发送给朋友</p>
+		<p class="p_txt">一起[伙拼]</p>
+	</div>
+</div>
+<script type="text/javascript" src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+</body>
+</html>

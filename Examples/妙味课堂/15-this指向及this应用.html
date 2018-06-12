@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>this指向及this应用</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<button id="btn">按钮</button>
+<button onclick="fun()">按钮2</button>
+
+
+
+<script type="text/javascript">
+// window是JS老大
+// window.alert(this);
+// this:指的是调用当前方法（函数）的那个对象
+
+var Btn=document.querySelector('#btn');
+function fun() {
+	alert(this);
+}
+Btn.onclick=fun;//此时this指的是Btn
+// Btn.onclick=function () {
+// 	fun()//只要见到这种调用this指的都是window
+// }
+</script>
+</body>
+</html>

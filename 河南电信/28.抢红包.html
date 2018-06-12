@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>556656656</title>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css">
+<!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+<link href="css/page_style.css" rel="stylesheet" type="text/css">
+<!--页面所需样式-->
+
+<style type="text/css">
+.p_hongbao_btn{  background:#ff4a4a; color:#fff; margin: 0 auto; width: 100px; height: 36px; line-height: 36px; border-radius: 3px; text-align: center; font-size: 15px; margin-bottom:20px;}
+.p_hongbao_btn:active{ background:#ef4444;}
+
+
+.hongbao_bj{ background-color:rgba(0,0,0,0.3); width:100%; height:100%; position:fixed; left:0; top:0; z-index:3;}
+
+.hongbao_info{ position:fixed; width:100%; height:100%; z-index:4; left:0; top:0;}
+
+.hongbao_info .p_close_btn{ position:absolute; top:30px; right:20px; z-index:1; width:30px; height:30px; background-image:url(images/hb_img_01.png); background-repeat:no-repeat; background-position:top center; background-size:contain;}
+.hongbao_info .p_close_btn:active{ opacity:0.8;}
+
+.hongbao_info .hb_no_open{ position:relative; width:260px; height:387px; margin:0 auto; margin-top:20px; background-image:url(images/hb_img_03.png); background-repeat:no-repeat; background-position:top center; background-size:contain;}
+.hongbao_info .hb_no_open .p_btn{ position:absolute; top:150px; left:50%; width:60px; height:60px; margin-left:-30px; background-image:url(images/hb_img_04.png); background-repeat:no-repeat; background-position:top center; background-size:contain;}
+.hongbao_info .hb_no_open .p_btn:active{ opacity:0.8;}
+
+
+.hongbao_info  .hb_open{ overflow:hidden; position:relative; width:260px; height:387px; margin:0 auto; margin-top:20px; background-image:url(images/hb_img_02.png); background-repeat:no-repeat; background-position:top center; background-size:contain;}
+.hongbao_info  .hb_open .hb_info_body{ text-align:center; margin-top:120px; }
+.hongbao_info  .hb_open .hb_info_body .p_txt{ font-size:20px; color:#ffde00; margin-bottom:30px; }
+.hongbao_info  .hb_open .hb_info_body .p_money{ font-size:30px; font-weight:bold; color:#fff; margin-bottom:50px; }
+.hongbao_info  .hb_open .hb_info_body .p_money em{ font-size:20px;}
+.hongbao_info  .hb_open .hb_info_body .p_ts{ font-size:14px; color:#222 }
+
+</style>
+
+
+
+</head>
+
+<body ontouchstart >
+
+<div class="hint_message_icon" style="margin-top:50px;">
+  <p class="p_img"><img src="images/ts_icon_ok.png"></p>
+  <p class="p_txt">支付成功</p>
+  
+  <p class="p_hongbao_btn">立抢红包</p>
+  
+  <p class="p_btn">继续购物</p>
+</div>
+
+
+
+<!--弹出层-->
+
+<div class="hongbao_info">
+	<p class="p_close_btn" style="display:;"></p>
+	<div class="hb_no_open" style="display:none;"><p class="p_btn"></p></div>
+    
+    <div class="hb_open" style="display:;">
+    	<div class="hb_info_body">
+            <p class="p_txt">恭喜你</p>
+            <p class="p_money">2.88<em>元</em></p>
+            <p class="p_ts">红包将自动存入您的余额</p>
+        </div>
+    </div>
+    
+</div>
+
+<div class="hongbao_bj" style="display:;"></div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<link rel="stylesheet" type="text/css" href="css/public.css"><!--共用样式-->
+<link rel="stylesheet" type="text/css" href="css/page_style.css"><!--页面样式-->
+<link rel="stylesheet" type="text/css" href="font/font-awesome.css"><!--字体图标-->
+<script src="js/jquery.js"></script>
+<title>名片模板-02</title>
+<style>
+body{ background:url(images/card_mould_bg02.jpg) no-repeat center center; background-size:cover;}
+
+
+
+
+</style>
+</head>
+
+<body ontouchstart>
+
+<div class="card_mould_tit_02">
+	
+    <div class="card_name_box">
+    	<div class="top_btn_box">
+            <ul class="box-flex-box">
+                <li class="box-flex-1">
+                    <p class="p_see">100次访问</p>
+                </li>
+                <li class="box-flex-1">
+                    <p class="p_icon" style="background-image:url(images/card_erwei_icon.png)"></p>
+                </li>
+            </ul>
+        </div>
+    	<p class="p_img" style="background-image:url(images/card_img_01.png)"><span class="vip_icon"></span></p>
+        <p class="p_name" id="p-click"><span class="s_tit"><i class="i_name" style="margin-top: 12px">王小蒙</i><!-- <em class="fa fa-plus em_plus"></em> --><span class="zebra-subject-hotarea"><a href="#"><span class="subject-href"><i class="anim"></i><i class="shadow"></i><i class="dot fa fa-plus"></i></span></a></span></span>
+        </p>
+        <p class="p_job">行业经理</p>
+        
+    </div>
+</div>
+<div class="fixed_bottom_box_02">
+	<p class="p_company">中国联通沃名片<em class="fa fa-angle-right"></em></p>
+	<div class="btm_tell_box">
+    	<ul>
+    	<li>
+        	<p class="p_tell text-overflow"><i class="fa fa-phone bg_1"></i>18500185000<em class="fa fa-angle-right"></em></p>
+        </li>
+        <li>
+        	<p class="p_tell text-overflow"><i class="fa fa-envelope bg_2"></i>wo@10010.com</p>
+        </li>
+        <li>
+        	<p class="p_tell text-overflow"><i class="fa fa-weixin bg_3"></i>IM10010<em class="fa fa-angle-right"></em></p>
+        </li>
+        <li>
+        	<p class="p_tell text-overflow"><i class="fa fa-envelope bg_4"></i>Xiaomeng@126.com</p>
+        </li>
+        <li>
+        	<p class="p_tell text-overflow"><i class="fa fa-qq bg_5"></i>123456789<em class="fa fa-angle-right"></em></p>
+        </li>
+        <li>
+        	<p class="p_tell text-overflow"><i class="fa fa-user bg_6"></i>个人说明<em class="fa fa-angle-right"></em></p>
+        </li>
+    </ul>
+    </div>
+    <p class="add_txl_box">添加到通讯录</p>
+    <a href="#" style="text-align: center;display: block;text-decoration: underline;color:#f48454;margin: 10px 0;">我要使用沃名片</a>
+</div>
+<!--头像弹窗-->
+<div class="fixed_tx_eject">
+	<p class="p_img" style="background-image:url(images/240X240_2.jpg)"></p>
+</div>
+
+
+<!-- 顶部提示信息 -->
+<div id="top-fixed-info" style="background:rgba(0,0,0,.5);color: #fff;position: fixed;left: 0;top: 0;width: 100%;z-index: 300;text-align: center;padding: 10px 0;"><em class="fa fa-bell-o" style="margin-right: 4px"></em>本企业信息河南联通已认证通过</div>
+
+
+<script>
+
+  // 顶部提示2s自动消失
+$('#top-fixed-info').show().delay(5000).slideUp(200); 
+
+/*头像弹窗*/
+$(".fixed_tx_eject").hide()
+$(".card_name_box .p_img").click(
+	function(){
+		$(".fixed_tx_eject").show()
+		}
+)
+$(".fixed_tx_eject").click(
+	function(){
+		$(this).hide()
+		}
+)	
+</script>
+</body>
+</html>

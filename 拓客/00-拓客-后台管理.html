@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>拓客-后台管理</title>
+<!-- layui.css -->
+<link href="layui/css/layui.css" rel="stylesheet">
+<style type="text/css">
+/* 后台-内容表格 */
+.content_show_info{background-color: #f1f1f1;margin-bottom: 15px;border: 1px dashed #ccc;}
+.content_show_info table td:first-child{min-width: 100px;}
+.content_show_info table td{padding: 10px;}
+
+/* 后台-手机预览 */
+.phone_preview_info .phone_wrap{width: 300px;margin: 0 auto;position: relative;}
+.phone_preview_info .phone_wrap img{width: 100%;}
+.phone_preview_info .phone_wrap .phone_info{width: 260px;height: 464px;position: absolute;left: 20px;top: 76px;}
+.phone_preview_info .phone_wrap .phone_info .phone_main_info{position: relative;width: 260px;height: 464px;}
+.phone_preview_info .phone_wrap .phone_info .phone_main_info .phone_img_info .phone_img_list{background-position: center center;background-repeat: no-repeat;background-size: cover;}
+
+/* 固定预览手机 */
+.phone_preview_info{position: fixed;width: 300px;z-index: 10;right: 14%;height: 611px;top: 50%;margin-top: -305px;}
+.phone_preview_info .phone_wrap{ position: relative; z-index: 100;width: 300px;height: 611px;background-repeat: no-repeat;background-position: center center;background-size: 100% 100%;}
+
+/* 统计tab切换 */
+.data_tj_info{overflow: hidden;margin: 10px;}
+.data_tj_info .data_item{width: 300px;padding: 15px;float: left;margin-right: 15px;color: #fff;border-radius: 4px;text-align: center;margin-bottom: 15px;}
+
+.data_tj_info .data_item.bg_01{background-color: #009688;}
+.data_tj_info .data_item.bg_02{background-color: #5FB878;}
+.data_tj_info .data_item.bg_03{background-color: #FF5722;}
+.data_tj_info .data_item.bg_04{background-color: #01AAED;}
+.data_tj_info .data_item.bg_05{background-color: #2F4056;}
+
+.data_tj_info .data_item .a_tit{font-size: 18px;text-align: center;margin: 10px 0;color: #fff;display: inline-block;}
+.data_tj_info .data_item .data_table{text-align: center;}
+.data_tj_info .data_item .data_table td{padding: 8px 0;}
+.data_tj_info .data_item .data_table .td_num{font-size: 25px;}
+
+
+.show_table th:nth-child(1), .show_table td:nth-child(1){width: 100px;}
+
+
+/* 暂无资源 */
+.none_data{text-align: center;margin: 40px 0;}
+.none_data .p_icon i{color: #009688;font-size: 30px;}
+.none_data .p_text{margin-top: 10px;}
+
+/* 去掉弹出图片序号信息 */
+.layui-layer-imgsee{display: none;}
+</style>
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">拓客-后台管理</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="">控制台</a></li>
+      <li class="layui-nav-item"><a href="">商品管理</a></li>
+      <li class="layui-nav-item"><a href="">用户</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">其它</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">邮件管理</a></dd>
+          <dd><a href="">消息管理</a></dd>
+          <dd><a href="">授权管理</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <ul class="layui-nav" style="float: right;">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <!-- <img src="http://t.cn/RCzsdCq" class="layui-nav-img"> -->
+          个人设置
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+          <dd><a href="">退出</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <p style="height: 60px;line-height: 60px;color: #fff;float: right;">显示公司名称</p>
+
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item">
+          <a class="" href="javascript:;">平台管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">列表一</a></dd>
+            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a href="javascript:;">列表三</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">用户管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">列表一</a></dd>
+            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a href="">产品管理</a></li>
+        <li class="layui-nav-item"><a href="">系统管理</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body" style="bottom: 0;">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+    	<!-- 顶部标题 -->
+      	 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    		<legend>创建活动</legend>
+  		 </fieldset>
+
+
+		
+		<!-- 栅格布局、表单 -->
+		<div class="layui-fluid"> 
+				<div class="layui-row">
+				    <div class="layui-col-md6">
+				    	<form class="layui-form"> 
+							<fieldset class="layui-elem-field">
+							  <legend><button type="button" class="layui-btn layui-btn-normal"><i class="layui-icon">&#xe654;</i>添加资源</button></legend>
+							  <div class="layui-field-box">
+								<div class="none_data">
+					    			<p class="p_icon"><i class="layui-icon">&#xe6af;</i></p>
+					    			<p class="p_text">暂无资源</p>
+					    		</div>
+							    <table class="layui-table show_table" lay-even lay-skin="nob">
+								  <thead>
+								    <tr>
+								      <th>公司名称：</th>
+								      <th>探险加信息技术有限公司</th>
+								    </tr> 
+								  </thead>
+								  <tbody>
+								    <tr>
+								      <td>选择资源：</td>
+								      <td>0元一年意外险</td>
+								    </tr>
+								    <tr>
+								      <td>资源类型：</td>
+								      <td>虚拟</td>
+								    </tr>
+								    <tr>
+								      <td>起始时间：</td>
+								      <td>2017-08-10至 2017-09-01</td>
+								    </tr>
+								    <tr>
+								      <td>兑换规则：</td>
+								      <td>微信搜索 【探险加】 微信公众号并关注，回复“兑换礼品”，进入页面进行兑换；礼品将在48小时内发放…</td>
+								    </tr>
+								  </tbody>
+								</table>
+							  </div>
+							</fieldset>
+
+
+				      	<div class="layui-form-item">
+						  <label class="layui-form-label">所属应用：</label>
+						  <div class="layui-input-block">
+						    <select name="city" lay-verify="">
+							  <option value="">请选择所属应用</option>
+							  <option value="010">探险加</option>
+							  <option value="021">河南联通</option>
+							  <option value="0571">河南电信公众号</option>
+							</select>  
+						  </div>
+						</div>
+
+						<div class="layui-form-item">
+						  <label class="layui-form-label">公司名称：</label>
+						  <div class="layui-input-block">
+						    <input type="text" name="title" placeholder="请输入公司名称" class="layui-input">  
+						  </div>
+						</div>
+
+						<div class="layui-form-item">
+						  <label class="layui-form-label">起始时间：</label>
+						  <div class="layui-input-block">
+						    <div class="layui-inline">
+						      <input type="text" class="layui-input test-item">
+						    </div>
+						    <span style="margin-right: 10px;">至</span>
+						    <div class="layui-inline">
+						      <input type="text" class="layui-input test-item">
+						    </div>
+						  </div>
+						</div>
+
+						<div class="layui-form-item">
+						  <label class="layui-form-label">应用类型：</label>
+						  <div class="layui-input-block">
+						    <input type="radio" name="sex" value="nan" title="App">
+							<input type="radio" name="sex" value="nv" title="微信公众号" checked>  
+						  </div>
+						</div>
+
+						<div class="layui-form-item">
+						  <label class="layui-form-label">选择商品：</label>
+						  <div class="layui-input-block">
+						    <input type="checkbox" name="" lay-skin="primary" title="100M流量" checked="">
+						    <input type="checkbox" name="" lay-skin="primary" title="鲜花">
+						    <input type="checkbox" name="" lay-skin="primary" title="卡券" disabled=""> 
+						  </div>
+						</div>
+
+						<div class="layui-form-item layui-form-text">
+						    <label class="layui-form-label">编辑页面：</label>
+						    <div class="layui-input-block">
+						      <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+						    </div>
+  						</div>
+
+  						<div class="layui-form-item">
+						    <label class="layui-form-label"></label>
+						    <div class="layui-input-block">
+						      <button class="layui-btn" type="button">立即提交</button>
+						      <button class="layui-btn layui-btn-primary" type="button">重置</button>
+						    </div>
+  						</div>
+
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">上传封面：</label>
+							<div class="layui-inline">
+								<div class="layui-input-inline">
+									<input type="text" name="" placeholder="" class="layui-input" readonly="" id="link_value">
+								</div>
+								<button class="layui-btn layui-btn-normal" type="button" id="set_link">设置链接</button>
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+						  <label class="layui-form-label">上传照片：</label>
+						  <div class="layui-input-block">
+							<div id="layer-photos-demo" class="layer-photos-demo">
+	  							<img layer-src="images/zizhi.jpg" src="images/zizhi.jpg" alt="图片名" width="200">
+	  							<!-- <img layer-src="images/zizhi.jpg" src="images/zizhi.jpg" alt="图片名" width="200"> -->
+	  							<p style="margin: 10px 0;color: #999;">上传营业执照或组织机构代码（点击图片可预览大图）</p>
+	  							<button type="button" class="layui-btn layui-btn-normal" id="up_btn">上传图片</button>
+							</div>
+						  </div>
+						</div>
+						
+  						</form>
+				    </div>
+
+				    <div class="layui-col-md6">
+				    	<!-- 手机预览 -->
+				    	<div class="phone_preview_info">
+				    		<div class="phone_wrap" style="background-image: url(images/iphone.png);">
+				    			<div class="phone_info">
+				    				<div class="phone_main_info">
+				    					<div class="layui-carousel phone_img_info" id="phone_preview">
+										  <div carousel-item="">
+										    <div class="phone_img_list" style="background-image: url(images/bg_01.jpg);"></div>
+										   	<div class="phone_img_list" style="background-image: url(images/bg_02.jpg);"></div>
+										   	<div class="phone_img_list" style="background-image: url(images/bg_03.jpg);"></div>
+										  </div>
+										</div>
+										<!-- <div style="height: 464px;overflow-y: auto;"><img src="images/bg_03.jpg"></div> -->
+				    				</div>
+				    			</div>
+				    		</div>
+				    		<!-- <div style="margin: 20px 0;text-align: center;"><button class="layui-btn layui-btn-normal" id="up_phone_btn">上传照片</button></div> -->
+				    	</div>
+				    </div>
+
+				</div>
+		</div>
+  		<!-- 表格数据 -->
+		<form class="layui-form" action="">
+			<div class="layui-form-item">
+				<table class="layui-table">
+				  <colgroup>
+				    <col width="150">
+				    <col width="200">
+				    <col>
+				  </colgroup>
+				  <thead>
+				    <tr>
+				      <th>昵称</th>
+				      <th>加入时间</th>
+				      <th>签名</th>
+				      <th>起始时间</th>
+				      <th>操作</th>
+				    </tr> 
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td>贤心</td>
+				      <td>2016-11-29</td>
+				      <td>人生就像是一场修行</td>
+				      <td>2017-01-01至2018-01-01</td>
+				      <td><a href="Javascript:;">查看</a> | <a href="Javascript:;">编辑</a> | <a href="Javascript:;">删除</a></td>
+				    </tr>
+				    <tr>
+				      <td>许闲心</td>
+				      <td>2016-11-28</td>
+				      <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+				      <td>2017-01-01至2018-01-01</td>
+				      <td><a href="Javascript:;">查看</a> | <a href="Javascript:;">编辑</a> | <a href="Javascript:;">删除</a></td>
+				    </tr>
+				    <tr>
+				      <td>贤心</td>
+				      <td>2016-11-29</td>
+				      <td>人生就像是一场修行</td>
+				      <td>2017-01-01至2018-01-01</td>
+				      <td><a href="Javascript:;">查看</a> | <a href="Javascript:;">编辑</a> | <a href="Javascript:;">删除</a></td>
+				    </tr>
+				    <tr>
+				      <td>许闲心</td>
+				      <td>2016-11-28</td>
+				      <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+				      <td>2017-01-01至2018-01-01</td>
+				      <td><a href="Javascript:;">查看</a> | <a href="Javascript:;">编辑</a> | <a href="Javascript:;">删除</a></td>
+				    </tr>
+				  </tbody>
+				</table>
+				<!-- 分页 -->
+				<div id="page" style="text-align: center;"></div>
+			</div>
+		</form>
+		
+		<!-- tab切换 -->
+		<div class="layui-tab layui-tab-card">
+		  <ul class="layui-tab-title">
+		    <li class="layui-this">我发布的资源</li>
+		    <li>我发布的活动</li>
+		  </ul>
+		  <div class="layui-tab-content">
+		    <div class="layui-tab-item layui-show">
+		    	<div class="data_tj_info">
+		    		<!-- <div class="data_item bg_01">
+		    			<a href="javascript:;" class="a_tit">0元一年意外保险<i class="layui-icon">&#xe602;</i></a>
+		    			<hr>
+			    		<div class="data_table">
+			    			<table width="100%">
+			    				<tr>
+			    					<td class="td_num">3</td>
+			    					<td class="td_num">50</td>
+			    					<td class="td_num">100</td>
+			    				</tr>
+			    				<tr>
+			    					<td>使用企业</td>
+			    					<td>获得用户数</td>
+			    					<td>页面访问量</td>
+			    				</tr>
+			    			</table>
+			    		</div>
+		    		</div> -->
+		    		<!-- <div class="data_item bg_02">
+		    			<a href="javascript:;" class="a_tit">0元一年意外保险<i class="layui-icon">&#xe602;</i></a>
+		    			<hr>
+			    		<div class="data_table">
+			    			<table width="100%">
+			    				<tr>
+			    					<td class="td_num">3</td>
+			    					<td class="td_num">50</td>
+			    					<td class="td_num">100</td>
+			    				</tr>
+			    				<tr>
+			    					<td>使用企业</td>
+			    					<td>获得用户数</td>
+			    					<td>页面访问量</td>
+			    				</tr>
+			    			</table>
+			    		</div>
+		    		</div> -->
+		    		<div class="none_data">
+		    			<p class="p_icon"><i class="layui-icon">&#xe6af;</i></p>
+		    			<p class="p_text">暂无资源</p>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="layui-tab-item">
+		    	<div class="data_tj_info">
+		    		<div class="data_item bg_01">
+		    			<a href="javascript:;" class="a_tit">0元一年意外保险<i class="layui-icon">&#xe602;</i></a>
+		    			<hr>
+			    		<div class="data_table">
+			    			<table width="100%">
+			    				<tr>
+			    					<td class="td_num">3</td>
+			    					<td class="td_num">50</td>
+			    					<td class="td_num">100</td>
+			    				</tr>
+			    				<tr>
+			    					<td>使用企业</td>
+			    					<td>获得用户数</td>
+			    					<td>页面访问量</td>
+			    				</tr>
+			    			</table>
+			    		</div>
+		    		</div>
+		    		<div class="data_item bg_02">
+		    			<a href="javascript:;" class="a_tit">0元一年意外保险<i class="layui-icon">&#xe602;</i></a>
+		    			<hr>
+			    		<div class="data_table">
+			    			<table width="100%">
+			    				<tr>
+			    					<td class="td_num">3</td>
+			    					<td class="td_num">50</td>
+			    					<td class="td_num">100</td>
+			    				</tr>
+			    				<tr>
+			    					<td>使用企业</td>
+			    					<td>获得用户数</td>
+			    					<td>页面访问量</td>
+			    				</tr>
+			    			</table>
+			    		</div>
+		    		</div>
+		    		<div class="data_item bg_03">
+		    			<a href="javascript:;" class="a_tit">0元一年意外保险<i class="layui-icon">&#xe602;</i></a>
+		    			<hr>
+			    		<div class="data_table">
+			    			<table width="100%">
+			    				<tr>
+			    					<td class="td_num">3</td>
+			    					<td class="td_num">50</td>
+			    					<td class="td_num">100</td>
+			    				</tr>
+			    				<tr>
+			    					<td>使用企业</td>
+			    					<td>获得用户数</td>
+			    					<td>页面访问量</td>
+			    				</tr>
+			    			</table>
+			    		</div>
+		    		</div>
+		    		<div class="data_item bg_04">
+		    			<a href="javascript:;" class="a_tit">0元一年意外保险<i class="layui-icon">&#xe602;</i></a>
+		    			<hr>
+			    		<div class="data_table">
+			    			<table width="100%">
+			    				<tr>
+			    					<td class="td_num">3</td>
+			    					<td class="td_num">50</td>
+			    					<td class="td_num">100</td>
+			    				</tr>
+			    				<tr>
+			    					<td>使用企业</td>
+			    					<td>获得用户数</td>
+			    					<td>页面访问量</td>
+			    				</tr>
+			    			</table>
+			    		</div>
+		    		</div>
+		    		<div class="data_item bg_05">
+		    			<a href="javascript:;" class="a_tit">0元一年意外保险<i class="layui-icon">&#xe602;</i></a>
+		    			<hr>
+			    		<div class="data_table">
+			    			<table width="100%">
+			    				<tr>
+			    					<td class="td_num">3</td>
+			    					<td class="td_num">50</td>
+			    					<td class="td_num">100</td>
+			    				</tr>
+			    				<tr>
+			    					<td>使用企业</td>
+			    					<td>获得用户数</td>
+			    					<td>页面访问量</td>
+			    				</tr>
+			    			</table>
+			    		</div>
+		    		</div>
+		    		<div class="data_item bg_01">
+		    			<a href="javascript:;" class="a_tit">0元一年意外保险<i class="layui-icon">&#xe602;</i></a>
+		    			<hr>
+			    		<div class="data_table">
+			    			<table width="100%">
+			    				<tr>
+			    					<td class="td_num">3</td>
+			    					<td class="td_num">50</td>
+			    					<td class="td_num">100</td>
+			    				</tr>
+			    				<tr>
+			    					<td>使用企业</td>
+			    					<td>获得用户数</td>
+			    					<td>页面访问量</td>
+			    				</tr>
+			    			</table>
+			    		</div>
+		    		</div>
+
+		    	</div>
+		    </div>
+		  </div>
+		</div>
+
+    </div>
+  </div>
+</div>
+
+<!-- <div style="" id="ewm_box"><img src="images/ewm.jpg"></div> -->
+<!-- layui.js -->
+<script type="text/javascript" src="layui/layui.js"></script>  
+<script>
+layui.use(['element','form', 'layedit', 'laydate','laypage','upload','layer','carousel','jquery'], function(){
+  var form = layui.form
+  ,$= layui.jquery
+  ,carousel = layui.carousel
+  ,layer = layui.layer
+  ,element = layui.element
+  ,layer = layui.layer
+  ,layedit = layui.layedit
+  ,laypage = layui.laypage
+  ,upload = layui.upload
+  ,laydate = layui.laydate;
+  
+   //同时绑定多个日期控件
+  lay('.test-item').each(function(){
+    laydate.render({
+      elem: this
+      ,min: '2017-1-1'//最小/大范围
+  	  ,max: '2017-12-31'//最小/大范围
+      ,trigger: 'click'//触发
+    });
+  });
+
+  
+  //创建一个编辑器
+  var editIndex = layedit.build('LAY_demo_editor');
+
+  //分页
+  laypage.render({
+    elem: 'page' //注意，这里的 page 是 ID，不用加 # 号
+    ,count: 80 //数据总数，从服务端得到
+    ,layout: ['count','prev', 'page', 'next']//自定义排版
+  });
+
+  //图片上传
+  var uploadInst = upload.render({
+    elem: '#up_btn' //绑定元素
+    ,url: '/upload/' //上传接口
+    ,done: function(res){
+      //上传完毕回调
+    }
+    ,error: function(){
+      //请求异常回调
+    }
+  });
+ 
+
+ //图片预览
+layer.photos({
+  photos: '#layer-photos-demo'
+  ,anim: 5 
+}); 
+
+
+// 设置链接弹层
+$('#set_link').click(function() {
+	layer.prompt({
+	  formType: 0, //输入框类型，支持0（文本）默认1（密码）2（多行文本）
+	  title: '请输入地址',//标题
+	}, function(value, index, elem){
+	  document.getElementById('link_value').value=value;//获取value
+	  layer.close(index);
+	});
+});
+	
+
+
+
+// 手机预览轮播图
+ carousel.render({
+    elem: '#phone_preview'
+    ,autoplay:false
+    ,width:'100%'
+    ,height: '100%'
+  });
+
+
+ //手机上传照片 
+  var up_phone_pic = upload.render({
+    elem: '#up_phone_btn' //绑定元素
+    ,url: '/upload/' //上传接口
+    ,done: function(res){
+      //上传完毕回调
+    }
+    ,error: function(){
+      //请求异常回调
+    }
+  });
+
+
+// 弹出二维码
+$('#preview_phone').click(function () {
+	layer.open({
+	  title :'扫描二维码在手机预览',
+	  type: 1,
+	  anim: 0,
+	  skin:'layui-layer-molv',
+	  area: '300px',
+	  content: '<div style="text-align:center;padding: 20px;"><img src="images/ewm.jpg" width="200"></div>'
+	});
+});
+
+
+
+
+
+});
+
+</script>  
+
+
+</body>
+</html>

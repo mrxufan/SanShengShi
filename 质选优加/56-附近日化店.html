@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>附近日化店</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<!--标准mui.css-->
+<link rel="stylesheet" href="css/mui.min.css">
+<!--App自定义的css-->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style>
+.mui-content .mui-segmented-control.mui-segmented-control-inverted{background-color: #fff;color: #333;}
+.mui-content .mui-segmented-control.mui-scroll-wrapper .mui-control-item{padding: 0 10px;}
+.mui-content .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{color: #fe406e;border-bottom-color:#fe406e;}
+
+
+.nearby_shop .p_name_title{text-align: center;padding: 10px;background-color: #fff;border-bottom: 1px solid #eee;}
+.nearby_shop .p_name_title .s_name{color: #fe406e;border: 1px solid #fe406e;padding: 2px 4px;border-radius: 2px;font-size: 15px;}
+.nearby_shop .shop_name{position: relative;background-color: #fff;padding: 10px 10px 10px 40px;}
+.nearby_shop .shop_name .iconfont{position: absolute;left: 5px;top: 50%;margin-top: -10px;font-size: 24px;color: #fe406e;}
+.nearby_shop .map_box{height: 70vw;position: relative;}
+.nearby_shop .btm_name{background-color: #fff;padding: 10px;}
+.nearby_shop .btm_name .p_name{color: #333;font-weight: bold;}
+.nearby_shop .btm_name .p_add{font-size: 12px;}
+
+/* 归属店列表 */
+.my_nearby_shop_list{background-color: #fff;}
+.my_nearby_shop_list li{padding: 10px 50px 10px 10px;position: relative;border-bottom:1px solid #eee;}
+.my_nearby_shop_list li:active{background-color: #f5f5f5;}
+.my_nearby_shop_list li .a_go{position: absolute;right: 10px;top: 7px;text-align: center;}
+.my_nearby_shop_list li .a_go .s_go{font-size: 12px;}
+.my_nearby_shop_list li .a_go .icon-xiangshang{width: 24px;height: 24px;border-radius: 50%;line-height: 24px;background-color: #3c93fa;color: #fff;display: inline-block;}
+.my_nearby_shop_list li .p_title{font-weight: bold;color: #333;}
+.my_nearby_shop_list li .p_add{font-size: 12px;}
+.my_nearby_shop_list li .p_title,.my_nearby_shop_list li .p_add{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+/* 带图片列表 */
+.choice_shop_list li{background-color: #fff;padding: 10px;border-bottom: 1px solid #eee;}
+.choice_shop_list li:active{background-color: #f5f5f5;}
+.choice_shop_list a{display: block;overflow: hidden;}
+.choice_shop_list a .p_img{width: 90px;height: 90px;background-repeat: no-repeat;background-position: center center;background-size: cover;float: left;margin-right: 10px;} 
+.choice_shop_list a .choice_shop_list_txt .p_tit{font-weight: bold;color: #333;margin-top: 6px;}
+.choice_shop_list a .choice_shop_list_txt .p_tit,.choice_shop_list a .choice_shop_list_txt .p_txt,.choice_shop_list_txt .p_add{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.choice_shop_list a .choice_shop_list_txt .p_txt,.choice_shop_list a .choice_shop_list_txt .p_add{font-size: 12px;}
+.choice_shop_list a .choice_shop_list_txt .p_star{color: #ff9d06;}
+.choice_shop_list a .choice_shop_list_txt .p_star .s_fen{margin-left: 6px;}
+
+
+.choice_shop_list_info{background-color: #fff;}
+.choice_shop_list_info .name_info{padding: 10px;border-bottom: 1px solid #eee;}
+.choice_shop_list_info .name_info .p_tit{font-weight: bold;color: #333;}
+.choice_shop_list_info .name_info .p_fen{color: #ff9d06;}
+.choice_shop_list_info .name_info .p_fen .s_fen{margin-left: 6px;}
+.choice_shop_list_info .choice_shop_add{padding:10px 40px;position: relative;border-bottom: 1px solid #eee;}
+.choice_shop_list_info .choice_shop_add .iconfont{position: absolute;}
+.choice_shop_list_info .choice_shop_add .icon-dizhi{left: 5px;top: 50%;font-size: 22px;
+    margin-top: -10px;}
+.choice_shop_list_info .choice_shop_add .icon-boda{right: 10px;top: 50%;margin-top: -8px;color: #19b4a4;}
+</style>
+</head>
+
+<body>
+<div style="height: 40px;">
+<div class="mui-content" style="position: fixed;left: 0;top: 0;border-bottom: 1px solid #eee;z-index: 999;">
+	<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+		<a class="mui-control-item mui-active" href="#">我的服务店</a>
+		<a class="mui-control-item" href="#">我附近的店</a>
+	</div>
+</div>
+</div>
+<div class="nearby_shop">
+	<!-- <p class="p_name_title"><span class="s_name">我的服务店</span></p> -->
+	<div class="shop_name">
+		<span class="iconfont icon-dizhi"></span>
+		<p class="p_name">店名：倾国倾城日化店</p>
+		<p class="p_add">位置：河南省郑州市高新区长椿路与梧桐街交叉口</p>
+	</div>
+	<div class="map_box">此处显示地图</div>
+	<div class="btm_name">
+		<p class="p_name">倾国倾城</p>
+		<p class="p_add">位置：河南省郑州市高新区长椿路与梧桐街交叉口</p>
+	</div>
+	<p class="p_name_title"><span class="s_name">我附近的店</span></p>
+	<div class="map_box">此处显示地图</div>
+	<div class="choice_add">
+		<table class="table_choice">
+			<tr>
+				<td class="td_title" style="width: 75px;">选择地区</td>
+				<td class="td_input td_input_add">
+					<i class="iconfont icon-youbian"></i>
+					<div class="content-block">
+					    <input id="demo1" type="text" readonly="" value="广东省,深圳市,南山区"/ style="width: 100%;color: #a2a2a2;border: none;margin-bottom: 0;">
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="my_nearby_shop_list">
+		<ul>
+			<li>
+				<p class="p_title">国珍日化店</p>
+				<p class="p_add"><em>100</em>米，解放路100号</p>
+				<a href="#" class="a_go"><em class="iconfont icon-xiangshang"></em><br><span class="s_go">到这去</span></a>
+			</li>
+			<li>
+				<p class="p_title">国珍日化店</p>
+				<p class="p_add"><em>100</em>米，解放路100号</p>
+				<a href="#" class="a_go"><em class="iconfont icon-xiangshang"></em><br><span class="s_go">到这去</span></a>
+			</li>
+			<li>
+				<p class="p_title">国珍日化店</p>
+				<p class="p_add"><em>100</em>米，解放路100号</p>
+				<a href="#" class="a_go"><em class="iconfont icon-xiangshang"></em><br><span class="s_go">到这去</span></a>
+			</li>
+		</ul>
+    </div>
+    
+    <div class="choice_shop_list_info">
+    	<div class="mui-content">
+    		<!-- 轮播图开始 -->
+		    <div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="images/cbd.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="images/shuijiao.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="images/muwu.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="images/cbd.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="images/shuijiao.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<!-- 轮播图结束 -->
+    	</div>
+    	<div class="name_info">
+    		<p class="p_tit">美城美甲</p>
+    		<p class="p_fen"><em class="iconfont icon-wujiaoxingman"></em><em class="iconfont icon-wujiaoxingman"></em><em class="iconfont icon-wujiaoxingman"></em><span class="s_fen">5.0分</span></p>
+    	</div>
+    	<div class="choice_shop_add">
+    		<em class="iconfont icon-dizhi"></em>
+    		<a href="tel:13535353535" class="iconfont icon-boda"></a>
+    		<p class="p_add">郑州市高新区长椿路与梧桐街交叉口大学科技园</p>
+    	</div>
+    </div>
+    <div class="choice_shop_list">
+    	<ul>
+    		<li>
+    			<a href="#">
+    				<p class="p_img" style="background-image: url(images/cbd.jpg);"></p>
+    				<div class="choice_shop_list_txt">
+    					<p class="p_tit">叮当美甲</p>
+    					<p class="p_txt">日化</p>
+						<p class="p_star"><em class="iconfont icon-wujiaoxingman"></em><em class="iconfont icon-wujiaoxingman"></em><em class="iconfont icon-wujiaoxingman"></em><span class="s_fen">5分</span></p>
+						<p class="p_add">外滩 1.1km</p>
+    				</div>
+    			</a>
+    		</li>
+    		<li>
+    			<a href="#">
+    				<p class="p_img" style="background-image: url(images/cbd.jpg);"></p>
+    				<div class="choice_shop_list_txt">
+    					<p class="p_tit">叮当美甲</p>
+    					<p class="p_txt">日化</p>
+						<p class="p_star"><em class="iconfont icon-wujiaoxingman"></em><em class="iconfont icon-wujiaoxingman"></em><em class="iconfont icon-wujiaoxingman"></em><span class="s_fen">5分</span></p>
+						<p class="p_add">外滩 1.1km</p>
+    				</div>
+    			</a>
+    		</li>
+    		<li>
+    			<a href="#">
+    				<p class="p_img" style="background-image: url(images/cbd.jpg);"></p>
+    				<div class="choice_shop_list_txt">
+    					<p class="p_tit">叮当美甲</p>
+    					<p class="p_txt">日化</p>
+						<p class="p_star"><em class="iconfont icon-wujiaoxingman"></em><em class="iconfont icon-wujiaoxingman"></em><em class="iconfont icon-wujiaoxingman"></em><span class="s_fen">5分</span></p>
+						<p class="p_add">外滩 1.1km</p>
+    				</div>
+    			</a>
+    		</li>
+    	</ul>
+    </div>
+</div>	
+
+
+
+
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+
+</body>
+
+</html>

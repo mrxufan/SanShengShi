@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>数组定义及清空数组效率问题</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+<script type="text/javascript">
+//for-in可以用做josn也可以用作数组for循环不可以用作json
+var arr=['a','b','c'];
+for (x in arr) {
+	// alert(x) //0,1,2
+	// alert(arr[x])//a,b,c
+}
+
+
+var arr1=['a','b','c'];
+// arr1.length=1 //快速清空数组的数量
+// alert(arr1)
+</script>   
+</body>
+</html>

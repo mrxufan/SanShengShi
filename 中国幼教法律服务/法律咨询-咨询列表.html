@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>法律咨询-咨询列表</title>
+
+<!--[if IE]>  
+<script src="css_js/html5.js"></script>  
+<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="css_js/css3-mediaqueries.js"></script>
+<![endif]-->
+<script src="css_js/jquery.1.9.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css_js/public.css" type="text/css">
+<link rel="stylesheet" href="css_js/font-awesome.min.css" type="text/css">
+
+<script src="css_js/Swiper3/swiper.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css_js/Swiper3/swiper.min.css" type="text/css">
+
+
+<link rel="stylesheet" type="text/css" href="css_js/style_pc.css" />
+
+
+
+<style>
+/*法律咨询-咨询列表*/
+.main_body_nr_k .law_news_list_box{overflow:hidden; width:1200px; margin:0 auto; margin-bottom:20px; background-color:#fff; padding:20px 20px 0 20px; box-sizing:border-box;}
+.main_body_nr_k .law_news_list_box .news_list{ overflow:hidden; margin-bottom:30px;}
+.main_body_nr_k .law_news_list_box .news_list ul li{ width:50%; float:left; }
+.main_body_nr_k .law_news_list_box .news_list ul li a{display:block;color: #555;}
+.main_body_nr_k .law_news_list_box .news_list ul li .news_list_content{border:1px solid #eee; overflow:hidden; padding:10px; margin-right:20px; margin-bottom:20px; cursor:pointer;}
+.main_body_nr_k .law_news_list_box .news_list ul li:last-child .news_list_content{ margin-bottom:30px;}
+.main_body_nr_k .law_news_list_box .news_list ul li .news_list_content:hover{ background:#f8f8f8;}
+.main_body_nr_k .law_news_list_box .news_list ul li:nth-child(even) .news_list_content{ margin-right:0;}
+.main_body_nr_k .law_news_list_box .news_list ul li .news_list_content .p_img{ width:180px; height:136px; float:left; margin-right:10px;}
+.main_body_nr_k .law_news_list_box .news_list ul li .news_list_content .p_img img{ width:100%;}
+.main_body_nr_k .law_news_list_box .news_list ul li .news_list_content .p_tit{ font-size:16px; margin-top:6px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.main_body_nr_k .law_news_list_box .news_list ul li .news_list_content .p_tit .s_name{ margin-right:8px;}
+.main_body_nr_k .law_news_list_box .news_list ul li .news_list_content .p_txt{ font-size:14px; color:#666; margin-top:15px; height:38px; line-height:19px; overflow:hidden;}
+.main_body_nr_k .law_news_list_box .news_list ul li .news_list_content .p_time{font-size:14px; color:#666; margin-top:15px;}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!--浏览器检测-->
+<div style="display: none" id="browser_ie">
+    <div class="brower_info">
+        <div class="notice_info">
+            <p>
+                你的浏览器版本过低，可能导致网站不能正常访问！<br>
+                为了你能正常使用网站功能，请使用这些浏览器。</p>
+        </div>
+        <div class="browser_list">
+            <span><a href="#" target="_blank"><img src="images/browser/Chrome.png"><br>Chrome </a></span>
+            <span><a href="#" target="_blank"><img src="images/browser/Firefox.png"><br>Firefox </a></span>
+            <span><a href="#" target="_blank"><img src="images/browser/Safari.png"><br>Safari </a></span>
+            <span><a href="#" target="_blank"><img src="images/browser/IE.png"><br>IE9及以上 </a></span>
+        </div>
+    </div>
+</div>
+    <script>
+    if (!$.support.leadingWhitespace) {
+        $("#browser_ie").show();
+    }
+</script>
+
+<!--浏览器检测-->
+
+
+<!--顶部彩色线-->
+<div class="page_topline">
+<div class="top_line_box">
+<span class="sp_block bg_01"></span>
+<span class="sp_block bg_02"></span>
+<span class="sp_block bg_03"></span>
+<span class="sp_block bg_04"></span>
+</div>
+</div>
+
+
+
+<div class="new_header_box">
+	<div class="fn-left logo_box"><p class="p_img"><img src="images/main_logo.png"></p></div>
+    
+    <div class="fn-right new_menu">
+    	<ul  class="ul_nav">
+        <li><a href="#">法律服务</a>
+        <ul class="ul_two_nav"><li><a href="#">套餐订购</a></li><li><a href="#">文档下载</a></li><li><a href="#">文书上传</a></li><li><a href="#">预约服务</a></li><li><a href="#">签约单位</a></li></ul>
+        </li>
+        <li><a href="#">心理服务</a>
+        
+        </li>
+        <li><a href="#">幼教学院</a>
+        
+        </li>
+        
+        <li><a href="#">联系我们</a>
+        
+        </li>
+        
+        	
+        </ul>
+        
+        <ul class="ul_user"><p class="p_user on" ><i class="fa fa-user"></i></p> <!--如果没有登录，则class去掉 on -->
+        	<div class="user_info">
+            	<div class="info_box">
+            	<!--<p class="p_link"><a href="#">登录</a>&nbsp;|&nbsp;<a href="#">注册</a></p>-->
+                <p class="p_info">欢迎<br>郑州掌通…<br><a href="#">退出</a></p>
+                </div>
+            </div>
+        </ul>
+    </div>
+    
+</div>
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {  
+  $('.ul_nav li').hover(function() {
+    $('ul', this).slideDown(200);
+    $(this).children('a:first').addClass("hov");
+  }, function() {
+    $('ul', this).slideUp(100);
+    $(this).children('a:first').removeClass("hov");    
+  });
+  
+  
+  $('.ul_user').hover(function() {
+    $('.info_box').slideDown(200);
+   
+  }, function() {
+    $('.info_box').slideUp(100);
+    
+  });
+  
+});
+
+</script>
+
+<style>
+
+</style>
+
+<div class="main_body_nr_k">
+
+	<div class="main_mbx_nav_box"><div class="mbx_link_a"><a href="#">法律资讯</a> <i class="fa fa-angle-right"></i> <span>资讯列表</span></div></div>
+    
+    
+        
+        <div class="law_news_list_box">
+        	<div class="news_list">
+            	<ul>
+                	<li>
+                        <a href="#">
+                    	<div class="news_list_content">
+                        	<p class="p_img"><img src="images/news_list_img.jpg" alt=""></p>
+                            <p class="p_tit">如果进行有效的幼儿教育</p>
+                            <p class="p_txt">数据分析数据分析在SEO中的作用似乎越来越重要了，数据分O中的作重要了</p>	
+                            <p class="p_time">2016-06-25</p>
+                        </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                    	<div class="news_list_content">
+                        	<p class="p_img"><img src="images/news_list_img.jpg" alt=""></p>
+                            <p class="p_tit">如果进行有效的幼儿教育</p>
+                            <p class="p_txt">数据分析数据分析在SEO中的作用似乎越来越重要了，数据分O中的作重要了</p>	
+                            <p class="p_time">2016-06-25</p>
+                        </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                    	<div class="news_list_content">
+                        	<p class="p_img"><img src="images/news_list_img.jpg" alt=""></p>
+                            <p class="p_tit">如果进行有效的幼儿教育</p>
+                            <p class="p_txt">数据分析数据分析在SEO中的作用似乎越来越重要了，数据分O中的作重要了</p>	
+                            <p class="p_time">2016-06-25</p>
+                        </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                    	<div class="news_list_content">
+                        	<p class="p_img"><img src="images/news_list_img.jpg" alt=""></p>
+                            <p class="p_tit">如果进行有效的幼儿教育</p>
+                            <p class="p_txt">数据分析数据分析在SEO中的作用似乎越来越重要了，数据分O中的作重要了</p>	
+                            <p class="p_time">2016-06-25</p>
+                        </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                    	<div class="news_list_content">
+                        	<p class="p_img"><img src="images/news_list_img.jpg" alt=""></p>
+                            <p class="p_tit">如果进行有效的幼儿教育</p>
+                            <p class="p_txt">数据分析数据分析在SEO中的作用似乎越来越重要了，数据分O中的作重要了</p>	
+                            <p class="p_time">2016-06-25</p>
+                        </div>
+                        </a>
+                    </li>
+                    
+                </ul>
+         
+            </div>
+           <!--分页-->
+        <div class="paging_box">
+        	<a href="#" class="a_btn on_hit">上一页</a><span class="sp_txt">共2/3页</span><a href="#" class="a_btn">下一页</a>
+        </div>
+        </div>
+        
+        
+        
+    </div>
+    
+</div>
+
+
+<div class="main_footer_box">
+	<div class="footer_info_box">Copyright &copy; 2015-2016  中国幼教法律网&nbsp;&nbsp;版权所有&nbsp;&nbsp;&nbsp;&nbsp;备案号: 豫ICP备 15016624号-1</div>
+</div>
+
+
+</body>
+</html>
+	
+	
+	

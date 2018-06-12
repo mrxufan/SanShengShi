@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>数组</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+
+<script type="text/javascript">
+// 给正序的数组随机乱序
+var arr=[1,2,3,4,5,6,7];
+arr.sort(function(){
+    return Math.random()-0.5;
+});
+// console.log(arr);
+
+
+
+
+// 排序
+var arr1=[2,6,8,4,9,7,1];
+arr1.sort(function(a,b){
+	return a-b; //升序
+	// return b-a; //降序
+});
+// console.log(arr1);
+
+
+
+
+
+
+
+// 应用，按年龄排序
+var song={
+	name:'song',
+	age:40
+};
+var zhang={
+	name:'zhang',
+	age:20
+};
+var li={
+	name:'li',
+	age:30
+};
+
+
+var arrObj=[song,zhang,li];
+arrObj.sort(function(a,b){
+	return a.age-b.age;
+});
+// console.log(arrObj);
+
+
+
+
+// 按数组元素长度排序
+var arr2=['asa','azsdc','sd','asasd','adasds','sdcscscc'];
+arr2.sort(function(a,b){
+	return a.length-b.length;
+});
+// console.log(arr2);
+
+
+
+
+// 返回字节长度，1个汉字等于2个字符
+function retBytes(str){
+	var num=str.length;
+	for (var i = 0; i < str.length; i++) {
+		if (str.charCodeAt(i)>255) {
+			num++;
+		}
+	}
+	return num;
+}
+</script>    
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>每日签到</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!-- 共用样式 -->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+.clearfix:after {clear:both;font-size:0; height:0; display:block; visibility:hidden; content:" "; line-height:0}
+.title{height: 30px;line-height: 30px;font-size: 16px;margin-bottom: 10px;}
+.title p{float: left;height: 30px;line-height: 30px;font-size: 16px;}
+.title a{display: inline-block;height: 30px;line-height: 30px;text-align: center;background: #42941a;border-radius: 5px;color: #fff;text-decoration: none;font-size: 16px;float: right;padding: 0 6px;}
+.checkin li{background: #fee684; float: left;text-align: center;}
+li.able-qiandao{background: #e9c530; }
+.mask{ width: 100%;height: 100%;position: absolute;top: 0;left: 0; background-color: rgba(0,0,0,.5);visibility: hidden;}
+.modal{background:#fff;width: 80%;border-radius: 10px;position: absolute;left: 50%;top: 50%;border:5px solid #42941a;box-sizing:border-box;overflow: hidden;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);padding: 20px 0;}
+a.closeBtn{display: block;position: absolute;right: 10px;top: 5px;font-family: 'simsun';font-size: 18px;text-decoration: none;font-weight: bolder;color: #333}
+.title_h1{text-align: center;font-size: 25px;font-weight: normal;padding-top: 20px;display: block;width: 100%}
+.title_h1 span{display: inline-block;width: 40px;height: 40px;border-radius: 100%;background: #42941a;color: #fff;position: relative;float: left;margin-left: 30%;margin-top: 7px;}
+.title_h1 span::before{width: 10px;height: 2px;background: #fff;position: absolute;left: 8px;top: 23px;display: block;line-height: 0;font-size: 0;content: ""; transform: rotate(52deg);}
+.title_h1 span::after{width: 24px;height: 2px;background: #fff;position: absolute;left: 12px;top: 20px;display: block;line-height: 0;font-size: 0;content: "";transform: rotate(-45deg);}
+.title_h2{text-align: center;font-size: 16px;display: block;padding-top: 20px;}
+.trf{visibility: visible;}
+.mask .modal .p_tit{margin: 10px;text-align: center;}
+.top_title{margin:10px 20px;}
+.top_title .p_tit{font-size: 16px;font-weight: bold;}
+.sign_rule{margin:10px 20px;font-size: 12px;}
+</style>
+</head>
+<body style="background-color: #fff;">
+<div class="top_title">
+  <p class="p_tit">当月累计签到：<em style="font-size: 16px;font-weight: bold;">1</em>天</p>
+</div>
+<div class="checkin" style="margin:0 20px"></div>
+<div class="mask">
+    <div class="modal">
+      <a href="#" class="closeBtn">×</a>
+      <h1 class="title_h1">已签到</h1>
+      <p class="p_tit">您已签到<em>1</em>天</p>
+    </div>
+</div>
+<div class="sign_rule">
+  <p class="p_rule">签到规则</p>
+  <p class="p_rule">1、连续签到不足7天时，签到奖励将重新计算。</p>
+  <p class="p_rule">1、连续签到不足7天时，签到奖励将重新计算。</p>
+  <p class="p_rule">1、连续签到不足7天时，签到奖励将重新计算。</p>
+</div>
+<!-- 固定底部导航 -->
+<div style="height: 45px;">
+  <div class="index_btm_nav">
+    <a href="#" class="color">
+      <i class="iconfont icon-shouye-shouye"></i><br>
+      <span class="p_nav">首页</span>
+    </a>
+    <a href="#">
+      <i class="iconfont icon-tuandui1"></i><br>
+      <span class="p_nav">伙拼</span>
+    </a>
+    <a href="#">
+      <i class="iconfont icon-zhibo1"></i><br>
+      <span class="p_nav">部落</span>
+    </a>
+    <a href="#">
+      <i class="iconfont icon-lijigoumaigouwuchetubiaobaise" style="display: inline-block;-webkit-transform: rotateY(180deg);transform: rotateY(180deg);font-size: 20px;margin-top: 1px;"></i><br>
+      <span class="p_nav">购物车</span>
+    </a>
+    <a href="#">
+      <i class="iconfont icon-gerenzhongxin"></i><br>
+      <span class="p_nav">我的</span>
+    </a>
+  </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript">
+(function($) {
+    var Checkin = function(ele, options) {
+      this.ele = ele;
+      this.opt = options;
+      this.defaults = {
+        background: '#f90',
+        radius: 10,
+        color: '#fff',
+        padding: 10,
+        dateArray: [1, 2, 4, 6], // 假设已签到的天数+1
+      };
+      this.obj = $.extend({}, this.defaults, this.opt);
+    };
+    Checkin.prototype.init = function() {
+      var _self = this.ele,
+        html = '',
+        myDate = new Date(),
+        year = myDate.getFullYear(),
+        month = myDate.getMonth(),
+        day = myDate.getDate(),
+        weekText = ['日', '一', '二', '三', '四', '五', '六'];
+      _self.css({
+        width: this.obj.width + 'px',
+        height: this.obj.height,
+        background: this.obj.background,
+        borderRadius: this.obj.radius,
+        color: this.obj.color,
+        padding: this.obj.padding
+      }).append("<div class='title'><p>" + year + '年' + (month + 1) + '月' + day + '日' + "</p><a class=\'checkBtn\' href=\"javascript:;\">签到</a></div>");
+      $("<ul class='week clearfix'></ul><ul class='calendarList clearfix'></ul>").appendTo(_self);
+      for (var i = 0; i < 7; i++) {
+        _self.find(".week").append("<li>" + weekText[i] + "</li>")
+      };
+      for (var i = 0; i < 42; i++) {
+        html += "<li></li>"
+      };
+      _self.find(".calendarList").append(html);
+      var $li = _self.find(".calendarList").find("li");
+      _self.find(".week li").css({
+        width: (_self.width() / 7) + 'px',
+        height: 35 + 'px',
+        lineHeight:35+'px',
+        borderRight: '1px solid #f90',
+        boxSizing: 'border-box',
+        background: '#b25d06'
+      });
+      $li.css({
+        width: (_self.width() / 7) + 'px',
+        height: 35 + 'px',
+        lineHeight: 35+'px',
+        borderRight: '1px solid #f90',
+        borderBottom: '1px solid #f90',
+        boxSizing: 'border-box',
+        color: "#b25d06"
+      });
+      _self.find(".calendarList").find("li:nth-child(7n)").css('borderRight', 'none');
+      _self.find(".week li:nth-child(7n)").css('borderRight', 'none');
+      var monthFirst = new Date(year, month, 1).getDay();
+      var d = new Date(year, (month + 1), 0)
+      var totalDay = d.getDate(); //获取当前月的天数
+      for (var i = 0; i < totalDay; i++) {
+        $li.eq(i + monthFirst).html(i + 1);
+        $li.eq(i + monthFirst).addClass('data' + (i + 1))
+        if (isArray(this.obj.dateArray)) {
+          for (var j = 0; j < this.obj.dateArray.length; j++) {
+            if (i == this.obj.dateArray[j]) {
+              // 假设已经签到的
+              $li.eq(i + monthFirst).addClass('checked');
+            }
+          }
+        }
+      }
+      //$li.eq(monthFirst+day-1).css('background','#f7ca8e')
+      _self.find($(".data" + day)).addClass('able-qiandao');
+    }
+    var isChecked = false;
+    Checkin.prototype.events = function() {
+      var _self = this.ele;
+      var $li = _self.find(".calendarList").find("li");
+      $li.on('click', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        if ($(this).hasClass('able-qiandao')) {
+          $(this).addClass('checked');
+          modal(_self);
+          isChecked = true;
+        }
+      });
+      var checkBtn = _self.find(".checkBtn");
+      checkBtn.click(function(event) {
+        modal(_self);
+        _self.find('.able-qiandao').addClass('checked');
+        isChecked = true;
+      });
+    }
+    var modal = function(e) {
+      var mask = e.parents().find(".mask");
+      var close = e.parents().find(".closeBtn");
+      if (mask && !isChecked) {
+        mask.addClass('trf');
+      } else {
+        return
+      };
+      close.click(function(event) {
+        event.preventDefault();
+        mask.removeClass('trf')
+      });
+      e.parents().find('.checkBtn').text("已签到");
+    }
+    $.fn.Checkin = function(options) {
+      var checkin = new Checkin(this, options);
+      var obj = [checkin.init(), checkin.events()]
+      return obj
+    }
+    var isArray = function(arg) {
+      return Object.prototype.toString.call(arg) === '[object Array]';
+    };
+  })(jQuery);
+  // 插件调用
+  $(".checkin").Checkin();
+
+
+  // 底部导航选中状态
+  $(document).ready(function() {
+    $('.index_btm_nav a',this).click(function(){
+      $(this).addClass('color').siblings().removeClass('color');
+    });
+  });
+</script>
+</body>
+</html>

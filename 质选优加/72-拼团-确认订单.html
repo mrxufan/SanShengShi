@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>拼团-确认订单</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!--标准mui.css-->
+<link href="css/mui.min.css" rel="stylesheet">
+<!-- 共用样式 -->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+.sure_order,.sure_order_submit{background-color: #fff;}
+.sure_order_submit .a_submit{height: 42px;line-height: 42px;}
+
+
+.pay_way{background-color: #fff;margin-top: 10px;}
+.pay_way li{border-bottom: 1px solid #eee;margin:0 10px;padding: 10px 0;color: #333;}
+.pay_way li .choice_bank{position: relative;}
+.pay_way li .choice_bank .iconfont{margin-right: 10px;}
+.pay_way li .choice_bank .em_tuijian{font-size: 10px;color: #fe406e;padding:0 2px;border: 1px solid #fe406e;border-radius: 3px;margin-left: 10px;}
+.pay_way li .mui-icon-checkmarkempty{position: absolute;right: 0;top: 0;color: #fe406e;display: none;}
+</style>
+</head>
+<body>
+<div class="sure_order">
+	<div class="sh_ren">
+		<i class="iconfont icon-dizhi"></i>
+		<i class="iconfont icon-youbian"></i>
+		<p class="p_name">收货人：<span>张三</span><span class="s_phone">13535353535</span></p>
+		<p class="p_add">收货地址：河南省郑州市高新区长椿路梧桐街大学科技园</p>
+	</div>
+	<div class="goods_info">
+		<p class="p_img"><img src="images/240X240_2.jpg"></p>
+		<div class="goods_info_txt">
+			<p class="p_tit">欧式韩国公主木质绒布带锁首饰盒饰品收纳盒化妆盒耳钉耳环</p>
+			<p class="p_content">容量：<em>125g</em></p>
+			<!-- <span class="s_tui">17天退换</span> -->
+			<p class="p_price"><span class="s_price">￥100</span></p>
+		</div>
+	</div>
+	<div class="sure_order_table">
+		<table width="100%">
+			<tr>
+				<td>购买数量</td>
+				<td>
+					<div class="mui-numbox" data-numbox-min='1'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input id="test" class="mui-input-numbox" type="number" value="1" />
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div>
+				</td>
+			</tr>
+		</table>		
+	</div>
+</div>
+
+
+<!-- 支付方式 -->
+		<div class="pay_way">
+			<ul>
+				<li>支付方式：</li>
+				<li>
+						<label>
+							<div class="choice_bank">
+								<i class="iconfont icon-weixin" style="color: #0ecd1b;"></i>微信支付<em class="em_tuijian">推荐</em>
+								<em class="mui-icon mui-icon-checkmarkempty" style="display: block;"></em>
+							</div>
+							
+						</label>
+				</li>
+				<li>
+						<label>
+							<div class="choice_bank">
+								<i class="iconfont icon-zhifubao" style="color: #00aaee;"></i>支付宝支付<span class="s_pay" style="font-size: 12px;color: #999;">（支持蚂蚁花呗支付）</span>
+								<em class="mui-icon mui-icon-checkmarkempty"></em>
+							</div>
+							
+						</label>
+				</li>
+			</ul>
+		</div>
+<!-- 支付方式弹层 -->
+<!-- <div class="pay_tan" style="display: none;">
+	<div class="pay_tan_info">
+		<p class="p_pay"><i class="iconfont icon-chahao"></i>付款</p>
+		<p class="p_time">还剩<em>00</em>:<em>30</em>:<em>30</em>自动关闭订单</p>
+		<div class="pay_list">
+			<ul>
+				<li>
+					<a href="#">
+						<label>
+							<p class="p_tit">推荐使用</p>
+							<div class="choice_bank">
+								<input type="radio" checked><i class="iconfont icon-yinxingqia" style="color: #666666;"></i>银行卡支付<em class="iconfont icon-youbian"></em>
+							</div>
+						</label>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<label>
+							<p class="p_tit">其他支付方式</p>
+							<div class="choice_bank">
+								<input type="radio"><i class="iconfont icon-weixin" style="color: #0ecd1b;"></i>微信支付<em class="iconfont icon-youbian"></em>
+							</div>
+						</label>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<label>
+							<p class="p_tit" style="visibility: hidden;">推荐使用</p>
+							<div class="choice_bank">
+								<input type="radio"><i class="iconfont icon-zhifubao" style="color: #00aaee;"></i>支付宝支付<em class="iconfont icon-youbian"></em>
+							</div>
+						</label>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="price_box">
+			<p class="p_price">支付：<em class="em_price">￥100</em></p>
+			<a href="#" class="a_pay">去付款</a>
+		</div>
+	</div>
+</div>	 -->	
+<!-- 运费规则弹层 -->
+<div class="yunfei_tan">
+	<div class="yunfei_tan_info">
+		<div class="yunfei_tan_txt">
+			<p class="p_tit">运费规则</p>
+			<p class="p_txt">商品价格100元以下运费8元，价格100-200元运费5元，200元以上包邮，偏远地区（内蒙、西藏、新疆、宁夏、甘肃、陕西、青海、海南、港澳台以及海外地区）运费25元</p>
+			<p class="p_txt">商品价格100元以下运费8元，价格100-200元运费5元，200元以上包邮，偏远地区（内蒙、西藏、新疆、宁夏、甘肃、陕西、青海、海南、港澳台以及海外地区）运费25元</p>
+		</div>
+		<div class="yunfei_tan_btn">
+			<span class="s_btn" id="s_close" style="border-right: 1px solid #eee;">取消</span>
+			<span class="s_btn">确定</span>
+		</div>
+	</div>
+</div>
+<div style="height: 42px;">
+	<div class="sure_order_submit">
+		<a href="#" class="a_submit">提交订单</a>
+		<p class="p_total">合计：<span class="s_price">￥100</span></p>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.pay_tan .pay_tan_info li',this).click(function(){
+			$(this).siblings().find('input').removeAttr('checked');
+		});
+		// 调取支付弹层
+		$('.sure_order_submit .a_submit').click(function(){
+			$('.pay_tan').show();
+		});
+		$('.pay_tan_info .p_pay i').click(function(){
+			$('.pay_tan').hide();
+		});
+		// 运费规则
+		$('#tr_yunfei').click(function(){
+			$('.yunfei_tan').show();
+		});
+		$('#s_close').click(function(){
+			$('.yunfei_tan').hide();
+		});
+
+
+		$('.pay_way li').click(function(){
+			$(this).find('.mui-icon-checkmarkempty').show();
+			$(this).siblings().find('.mui-icon-checkmarkempty').hide();
+		})
+	});
+
+</script>
+</body>
+</html>

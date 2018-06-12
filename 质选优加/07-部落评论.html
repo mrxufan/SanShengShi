@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>部落评论</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 字体图标 -->
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+<!--标准mui.css-->
+<link href="css/mui.min.css" rel="stylesheet">
+<!-- 共用样式 -->
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<!-- 页面样式 -->
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+#zan_ani_btn{position: relative;}
+#zan_ani_btn.color{color: #fe406e;}
+#s_plus{position: absolute;left: 13px;top: -13px;color: #fe406e;display: none;}
+#s_plus.ani{animation:forwards zan_ani 1s;}
+@keyframes zan_ani{
+	0%{opacity: 1;}
+	100%{opacity: 0;top: -30px;}
+}
+
+.buluo_btm_nav .s_send{background-color: #fe406e;color: #fff;padding: 6px 20px;float: right;margin-top: 7px;margin-right: 10px;border-radius: 4px;}
+.buluo_btm_nav .s_send:active{background-color: #eb3b66;}
+</style>
+</head>
+<body>
+<div class="buluo_discuss">
+	<div class="buluo_discuss_head">
+		<p class="p_head"><img src="images/logo.png"></p>
+		<p class="p_name">
+			<span class="s_name">米小啦</span><br>
+			<span class="s_time">12-31 09:00</span>
+		</p>
+	</div>
+	<div class="buluo_discuss_banner">
+		<p class="p_tit">2016年最后一天的福利。</p>
+		<!-- <p class="p_banner"><img src="images/cbd.jpg"></p> -->
+		<div class="video_info">
+			<video src="images/test.mp4" width="100%" controls></video>
+		</div>
+		<p class="p_btm">12月31日下午3点限时抢购，推荐购买还有惊喜！</p>
+	</div>
+	<div class="buluo_discuss_info">
+		<p class="p_discuss_tit">
+			<span class="s_plun">评论<em>100</em></span>
+			<span class="s_zan">赞<em>100</em></span>
+		</p>
+		<div class="buluo_discuss_list">
+			<ul>
+				<li>
+					<p class="p_head"><img src="images/logo.png"></p>
+					<p class="p_name"><span class="s_name">兰瑟用户</span><br><span class="s_time">12-31 09:00</span></p>
+					<p class="p_liuyan">兰瑟的产品很好用，很喜欢！</p>
+				</li>
+				<li>
+					<p class="p_head"><img src="images/logo.png"></p>
+					<p class="p_name"><span class="s_name">兰瑟用户</span><br><span class="s_time">12-31 09:00</span></p>
+					<p class="p_liuyan">兰瑟的产品很好用，很喜欢！</p>
+				</li>
+				<li>
+					<p class="p_head"><img src="images/logo.png"></p>
+					<p class="p_name"><span class="s_name">兰瑟用户</span><br><span class="s_time">12-31 09:00</span></p>
+					<p class="p_liuyan">兰瑟的产品很好用，很喜欢！</p>
+				</li>
+				<li>
+					<p class="p_head"><img src="images/logo.png"></p>
+					<p class="p_name"><span class="s_name">兰瑟用户</span><br><span class="s_time">12-31 09:00</span></p>
+					<p class="p_liuyan">兰瑟的产品很好用，很喜欢！</p>
+				</li>
+				<li>
+					<p class="p_head"><img src="images/logo.png"></p>
+					<p class="p_name"><span class="s_name">兰瑟用户</span><br><span class="s_time">12-31 09:00</span></p>
+					<p class="p_liuyan">兰瑟的产品很好用，很喜欢！</p>
+				</li>
+				<li>
+					<p class="p_head"><img src="images/logo.png"></p>
+					<p class="p_name"><span class="s_name">兰瑟用户</span><br><span class="s_time">12-31 09:00</span></p>
+					<p class="p_liuyan">兰瑟的产品很好用，很喜欢！</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div style="height: 45px;">
+	<div class="buluo_btm_nav">
+		<div class="write_box">
+			<p class="p_write"><span class="s_write"><em class="iconfont icon-bi" style="position: absolute;left: 0;top: 0;text-align: center;line-height: 30px;margin: 0 6px;"></em><input type="text" placeholder="来说点什么？"></span><i class="iconfont icon-xiaolian" style="font-size: 26px;"></i></p>
+
+		</div>
+		<div class="zan_btn">
+			<p class="s_icon" id="zan_ani_btn">
+				<span id="s_plus" class="ani">+1</span>
+				<i class="iconfont icon-iconfontzan"></i><br>
+				<span class="s_zan">点赞</span>
+			</p>
+			<p class="s_icon" id="shoucang">
+				<i class="iconfont icon-xin1"></i><br>
+				<span class="s_zan">收藏</span>
+			</p>
+			<p class="s_icon">
+				<i class="iconfont icon-fenxiang"></i><br>
+				<span class="s_zan">分享</span>
+			</p>
+		</div>
+		<!-- <span class="s_send">发送</span> -->
+	</div>
+</div>
+
+<!-- 返回顶部 -->
+<div class="back_top"><i class="iconfont icon-xiangshang"></i><br>顶部</div>
+
+<script type="text/javascript" src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+// 分享弹层
+	$(document).ready(function() {
+		$('.buluo_btm_nav .zan_btn .tan_btn').click(function(){
+			$('.share_tan').show();
+		});
+		$('.share_tan .share_tan_info .quxiao_btn').click(function(){
+			$('.share_tan').hide();
+		});
+	});
+</script>
+
+<script> 
+// 返回顶部
+$(function(){ 
+//当滚动条的位置处于距顶部100像素以下时，返回顶部按钮出现，否则消失 
+$(function () {
+$(".back_top").hide();
+$(window).scroll(function(){ 
+if ($(window).scrollTop()>100){ 
+$(".back_top").fadeIn(500); 
+} 
+else 
+{ 
+$(".back_top").fadeOut(500); 
+} 
+}); 
+//当点击返回顶部按钮后，回到页面顶部位置 
+$(".back_top").click(function(){ 
+$('body,html').animate({scrollTop:0},200); 
+return false; 
+});
+}); 
+}); 
+</script>
+<script type="text/javascript">
+	document.getElementById("shoucang").addEventListener('tap', function() {
+				mui.toast('已收藏');
+			});
+</script>
+
+<script type="text/javascript">
+// 点赞事件
+$(document).ready(function() {
+	$('#zan_ani_btn').click(function(){
+		if ($(this).hasClass('color')) {
+			mui.toast('你已经点过赞啦');
+			return false;
+		} 
+		$(this).addClass('color');
+		$('#s_plus').show();
+	});
+});
+</script>
+</body>
+</html>

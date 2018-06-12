@@ -1,0 +1,155 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>缴费记录</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<link rel="stylesheet" href="css/my_style.css" type="text/css">
+<style type="text/css">
+.title_yuan{position: relative;padding-left: 10px;}
+.title_yuan:after{content: '';display: block;width: 6px;height: 6px;background-color: #8a91d9;position: absolute;left: 10px;top: 50%;border-radius: 50%;margin-top: -3px;}
+
+
+
+
+</style>
+</head>
+
+<body ontouchstart>
+
+<div id="app" v-cloak class="vue_body">
+    <div class="head_wrap flex_wrap">
+        <div class="flex_item">
+            <div class="head_info flex_wrap">
+                <span class="head_pic"><img :src="myData.headImg"></span>
+                <span class="s_phone">{{myData.MobileNo}}</span>
+            </div>
+        </div>
+        <a href="javascript:;" class="home_btn"></a>
+    </div>
+    <div class="pay_corder_list">
+        <ul>
+            <li v-for="(item,index) in myData.Data">
+                <div class="pay_corder_main">
+                    <div v-on:click="tab(index)">
+                        <mt-cell :title="item.MonthStr" class="title_yuan clear_border">
+                          <span class="green">{{item.TotalCharge}}</span>元
+                          <span class="allow_right" :class="{allow_active:item.bool}"></span>
+                        </mt-cell>
+                    </div>
+                     <div class="sub_list" v-show="item.bool">
+                        <mt-cell-swipe v-for="list in item.Detail" :title="list.Channel" :label="list.Date" :value="list.Charge">
+                        </mt-cell-swipe>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+   <div class="dx_need_box">
+        <div class="need_title">您可能需要</div>
+        <div class="need_list_body">
+            <ul class="need_list_ul">
+                <li class="list_item">
+                    <a href="javascript:;"  class="item_link">
+                        <p class="p_icon"><img src="images/icon/click_icon/zd_icon.png" width="30"></p>
+                        <p class="p_text">缴费记录</p>
+                    </a>
+                </li>
+                <li class="list_item">
+                    <a href="javascript:;"  class="item_link">
+                        <p class="p_icon"><img src="images/icon/click_icon/money.png" width="30"></p>
+                        <p class="p_text">账单查询</p>
+                    </a>
+                </li>
+                <li class="list_item">
+                    <a href="javascript:;"  class="item_link">
+                        <p class="p_icon"><img src="images/icon/click_icon/yul_icon.png" width="30"></p>
+                        <p class="p_text">余量查询</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+var vm=new Vue({
+    el: '#app',
+    data:{
+       myData:{}
+    },
+    methods: {
+        getMsg:function(){
+            this.myData={
+                headImg:'images/head.jpeg',           //头像
+                MobileNo:"13323719539",               //手机号
+            　　Data:[
+            　　　　{
+            　　　　　　MonthStr:"本月",              //月份
+            　　　　　　TotalCharge:"100.00",         //当月充值总额
+            　　　　　　Detail:[
+            　　　　　　　　{
+            　　　　　　　　　　Channel:"银行",       //渠道
+            　　　　　　　　　　Date:"2018-03-06",    //日期
+            　　　　　　　　　　Charge:"10.00"        //充值金额
+            　　　　　　　　},
+            　　　　　　　　{
+            　　　　　　　　　　Channel:"营业厅",
+            　　　　　　　　　　Date:"2018-03-25",
+            　　　　　　　　　　Charge:"50.00"
+            　　　　　　　　}
+            　　　　　　]
+            　　　　},
+                    {
+            　　　　　　MonthStr:"2018年2月",              //月份
+            　　　　　　TotalCharge:"10.00",         //当月充值总额
+            　　　　　　Detail:[
+            　　　　　　　　{
+            　　　　　　　　　　Channel:"微信",       //渠道
+            　　　　　　　　　　Date:"2018-03-06",    //日期
+            　　　　　　　　　　Charge:"10.00"        //充值金额
+            　　　　　　　　},
+            　　　　　　　　{
+            　　　　　　　　　　Channel:"支付宝",
+            　　　　　　　　　　Date:"2018-03-25",
+            　　　　　　　　　　Charge:"50.00"
+            　　　　　　　　}
+            　　　　　　]
+            　　　　},
+            　　]
+            };
+            this.setStatus();
+            console.log(this.myData.Data);
+        },
+        setStatus:function(){
+            this.myData.Data.forEach(function(a,i){
+                Vue.set(a,'bool',false);
+            });
+        },
+
+        tab:function(i){
+            this.myData.Data[i].bool=!this.myData.Data[i].bool;
+            console.log(this.myData.Data[i].bool);
+        },
+    },
+    
+    mounted:function(){
+        this.getMsg();
+    }
+});
+</script>
+	
+</html>

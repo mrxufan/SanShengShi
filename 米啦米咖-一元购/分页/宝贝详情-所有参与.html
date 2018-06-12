@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>宝贝详情-所有参与</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+
+<style type="text/css">
+
+.gg_toppic_box { overflow: hidden; background: #fff; }
+.gg_toppic_box img { width: 100%; }
+.gg_toppic_box .swiper-slide { min-height: 120px; }
+.gg_toppic_box .swiper-pagination { bottom: 5px; line-height: 100%; }
+.gg_toppic_box .swiper-pagination .swiper-pagination-bullet { width:6px; height:6px; margin: 0 3px; line-height: 100%; overflow: hidden; background-color:#fff; }
+.gg_toppic_box .swiper-pagination .swiper-pagination-bullet:after { display: block; content: "."; color: rgba(0,0,0,0) }
+.gg_toppic_box .swiper-pagination .swiper-pagination-bullet-active{ background-color:#c00;}
+
+
+.product_info_box { background: #fff; padding:10px; overflow:hidden;}
+.product_info_box .h3_tit { font-size: 14px; color: #555; margin-bottom:6px; }
+
+.product_info_box .h3_tit em{ display:inline-block; font-size:12px; line-height:100%; border:1px solid #c22; color:#c22; padding:1px 2px; border-radius:3px; font-weight:normal; margin-right:2px;}
+
+.product_info_box .p_jindu_tiao{ overflow:hidden; height:5px; border-radius:5px; background-color:#ddd; margin-bottom:3px; }
+.product_info_box .p_jindu_tiao span{ display:inline-block; height:5px; vertical-align:top;  background-color:#f60;}
+.product_info_box .p_jindu_number{ font-size:12px; color:#999;}
+
+.product_info_box .p_jindu_number .em_1{ color:#6c0;}
+.product_info_box .p_jindu_number .em_2{ color:#c90;}
+
+.duobao_canyu_zt_box{ overflow:hidden; padding:10px; background:#fff;}
+.duobao_canyu_zt_box .p_no_cy{ height:36px; line-height:36px; background:#ddd; color:#999; border-radius:3px; text-align:center; }
+
+
+.baobei_info_nav{ overflow:hidden; background:#fff; border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+.baobei_info_nav li{ text-align:center; position:relative; font-size:15px; color:#555; height:36px; line-height:36px; border-right:1px solid #ddd; overflow:hidden;}
+.baobei_info_nav li:last-child{ border-right:0;}
+.baobei_info_nav li.on{ color:#c33}
+.baobei_info_nav li.on:after{ content:''; display:inline-block; width:10px; height:10px; background-color:#c33; position:absolute; right:-5px; bottom:-5px; z-index:1; -webkit-transform:rotate(45deg);  }
+
+	/*商品详情栏 */
+
+.baobei_xq_box { overflow: hidden; line-height: 1.5em; font-size: 15px; background: #fff; padding: 10px; }
+.baobei_xq_box img { max-width: 100%; position:relative; }
+.baobei_xq_canyu{ background:#fff; width:100%; color:#999; padding:10px 0; }
+.baobei_xq_tel{ width:100%; background:#EAEAEA;}
+.baobei_xq_text{ color:#06F; padding:0 10px; line-height:1.5em;}
+.baobei_xq_text01{ padding:0 10px; margin-bottom:10px;}
+.baobei_xq_text01 b{ color:#c33; }
+.baobei_xq_tel{ padding:10px 0}
+.baobei_xq_btn{ width:100%; height:50px; background:#fff; position:fixed; left:0; bottom:0;}
+.canyu_btn{ display:block; width:120px; height:36px; background:#F03; margin:auto; border-radius:3px; text-align:center; line-height:36px; font-size:18px; color:white; margin-top:7px;}
+.baobei_xq_out_btn{ height:50px;}
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+<span class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"></span>
+<div class="swiper-container gg_toppic_box pro_info_gdimg">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+</div>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+		autoplayDisableOnInteraction:false,
+		loop : true,
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+		preloadImages: false,//禁止强制加载所有图片
+		lazyLoading: true,//延时加载图片
+    });
+    </script>
+
+<div class="product_info_box">
+	<h3 class="h3_tit"><em>进行中</em>魅蓝note2 16GB 白色 电信4G手机 双卡双待</h3>
+    
+    <p class="p_jindu_tiao"><span style="width:50%"></span></p>
+    <p class="p_jindu_number"><span class="fn-left">总需<em class="em_1">32560</em>人次</span><span class="fn-right">剩余<em class="em_2">560</em></span></p>
+    
+</div>
+
+<div class="duobao_canyu_zt_box">
+	<p class="p_no_cy">您没有参与本期夺宝哦！</p>
+</div>
+
+
+
+<div class="baobei_info_nav">
+	<ul class=" box-flex-box">
+    	<li class="box-flex-1 ">图文详情</li>
+        <li class="box-flex-1 on">所有参与</li>
+        <li class="box-flex-1">往期中奖</li>
+    </ul>
+</div>
+
+<div class="baobei_xq_tel">
+  <p class="baobei_xq_canyu">（自2015-10-25 00:58:06 开始）</p>
+   <p class="baobei_xq_text">133****1262</p>
+   <p class="baobei_xq_text01">参与了<b>5</b>人次 2015-10-05 02:33:32.684</p>
+   <p class="baobei_xq_text">139****5765</p>
+   <p class="baobei_xq_text01">参与了<b>2</b>人次 2015-10-05 02:22:41.342</p>   
+</div>
+<div class="baobei_xq_out_btn"> 
+<div class="baobei_xq_btn">
+   <span class="canyu_btn">立即参与</span>
+</div> 
+</div> 
+
+</body>
+
+</html>

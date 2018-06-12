@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>index</title>
+	<link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="Mint UI/mint-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+    
+    </style>
+</head>
+<body ontouchstart>
+  <div id="app">
+  	<div class="img_box"><img src="images/top_img.jpg"></div>
+    <div class="img_box">
+      <a href="javascript:;"><img src="images/link_img.jpg"></a>
+    </div>
+    <div class="top_main_wrap">
+      <div class="top_bag_bg">
+        <div class="top_dog_wrap">
+          <a href="javascript:;" class="a_btn btn1" v-on:click="fn1"></a>
+          <span class="dog_info dog_01"></span>
+        </div>
+      </div>
+      <div class="text_wrap">
+        <h3>提“钱”乐</h3>
+        <p>2月5日-13日，现金红包天天抢，最高199元</p>
+      </div>
+    </div>
+    <div class="bottom_main_wrap">
+      <div class="b_item">
+        <div class="b_item_wrap bag_left">
+          <div class="b_main">
+            <a href="javascript:;" class="a_btn btn2"></a>
+            <span class="dog_info dog_02"></span>
+          </div>
+        </div>
+        <div class="text_wrap">
+          <h3>普天同庆</h3>
+          <p>2月14日-21日<br>看电信电视，嗨抢倒计时</p>
+        </div>
+      </div>
+      <div class="b_item">
+        <div class="b_item_wrap bag_right">
+          <div class="b_main">
+            <a href="javascript:;" class="a_btn btn2"></a>
+            <span class="dog_info dog_03"></span>
+          </div>
+        </div>
+        <div class="text_wrap">
+          <h3>喜上加喜</h3>
+          <p>2月14日-21日<br>没有上限，参与必得</p>
+        </div>
+      </div>
+    </div>
+    <div class="activity_btn">
+      <a href="javascript:;">活动说明</a>
+    </div>
+  </div>
+  
+
+
+  <script type="text/javascript" src="Mint UI/vue.js"></script>
+  <script type="text/javascript" src="Mint UI/index.js"></script>
+  <script type="text/javascript">
+  	var vm01 = new Vue({
+  		el: "#app",
+  		data:{
+  		},
+      methods: {
+        fn1(){
+          this.$messagebox.alert('正文内容','温馨提示').then(() => {
+            console.log('点击了确定');
+          })
+        }
+      },
+      mounted(){
+
+      }
+  	});
+  </script>
+</body>
+</html>

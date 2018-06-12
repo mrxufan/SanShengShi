@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>if判断</title>
+<link href="" rel="stylesheet">
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<button id="btn1">+</button>
+<button id="btn2">-</button>
+<p id="txt">本课程共需要2个月时间，讲解内容涵盖PC端静态页面制作所需的全部知识，以及移动端静态页面制作、响应式开发、CSS3相关的新特性、3D与动画等内容。完成所学课程以后，最终检验学员们能否顺利毕业的依据，是我们精心安排的整站级别的项目，例如：PC端电子商城、移动端企业站、微信端静态页面、响应式项</p>
+
+
+
+<script type="text/javascript">
+var Btn1=document.querySelector('#btn1');
+var Btn2=document.querySelector('#btn2');
+var Txt=document.querySelector('#txt');
+var num=16;
+Btn1.onclick=function () {
+	if (num<20) {
+		num++;
+		Txt.style.fontSize = num+'px';
+	}
+	
+};
+Btn2.onclick=function () {
+	if (num>15) {
+		num--;
+		Txt.style.fontSize = num+'px';
+	}
+	
+};
+
+
+</script>   
+</body>
+</html>

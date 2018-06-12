@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+<style type="text/css">
+
+.my_collection_list{ overflow:hidden; background:#fff; margin-bottom:10px;}
+
+.my_collection_list li{ position:relative; padding:10px; overflow:hidden; position:relative; padding-right:80px;}
+.my_collection_list li:after { position: absolute; top: auto; right: auto; bottom: 0; left: 0; z-index: 0; display: block; width: 100%; height: 1px; background: #ddd; content: ''; box-sizing: border-box; -webkit-transform-origin: 50% 100%; -webkit-transform: scaleY(.5) }
+.my_collection_list li:last-child:after{ display:none;}
+
+.my_collection_list li:active{ background:#f1f1f1;}
+
+.my_collection_list .product_info{ overflow:hidden; line-height:1.8em;}
+
+.my_collection_list .product_info .p_img{ width:70px; height:70px; overflow:hidden; float:left; margin-right:6px; background-position:center center; background-repeat:no-repeat; background-size:cover;}
+
+.my_collection_list .product_info .p_tit{ color:#555; font-size:14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.my_collection_list .product_info .p_pre{ overflow:hidden;}
+.my_collection_list .product_info .p_pre .sp_old{font-size:12px; margin-right:4px; color:#999; font-style:oblique; text-decoration:line-through }
+.my_collection_list .product_info .p_pre .em_huiyuan{ color:#ef6360;}
+.my_collection_list .product_info .p_pre .em_zp{ display:inline-block; line-height:100%; font-size:11px; background:#c00; color:#fff; padding:2px 4px; margin-left:4px;}
+.my_collection_list .product_info .p_vip{ color:#c00;}
+
+.my_collection_list li  .p_del_btn{ display:inline-block; width:60px; height:30px; line-height:30px; text-align:center; position:absolute; top:50%; right:10px; margin-top:-17px;background:#fff; color:#f33; border-radius:3px; overflow:hidden;}
+.my_collection_list li  .p_del_btn:after{position: absolute; top: auto; right: auto; bottom: 0; left: 0; z-index: 1; content: ''; display: block; width: 200%; height: 200%; border-radius: 6px; content: ''; border: 1px solid #f33; box-sizing: border-box; -webkit-transform-origin: 0% 100%; -webkit-transform: scale(.5)}
+.my_collection_list li .p_del_btn:active{ background:#f33; color:#fff;}
+
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+
+
+<div class="my_collection_list">
+	<ul>
+    	<li>
+                <div class="product_info">
+                	<p class="p_img" style="background-image:url(images/test_007.jpg)"></p>
+                    <p class="p_tit">飞天茅台53度500ML特价开抢茅台53度500ML特</p>
+                    <p class="p_pre"><span class="sp_old">￥868.00</span><em class="em_huiyuan">会员:￥868.00</em><em class="em_zp">含赠品</em></p>
+                     <p class="p_vip">VIP:￥868.00</p>
+                </div>
+       			<p class="p_del_btn">删除</p>
+        </li>
+        <li>
+                <div class="product_info">
+                	<p class="p_img" style="background-image:url(images/test_007.jpg)"></p>
+                    <p class="p_tit">飞天茅台53度500ML特价开抢茅台53度500ML特</p>
+                    <p class="p_pre"><span class="sp_old">￥868.00</span><em class="em_huiyuan">会员:￥868.00</em><em class="em_zp">含赠品</em></p>
+                     <p class="p_vip">VIP:￥868.00</p>
+                </div>
+       			<p class="p_del_btn">删除</p>
+        </li>
+        <li>
+                <div class="product_info">
+                	<p class="p_img" style="background-image:url(images/test_007.jpg)"></p>
+                    <p class="p_tit">飞天茅台53度500ML特价开抢茅台53度500ML特</p>
+                    <p class="p_pre"><span class="sp_old">￥868.00</span><em class="em_huiyuan">会员:￥868.00</em><em class="em_zp">含赠品</em></p>
+                     <p class="p_vip">VIP:￥868.00</p>
+                </div>
+       			<p class="p_del_btn">删除</p>
+        </li>
+      
+    </ul>
+</div>
+
+
+
+
+</body>
+
+</html>

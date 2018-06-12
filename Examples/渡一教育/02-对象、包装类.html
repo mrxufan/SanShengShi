@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>对象、包装类</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+
+
+<script type="text/javascript">
+/*
+对象的创建方法
+1、var obj={} 对象字面量
+2、构造函数：
+	1>系统自带的构造函数 new Object() Array()
+	2>自定义
+*/
+var person={
+    name:'张三',
+    age:20,
+    ageAdd:function(){
+        this.age++;
+    },
+    ageMin:function(){
+        this.age--;
+    }
+};
+// person.girlFriend='翠花'; //增
+// delete person.name; //删
+// person.age=30; //改
+// console.log(person.age); //查
+
+
+var obj=new Object();
+obj.name='李四';
+obj.sex='男';
+obj.fn=function(){
+
+};
+
+
+
+/*
+构造函数内部原理：
+	1、在函数体最前面隐式的加上this={}
+	2、执行this.xxx=xxx
+	3、隐式的返回this
+
+大驼峰式命名规则：TheFirstName theFirstName(小驼峰)	
+*/
+function People(str){
+	this.color=str;
+	this.name='张三';
+	this.sex='男';
+	this.age=20;
+	this.fn=function(){
+		this.age--;
+	};
+}
+var peo1=new People('red');
+var peo2=new People('green');
+// 结果各改各的
+peo1.name='李四';
+peo2.name='王五';
+
+
+
+function Student(name,age,sex){
+	this.name=name;
+	this.age=age;
+	this.sex=sex;
+	this.class=2018;
+	this.showName=function(){
+		console.log(this.name);
+	};
+}
+var student1=new Student('张三',20,'男'); 
+
+
+
+/*
+包装对象：
+引用类型有方法和属性，但是基本类型是木有的
+在基本类型中，有三个比较特殊的存在就是：String Number Boolean，这三个基本类型都有自己对应的包装对象，并且随时等候召唤。包装对象呢，其实就是对象，有相应的属性和方法。至于这个过程是怎么发生呢，其实是在后台偷偷发生的
+
+由此我们可以知道，引用类型和基本包装对象的区别在于：生存期
+引用类型所创建的对象，在执行的期间一直在内存中，而基本包装对象只是存在了一瞬间。所以我们无法直接给基本类型添加方法
+
+*/
+
+// var str = 'hello'; //string 基本类型
+// var s2 = str.charAt(0); //在执行到这一句的时候 后台会自动完成以下动作 ：
+// var str = new String('hello'); // 1 找到对应的包装对象类型，然后通过包装对象创建出一个和基本类型值相同的对象
+// var s2 = str.chaAt(0); // 2 然后这个对象就可以调用包装对象下的方法，并且返回结给s2.
+// str = null;  //    3 之后这个临时创建的对象就被销毁了， str =null; 
+ 
+// alert(s2);//h 
+// alert(str);//hello     注意这是一瞬间的动作 实际上我们没有改变字符串本身的值。就是做了下面的动作.这也是为什么每个字符串具有的方法并没有改变字符串本身的原因。
+
+
+
+
+// 浅拷贝
+var obj1={
+	name:'张三',
+	age:20,
+	sex:'男',
+	users:['a','b','c'] //此属性是引用类型，拷贝过去的是一个地址，修改一个另一个也会跟着修改
+};
+var obj2={};
+for (prop in obj1) {
+	obj2[prop]=obj1[prop];
+}
+// console.log(obj2);
+
+
+
+
+
+
+
+
+
+/*
+	判断数组还是对象：
+
+Object.prototype.toString：首先，取得对象的一个内部属性[[Class]]，然后依据这个属性，返回一个类似于"[object Array]"的字符串作为结果(看过ECMA标准的应该都知道，[[]]用来表示语言内部用到的、外部不可直接访问的属性，称为“内部属性”)。利用这 个方法，再配合call，我们可以取得任何对象的内部属性[[Class]]，然后把类型检测转化为字符串比较，以达到我们的目的
+*/
+
+// 方法1：
+function isArray(obj){
+	var str=Object.prototype.toString.call(obj);
+	if (str==='[object Array]') {
+		return '数组';
+	}
+	if (str==='[object Object]') {
+		return '对象';
+	}
+}
+// console.log(isArray([]));
+
+
+// 方法2：
+var arr1=['a','b','c'];
+// console.log(arr1 instanceof Array);
+
+
+// 方法3：
+// console.log(arr1.constructor===Array);
+
+
+// 方法4：
+// console.log(Array.isArray(arr1));
+
+</script>   
+</body>
+</html>

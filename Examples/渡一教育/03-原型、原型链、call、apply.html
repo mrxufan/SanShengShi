@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>原型、原型链、call、apply</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+// 构造函数是用来构造对象的，通过new加函数执行来构造
+/*
+__proto__ 、prototype傻傻分不清楚？ 记住以下两点:1. __proto__是每个对象都有的一个属性，而prototype是函数才会有的属性。2. __proto__指向的是当前对象的原型对象，而prototype指向的，是以当前函数作为构造函数构造出来的对象的原型对象。
+*/
+	
+// function Person(name,age,sex){
+// 	this.name=name;
+// 	this.age=age;
+// 	this.sex=sex;
+// 	this.showName=function(){
+// 		console.log(this.name);
+// 	};
+// }
+// var f1=new Person('张三',10,'男');
+
+
+
+/*
+1、定义：原型是function对象的一个属性，它定义了构造函数制造出的对象的公共祖先。通过该构造函数产生的对象，可以继承该原型的属性和方法。原型也是对象。
+2、利用原型特点和概念，可以提取共有属性
+*/
+
+
+// Person.prototype ->原型
+// Person.prototype={}是祖先
+Person.prototype.lastName='张三';
+Person.prototype.say=function(){console.log('哈哈')};
+function Person(name,age,sex){
+	// 如果自己没有属性和方法而prototype有就用prototype，如果自己有，就用自己的属性和方法，如果两者都有优先用自己的属性和方法
+	this.name=name;
+	this.age=age;
+	this.sex=sex;
+}
+// person、person1继承Person的属性，它们可以访问Person自己的属性，也可以访问Person.prototype属性
+var person=new Person('李四',20,'男');
+var person1=new Person('王五',30,'男');
+// console.log(person.name); //李四
+// console.log(person1.name); //王五
+// console.log(person.say()); //哈哈
+// console.log(person1.say()); //哈哈
+
+
+
+
+
+// Car.prototype.width=1500;
+// Car.prototype.lang=4900;
+// Car.prototype.carName='BMW'; 
+// 可以简化为：
+Car.prototype={
+	width:1500,
+	lang:4900,
+	carName:'BWM'
+};
+function Car(name,color){
+	this.name=name;
+	this.color=color;
+	// 利用原型特点和概念，可以提取共有属性
+	// this.width=1500;
+	// this.lang=4900;
+	// this.carName='BMW';
+}
+var car1=new Car('张三','红色');
+var car2=new Car('李四','蓝色');
+// car1、car2除了有自身的name、color属性外还继承了Car的width、lang、carName
+
+
+
+
+
+People.prototype.lastName='fan';
+function People(name){
+	this.name=name;
+}
+var people1=new People('xu');
+// people1.lastName='james';//这样只是修改people1自己的lastName
+
+// People.prototype.lastName='yan';//这样才是修改原型属性
+
+
+
+/////////////////constructor构造函数的构造器（是谁构造的）
+function Users1(){
+
+}
+
+function Users(){
+
+}
+Users.prototype={
+	// 更改指向的构造器
+	constructor:Users1
+};
+var user1=new Users();
+// user1.constructor可以找出是谁构造了它 ->Users(){}
+
+// console.log(user1.constructor)
+
+
+
+
+
+
+
+Student.prototype.name='张三';
+function Student(){
+
+}
+var obj1={
+	name:'李四'
+};
+var student1=new Student();
+
+// 改变原来prototype的指向
+student1.__proto__=obj1;
+
+
+
+
+
+////////////////////////////////原型链
+Grand.prototype.lastName='Deng';
+function Grand(){
+
+}
+var grand=new Grand();
+
+Father.prototype=grand;
+function Father(){
+	this.name='xuming';
+	this.money={
+		card1:100
+	};
+}
+var father=new Father();
+
+Son.prototype=father;
+function Son(){
+	this.hobbit='smoke';
+}
+var son=new Son();
+
+// console.log(son.hobbit); //smoke
+// console.log(son.name); //xuming
+// console.log(son.lastName); //Deng
+
+// son.money.card2=200;//可以添加到father里，此时father.money->{card1: 100, card2: 200}
+
+
+
+
+
+
+// 重写
+Number.prototype.toString=function(){
+	return '哈哈';
+};
+var num=123;
+// console.log(num.toString()); //哈哈
+
+
+
+
+
+
+
+
+//////////////////////call、apply
+
+function Man(name,age){
+	this.name=name;
+	this.age=age;
+}
+var man1=new Man('张三',30);
+var obj2={
+
+};
+Man.call(obj2,'李四',40);//obj2->{name: "李四", age: 40}
+
+
+
+
+
+
+function Person2(name,age,sex){
+	this.name=name;
+	this.age=age;
+	this.sex=sex;
+}
+
+function Student2(name,age,sex,tel,grade){
+	Person2.call(this, name,age,sex);
+	this.tel=tel;
+	this.grade=grade;
+}
+
+var student3=new Student2('王五',20,'男',158,2018);//student3 -> Student2 {name: "王五", age: 20, sex: "男", tel: 158, grade: 2018}
+
+
+
+/*
+call、apply作用：改变this指向
+不同：传参列表不同：
+	call需要把实参按照形参的个数挨个传进去
+	apply需要传一个arguments数组
+*/
+
+
+
+function Wheel(size,style){
+	this.size=size;
+	this.style=style;
+}
+function Sit(c,color){
+	this.c=c;
+	this.color=color;
+}
+function Model(length,width,height){
+	this.length=length;
+	this.width=width;
+	this.height=height;
+}
+function Car3(size,style,c,color,length,width,height){
+	Wheel.call(this,size,style);
+	Sit.call(this,c,color);
+	Model.apply(this,[length,width,height]);
+
+}
+
+var car4=new Car3('大','漂亮','舒适','红色',4500,1900,1800);
+</script>
+</body>
+</html>

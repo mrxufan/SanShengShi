@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>宝贝详情-开奖详情-已揭晓</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+
+<style type="text/css">
+
+.gg_toppic_box { overflow: hidden; background: #fff; }
+.gg_toppic_box img { width: 100%; }
+.gg_toppic_box .swiper-slide { min-height: 120px; }
+.gg_toppic_box .swiper-pagination { bottom: 5px; line-height: 100%; }
+.gg_toppic_box .swiper-pagination .swiper-pagination-bullet { width:6px; height:6px; margin: 0 3px; line-height: 100%; overflow: hidden; background-color:#fff; }
+.gg_toppic_box .swiper-pagination .swiper-pagination-bullet:after { display: block; content: "."; color: rgba(0,0,0,0) }
+.gg_toppic_box .swiper-pagination .swiper-pagination-bullet-active{ background-color:#c00;}
+
+
+.product_info_box { background: #fff; padding:10px; overflow:hidden;}
+.product_info_box .h3_tit { font-size: 14px; color: #555; margin-bottom:6px; }
+
+.product_info_box .h3_tit em{ display:inline-block; font-size:12px; line-height:100%; border:1px solid #c22; color:#c22; padding:1px 2px; border-radius:3px; font-weight:normal; margin-right:2px;}
+
+.product_info_box .p_jindu_tiao{ overflow:hidden; height:5px; border-radius:5px; background-color:#ddd; margin-bottom:3px; }
+.product_info_box .p_jindu_tiao span{ display:inline-block; height:5px; vertical-align:top;  background-color:#f60;}
+.product_info_box .p_jindu_number{ font-size:12px; color:#999;}
+
+.product_info_box .p_jindu_number .em_1{ color:#6c0;}
+.product_info_box .p_jindu_number .em_2{ color:#c90;}
+
+.duobao_canyu_zt_box{ overflow:hidden; padding:10px; background:#fff;}
+.duobao_canyu_zt_box .p_no_cy{ height:36px; line-height:36px; background:#ddd; color:#999; border-radius:3px; text-align:center; }
+
+/*开奖详情 */
+*{ margin:0;}
+body{ min-width:320px; height:640px; background:#fff;}
+.kjxq_box{ width:100%; background:#fff; padding:0 10px;box-sizing:border-box;}
+.kjxq_text b{ font-weight:normal; color:#F03;}
+.kjxq_text{ font-size:13px; line-height:18px; height:36px; overflow:hidden; margin:5px 0;}
+.djs{ display:inline-block; font-size:12px; line-height:100%; background:#F93;color:white; padding:2px 3px; border-radius:3px; font-weight:normal; margin-right:2px;}
+.djs_btn{ width:100%; height:35px; background:#F03; text-align:center; line-height:35px; color:white; font-size:16px;   }
+.djs_btn b{ font-size:20px;}
+.djs_box{ width:100%;}
+.db_box{ width:100%; height:35px; background:#CCC; color:#666; text-align:center; line-height:35px; margin-top:10px; border-radius:3px;}
+.qw_box{ overflow:hidden; line-height:35px; margin-top:10px; border-top:1px solid #dcdcdc; padding:10px 0;}
+.qw_btn{ display:inline-block; width:100px; height:35px;background:#F03; border-radius:3px; text-align:center; line-height:35px; color:white; float:right; font-size:18px;}
+.qw_btn:active{background:#C00;}
+.lucky_box{ width:100%; border:1px solid #eee;  padding:5px; box-sizing:border-box;}
+.lucky_people{ font-size:16px; color:#06C;}
+.lucky_people01 b{ color:#F03;}
+.lucky_text,.djs_box{background:#eee;}
+.lucky_people,.lucky_people01{ padding:10px;}
+.lucky_people{ padding-bottom:0;}
+
+.baobei_xq_tel .baobei_xq_text01{ color:#323232;white-space: nowrap; text-overflow:ellipsis;overflow:hidden;}
+.baobei_xq_tel .baobei_xq_canyu{ color:#06C; margin-bottom:5px;}
+.baobei_xq_tel li{ margin-bottom:5px;}
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+<span class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"></span>
+<div class="swiper-container gg_toppic_box pro_info_gdimg">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+</div>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+		autoplayDisableOnInteraction:false,
+		loop : true,
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+		preloadImages: false,//禁止强制加载所有图片
+		lazyLoading: true,//延时加载图片
+    });
+    </script>
+
+</div>
+<div class="kjxq_box">  
+<div class="kjxq_text">
+   <span class="djs">已揭晓</span>(第5717期)小米插线板 3个USB充电口 支持2A快充 3重安全保护
+</div>
+<div class="lucky_box">
+   <div class="lucky_text">
+      <p class="lucky_people">中奖用户139****1234</p>
+      <p class="lucky_people01">本期参与：<b>8</b>人次<br>揭晓时间：2015-10-16 13:24:00</p>
+     
+   </div>
+   <div class="djs_box">
+      <div class="djs_btn">
+   幸运号码： <b>10000053</b>
+      </div> 
+   </div>
+</div>
+<div class="db_box">您没有参与本期夺宝哦！</div>
+<ul class="canyu_column" style="background:#eee; margin-top:10px; padding:10px;">
+  <li>
+    <div class="baobei_xq_tel">
+      <p class="baobei_xq_canyu">（自2015-10-25 00:58:06 开始）</p>
+     <ul>
+      <li>
+       <p class="baobei_xq_text">获得者：133****1262</p>
+       <p class="baobei_xq_text01">参与了5人次 2015-10-05 02:33:32</p>
+       </li>
+       <li>
+       <p class="baobei_xq_text">获得者：133****1262</p>
+       <p class="baobei_xq_text01">参与了5人次 2015-10-05 02:33:32</p>
+       </li>
+     </ul>
+         
+    </div>
+  </li>
+</ul>
+<div style="height:56px; margin-top:10px;">
+<div class="qw_box" style="width:100%; height:35px; background:#fff; position:fixed; z-index:200; left:0; bottom:0; padding: 10px;">第5720期正在火热进行中…<a href="#"><span class="qw_btn" style="margin-right:20px;">立即前往</span></a></div>
+</div>
+</body>
+
+</html>

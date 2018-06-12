@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>已发红包</title>
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="Mint UI/mint-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+  
+    </style>
+</head>
+<body ontouchstart>
+  <div id="app01">
+  	<div class="img_box"><img src="images/top_img_01.png"></div>
+    <p class="p_money"><span v-cloak>{{money}}</span>元</p>
+    <p class="p_tips">红包已经发放到您的零钱中</p>
+    <div class="btn_wrap">
+      <a href="javascript:;">我知道了</a>
+    </div>
+    <p class="p_tips" style="color: #f5192f"><span v-cloak>《{{imgInfo[i].tit}}》</span>电信电信热播中</p>
+    <a href="javascript:;" class="ad_wrap">
+      <img :src="'images/'+imgInfo[i].url">
+    </a>
+  </div>
+
+
+
+  <script type="text/javascript" src="Mint UI/vue.js"></script>
+  <script type="text/javascript" src="Mint UI/index.js"></script>
+  <script type="text/javascript">
+  	var vm01 = new Vue({
+  		el: "#app01",
+  		data:{
+  			money:666,
+        imgInfo:[
+            {tit:'变形金刚5',url:'001.jpg'},
+            {tit:'敦刻尔克',url:'002.jpg'},
+            {tit:'缝纫机乐队',url:'003.jpg'},
+            {tit:'神奇女侠',url:'004.jpg'},
+            {tit:'摔跤吧爸爸',url:'005.jpg'},
+            {tit:'羞羞的铁拳',url:'006.jpg'},
+            {tit:'银河护卫队',url:'007.jpg'},
+            {tit:'战狼2',url:'008.jpg'},
+            {tit:'追龙',url:'009.jpg'}
+        ],
+        i:0,
+  		},
+      methods: {
+        fn1(){
+            var numAll=this.imgInfo.length;
+            this.i=Math.floor(Math.random()*numAll);
+            console.log(`第 ${this.i+1} 张`);
+        }
+      },
+      mounted(){
+        this.fn1();
+      }
+  	});
+  </script>
+</body>
+</html>

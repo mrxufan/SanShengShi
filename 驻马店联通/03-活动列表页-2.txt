@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/public.css"/>
+<link href="css/page_style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.hd-list-box{ padding:0px 10px 10px 10px;}
+.hd-list-box ul li dl dt{ background:#eee; padding:10px 0px 5px 0px;}
+.hd-list-box ul li dl dt .p-time{ text-align:center;}
+.hd-list-box ul li dl dt .p-time span{ display:inline-block; padding:0px 5px; height:16px; border-radius:2px; background:#D4D4D4; color:#fff; font-size:12px; line-height:16px; }
+.hd-list-box ul li dl .dd-img{ padding:10px; background:#fff;}
+.hd-list-box ul li dl .dd-img .p-img{ height:150px; overflow:hidden;}
+.hd-list-box ul li dl .dd-img .p-img img{ width:100%;}
+.hd-list-box ul li dl .dd-txt{ background:#fff; padding:10px;}
+.hd-list-box ul li dl .dd-txt .jz-time{ display:inline-block; color:#9F9F9F; font-size:12px;}
+</style>
+</head>
+<body ontouchstart style="background:#EEEEEE;">
+<div class="hd-list-box">
+    <ul>
+        <li>
+            <dl>
+                <dt>
+                    <p class="p-time"><span>周五 17：50</span></p>
+                </dt>
+                <dd class="dd-img btm-line">
+                    <p class="p-img"><img src="images/bd_img_bj_02.jpg"></p>
+                </dd>
+                <dd class="dd-txt box-flex-box">
+                    <p class="tit box-flex-1 text-overflow">大转盘</p>
+                    <p class="jz-time text-right">截止日期：<i>2015.12.25 24:00</i></p>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>
+                    <p class="p-time"><span>周五 17：50</span></p>
+                </dt>
+                <dd class="dd-img btm-line">
+                    <p class="p-img"><img src="images/2010062914324027.jpg"></p>
+                </dd>
+                <dd class="dd-txt box-flex-box">
+                    <p class="tit box-flex-1 text-overflow">大转盘</p>
+                    <p class="jz-time text-right">截止日期：<i>2015.12.25 24:00</i></p>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>
+                    <p class="p-time"><span>周五 17：50</span></p>
+                </dt>
+                <dd class="dd-img btm-line">
+                    <p class="p-img"><img src="images/bd_img_bj_02.jpg"></p>
+                </dd>
+                <dd class="dd-txt box-flex-box">
+                    <p class="tit box-flex-1 text-overflow">大转盘</p>
+                    <p class="jz-time text-right">截止日期：<i>2015.12.25 24:00</i></p>
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt>
+                    <p class="p-time"><span>周五 17：50</span></p>
+                </dt>
+                <dd class="dd-img btm-line">
+                    <p class="p-img"><img src="images/2010062914324027.jpg"></p>
+                </dd>
+                <dd class="dd-txt box-flex-box">
+                    <p class="tit box-flex-1 text-overflow">大转盘</p>
+                    <p class="jz-time text-right">截止日期：<i>2015.12.25 24:00</i></p>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Examples</title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<ul id="ul1"></ul>
+
+
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript">
+var oUl=document.getElementById('ul1');
+var oBtn=document.getElementsByTagName('button');
+for (var i = 0; i < oBtn.length; i++) {
+	oBtn[i].index=i;
+	oBtn[i].onclick=function(){
+		ajax('page'+(this.index+1)+'.txt',function(str){
+			var arr=eval(str);
+			oUl.innerHTML='';
+			for (var i = 0; i < oBtn.length; i++) {
+				var oLi=document.createElement('li');
+				oLi.innerHTML='user='+arr[i].user+',pass='+arr[i].pass;
+				oUl.appendChild(oLi);
+			}
+		});
+	};
+}
+
+</script>
+
+</body>
+</html>

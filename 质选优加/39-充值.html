@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>充值</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<!--标准mui.css-->
+<link rel="stylesheet" href="css/mui.min.css">
+<link rel="stylesheet" type="text/css" href="css/public.css">
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="mui-content recharge_info" style="margin-top: 15px;">
+	<div class="mui-content-padded" style="margin: 0;">
+		<form class="mui-input-group">
+			<!-- <div class="mui-input-row">
+				<label>账号</label>
+				<input type="text" placeholder="请输入账号">
+			</div> -->
+			<div class="mui-input-row">
+				<label>金额</label>
+				<input type="text" placeholder="请输入金额">
+			</div>
+		</form>
+		<div class="mui-content-padded">
+			<button type="button" class="mui-btn mui-btn-primary mui-btn-block" style="padding:6px 0;" id="toastBtn">确认</button>
+		</div>
+	</div>
+</div>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript">
+document.getElementById("toastBtn").addEventListener('tap', function() {
+				mui.toast('充值成功');
+			});
+</script>	
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>摇啊摇</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<link rel="stylesheet" href="css/animate.min.css" type="text/css">
+<style type="text/css">
+    html,body{min-height: 100%; background-color:#f4f4f4; font-size:3vw; }
+
+    .yao_body{  overflow: hidden; background-image: url(images/bgi_01.jpg); background-position: top center; background-repeat: no-repeat; background-size:cover;}
+    .logo_box{ width:25vw; height: 8vw; margin-left:4vw; margin-top: 4vw; background-image: url(images/logo.png); background-position: center center; background-repeat: no-repeat; background-size:cover; }
+    .title_box{ width:80vw; height:36vw; margin:0 auto;  background-image: url(images/title_01.png); background-position: center center; background-repeat: no-repeat; background-size:cover; }
+    .yao_box{ position:relative;width:60vw; height:66vw; margin:0 auto; margin-top:4vw; background-image: url(images/yao_pic_02.png); background-position: center center; background-repeat: no-repeat; background-size:cover; }
+    .yao_box .yao_border{ position: absolute; left: 0;top:0; width:60vw; height:66vw; background-image: url(images/yao_pic_01.png); background-position: center center; background-repeat: no-repeat; background-size:cover; }
+    .yao_box .yao_hand{position: absolute; left:14vw;top:10vw; width:36vw; height:48vw; background-image: url(images/yao_pic_03.png); background-position: top center; background-repeat: no-repeat; background-size:cover;}
+    .yao_box .yao_hand.dh{animation: grow 0.7s 0s 1 ease, hand-move 1s 0.6s infinite alternate ease-in-out;  transform-origin: bottom right;}
+    @keyframes grow
+    {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+        60% {
+            -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+        }
+        80% {
+            -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+        }
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+    @keyframes hand-move
+    {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        33% {
+            -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+        }
+        66% {
+            -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+        }
+        100% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+    }
+
+    .surplus_box{ width:40vw; height: 8vw; line-height: 8vw; font-size:3.5vw; margin:0 auto; background-color: #ef444a; border:.3vw #222 solid; border-radius:2vw; color:#fff; text-align:center; }
+    .surplus_box span{font-weight: bold;font-size:4vw; color:#fef300}
+    .rule_box{margin:3vw 5vw; color:#333;}
+    .rule_box .rule_tit{ font-size:4vw; font-weight: bold; margin-bottom:1vw;}
+    .rule_box .rule_text{font-size:3vw; line-height: 6vw;}
+    .yao_footer{ background-color: #ef444a; border-top:.3vw #222 solid; text-align:center;  color:#fff; padding:2vw; font-size:4vw; }
+
+    .mint-popup-1 { overflow: hidden; width: 100%;height: 100%;  background-image:url(images/bgi_02.jpg); background-position: top center; background-repeat: no-repeat; background-size:cover; }
+    .hongbao_box{overflow: hidden;   position:relative;width:86vw; height:66vw; margin:0 auto; margin-top:4vw; background-image: url(images/hongbao_img.png); background-position: center center; background-repeat: no-repeat; background-size:cover; }
+    .hongbao_box .zj_ts_txt{font-size:5vw; text-align: center; margin-top:5vw; color:#fef300; line-height: 150%;}
+    .hongbao_box .zj_ts_txt span{font-size:6vw; font-weight: bold;}
+    .hongbao_box .all_ts_txt{font-size:4vw; text-align: center; margin-top:4vw; color:#333; line-height: 150%;}
+    .hongbao_box .all_ts_txt span{font-size:5vw; font-weight: bold;  color:#df1e35;}
+
+    .hongbao_box .again_btn{ text-align: center; margin-top:8vw;}
+    .hongbao_box .again_btn .btn_1{ border:0; font-size:5vw; font-weight: bold; padding:2.5vw 6vw; line-height: 100%; background-color:#fbc80d; color:#e53c39; border-radius:1vw; box-shadow:0 .6vw 0px #ddae00 }
+    .hongbao_box .again_btn .btn_1:active{color:#d63836; background-color:#ffd739; box-shadow:0 .4vw 0px #ddae00}
+
+    .hongbao_box .sy_ts_txt{font-size:4vw; text-align: center; margin-top:2vw; color:#fff; line-height: 150%;}
+    .hongbao_box .sy_ts_txt span{font-size:5vw; font-weight: bold;  color:#ffd739;}
+
+    .hb_info_title{width:90vw; height:22vw; margin:0 auto; margin-top:6vw;  background-image: url(images/hongbao_tit.png); background-position: center center; background-repeat: no-repeat; background-size:cover;}
+    .hb_duihuan_btn{width:50vw; height:18vw; margin:0 auto; margin-top:6vw;  background-image: url(images/hongbao_cbtn.png); background-position: center center; background-repeat: no-repeat; background-size:cover;}
+    .hb_duihuan_btn:active{opacity: .8}
+    .hongbao_footer{position:absolute;bottom:0; width:100%;}
+
+    [v-cloak]{display: none;}
+
+</style>
+
+</head>
+
+<body ontouchstart >
+
+<div id="app">
+<div class="yao_body" >
+    <div class="logo_box"></div>
+    <div class="title_box"></div>
+        <div class="yao_box">
+
+            <div class="yao_hand animated" :class="{wobble:ydActive,dh:!ydActive}"></div>
+            <div class="yao_border"></div>
+        </div>
+        <div class="surplus_box">今日还剩 <span v-cloak>{{ciShu}}</span> 次机会</div>
+    <button @click="Shaking">测试摇一摇</button>
+    <div class="rule_box">
+        <div class="rule_tit">活动规则</div>
+        <div class="rule_text">
+            1.每人每天3次参与机会；<br>
+            2.奖品通过卡券方式发至微信卡包内，流量卡券可转发好友；<br>
+            3.摇红包时间：2018年2月2日-2月5日<br>
+            4.流量使用时间：2018年2月2日-2月28日；
+        </div>
+    </div>
+</div>
+<div class="yao_footer" >活动最终解释权归中国电信河南公司所有</div>
+
+
+<mt-popup v-model="popupVisible_1" position="right" class="mint-popup-1" >
+    <div class="logo_box"></div>
+    <div class="hongbao_box">
+        <div class="zj_ts_txt">恭喜您<br/>中了 <span>{{zMsg}}</span> 流量</div>
+        <div class="all_ts_txt">在本次活动中您一共摇到了<br/><span>{{AllNum | flowUnit}}</span> 流量</div>
+        <div class="again_btn"><button class="btn_1" @click="popupVisible_1 = false;isPopup=false" >再摇一次</button></div>
+        <div class="sy_ts_txt">今日还剩 <span v-cloak>{{ciShu}}</span> 次机会</div>
+    </div>
+    <div class="hb_info_title"></div>
+    <div class="hb_duihuan_btn" @click="gohref"></div>
+    <div class="yao_footer hongbao_footer">活动最终解释权归中国电信河南公司所有</div>
+</mt-popup>
+
+</div>
+
+<audio id="shakemusic" src="music/red-01.mp3"  style="display: none;"></audio>
+<audio id="openmusic" src="music/red-02.mp3" style="display: none;"></audio>
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+
+<script>
+    var myDlUrl = 'https://bird.ioliu.cn/v1?url=';
+
+    var tempUrl = 'http://www.cnnmo.com/weixina/';
+    var BindUrl = 'http://hnwx1.hntele.com/Home/Bind/';  //绑定页面
+    var SubscribeUrl = 'http://hnwx1.hntele.com/Home/CTPoster/'; //关注页面
+
+    var audio = document.getElementById("shakemusic");
+    var openAudio = document.getElementById("openmusic");
+    var lastX = null, lastY = null, lastZ = null;
+    var threshold = 6; //灵敏度（值越小灵敏度越高）
+    var timeout = 1000;
+    var lastTime = new Date();
+    var isShaking = !1;
+    new Vue({
+        el: '#app',
+        data:{
+            code:2,
+            zMsg:'', // 每次得到的
+            ciShu:3, // 剩余： 总次数 - 已用
+            AllNum:0, // 总流量
+            Yiyong:0, // 已用次数
+
+            loading:true,
+            ydActive:false,
+            isPopup:false,
+            popupVisible_1:false,
+            st:null,
+        },
+        filters:{
+            flowUnit(val){
+                if (!val) return '';
+                if(val<1024){
+                    return val+" M"
+                }
+                if(val>=1024){
+                    return ((val/1024).toFixed(2)) +' G'
+                }
+            }
+        },
+        methods: {
+
+            getCiShuDate(){
+                axios.post(`${myDlUrl}${tempUrl}NYFlows/Index`).then((response)=>{
+                    console.log(response.data)
+                    this.code= response.data.code;
+                    this.Yiyong = response.data.data;
+                }).catch((err)=>{
+                    console.log(err)
+                })
+            },
+
+            getFlowDate(){
+                axios.post(`${myDlUrl}${tempUrl}NYFlows/GetFlow`).then((response)=>{
+                    console.log(response.data);
+                    this.code= response.data.code;
+                    this.zMsg=response.data.message;
+                    this.AllNum = response.data.data;
+                    this.ciShu -= this.Yiyong;
+                }).catch((err)=>{
+                    console.log(err)
+                })
+            },
+
+            gohref(){
+                window.location.href='index1.html'
+            },
+            loadSound(){
+                document.addEventListener("WeixinJSBridgeReady",()=> {
+                    audio.load();
+                    openAudio.load();
+                }, false);
+            },
+            goYao(){
+                if (window.DeviceMotionEvent){
+                    window.addEventListener('devicemotion', (e)=> {
+                        var current = e.accelerationIncludingGravity;
+                        var currentTime;
+                        var timeDifference;
+                        var deltaX = 0;
+                        var deltaY = 0;
+                        var deltaZ = 0;
+                        //记录上一次设备在x,y,z方向上的加速度
+                        if ((lastX === null) && (lastY === null) && (lastZ === null)) {
+                            lastX = current.x;
+                            lastY = current.y;
+                            lastZ = current.z;
+                            return;
+                        }
+                        //得到两次移动各个方向上的加速度绝对差距
+                        deltaX = Math.abs(lastX - current.x);
+                        deltaY = Math.abs(lastY - current.y);
+                        deltaZ = Math.abs(lastZ - current.z);
+
+                        //当差距大于设定的阀值并且时间间隔大于指定阀值时，触发摇一摇逻辑
+                        if (((deltaX > threshold) && (deltaY > threshold)) || ((deltaX > threshold) && (deltaZ > threshold)) || ((deltaY > threshold) && (deltaZ > threshold))) {
+                            currentTime = new Date();
+                            timeDifference = currentTime.getTime() - lastTime.getTime();
+
+                            //时间间隔
+                            if (timeDifference > timeout) {
+                                //触发摇一摇事件
+                                this.Shaking();
+                                lastTime = new Date();
+                            }
+                        }
+
+                        lastX = current.x;
+                        lastY = current.y;
+                        lastZ = current.z;
+
+                    },false);
+
+                }else{
+                    this.$messagebox('很遗憾！','你的手机太low了，不能摇一摇…');
+                }
+            },
+            Shaking(){
+                if(this.code<1){
+                    switch(this.code){
+                        case -11:
+                            this.$messagebox.confirm('您还没有关注河南电信公众号','提示',{confirmButtonText:'立即关注',showCancelButton:false}).then(()=>{
+                                window.location.href=SubscribeUrl
+                            });
+                            break;
+                        case -12:
+                            this.$messagebox.confirm('没有绑定！','提示',{confirmButtonText:'立即绑定',showCancelButton:true}).then(()=>{
+                                window.location.href=BindUrl
+                            });
+                            break;
+
+                        case -21:
+                            this.$messagebox.alert('活动未开始！','提示',{confirmButtonText:'我知道了'});
+                            break;
+                        case -22:
+                            this.$messagebox.alert('活动已结束！','提示',{confirmButtonText:'我知道了'});
+                            break;
+                    }
+                    return;
+                }
+
+                if(this.ciShu<=0) {
+                    this.$messagebox.alert('次数已用完！','提示',{confirmButtonText:'我知道了'});
+                    return
+                };  //判断次数是否够
+                if(this.isPopup) return ;   //判断弹出的红包层是否还在
+                if (isShaking) return;  //判断是否还在 摇晃中
+                isShaking = !0 ;
+                audio.play();
+                this.ydActive=true; //添加摇晃动画
+                clearTimeout(this.st); //先清除延时
+               // this.getFlowDate();
+                this.st = setTimeout(()=>{
+                    isShaking = !1;
+                    audio.pause();
+                    openAudio.play();
+                    this.ydActive=false;
+                    this.popupVisible_1=true;
+                    this.isPopup=true;
+                    return false;
+                }, 1500);
+            }
+        },
+
+        mounted(){
+          //  this.getCiShuDate();
+          //  this.getFlowDate();
+            this.loadSound();
+            this.goYao();
+
+        }
+
+
+    })
+</script>
+	
+</html>

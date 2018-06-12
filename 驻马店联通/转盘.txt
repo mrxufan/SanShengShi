@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/public.css"/>
+<link href="css/page style.css" rel="stylesheet" type="text/css">
+</head>
+<body ontouchstart style="background:url(images/02bOOOPIC8b_1024.jpg) no-repeat center top; background-size:cover;">
+<div class="circle-box">
+    <div class="circle">
+        <img src="images/zhuanpan.png" width="280" height="280" alt=""/> 
+    </div>
+    <div class="p-btn">
+        <p class="btn">点击抽奖</p>
+    </div>
+</div>
+<div class="alert-box" style="display:none;">
+    <div class="alert-bg"></div>
+    <div class="alert-content">
+        <div class="an-false" style="display:none;">
+            <p><img src="images/x.png"/></p>
+            <p class="alert-txt">对不起，答错了，再接再厉</p>
+            <p class="">正确答案：<span class="answer">A</span></p>
+            <p class="p_btn">下一题</p>
+        </div>
+        <div class="an-right" style="">
+            <p><img src="images/right.png"/></p>
+            <p class="alert-txt">恭喜你！答对了！</p>
+            <p class="p_btn">下一题</p>
+        </div>
+    </div>
+</div>
+<!--JS-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(".btn").click(function(){
+	var randomnumber;
+	$(".circle").attr("style","transform:rotate(2500deg); -webkit-transform:rotate(2500deg);");
+	function rid(){
+		 $(".alert-box").show();
+	}
+	setTimeout(rid,6300);	
+});
+</script>
+</body>
+</html>

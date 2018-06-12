@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>宝贝详情-开奖详情-倒计时</title>
+
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+
+<link href="css/page_style.css" rel="stylesheet" type="text/css"><!--页面所需样式-->
+
+
+
+<style type="text/css">
+
+.gg_toppic_box { overflow: hidden; background: #fff; }
+.gg_toppic_box img { width: 100%; }
+.gg_toppic_box .swiper-slide { min-height: 120px; }
+.gg_toppic_box .swiper-pagination { bottom: 5px; line-height: 100%; }
+.gg_toppic_box .swiper-pagination .swiper-pagination-bullet { width:6px; height:6px; margin: 0 3px; line-height: 100%; overflow: hidden; background-color:#fff; }
+.gg_toppic_box .swiper-pagination .swiper-pagination-bullet:after { display: block; content: "."; color: rgba(0,0,0,0) }
+.gg_toppic_box .swiper-pagination .swiper-pagination-bullet-active{ background-color:#c00;}
+
+
+.product_info_box { background: #fff; padding:10px; overflow:hidden;}
+.product_info_box .h3_tit { font-size: 14px; color: #555; margin-bottom:6px; }
+
+.product_info_box .h3_tit em{ display:inline-block; font-size:12px; line-height:100%; border:1px solid #c22; color:#c22; padding:1px 2px; border-radius:3px; font-weight:normal; margin-right:2px;}
+
+.product_info_box .p_jindu_tiao{ overflow:hidden; height:5px; border-radius:5px; background-color:#ddd; margin-bottom:3px; }
+.product_info_box .p_jindu_tiao span{ display:inline-block; height:5px; vertical-align:top;  background-color:#f60;}
+.product_info_box .p_jindu_number{ font-size:12px; color:#999;}
+
+.product_info_box .p_jindu_number .em_1{ color:#6c0;}
+.product_info_box .p_jindu_number .em_2{ color:#c90;}
+
+.duobao_canyu_zt_box{ overflow:hidden; padding:10px; background:#fff;}
+.duobao_canyu_zt_box .p_no_cy{ height:36px; line-height:36px; background:#ddd; color:#999; border-radius:3px; text-align:center; }
+
+/*开奖详情 */
+*{ margin:0;}
+body{ min-width:320px; height:640px; background:#fff;}
+.kjxq_box{ width:100%; background:#fff; padding:0 10px;box-sizing:border-box;}
+.kjxq_text b{ font-weight:normal; color:#F03;}
+.kjxq_text{ font-size:13px; line-height:18px; height:36px; overflow:hidden; margin:5px 0;}
+.djs{display:inline-block; font-size:12px; line-height:100%; background:#F93;color:white; padding:2px 3px; border-radius:3px; font-weight:normal; margin-right:2px;}
+.djs.on{ background:#09F;}
+.djs_btn{ width:100%; height:35px; background:#F03; text-align:center; line-height:35px; color:white; font-size:16px; border-radius:3px;}
+.djs_btn b{ font-size:20px;}
+.djs_box{ width:100%;}
+.db_box{ width:100%; height:35px; background:#CCC; color:#666; text-align:center; line-height:35px; margin-top:10px;border-radius:3px;}
+.qw_box{ overflow:hidden; line-height:35px; margin-top:10px; border-top:1px solid #dcdcdc; padding:10px 0;}
+.qw_btn{ display:inline-block; width:100px; height:35px;background:#F03; border-radius:3px; text-align:center; line-height:35px; color:white; float:right; font-size:18px;}
+.qw_btn:active{background:#C00;}
+</style>
+
+
+</head>
+
+<body ontouchstart >
+
+<span class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"></span>
+<div class="swiper-container gg_toppic_box pro_info_gdimg">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+        <div class="swiper-slide"><img data-src="images/test_003.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader"></div></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+</div>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay: 3000,
+		autoplayDisableOnInteraction:false,
+		loop : true,
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+		preloadImages: false,//禁止强制加载所有图片
+		lazyLoading: true,//延时加载图片
+    });
+    </script>
+
+</div>
+<div class="kjxq_box">  
+<div class="kjxq_text">
+   <span class="djs">倒计时</span>(第4388期)iPhone6 4.7英寸128G 至大之作，亦是至薄之作(颜色随机)
+</div>
+<div class="djs_box">
+<div class="djs_btn">
+   揭晓倒计时 <b>12:06:30</b>
+</div> 
+</div>
+<div class="db_box">您没有参与本期夺宝哦！</div>
+<div class="qw_box">第4389期正在火热进行中…<a href="#"><span class="qw_btn">立即前往</span></a></div>
+</div>
+</body>
+
+</html>

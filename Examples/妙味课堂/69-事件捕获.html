@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>事件捕获</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+div{padding: 50px;}
+#div1{background-color: red;}
+#div2{background-color: green;}
+#div3{background-color: blue;}
+</style>
+</head>
+<body>
+<div id="div1">
+	<div id="div2">
+		<div id="div3"></div>
+	</div>
+</div> 
+<script type="text/javascript">
+// 事件冒泡：当一个元素接收到事件的时候，会把它接收到的所有传播给他的父级，一直到顶层window,事件冒泡机制
+
+
+var oDiv1=document.getElementById('div1');
+var oDiv2=document.getElementById('div2');
+var oDiv3=document.getElementById('div3');
+function fn() {
+	alert(this.id);
+}
+
+// oDiv1.addEventListener('click',fn,true);
+// oDiv2.addEventListener('click',fn,true);
+// oDiv3.addEventListener('click',fn,true);
+
+//false = 冒泡
+// true = 捕获
+	
+	//告诉div1，如果有一个出去的事件触发了你，你就去执行fn1这个函数
+	/*oDiv1.addEventListener('click', fn1, false);
+	oDiv2.addEventListener('click', fn1, false);
+	oDiv3.addEventListener('click', fn1, false);*/
+	
+	//告诉div1，如果有一个进去的事件触发了你，你就去执行fn1这个函数
+	/*oDiv1.addEventListener('click', fn1, true);
+	oDiv2.addEventListener('click', fn1, true);
+	oDiv3.addEventListener('click', fn1, true);*/
+	
+	oDiv1.addEventListener('click', function() {
+		alert(1);
+	}, false);
+	oDiv1.addEventListener('click', function() {
+		alert(3);
+	}, true);
+	oDiv3.addEventListener('click', function() {
+		alert(2);
+	}, false);
+	// 3、2、1
+	
+
+</script>
+</body>
+</html>

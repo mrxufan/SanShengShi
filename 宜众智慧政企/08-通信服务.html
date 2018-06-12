@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>通信服务</title>
+
+
+<script src="css_js/jquery.1.9.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css_js/public.css" type="text/css">
+<link rel="stylesheet" href="css_js/font-awesome.css" type="text/css">
+<script src="css_js/Swiper3/swiper.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css_js/Swiper3/swiper.min.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="css_js/style_pc.css" />
+<script src="css_js/jquery.js"></script>
+<style>
+.tx_service_box{ padding-bottom:90px;}
+.tx_service_box .tx_box{ width:1200px; margin:0 auto;}
+.tx_service_box .tx_box .p_tit{font-size:30px; color:#333; text-align:center; line-height:180px;}
+.tx_service_box .tx_box .p_img img{ width:100%;}
+</style>
+
+</head>
+
+<body ontouchstart >
+<!--浏览器检测-->
+<div style="display: none" id="browser_ie">
+    <div class="brower_info">
+        <div class="notice_info">
+            <p>
+                你的浏览器版本过低，可能导致网站不能正常访问！<br>
+                为了你能正常使用网站功能，请使用这些浏览器。</p>
+        </div>
+        <div class="browser_list">
+            <span><a href="#" target="_blank"><img src="images/browser/Chrome.png"><br>Chrome </a></span>
+            <span><a href="#" target="_blank"><img src="images/browser/Firefox.png"><br>Firefox </a></span>
+            <span><a href="#" target="_blank"><img src="images/browser/Safari.png"><br>Safari </a></span>
+            <span><a href="#" target="_blank"><img src="images/browser/IE.png"><br>IE9及以上 </a></span>
+        </div>
+    </div>
+</div>
+<script>
+    if (!$.support.leadingWhitespace) {
+        $("#browser_ie").show();
+    }
+</script>
+<!--浏览器检测--> 
+<div class="top_nav_box">
+	<div class="top_nav">
+    	<span><a href="00-sign_in.html">您好，请登录</a>&nbsp; | &nbsp;<a href="#">使用帮助</a>&nbsp; | &nbsp;<a href="#">网上客服</a></span>
+    </div>
+</div>
+<div style="background:#fff;">
+<div class="wrap">
+    <p class="logo_box"><a href="#"><img src="images/YZ-logo.png"></a></p>
+    <ul id="nav">
+        
+        <li style="width: 122px;text-align: center;"><a href="#" class="a-title">企业专享服务</a>
+            <ul class="subnav-list">
+                <li><a href="03-企业名片.html">员工借款</a></li>
+                <li><a href="03-员工借款.html">员工保险</a></li>
+                <li><a href="04-员工保险.html">企业名片</a></li>
+                <li><a href="05-微官网.html">员工福利险</a></li>
+                <li><a href="06-公务用车.html">分期购</a></li>
+                <li><a href="07-易企秀.html">车险服务</a></li>
+                <li><a href="08-通信服务.html">通信服务</a></li>
+            </ul>
+        </li>
+        <li style="width: 122px;text-align: center;"><a href="#" class="a-title">便捷服务</a>
+            <ul class="subnav-list">
+                <li><a href="03-企业名片.html">通讯录</a></li>
+                <li><a href="03-员工借款.html">福利券</a></li>
+                <li><a href="04-员工保险.html">公司公告</a></li>
+                <li><a href="05-微官网.html">工资管理</a></li>
+            </ul>
+        </li>
+        <!-- <li style="width: 122px;text-align: center;"><a href="#" class="a-title">福利购商城</a></li> -->
+        
+    </ul>
+    <div style="clear:both;"></div>
+</div>
+</div>
+
+<div class="banner_container" style="background-image:url(images/message_service_images/banner_01.jpg)">
+	<div class="banner_box">
+    	<div class="top_tit_box">
+        	<p class="p_icon"><img src="images/message_service_images/icon_01.png"></p>
+            <span class="s_tit">通信服务</span>
+            <p class="p_txt">由河南联通提供集团通讯服务，根据不同企业定制手机套餐、宽带套餐、合约购机、通话流量等为企业运营节省成本。</p>
+        </div>
+        <div class="open_btn"><button>立即开通</button></div>
+    </div>
+</div>
+<div class="tx_service_box">
+	<div class="tx_box">
+    	<p class="p_tit">渠道服务优越</p>
+        <p class="p_img"><img src="images/message_service_images/img_01.jpg"></p>
+    </div>
+</div>
+<div class="tx_service_box" style="background:#f7f9fb;">
+	<div class="tx_box">
+    	<p class="p_tit">覆盖行业广</p>
+        <p class="p_img"><img src="images/message_service_images/img_02.jpg"></p>
+    </div>
+</div>
+<div class="tx_service_box">
+	<div class="tx_box">
+    	<p class="p_tit">企业通信从未如此简单</p>
+        <p class="p_img"><img src="images/message_service_images/img_03.jpg"></p>
+    </div>
+</div>
+<div class="footer_box"><p class="p_txt">© Copyright © 2005 - 2016 CHINA SOAR INFORMATION TECHNOLOGY, INC.</p></div>
+<script>
+var mySwiper = new Swiper ('.swiper-container', {
+    autoplay : 3000,
+	effect : 'fade',
+    loop: true,
+    
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+    paginationClickable :true,
+
+  });           
+
+</script>
+<script>
+$(document).ready(function() {  
+    $('#nav li').hover(function() {
+        $('ul', this).slideDown(200);
+        $(this).children('a:first').addClass("hov");
+    }, function() {
+        $('ul', this).slideUp(100);
+        $(this).children('a:first').removeClass("hov");     
+    });
+});
+
+</script>
+</body>
+</html>

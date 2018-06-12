@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>ajax实例</title>
+<style type="text/css">
+.loading{position: fixed;width: 100px;height: 100px;left: 50%;top: 50%;transform: translate(-50%,-50%);display: none;}
+.loading img{width: 100%;}
+</style>
+</head>
+<body>
+
+
+<button id="prev" onclick="getPage('prev')">上一页</button>
+<button id="next" onclick="getPage('next')">下一页</button>
+<ul id="ul1"></ul>
+<span class="loading"><img src="../images/test_pic/loading.gif"></span>
+
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+var currentPage = 0;
+var pageSize = 100;
+var prevBtn=document.querySelector('#prev');
+var nextBtn=document.querySelector('#next');
+function getPage(type){
+	type == 'next'?currentPage++:currentPage--;
+	if(type=='prev'&&currentPage==0){
+		prevBtn.disabled=true;
+	} else {
+		prevBtn.disabled=false;
+	}
+	$.ajax({
+	    type: "post",
+	    url: 'http://xinhengjieyi.vicp.io/home/getYdLogList',
+	    dataType: "json",
+	    data: {PageSize:pageSize, CurrentPage:currentPage},
+	    beforeSend:function(){
+	        $('.loading').show();
+	    }, 
+	    success: function (result) {
+	    	console.log(result);
+	    	if (result.Code==0) {
+		    	var ul=document.querySelector('#ul1');
+		    	var str = "";
+		        for (var i = 0; i < result.Data.length; i++) {
+		           //追加每页显示所有数据
+		           // ul.innerHTML+='<li>ID: '+result.Data[i].Id+' ，地址：'+result.Data[i].URL+'</li>';
+
+		           //只显示当前页数据
+		           str +='<li>编号: '+result.Data[i].Id+' ，地址：'+result.Data[i].URL+'</li>';
+		        }
+		        ul.innerHTML = str;	
+
+				console.log('第'+currentPage+'页，总'+result.Page.TotalPage+'页'); 
+
+				if (type=='next'&&currentPage==result.Page.TotalPage) {
+					nextBtn.disabled=true;
+				} else {
+					nextBtn.disabled=false;
+				}
+
+	    	} else {
+	    		$('.loading').hide();
+	    	}
+	    },
+	    complete:function(){
+	        $('.loading').hide();
+
+	    }
+	});
+}
+//	获取第一页数据
+getPage('next');
+</script>
+
+</body>
+</html>

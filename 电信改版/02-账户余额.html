@@ -1,0 +1,106 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>账户余额</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<link rel="stylesheet" href="css/my_style.css" type="text/css">
+<style type="text/css">
+
+</style>
+</head>
+
+<body ontouchstart>
+
+<div id="app" v-cloak class="vue_body">
+    <div class="head_wrap flex_wrap">
+        <div class="flex_item">
+            <div class="head_info flex_wrap">
+                <span class="head_pic"><img :src="headImg"></span>
+                <span class="s_phone">{{phoneNum}}</span>
+            </div>
+        </div>
+        <a href="javascript:;" class="home_btn"></a>
+    </div>
+   <div class="account_yue_info">
+       <div class="top_msg">
+           <p class="p_tit">账户余额/元</p>
+           <p class="p_money">{{totalYue}}</p>
+       </div>
+       <div class="center_msg flex_wrap">
+           <div class="flex_item center_item">
+               <p><span class="shu yellow"></span>通用余额/元</p>
+               <p>{{tyYue}}</p>
+           </div>
+           <div class="flex_item center_item">
+               <p><span class="shu green"></span>专用余额/元</p>
+               <p>{{zyYue}}</p>
+           </div>
+       </div>
+       <div class="btm_msg">
+           <p><span class="yuan yellow"></span>通用余额：可以抵扣任意费用，等于自由话费</p>
+           <p><span class="yuan green"></span>专用余额：只能抵扣指定费用</p>
+       </div>
+   </div>
+   <div class="account_yue_list">
+       <p class="p_tit">余额变动明细</p>
+       <ul>
+           <li v-for="item in items">
+               <div class="account_yue_item flex_wrap">
+                   <p class="flex_item"><span class="yuan blue"></span>{{item.date}}</p>
+                   <div>
+                       <p>充入：<span class="font_green">{{item.enter}}</span>元</p>
+                       <p>支出：<span class="font_red">{{item.out}}</span>元</p>
+                   </div>
+               </div>
+           </li>
+       </ul>
+   </div>
+ 
+</div>
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+new Vue({
+    el: '#app',
+    data:{
+       headImg:'images/head.jpeg',      //头像
+       phoneNum:'13566666666',  //手机号
+       totalYue:'100.00',   //账户余额
+       tyYue:'50.00',      //通用余额
+       zyYue:'20.00',      //专用余额
+       items:[
+            {date:'本月',enter:'20.00',out:'50.00'},
+            {date:'2018-01-01',enter:'20.00',out:'50.00'},
+       ]
+    },
+    methods: {
+        getMsg:function(){
+            // var _this=this;
+            // this.$indicator.open(); //开启加载中
+            // axios.get('http://jsonplaceholder.typicode.com/posts').then(function (response) {
+            //     console.log(response);
+            //     _this.$indicator.close();//关闭加载中
+            //   }).catch(function (error) {
+            //     console.log(error);
+            //   });
+        }
+    },
+    mounted:function(){
+        this.getMsg();
+    }
+});
+</script>
+	
+</html>

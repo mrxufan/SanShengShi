@@ -1,0 +1,98 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>今日油价</title>
+<link rel="stylesheet" href="css/default.css" type="text/css">
+<link rel="stylesheet" href="mint-ui/style.css" type="text/css">
+<style type="text/css">
+body{background-color: #eee;}
+[v-cloak] { display: none }
+.popup{width: 100%;}
+.btn_wrap{margin: 15px;}
+.add_input .mint-field-other{position: absolute;left: 115px;top: 16px;}
+
+.img_box img{width: 100%;display: block;}
+.youjia_list{margin-top: 10px;}
+.youjia_list .s_price{color: #ea4d46;font-weight: bold;}
+.youjia_list .p_tit{display: flex;background-color: #fff;padding: 10px;font-weight: bold;font-size: 16px;}
+.youjia_list .p_tit span{flex: 1;}
+.youjia_list .p_tit span:last-child{text-align: right;}
+.youjia_list .mint-cell:last-child{background-image: none;}
+
+.p_add{margin: 10px;}
+</style>
+</head>
+
+<body ontouchstart>
+
+<div id="app" v-cloak>
+    <div class="img_box"><img src="images/001.jpg"></div>
+    <p class="p_add">当前位置：河南郑州</p>
+   <div class="youjia_list">
+       <p class="p_tit">
+           <span>标号</span>
+           <span>价格</span>
+       </p>
+       <mt-cell title="#90"><span class="s_price">{{b90}}</span>元/升</mt-cell>
+       <mt-cell title="#93"><span class="s_price">{{b93}}</span>元/升</mt-cell>
+       <mt-cell title="#97"><span class="s_price">{{b97}}</span>元/升</mt-cell>
+       <mt-cell title="#0"><span class="s_price">{{b0}}</span>元/升</mt-cell>
+   </div>
+   <div class="btn_wrap">
+        <mt-button type="primary" size="large" v-on:click.native="submitBtn">我要加油</mt-button>
+    </div>
+</div>
+
+</body>
+<script src="js/fastclick.js"></script> <!--去掉点击300ms延时-->
+<script>
+    window.onload=function(){
+        FastClick.attach(document.body);
+    };
+</script>
+<script src="js/vue.js"></script>
+<script src="mint-ui/index.js"></script>
+<script src="js/axios.min.js"></script>
+<script>
+
+var vm=new Vue({
+    el: '#app',
+    data:{
+        b90: '',
+        b93: '',
+        b97: '',
+        b0: '',
+        updateTime:'',
+    },
+    methods: {
+        getMsg: function () {  
+            this.$indicator.open(); //开启加载中              
+            axios.get('http://192.168.0.106/' + 'yj/GetYouJiaByProvince', { province: '河南' }).then(function (response) {
+                    console.log(response);
+                    this.$indicator.close(); //关闭加载中
+                    this.b90=response.data.Data.b90;
+                    this.b93=response.data.Data.b93;
+                    this.b97=response.data.Data.b97;
+                    this.b0=response.data.Data.b0;
+            }.bind(this)).catch(function (error) {
+                console.log(error);
+            }.bind(this));
+        },
+
+        submitBtn:function(){
+            this.$messagebox.alert('请保持电话畅通，我们会尽快和您联系','温馨提示').then(function(){
+                console.log('点击了确定');
+            });
+        }
+
+
+    },
+    mounted:function(){
+        this.getMsg();
+    }
+});
+</script>
+	
+</html>

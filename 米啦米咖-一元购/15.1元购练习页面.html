@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<title>无标题文档</title>
+<style>
+/*重置*/
+em{ font-style:normal;}
+ul,li{ margin:0; padding:0; list-style:none;}
+body{ min-width:320px; max-width:640px; margin:auto; background:#ebebeb; font-size:13px; font-family:"微软雅黑"}
+.top_nav{ background:#fff; display:flex; padding:10px 0;}
+.top_box{ flex:1; margin:auto; text-align:center;}
+.top_box:active{ color:red;}
+.top_box p{ margin:0;}
+.top_pic{ display:inline-block; width:40px; height:40px; background-position:center center; background-repeat:no-repeat; background-size:cover;}
+.center_nav{ display:flex; background:#fff; border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+.center_nav_box{flex:1; height:40px; text-align:center; line-height:40px;}
+.center_nav_box:active{ background:#eee;}
+.center_nav_box.on{ color:red;}
+/*主栏目*/
+.main_box{ background:#fff; overflow:hidden;}
+.main_box li{ float:left; width:50%; border-bottom:1px solid #ddd; border-right:1px solid #ddd; box-sizing:border-box; padding:6px;}
+.main_box li:active{ background:#eee;}
+.main_box li:nth-child(2n){ border-right:none;}
+.main_column .main_pic{ width:90px; height:90px; display:block; margin:auto; margin-bottom:5px; background:no-repeat center center; background-size:cover;}
+.main_text{ font-size:12px; line-height:16px; height:32px; overflow:hidden; margin:0;}
+
+.main_bottom{ height:30px; position:relative; padding-right:60px; margin-top:5px;}
+.main_bottom_text{ font-size:12px; color:#999; margin:0;}
+.jindu_line,.jindu_inline{ display:block}
+.jindu_line{ height:5px; background:#ddd; border-radius:5px; overflow:hidden; margin-top:4px;}
+.jindu_inline{ width:50%; height:5px; background:#ECBF00;}
+.canyu_btn{ display:inline-block; width:55px; height:25px; border:1px solid red; text-align:center; line-height:25px; position:absolute; border-radius:3px; top:0; right:0; font-size:12px; box-sizing:border-box; color:red;}
+.canyu_btn:active{ background:red; color:#fff;}
+
+
+.fixed_back{ width:40px; height:40px; background:#fff; text-align:center; line-height:40px; position:fixed; right:10px; bottom:60px; font-size:30px; border-radius:4px;}
+</style>
+</head>
+
+<body>
+<div class="top_nav">
+	<div class="top_box">
+    	<span class="top_pic" style="background-image:url(images/uc_icon_05.png)"></span>
+        <p class="top_text">十元专区</p>
+    </div>
+    <div class="top_box">
+    	<span class="top_pic" style="background-image:url(images/uc_icon_02.png)"></span>
+        <p class="top_text">即将揭晓</p>
+    </div>
+    <div class="top_box">
+    	<span class="top_pic" style="background-image:url(images/uc_icon_03.png)"></span>
+        <p class="top_text">常见问题</p>
+    </div>
+    <div class="top_box">
+    	<span class="top_pic" style="background-image:url(images/uc_icon_04.png)"></span>
+        <p class="top_text">我的参与</p>
+    </div>
+</div>
+<div class="center_nav">
+	<div class="center_nav_box on">人气</div>
+    <div class="center_nav_box">最新</div>	
+    <div class="center_nav_box">进度</div>
+    <div class="center_nav_box">总需人次</div>
+</div>
+<div class="main_box">
+	<ul>
+    	<li>
+        	<div class="main_column">
+            	<p class="main_pic" style="background-image:url(images/test_003.jpg)"></p>
+                <p class="main_text">商品详情介绍最多两行，请注意字数限制</p>
+                <div class="main_bottom">
+                	<p class="main_bottom_text">开奖进度<em style="color:#5f91d0; margin-left:5px;">100%</em></p>
+                    <span class="jindu_line">
+                    	<span class="jindu_inline"></span>
+                    </span>
+                    <span class="canyu_btn">立即参与</span>	
+                </div>
+            </div>	
+        </li>
+        <li>
+        	<div class="main_column">
+            	<p class="main_pic" style="background-image:url(images/test_003.jpg)"></p>
+                <p class="main_text">商品详情介绍最多两行，请注意字数限制</p>
+                <div class="main_bottom">
+                	<p class="main_bottom_text">开奖进度<em style="color:#5f91d0; margin-left:5px;">100%</em></p>
+                    <span class="jindu_line">
+                    	<span class="jindu_inline"></span>
+                    </span>
+                    <span class="canyu_btn">立即参与</span>	
+                </div>
+            </div>	
+        </li>
+        <li>
+        	<div class="main_column">
+            	<p class="main_pic" style="background-image:url(images/test_003.jpg)"></p>
+                <p class="main_text">商品详情介绍最多两行，请注意字数限制</p>
+                <div class="main_bottom">
+                	<p class="main_bottom_text">开奖进度<em style="color:#5f91d0; margin-left:5px;">100%</em></p>
+                    <span class="jindu_line">
+                    	<span class="jindu_inline"></span>
+                    </span>
+                    <span class="canyu_btn">立即参与</span>	
+                </div>
+            </div>	
+        </li>
+        <li>
+        	<div class="main_column">
+            	<p class="main_pic" style="background-image:url(images/test_003.jpg)"></p>
+                <p class="main_text">商品详情介绍最多两行，请注意字数限制</p>
+                <div class="main_bottom">
+                	<p class="main_bottom_text">开奖进度<em style="color:#5f91d0; margin-left:5px;">100%</em></p>
+                    <span class="jindu_line">
+                    	<span class="jindu_inline"></span>
+                    </span>
+                    <span class="canyu_btn">立即参与</span>	
+                </div>
+            </div>	
+        </li>
+        <li>
+        	<div class="main_column">
+            	<p class="main_pic" style="background-image:url(images/test_003.jpg)"></p>
+                <p class="main_text">商品详情介绍最多两行，请注意字数限制</p>
+                <div class="main_bottom">
+                	<p class="main_bottom_text">开奖进度<em style="color:#5f91d0; margin-left:5px;">100%</em></p>
+                    <span class="jindu_line">
+                    	<span class="jindu_inline"></span>
+                    </span>
+                    <span class="canyu_btn">立即参与</span>	
+                </div>
+            </div>	
+        </li>
+        <li>
+        	<div class="main_column">
+            	<p class="main_pic" style="background-image:url(images/test_003.jpg)"></p>
+                <p class="main_text">商品详情介绍最多两行，请注意字数限制</p>
+                <div class="main_bottom">
+                	<p class="main_bottom_text">开奖进度<em style="color:#5f91d0; margin-left:5px;">100%</em></p>
+                    <span class="jindu_line">
+                    	<span class="jindu_inline"></span>
+                    </span>
+                    <span class="canyu_btn">立即参与</span>	
+                </div>
+            </div>	
+        </li>
+        <li>
+        	<div class="main_column">
+            	<p class="main_pic" style="background-image:url(images/test_003.jpg)"></p>
+                <p class="main_text">商品详情介绍最多两行，请注意字数限制</p>
+                <div class="main_bottom">
+                	<p class="main_bottom_text">开奖进度<em style="color:#5f91d0; margin-left:5px;">100%</em></p>
+                    <span class="jindu_line">
+                    	<span class="jindu_inline"></span>
+                    </span>
+                    <span class="canyu_btn">立即参与</span>	
+                </div>
+            </div>	
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

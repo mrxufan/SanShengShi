@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>我的</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+	<!--标准mui.css-->
+	<link href="css/mui.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<!--App自定义的css 不要加入模板页-->
+	<link rel="stylesheet" type="text/css" href="css/yh_myself.css"/>
+	
+	<style>
+	.ml_my_nav .ml_my_order_status .ml_flex_1 .iconfont{color: #999;}
+	.ml_my_order_status .d_icon .mui-badge{right: 12px;top: -5px;}
+	.ml_my_nav .mui-table-view .mui-navigate-right .iconfont{margin-right: 10px;}
+	
+	.mui-preview-header .mui-preview-indicator{display: none;}
+	.mui-preview-image.mui-fullscreen{background-color: #000;}
+	.ml_user_info .user_info_box .ml_user_ewm{float: left;margin-top: 28px;margin-left: 10px;margin-bottom: 0;}
+
+
+	/* 提醒会员升级弹窗 */
+	.upgrade_layer{position: fixed;width: 100%;height: 100%;left: 0;top: 0;background-color: rgba(0, 0, 0, .5);}
+	.upgrade_layer .layer_box{background-color: #fff;position: absolute;width: 80%;left: 50%;top: 50%;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);border-radius: 6px;overflow: hidden;max-width: 300px;}
+	.upgrade_layer .layer_box .p_tit{color: #fe406e;border-bottom: 1px solid #fe406e;text-align: right;padding: 10px;}
+	.upgrade_layer .layer_box .p_txt{margin: 0 10px;margin-bottom: 6px;}
+	.upgrade_layer .layer_box .btn_box{text-align: center;margin-bottom: 10px;}
+	.upgrade_layer .layer_box .a_tijiao{display: inline-block;background-color: #fe406e;color: #fff;padding: 5px 20px;border-radius: 4px;}
+	.upgrade_layer .layer_box .a_tijiao:active{background-color: #ec3b66;}
+
+	/* 2017-06-27 顶部 */
+	.ml_user_info .ml_user_head{float: left;margin-top: 30px;margin-left: 30px;}
+	.ml_user_info .ml_user_head .p_user_head{width: 80px;height: 80px;border-radius: 50%;background-repeat: no-repeat;background-size: cover;background-position: center center;margin-bottom: 0;}
+	.ml_user_info .ml_user_head .p_user_msg{margin-top: 10px;}
+	.ml_user_info .ml_user_head .p_user_msg .s_user_msg{background-color: #09c8ff;color: #fff;padding: 3px 10px;border-radius: 4px;font-size: 14px;}
+	.ml_user_info .ml_user_txt_info{margin-top: 45px;margin-left: 20px;float: left;}
+	.ml_user_info .ml_user_txt_info .p_num{color: #333;font-size: 16px;margin-bottom: 10px;}
+	.ml_my_nav .mui-table-view-cell .yao_btn_box{float: right;}
+	.ml_my_nav .mui-table-view-cell .yao_btn{float: right;font-size: 13px;color: #fff;padding: 2px 5px;margin-left: 10px;border-radius: 3px;}
+	.ml_my_nav .mui-table-view-cell .yao_btn:nth-child(1){background-color: #02ce5f;}
+	.ml_my_nav .mui-table-view-cell .yao_btn:nth-child(2){background-color: #0F7BFF;}
+	.ml_my_nav .mui-table-view-cell .yao_btn:nth-child(3){background-color: #ff940e;}
+
+	/* 提醒绑定手机号弹层 */
+	.bd_phone_layer{position: fixed;width: 100%;height: 100%;background-color: rgba(0, 0, 0, .5);left: 0;top: 0;}
+	.bd_phone_layer .bd_phone_main{background-color: #21b9e5;position: absolute;width: 80%;left: 50%;top: 50%;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);border-radius: 4px;overflow: hidden;max-width: 300px;}
+	.bd_phone_layer .bd_phone_main .p_title{background-color: #fff;height: 40px;line-height: 40px;color: #21b9e5;text-align: center;/* padding-right: 40px; */position: relative;} 
+	.bd_phone_layer .bd_phone_main .p_title .iconfont{position: absolute;width: 40px;height: 40px;text-align: center;line-height: 40px;right: 0;top: 0;}
+	.bd_phone_layer .bd_phone_main .p_title .iconfont:active{background-color: #f1f1f1;}
+	.bd_phone_layer .bd_phone_main .p_msg{color: #fff;margin: 10px;font-size: 12px;}
+
+ 	.bd_phone_layer .bd_phone_main .input_info{margin: 10px;overflow: hidden;background-color: #21b9e5;}
+	.bd_phone_layer .bd_phone_main .input_info .p_input{position: relative;padding:5px 5px 5px 90px;background-color: #fff;border-bottom: 1px solid #21b9e5;}
+	.bd_phone_layer .bd_phone_main .input_info .p_yzm{display: -webkit-flex;display: flex;}
+	.bd_phone_layer .bd_phone_main .input_info .p_yzm .s_yzm{height: 35px;line-height: 35px;background-color: #21b9e5;color: #fff;border-radius: 4px;padding: 0 5px;-webkit-flex:1;flex: 1;margin-left: 5px;font-size: 12px;}
+	.bd_phone_layer .bd_phone_main .input_info .p_input:last-child{border-bottom: none;}
+	.bd_phone_layer .bd_phone_main .input_info .p_input .s_span{position: absolute;width: 90px;left: 5px;top: 5px;color: #7f7f7f;height: 40px;line-height: 40px;font-size: 13px;}
+	.bd_phone_layer .bd_phone_main .input_info .p_input input{background-color: #f3f1f1;border: none;margin-bottom: 0;height: 35px;line-height: 35px;}
+	.bd_phone_layer .bd_phone_main .btn_info{text-align: center;background-color: #21b9e5;}
+	.bd_phone_layer .bd_phone_main .btn_info a{color: #fff;display: inline-block;}
+	.bd_phone_layer .bd_phone_main .btn_info .a_btn{border: 1px solid #fff;padding: 5px 50px;border-radius: 4px;font-size: 14px;margin-bottom: 10px;}
+	.bd_phone_layer .bd_phone_main .btn_info .a_btn:active{background-color: #1eaad3; }
+	</style>
+	</head>
+	<body>
+		
+		<div class="ml_user_info">
+			<div class="ml_user_head">
+				<p class="p_user_head" style="background-image: url(images/240X240_2.jpg);"></p>
+				<p class="p_user_msg"><span class="s_user_msg">个人资料</span></p>
+			</div>
+			<div class="ml_user_txt_info">
+				<p class="p_num">账号：<em>183****5665</em></p>
+				<p class="p_num">昵称：<em>锦七七</em></p>
+			</div>
+		</div>
+		<div class="mui-content ml_my_nav">
+			<ul class="mui-table-view" style="margin-top: 0;">
+				<li class="mui-table-view-cell">
+						<span class="iconfont icon-huiyuan" style="color: #f7aa1c;margin-right: 10px;"></span>会员
+						<div class="yao_btn_box">
+							<a href="javascript:;" class="yao_btn"><em class="iconfont icon-jia"></em>邀请好友</a><a href="javascript:;" class="yao_btn">升级VIP会员</a><a href="javascript:;" class="yao_btn">升级</a>
+						</div>
+				</li>
+			</ul>
+		</div>
+		
+		
+		<div class="mui-content ml_my_nav">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="iconfont icon-dingdan" style="color: #00cfbd"></span>我的订单
+					</a>
+				</li>
+				
+			</ul>
+			<ul class="mui-table-view ml_flex ml_my_order_status">
+				<li class="mui-table-view-cell ml_flex_1 ">
+					<a href="#">
+						<div class="d_icon"><span class="iconfont icon-yinxingqia"></span><span class="mui-badge mui-badge-danger">20</span></div>
+	                    <div class="mui-media-body">待付款</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell ml_flex_1">
+					<a href="#">
+	                    <span class="iconfont icon-che"></span>
+	                    <div class="mui-media-body">待发货</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell ml_flex_1">
+					<a href="#">
+	                    <span class="iconfont icon-icon-receive"></span>
+	                    <div class="mui-media-body">待收货</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell ml_flex_1">
+					<a href="#">
+	                    <span class="iconfont icon-pingjia-copy"></span>
+	                    <div class="mui-media-body">待评价</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell ml_flex_1">
+					<a href="#">
+	                    <span class="iconfont icon-tuikuan"></span>
+	                    <div class="mui-media-body">退款/售后</div>
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+		
+		
+		<div class="mui-content ml_my_nav">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="iconfont icon-qianbao" style="color: #f7aa1c"></span>我的钱包
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		
+		<div class="mui-content ml_my_nav">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="iconfont icon-youhuiquan" style="color: #f25246"></span>我的优惠券
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="iconfont icon-gouwuchexuanzhong" style="color: #09c8ff"></span>我的购物车
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="iconfont icon-xin" style="color: #fe406e"></span>我的收藏
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="iconfont icon-shenqing1" style="color: #993333"></span>申请推广海报
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="iconfont icon-zhanghuanquan" style="color: #99CC66"></span>账户与安全
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="mui-content ml_my_nav" style="margin-bottom:20px;">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<span class="iconfont icon-tuichu" style="color: #FF0033"></span>退出
+					</a>
+				</li>
+			</ul>
+		</div>	
+		
+
+		<!-- 提醒会员升级弹窗 -->
+		<div class="upgrade_layer" style="display: none;">
+			<div class="layer_box">
+				<p class="p_tit">关闭</p>
+				<p class="p_txt">亲：</p>
+				<p class="p_txt" style="text-indent: 2em;">您已具备升级服务商资格，请于45天内提交营业执照，即可成功升级！</p>
+				<div class="btn_box"><a href="javascript:;" class="a_tijiao">点击提交</a></div>
+			</div>
+		</div>
+		<!-- 提醒绑定手机号弹层 -->
+		<div class="bd_phone_layer">
+			<div class="bd_phone_main">
+				<p class="p_title">一分钟搞定<em class="iconfont icon-chahao" id="close_btn"></em></p>
+				<p class="p_msg">为了确保您的账号安全和更好的使用APP，请您绑定手机号，获得更多体验特权。</p>
+				<div class="input_info">
+					<div style="border-radius: 4px;overflow: hidden;">
+						<p class="p_input"><span class="s_span">手机号：</span><input type="number" name=""></p>
+						<p class="p_input"><span class="s_span">设置密码：</span><input type="number" name=""></p>
+						<p class="p_input p_yzm"><span class="s_span">验证码：</span><input type="number" name=""><input type="button" name="" value="获取验证码" class="s_yzm" id="a_yzm"></p>
+					</div>
+				</div>
+				<div class="btn_info">
+					<a href="javascript:;" class="a_btn">确认</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.zoom.js"></script>
+	<script src="js/mui.previewimage.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+
+		// 取消禁止a链接点击不跳转
+		mui('body').on('tap','a',function(){document.location.href=this.href;});
+	</script>
+	
+	
+	<script>
+	mui('.mui-scroll-wrapper').scroll({		
+		scrollY: false, //是否竖向滚动
+		scrollX: true, //是否横向滚动
+		indicators: false,//是否显示滚动条
+	}
+		
+	);
+</script>
+<script>
+		mui.previewImage();
+</script>	
+<script type="text/javascript">
+$(document).ready(function() {
+	// 关闭提醒会员升级
+	$('.upgrade_layer .layer_box .p_tit').click(function(){
+		$('.upgrade_layer').hide();
+	});
+});
+</script>	
+<script type="text/javascript">  
+// 短信验证码倒计时
+var wait=60;  
+function time(o) {  
+        if (wait == 0) {  
+            o.removeAttribute("disabled");            
+            o.value="获取验证码";  
+            wait = 60;  
+        } else {  
+            o.setAttribute("disabled", true);  
+            o.value="重新发送(" + wait + ")";  
+            wait--;  
+            setTimeout(function() {  
+                time(o);  
+            },  
+            1000);  
+        }  
+    }  
+document.getElementById("a_yzm").onclick=function(){time(this);};  
+
+// 关闭弹层
+$(document).ready(function() {
+	$('#close_btn').click(function () {
+		$('.bd_phone_layer').hide();
+	});
+});
+</script> 
+</html>

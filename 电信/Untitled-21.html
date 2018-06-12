@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<title>无标题文档</title>
+<style type="text/css">
+/*标题样式*/
+body{background-color:#f1efed;}
+.reason-title{padding:15px 7px;}
+.reason-title .p-tit{font-size:16px; color:#606060;}
+.reason-title .p-tit span{margin-left:5px; font-size:14px; color:#737373;}
+/*列表样式*/
+.reason_content_box{padding:0px 10px; background-color:#fff;}
+.reason_content_box ul label li{padding:15px 25px 15px 0px; position:relative;}
+.reason_content_box ul label li:after{position:absolute; left:0px; bottom:0px; display:block; content:""; width:100%; height:1px; background-color:#ece9e4; transform:scaleY(0.5); -webkit-transform:scaleY(0.5);}
+.reason_content_box ul label li p{font-size:14px; line-height:20px; font-weight:500; color:#606060;}
+.reason_content_box ul label li .p-checkbox{position:absolute; top:15px; right:0px; display:block; width:20px; height:20px;}
+.reason_content_box ul label li .p-checkbox input{position:relative; width:20px; height:20px; border:1px solid rgba(153,153,153,0.7); border-radius:3px;}
+.reason_content_box ul label li .p-checkbox input:checked{position:absolute; left:0px; top:0px; display:block; content:""; overflow:hidden; width:20px; height:20px; border-radius:3px; background:url(images/icon_01_6_2.png) no-repeat center; background-size:cover;}
+.reason_content_box ul .li-last{padding:20px 0px;}
+.reason_content_box ul .li-last h1{font-size:14px; font-weight:normal; color:#606060;}
+.reason_content_box ul .li-last p{margin:10px 0px 0px 5px; font-size:15px; color:#b0b0b0;}
+/*按钮*/
+.reason-button{padding:15px 10px;}
+.reason-button .p-btn{display:block; height:40px; border-radius:5px; background-color:#fb7250; color:#fff; font-size:16px; line-height:40px; text-align:center;}
+.reason-button .p-btn:active{background-color:#f36d4c;} 
+</style>
+</head>
+
+<body ontouchstart>
+<div class="reason-title">
+    <p class="p-tit">退款原因<span>(至少选一项)</span></p>
+</div>
+<div class="reason_content_box">
+	<ul>
+        <label>
+    	<li>
+            <p>预约不上</p>
+            <p class="p-checkbox"><input type="checkbox"/></p>
+        </li>
+        </label>
+    	<label>
+        <li>
+            <p>商家营业但不接待</p>
+            <p class="p-checkbox"><input type="checkbox"/></p>
+        </li>
+        </label>
+        <li class="li-last">
+            <h1>更多不爽，必须吐槽！</h1>
+            <p>小美将认真倾听您的任何不满</p>
+        </li>
+    </ul>
+</div>
+<div class="reason-button">
+    <p class="p-btn">申请退款</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--禁止缩放-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<link href="images/font/font-awesome.css" rel="stylesheet" type="text/css"><!--字体图标-->
+<link href="css/public.css" rel="stylesheet" type="text/css"><!--默认共用样式-->
+<script src="js/jquery.1.9.1.min.js"></script>
+<link rel="stylesheet" href="swiper/swiper.min.css">
+<script src="swiper/swiper.min.js"></script>
+<title>星级服务-征集春联</title>
+<style>
+body{background: #fbe4ee;}
+.top-banner img{width: 100%;}
+.main-box{margin: 20px;box-sizing: border-box;}
+.main-box .tab-title{overflow: hidden;margin-bottom: 20px;border-radius: 4px;}
+.main-box .tab-title li{float: left;width: 50%;text-align: center;background: #fff6e2;height: 40px;line-height: 40px;color: #ec7604;font-size: 15px;}
+.main-box .tab-title li.current{background: #ec7604;color: #fff;}
+
+.input-box .input-tab{box-sizing: border-box; display: none;}
+.input-box .input-tab.show{display: block;}
+.input-box .input-tab li{margin-bottom: 15px;box-sizing: border-box;background: #f0c3d6;border-radius: 4px;}
+.input-box .input-tab li input{height: 40px;width: 100%;box-sizing: border-box;padding: 0 10px;color: #555;}
+.input-box .input-tab li input::-webkit-input-placeholder{color: #e16097;}
+
+.btn-box{margin: 0 20px 20px;}
+.btn-box a{display: block;height: 36px;text-align: center;line-height: 36px;color:#fff;font-size: 16px;background: #e2001a;border-radius: 50px;box-shadow: inset 0 -4px 1px #ad0317; }
+.btn-box a:active{background: #c9031a;}
+
+.price-box{margin: 0 20px 20px;}
+.price-box .p-tit{font-weight: bold;font-size: 14px;}
+.price-box .p-txt{margin-top: 4px;}
+
+</style>
+</head>
+
+
+<body>
+<div class="top-banner"><img src="images/star-service/top-banner.png"></div>
+<div class="main-box">
+	<ul class="tab-title">
+		<li class="current">春联</li>
+		<li>成语、诗句</li>
+	</ul>
+	<div class="input-box">
+		<ul class="input-tab show">
+			<li><input type="text" placeholder="请输入上联"></li>
+			<li><input type="text" placeholder="请输入下联"></li>
+			<li><input type="text" placeholder="请输入横批"></li>
+		</ul>
+		<ul class="input-tab">
+			<li><input type="text" placeholder="请输入成语、诗句"></li>
+		</ul>
+	</div>
+</div>
+<div class="btn-box"><a href="#">提交</a></div>
+<div class="price-box">
+	<p class="p-tit">此次征集活动的获奖人员可获得以下奖品：</p>
+	<p class="p-txt">1.苹果电脑</p>
+	<p class="p-txt">2.苹果电脑</p>
+	<p class="p-txt">3.苹果电脑</p>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.tab-title li').click(function(){
+		$(this).addClass('current').siblings().removeClass('current');
+		$('.input-box .input-tab').eq($(this).index()).addClass('show').siblings().removeClass('show');
+	});
+});
+</script>
+</body>
+
+</html>

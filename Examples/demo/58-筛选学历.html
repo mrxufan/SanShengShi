@@ -54,10 +54,10 @@ var data=[
 		job:'工程师'
 	},
 	{
-		name:'王五',
-		age:40,
+		name:'赵六',
+		age:50,
 		xueli:'硕士',
-		job:'工程师'
+		job:'教授'
 	}
 ];
 
@@ -65,18 +65,32 @@ var data=[
 var sel=document.querySelector('.sel');
 var tbody=document.querySelector('.body');
 
+var dd=[];
+data.forEach(function(a){
+		var tr=document.createElement('tr');
+		tr.innerHTML='<tr><td>'+a.name+'</td><td>'+a.age+'</td><td>'+a.xueli+'</td><td>'+a.job+'</td></tr>';
+		tbody.appendChild(tr);
+	});
 sel.onchange=function(){
-	
+	if (this.value=='全部学历') {
+		data.forEach(function(a){
+			var tr=document.createElement('tr');
+			tr.innerHTML='<tr><td>'+a.name+'</td><td>'+a.age+'</td><td>'+a.xueli+'</td><td>'+a.job+'</td></tr>';
+			tbody.appendChild(tr);
+		});
+	} else {
+		dd=data.filter(function(a){
+			return a.xueli==sel.value;
+		});
+		dd.forEach(function(a){
+			var tr=document.createElement('tr');
+			tr.innerHTML='<tr><td>'+a.name+'</td><td>'+a.age+'</td><td>'+a.xueli+'</td><td>'+a.job+'</td></tr>';
+			tbody.appendChild(tr);
+		});
+	}
 };
 
-var dd=data.filter(function(a){
-		return a.name=='张三';
-	});
-dd.forEach(function(a){
-	var tr=document.createElement('tr');
-	tr.innerHTML+='<tr><td>'+a.name+'</td><td>'+a.age+'</td><td>'+a.xueli+'</td><td>'+a.job+'</td></tr>';
-	tbody.appendChild(tr)
-});
+
 
 
 

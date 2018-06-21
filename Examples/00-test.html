@@ -6,12 +6,19 @@
 <title>test</title>
 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 <style type="text/css">
-body{height: 2000px;}
 </style>
 </head>
 
 <body>
-
+<div class="form">
+	<label>账户：</label>
+	<input type="text" id="username">
+	<br>
+	<label>密码：</label>
+	<input type="password" id="password">
+	<br>
+	<label><input type="checkbox" name="" id="check">七天免登陆</label>
+</div>
 
 
 
@@ -20,9 +27,9 @@ body{height: 2000px;}
 <!-- <script type="text/javascript" src="js/axios.min.js"></script> -->
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script>
-$(window).scroll(function(){
-	console.log($(window).scrollTop())
-})
+var username=document.querySelector('#username');
+var password=document.querySelector('#password');
+var check=document.querySelector('#check');
 
 </script>
 

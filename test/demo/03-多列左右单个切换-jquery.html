@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>多列左右单个切换</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/reset.css" rel="stylesheet">
+<style type="text/css">
+.slide{width: 600px;height: 300px;background-color: #eee;position: relative;margin: 100px auto;overflow: hidden;}
+.slide .slide-wrap{position: absolute;height: 300px;left: 0;top: 0;}
+.slide .slide-wrap li{width: 200px;height: 300px;float: left;}
+.slide .slide-wrap li .main{width: 200px;height: 300px;text-align: center;line-height: 300px;color: #fff;font-size: 20px;}
+.slide .prev,.slide .next{position: absolute;width: 50px;height: 60px;background-color: #333;color: #fff;top: 50%;margin-top: -30px;text-align: center;line-height: 60px;cursor: pointer;}
+.slide .prev{left: 0;}
+.slide .next{right: 0;}
+</style>
+</head>
+<body>
+<div class="slide">
+	<ul class="slide-wrap">
+		<li><div class="main" style="background-color: grey">1</div></li>
+		<li><div class="main" style="background-color: purple">2</div></li>
+		<li><div class="main" style="background-color: green">3</div></li>
+		<li><div class="main" style="background-color: yellow">4</div></li>
+		<li><div class="main" style="background-color: orange">5</div></li>
+		<li><div class="main" style="background-color: brown">6</div></li>
+	</ul>
+	<span class="prev">prev</span>
+	<span class="next">next</span>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>  
+<script type="text/javascript">
+function slide(){
+	var liW=$('.slide .slide-wrap li').width();//获取li宽度
+	var len=$('.slide .slide-wrap li').length; //获取li的个数
+	var num=0;
+	$('.slide-wrap').css({'width':liW*len}); //设置 slide-wrap 的宽度
+	//如果li个数 <= 3，终止下面程序
+	if (len<=3) { 
+		return;
+	}
+
+	$('.prev').click(function(){
+		num--;
+		if (num==-1) {
+			num=len-3;
+		}
+		$('.slide .slide-wrap').stop().animate({left:-num*liW},300);
+	});
+
+	$('.next').click(function(){
+		num++;
+		if (num==len-2) {
+			num=0;
+		}
+		$('.slide .slide-wrap').stop().animate({left:-num*liW},300);
+	});
+}
+slide();
+</script>  
+</body>
+</html>

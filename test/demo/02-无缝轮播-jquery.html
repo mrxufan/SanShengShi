@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>无缝轮播-jquery</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/reset.css" rel="stylesheet">
+<style type="text/css">
+.slide{width: 600px;height: 300px;margin: 100px auto;position: relative;overflow: hidden;}
+.slide .slide-wrap{height: 300px;position: absolute;}
+.slide .slide-wrap li{width: 600px;height: 300px;background: #eee;float: left;}
+.slide .slide-wrap li .main{width: 600px;height: 300px;text-align: center;line-height: 300px;color: #fff;font-size: 30px;}
+.slide .page-list{position: absolute;width: 100%;left: 0;bottom: 20px;text-align: center;}
+.slide .page-list li{display: inline-block;width: 10px;height: 10px;background-color: #fff;border-radius: 50%;margin: 0 4px;cursor: pointer;}
+.slide .page-list li.active{background-color: red;}
+.slide .prev-btn,.slide .next-btn{width: 50px;height: 60px;background: #333;line-height: 60px;text-align: center;color: #fff;font-size: 30px;cursor: pointer;position: absolute;}
+.prev-btn{left: 0;top: 50%;margin-top: -30px;}
+.next-btn{right:0;top: 50%;margin-top: -30px;}
+
+</style>
+</head>
+<body>
+ <div class="slide">
+	<ul class="slide-wrap">
+		<li><div class="main" style="background-color: purple">1</div></li>
+		<li><div class="main" style="background-color: green">2</div></li>
+		<li><div class="main" style="background-color: grey">3</div></li>
+	</ul>
+	<ul class="page-list">
+		<li></li><li></li><li></li>
+	</ul>
+	<span class="prev-btn"><</span>
+	<span class="next-btn">></span>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>    
+<script type="text/javascript">
+function slide(){
+	//最外层容器
+	var slide=$('.slide');
+	//获取每个li元素的宽度
+	var liW = $(".slide-wrap li").width();
+	//获取li元素的长度(个数)
+	var len = $(".slide-wrap li").length;
+	//计算ul的总宽度
+	var ulW = len*liW;
+	var pageLi=$('.slide .page-list li');
+	// 设置定时器
+	var timer;
+	var num = 0;
+	//设置ul的宽度
+	$(".slide-wrap").css("width",ulW);
+
+	pageLi.eq(num).addClass('active');
+
+	// 自动轮播
+	function autoPlay(){
+		num++;  
+		if(num == len){
+			num = 0;
+		}
+		showLi();
+	}
+
+	timer=setInterval(autoPlay,1000);
+
+	// 鼠标经过暂停
+	slide.mouseenter(function(){
+		clearInterval(timer);
+	});
+	// 鼠标离开播放
+	slide.mouseleave(function(){
+		timer=setInterval(autoPlay,1000);
+	});
+
+	// 点击下一张
+	$(".next-btn").click(function(){
+		autoPlay();
+	});
+
+	// 点击上一张
+	$(".prev-btn").click(function(){
+		num--;
+		if(num == -1){
+			num = len - 1;
+		}
+		showLi();
+	});
+
+	// 鼠标经过分页器显示对应的内容
+	pageLi.mouseenter(function(){
+		num=$(this).index();
+		var move = -num * liW;
+		$(".slide-wrap").stop().animate({left:move},300);
+		$(this).addClass('active').siblings().removeClass('active');
+	});
+
+	function showLi(){
+		var move = -num * liW ;
+		$(".slide-wrap").stop().animate({left:move},300);
+		pageLi.each(function(){
+			pageLi.eq(num).addClass('active').siblings().removeClass('active');
+		});
+	}
+}
+slide();
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>仿百度联想词下拉列表,键盘上下键选值</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/reset.css" rel="stylesheet">
+<style type="text/css">
+.wrap{position: relative;width: 500px;height: 40px;margin: 20px auto;}
+.wrap .input{position: absolute;width: 400px;height: 100%;border: 1px solid #333;box-sizing: border-box;}
+.wrap .down{position: absolute;width: 400px;left: 0;top: 39px;border: 1px solid #333;box-sizing: border-box;}
+.wrap .down li:hover{background: #eee;}
+.wrap .down li.hover{background: #eee;}
+.wrap .btn{position: absolute;width: 100px;height: 40px;right: 0;top: 0;background: green;color: #fff;text-align: center;line-height: 40px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<input type="text" class="input">
+	<ul class="down" style="display: block;"></ul>
+	<a href="javascript:;" class="btn">按钮</a>
+</div>
+
+
+
+<script type="text/javascript">
+var input=document.querySelector('.input');
+var down=document.querySelector('.down');
+var li=down.getElementsByTagName('li');
+var btn=document.querySelector('.btn');
+var num=-1;
+
+var xhr=new XMLHttpRequest();
+xhr.open('get', 'https://www.easy-mock.com/mock/5b5a9932e51b9b054104fb8f/hotkey/', true);
+xhr.onreadystatechange=function(){
+	if (xhr.readyState==4) {
+		if (xhr.status==200) {
+			var json=JSON.parse(xhr.responseText);
+			console.log(json);
+			for (var i = 0; i < json.hotkey.length; i++) {
+				down.innerHTML+='<li>'+json.hotkey[i].title+'</li>';
+			}
+		}
+	}
+};
+xhr.send();
+
+
+
+input.onfocus=function(){
+	this.style.borderColor='green';
+	down.style.display='block';
+
+	input.onkeyup=function(event){
+	if (event.keyCode==13) {
+		btn.click();
+	}
+	
+	if (event.keyCode==40) {
+		num++;
+		if (num>li.length-1) {
+			num=0;
+		}
+		for (var i = 0; i < li.length; i++) {
+			li[i].className='';
+			li[num].className='hover';
+			input.value=li[num].innerHTML;
+		}
+		
+	}
+
+	if (event.keyCode==38) {
+		num--;
+		if (num<0) {
+			num=li.length-1;
+		}
+		for (var i = 0; i < li.length; i++) {
+			li[i].className='';
+			li[num].className='hover';
+			input.value=li[num].innerHTML;
+		}
+	}
+};
+
+};
+input.onblur=function(){
+	this.style.borderColor='#333';
+	// setTimeout(function(){
+	// 	down.style.display='none';
+	// },100);
+};
+
+
+btn.onclick=function(){
+	console.log(input.value);
+	input.blur();
+};
+
+
+
+
+
+// 添加事件委托，并获取子节点索引
+down.addEventListener('click', function(event){
+	// console.log(event)
+	if(event.target.nodeName== "LI"){
+	     var index;
+	     for(var i=0;i<li.length;i++){
+	     	if(li[i]==event.target){
+	     		index=i;
+	     		num=index;
+	     		console.log('第 '+index+' 个');
+	     	}
+	     	
+	     }
+    }
+	input.value=event.target.innerHTML;
+	input.blur();
+});
+
+
+
+down.onmouseenter=function(){
+	for (var i = 0; i < li.length; i++) {
+		li[i].className='';
+	}
+};
+
+</script>    
+</body>
+</html>

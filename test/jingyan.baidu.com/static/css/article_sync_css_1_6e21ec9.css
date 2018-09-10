@@ -1,0 +1,233 @@
+﻿.add-tag-dialog-main {
+    font-family: 'Microsoft Yahei', "微软雅黑", arial, "宋体", sans-serif
+}
+
+.add-tag-dialog-title {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    background: #f3f3f3;
+    border-bottom: 0
+}
+
+.add-tag-dialog-close {
+    width: 16px;
+    height: 16px;
+    top: 16px;
+    background-repeat: no-repeat;
+}
+
+.add-tag-dialog-close-hover {
+    background-repeat: no-repeat;
+}
+
+.add-tag-dialog-content {
+    padding: 15px 20px
+}
+
+.add-tag-dialog-content .pop-confirm-info {
+    margin: 0
+}
+
+.add-tag-body {
+    padding-bottom: 8px
+}
+
+.tag-tip-wrap {
+    height: 22px
+}
+
+.tag-tip-wrap span {
+    display: none;
+    font-size: 12px;
+    color: #F27900;
+    background: url(../images/uc-income-sprite_68404bf.png) no-repeat -235px -159px;
+    padding-left: 15px
+}
+
+.tag-item {
+    cursor: pointer;
+    float: left;
+    margin-right: 14px;
+    margin-bottom: 12px
+}
+
+.tag-item .t-hd {
+    height: 2px;
+    position: relative
+}
+
+.tag-item .t-hd-l {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: 2px;
+    background: url(../images/lt-r_1dc6392.png) no-repeat
+}
+
+.tag-item .t-hd-m {
+    margin: 0 2px;
+    height: 1px;
+    border-top: 1px solid #ddd
+}
+
+.tag-item .t-hd-r {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 2px;
+    width: 2px;
+    background: url(../images/rt-r_f69ffaa.png) no-repeat
+}
+
+.tag-item .t-md {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd
+}
+
+.tag-item .t-md .red-del {
+    display: block;
+    width: 17px;
+    height: 17px;
+    background: url(../images/red-del_9e97be2.png) no-repeat;
+    position: absolute;
+    right: -8px;
+    top: -11px
+}
+
+.tag-item .t-ft {
+    height: 3px;
+    position: relative
+}
+
+.tag-item .t-ft-l {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 3px;
+    width: 3px;
+    background: url(../images/lb-r_612229e.png) no-repeat
+}
+
+.tag-item .t-ft-m {
+    margin: 0 3px;
+    height: 1px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ededed;
+    background: #ddd
+}
+
+.tag-item .t-ft-r {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 3px;
+    width: 3px;
+    background: url(../images/rb-r_fdd6477.png) no-repeat
+}
+
+.exp-tag-item {
+    background: -moz-linear-gradient(top, #fff, #ddd);
+    border-color: #e1e1e1;
+    box-shadow: 0 1px 1px #eaeaea
+}
+
+.exp-tag-item:hover {
+    color: #333;
+    background: #fefefe;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f3f3f3');
+    background: -moz-linear-gradient(top, #fcfcfc, #f3f3f3);
+    border-color: #e1e1e1;
+    box-shadow: 0 1px 1px #ebebeb
+}
+
+.added-tags-wrap {
+    display: none
+}
+
+.added-tags-wrap .title {
+    float: left;
+    margin-top: 5px
+}
+
+.added-tags-wrap .add2list {
+    margin-left: 65px
+}
+
+.pls-add-tag {
+    display: none;
+    height: 47px;
+    line-height: 47px;
+    color: #888
+}
+
+.added-tags-inpt .add-tag-ipt {
+    font-family: 'Microsoft Yahei', "微软雅黑", arial, "宋体", sans-serif;
+    border: 1px solid #d1d1d1;
+    width: 294px;
+    height: 30px;
+    line-height: 30px\0;
+    padding: 0 8px;
+    border-radius: 1px;
+    font-size: 14px;
+    outline: 0;
+    float: left
+}
+
+.added-tags-inpt .add-tag-btn {
+    font-family: 'Microsoft Yahei', "微软雅黑", arial, "宋体", sans-serif;
+    float: left;
+    margin-left: 10px;
+    border: 0;
+    text-align: center;
+    width: 78px;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+    background: #53C645;
+    outline: 0
+}
+
+.added-tags-inpt .add-tag-btn:hover {
+    background: #61C151
+}
+
+.push-tag-wrap {
+    margin: 15px 0 0
+}
+
+.push-tag-wrap h3 {
+    font-weight: 400
+}
+
+.push-tag-wrap .push-tag-list {
+    margin-top: 5px
+}
+
+.push-tag-wrap .push-tag-item {
+    margin-bottom: 8px
+}
+
+.push-tag-wrap li {
+    float: left
+}
+
+.add-tag-dialog-close {
+    background-position: 0px 0px
+}
+
+.add-tag-dialog-close-hover {
+    background-position: 0px -21px
+}
+
+.add-tag-dialog-close,
+.add-tag-dialog-close-hover {
+    background-image: url(../images/article_sync_css_1_z_0717ed3.png)
+}

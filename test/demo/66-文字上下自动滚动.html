@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>文字上下自动滚动</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+.text-wrap{width: 300px;height: 40px;border: 1px solid #333;position: relative;margin: 20px auto;overflow: hidden;}
+.text-wrap ul{position: absolute;width: 100%;left: 0;top: 0;margin: 0;padding: 0;list-style: none;}
+.text-wrap ul li{height: 40px;line-height: 40px;width: 100%;}
+</style>
+</head>
+<body>
+<div class="text-wrap">
+	<ul>
+		<li>文字1</li>
+		<li>文字2</li>
+		<li>文字3</li>
+		<li>文字4</li>
+		<li>文字5</li>
+	</ul>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>    
+<script type="text/javascript">
+function textAuto(){
+	var textWrap=$('.text-wrap');
+	var ul=$('.text-wrap ul');
+	var li=$('.text-wrap ul li');
+	var timer=null;
+	var num=0;
+	function auto(){
+		num++;
+		if (ul.position().top==-40*(li.length-1)) {
+			num=0;
+		}
+		ul.animate({top:-num*40+'px'},200);
+	}
+
+	timer=setInterval(auto,1000);
+
+	textWrap.mouseenter(function(){
+		clearInterval(timer);
+	});
+
+	textWrap.mouseleave(function(){
+		timer=setInterval(auto,1000);
+	});
+}
+textAuto();
+</script>
+</body>
+</html>

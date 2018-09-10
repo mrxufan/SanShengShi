@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>SuperSlide</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/reset.css" rel="stylesheet">
+<style type="text/css">
+.slide-wrap{ width:100%; height:300px; position:relative;margin: 0 auto;}
+.slide-wrap .hd{  position:absolute; bottom:10px; width: 100%;left: 0;text-align: center;height: 15px;z-index: 1;}
+.slide-wrap .hd  li{width:6px; height:6px; text-align:center; background:#fff; cursor:pointer; display: inline-block;margin: 0 4px;border-radius: 6px;}
+.slide-wrap .hd li.on{ width: 15px; }
+.slide-wrap .bd{ position:relative; height:100%; z-index:0;   }
+.slide-wrap .bd img{ width:100%; height:300px; display:block;  }
+.slide-wrap .prev,.slide-wrap .next{position: absolute;font-size: 30px;color: #fff;cursor: pointer;}
+.slide-wrap .prev{left: 20px;top: 100px;}
+.slide-wrap .next{right: 20px;top: 100px;}
+</style>
+</head>
+<body>
+<div class="slide-wrap">
+    <ul class="hd">
+        <li></li><li></li><li></li>
+    </ul>
+    <ul class="bd">
+        <li><img src="images/001.jpg" /></li>
+        <li><img src="images/002.jpg" /></li>
+        <li><img src="images/003.jpg" /></li>
+    </ul>
+    <!-- 前/后按钮-->
+    <span class="prev"><</span>
+    <span class="next">></span>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>   
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript">
+$(".slide-wrap").slide({mainCell:".bd",autoPlay:true,interTime:3000,effect:"leftLoop"});
+</script>
+</body>
+</html>

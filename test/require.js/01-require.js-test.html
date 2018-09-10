@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>require.js-test</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+
+
+
+<script type="text/javascript" src="js/require.min.js"></script>   
+<script type="text/javascript">
+//想要获取模块的输出，在function中传递形参即可。
+//参数1：加载的模块列表（数组）
+//参数2：模块加载完成后，会执行的回调函数,形参就是模块的返回值
+require(['js/a','js/b'],function(a,b){
+	a.sayName('张三');
+	a.msg();
+
+	b.getSex('男');
+	b.getAge(20);
+});
+</script>
+</body>
+</html>

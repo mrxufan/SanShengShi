@@ -1,1 +1,0 @@
-[{user: 'blue', pass: '123'}, {user: 'aaa', pass: 'jjfhier'}, {user: 'leo', pass: '123456'}]

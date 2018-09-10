@@ -1,0 +1,38 @@
+﻿@charset "utf-8";
+/* reset */
+
+*{margin:0; padding:0;}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
+body{font-family:'Microsoft Yahei','Simsun',Arial, Helvetica, sans-serif; color:#000;-webkit-text-size-adjust: none; margin:0 auto;min-width: 1400px;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight: normal;}
+address,cite,dfn,em,var,i{font-style:normal}
+ul,ol,li{list-style:none}
+a{text-decoration:none;}
+a{-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+a:hover, a:active, a:focus,a:active{text-decoration: none;}
+img{vertical-align:middle;border:0;-ms-interpolation-mode:bicubic}
+button,input,select,textarea,file{-webkit-appearance:none; border:0; background:none; font-size:100%; vertical-align:middle; outline:none; font-family:'Microsoft Yahei','Simsun',Arial, Helvetica, sans-serif;}
+button:active,:active,select:active,textarea:active{outline:none;}
+table{border-collapse:collapse;border-spacing:0}
+textarea{resize:none}
+
+.fl{ float:left;}
+.fr{ float:right;}
+
+.oh{overflow: hidden;}
+
+/* 单行文字超出显示省略号 */
+.text-overflow{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+/*
+多行文字超出显示省略号
+display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;height: 40px;line-height: 20px;
+*/
+
+/* 清除浮动 */
+.clearfix:after{content: '';display: block;clear: both;}
+.clearfix{zoom:1;}
+
+
+
+

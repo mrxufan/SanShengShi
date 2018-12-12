@@ -1,0 +1,77 @@
+<scroll-view scroll-y style='height:100%;' bindscroll='scrollEvent'>
+
+
+    <view>
+        <!-- 以下是对一个自定义组件的引用 -->
+        <test-component inner-text="{{innerText}}"></test-component>
+    </view>
+
+
+
+    <!-- 引用 -->
+    <!-- <import src='item.wxml'/>
+<template is="item" data="{{text: 'forbar'}}"/> -->
+
+    <button data-time="{{lastTapTime}}" data-title="标题" bindtap="doubleClick">双击</button>
+    <button bindtap='qiandao'>{{signText}} {{signNum}}</button>
+
+
+
+    <view class='wrap'>
+        <button bindgetuserinfo='getUser' open-type='getUserInfo'>获取用户信息</button>
+        <view>{{userInfo.nickName}}</view>
+        <image class='user-img' src='{{userInfo.avatarUrl}}'></image>
+
+
+
+        <view class='music-wrap'>
+            <audio style='display:none' id='myMusic' author='{{author}}' name='{{name}}' poster='../../images/portrait.png' controls src='{{audioSrc}}'></audio>
+            <button bindtap='playMusic'>{{playText}}播放音乐</button>
+        </view>
+
+    </view>
+
+
+    <swiper class='swiper-text' vertical='true' autoplay='true' interval='3000' circular='true'>
+        <swiper-item class='item' wx:for='{{swiperText}}'>{{item}}</swiper-item>
+    </swiper>
+
+
+    <button bindtap='preImage'>预览图片</button>
+
+
+    <button bindtap='tap1'>{{showText}}</button>
+
+    <video id='myVideo' src='{{videoSrc}}' controls></video>
+    <button bindtap='startPlayVideo'>开始播放视频</button>
+    <button bindtap='stopPlayVideo'>暂停播放视频</button>
+
+
+<!-- tab 切换 -->
+    <view class='tab-wrap'>
+        <view class="swiper-tab">
+            <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">全部</view>
+            <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">提现中</view>
+            <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">已提现</view>
+        </view>
+
+        <swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
+            <swiper-item>
+                <view>全部</view>
+            </swiper-item>
+            <swiper-item>
+                <view>提现中</view>
+            </swiper-item>
+            <swiper-item>
+                <view>已提现</view>
+            </swiper-item>
+        </swiper>
+
+    </view>
+<!-- tab 切换 -->
+
+
+
+
+
+</scroll-view>

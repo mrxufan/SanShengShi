@@ -1,0 +1,42 @@
+<!-- 汤姆猫 -->
+<navigator class='ani-image' target="miniProgram" app-id="{{jumpAppid}}" hover-class='none'>
+  <image src='{{aniImage}}'></image>
+</navigator>
+
+<!-- 分享 -->
+<button bindtap='share' class='share-btn' open-type='share'>
+  <image src='../../images/share.gif'></image>
+</button>
+
+
+
+<view class='container'>
+    <view class='form-wrap'>
+        <view class='form-item'>
+            <text>快递单号：</text>
+            <input type='number' bindinput='bindInput' value='{{numbers}}' placeholder='请输入运单号'></input>
+        </view>
+    </view>
+    <view class='form-wrap'>
+        <view class='form-item'>
+            <text>快递公司：</text>
+            <view class='picker-wrap'>{{kdName}}</view>
+            <!-- <picker class='picker-wrap' bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker">{{array[index]}}</view>
+            </picker> -->
+        </view>
+    </view>
+    <button loading='{{loading}}' bindtap='searchBtn' hover-class='search-btn-hover' class='search-btn'>查询</button>
+    <view class='result'>
+        <view class='default-ressult' wx:if='{{result}}'>单号异常：单号不存在或者已经过期</view>
+        <scroll-view scroll-y style='height:55vh;'>
+            <view class='result-wrap'>
+                <view class='item' wx:for='{{dataArr}}'>
+                    {{item.context}}
+                    <view class='time'>{{item.time}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+

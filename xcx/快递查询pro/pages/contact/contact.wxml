@@ -1,0 +1,42 @@
+<!-- 汤姆猫 -->
+<navigator class='ani-image' target="miniProgram" app-id="{{jumpAppid}}" hover-class='none'>
+  <image src='{{aniImage}}'></image>
+</navigator>
+
+<!-- 分享 -->
+<button bindtap='share' class='share-btn' open-type='share'>
+  <image src='../../images/share.gif'></image>
+</button>
+
+<view class='contact-wrap'>
+  <view class='item' bindtap='bshtCall'>
+    <image mode='widthFix' src='../../images/bsht.jpg'></image>
+  </view>
+  <view class='item' bindtap='emsCall'>
+    <image mode='widthFix' src='../../images/ems.jpg'></image>
+  </view>
+  <view class='item' bindtap='sfkdCall'>
+    <image mode='widthFix' src='../../images/sfkd.jpg'></image>
+  </view>
+  <view class='item' bindtap='stkdCall'>
+    <image mode='widthFix' src='../../images/stkd.jpg'></image>
+  </view>
+  <view class='item' bindtap='ttkdCall'>
+    <image mode='widthFix' src='../../images/ttkd.jpg'></image>
+  </view>
+  <view class='item' bindtap='ydkdCall'>
+    <image mode='widthFix' src='../../images/ydkd.jpg'></image>
+  </view>
+  <view class='item' bindtap='ytkdCall'>
+    <image mode='widthFix' src='../../images/ytkd.jpg'></image>
+  </view>
+  <view class='item' bindtap='yzxbCall'>
+    <image mode='widthFix' src='../../images/yzxb.jpg'></image>
+  </view>
+  <view class='item' bindtap='zjsCall'>
+    <image mode='widthFix' src='../../images/zjs.jpg'></image>
+  </view>
+  <view class='item' bindtap='ztkdCall'>
+    <image mode='widthFix' src='../../images/ztkd.jpg'></image>
+  </view>
+</view>

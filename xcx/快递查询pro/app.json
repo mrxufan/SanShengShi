@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/contact/contact"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "快递查询pro",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#989898",
+    "selectedColor": "#d79437",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "快递查询",
+      "iconPath":"images/search.png",
+      "selectedIconPath":"images/search_select.png"
+    },{
+      "pagePath": "pages/contact/contact",
+      "text": "联系快递",
+      "iconPath": "images/kefu.png",
+      "selectedIconPath": "images/kefu_select.png"
+    }]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx324a89ed1fec5fc8"
+]
+}

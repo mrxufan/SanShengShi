@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='ball ballanimated'>
+        <navigator target="miniProgram" app-id="{{ballObj.appid}}">
+            <image src='{{ballObj.image}}' mode='widthFix'></image>
+        </navigator>
+    </view>
+    <view catchtap='catchBubble' class='bubble {{showBubbleMask?"BubbleMaskActive":""}}' wx:if="{{showbtn}}">
+        <text wx:if="{{!showBubbleMask}}">点我</text>
+        <text wx:if="{{!showBubbleMask}}">有惊喜</text>
+        <image wx:else src='/images/x.png' style='width:50rpx;height:50rpx'></image>
+    </view>
+    <view class='bubbleMask' hidden="{{!showBubbleMask}}" catchtap='catchBubble'>
+        <view class='app-wrap'>
+            <block wx:for="{{bubbleList}}" wx:key="{{index}}">
+                <navigator app-id="{{item.appid}}" target="miniProgram">
+                    <view class='app' animation="{{item.animation}}">
+                        <text>{{item.xcx_name}}</text>
+                        <image src='{{item.image}}' mode="widthFix" class='bubbleImg'></image>
+                    </view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+        <block wx:for="{{init.swiper}}" wx:for-index="index" wx:key="{{index}}">
+            <swiper-item>
+                <image src="{{item.thum_img}}" class="slide-image" mode='widthFix' />
+                <view class='mask' data-id='{{item.id}}' bindtap='navigateTo'>
+                    <text class='swiper_title'>{{item.title}}</text>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <ad unit-id="{{adv}}" wx:if="{{adv}}"></ad>
+    <block wx:for='{{data}}' wx:key='{{index}}'>
+        <view class='itemTwo' wx:if='{{item.type == 1}}' data-id='{{item.id}}' bindtap='navigateTo'>
+
+            <view class='itemTwo_bottom'>
+                <text class='itemTwo_title'>{{item.title}}</text>
+                <view class='desWrap'>
+                    <text class='itemTwo_intro'>{{item.description}}</text>
+                    <image src='{{item.thum_img}}' mode='widthFix'></image>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class='loading' wx:if='{{ifLoading}}'>
+        <image src='../../images/timg.gif' mode='widthFix'></image>
+    </view>
+</view>

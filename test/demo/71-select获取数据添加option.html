@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>select 添加下拉数据</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <style type="text/css">
+    select {
+        width: 200px;
+        height: 30px;
+        border: 1px solid blue;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap"></div>
+
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+   
+    <script type="text/javascript">
+	var dataArr = [
+		{
+		    "flink": "https://www.baidu.com/",
+		    "clist": [
+		    {
+		        "flink": "http://www.sina.com.cn",
+		        "name": "新浪",
+		        "ptypename": "高校网站",
+		        "remark": "的方法",
+		        "id": "112",
+		        "orlast": 1,
+		        "ptypeid": "111",
+		        "pids": "111"
+		    },
+		    {
+		        "flink": "http://www.huanqiu.com",
+		        "name": "环球网",
+		        "ptypename": "高校网站",
+		        "remark": "aa",
+		        "id": "8429f88d0c2542b0b8d9a939ff572aa8",
+		        "orlast": 1,
+		        "ptypeid": "111",
+		        "pids": null
+		    }],
+		    "name": "高校网站",
+		    "ptypename": "高校网站",
+		    "remark": "gx",
+		    "id": "111",
+		    "orlast": 0,
+		    "ptypeid": "0",
+		    "pids": "0"
+		},
+		{
+		    "flink": "",
+		    "clist": [
+		    {
+		        "flink": "http://www.sina.com.cn",
+		        "name": "新浪",
+		        "ptypename": "中等职业技术学校",
+		        "remark": "fffgggg",
+		        "id": "dca11dfd6f224471bb13e19a5a7400f0",
+		        "orlast": 1,
+		        "ptypeid": "54fe1d985fd546eea7e2bc9c6ff43e91",
+		        "pids": null
+		    }],
+		    "name": "中等职业技术学校",
+		    "ptypename": "中等职业技术学校",
+		    "remark": "tttyy",
+		    "id": "54fe1d985fd546eea7e2bc9c6ff43e91",
+		    "orlast": 0,
+		    "ptypeid": "0",
+		    "pids": null
+		},
+		{
+		    "flink": "",
+		    "clist": [
+		    {
+		        "flink": "http://www.huanqiu.com",
+		        "name": "环球",
+		        "ptypename": "兄弟协会网站",
+		        "remark": "mmm",
+		        "id": "635b5f07579548c2bc700fe672ad00bd",
+		        "orlast": 1,
+		        "ptypeid": "a9b62704f862432e81a1a75573bc5339",
+		        "pids": null
+		    }],
+		    "name": "兄弟协会网站",
+		    "ptypename": "兄弟协会网站",
+		    "remark": "aaa",
+		    "id": "a9b62704f862432e81a1a75573bc5339",
+		    "orlast": 0,
+		    "ptypeid": "0",
+		    "pids": null
+		}
+	];
+
+
+	console.log(dataArr);
+
+
+
+
+    dataArr.forEach(function(a, index) {
+        $('.wrap').append(`
+	        <select onchange="location.href=this.value;" class="item">
+	          <option>${a.name}</option>
+	        </select>
+			`);
+
+        a.clist.forEach(function(aa) {
+            $('.wrap').children().eq(index).append(`<option value="${aa.flink}">${aa.name}</option>`);
+        });
+    });
+
+
+    </script>
+</body>
+
+</html>

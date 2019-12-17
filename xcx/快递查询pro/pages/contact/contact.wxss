@@ -1,4 +1,0 @@
-/* pages/contact/contact.wxss */
-.contact-wrap{margin:20rpx;}
-.contact-wrap .item image{width: 100%;display: block;}
-.contact-wrap .item{margin-bottom: 20rpx;border-radius:15rpx;overflow: hidden;}
